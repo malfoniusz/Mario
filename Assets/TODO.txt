@@ -1,0 +1,126 @@
+﻿
+- poprawić ground check (nie można skakać z krawędzi)
+
+Mario:
+- animacja poruszania się
+- animacja skakania
+- przyspieszenie
+- dźwięk skakania
+
+Evironment:
+- background music
+- dokończenie podłogi
+- model solidnych bloków i ich rozstawienie
+- ustawienie ceglanych bloków
+- ustawienie bloków zapytania
+- ustawienie rur
+- ustawienie krzaków
+- ustawienie chmur
+- ustawienie flagi
+- ustawienie zamku
+- model przeciwnika gooma i ustawienie ich na planszy
+- model przeciwnika koopa i ustawienie ich na planszy
+
+Kamera:
+- podążanie kamerą za graczem
+- ograniczenie ruchu gracza w lewo
+
+UI:
+- liczba punktów
+- liczba monet
+- numer świata
+- zliczanie czasu
+- zmiana muzyki przy małym czasie
+
+Bloki:
+- zniszczenie ceglanych bloków + dźwięk
+- animacja bloku zapytania
+- zdobycie monet z bloku zapytania + dźwięk
+- zwiększenie ilości posiadanych monet
+- dodawanie punktów ze zdobytych monet
+- animacja punktów (pojawia się tekst który idzie do góry)
+- dźwięk uderzenia w solidny blok
+- zdobycie do dziesięciu monet z ceglanego bloku - potem zamiana bloku w solidny blok
+
+Goomba:
+- chodzenie (odbijanie się od ścian)
+- animacja chodzenia
+- zabicie przez skok na głowe + dźwięk
+- animacja śmieci
+- dodanie + animacja punktów
+
+Śmierć:
+- animacja śmierci maria
+- odjęcie życia
+- zresetowanie poziomu (automatyczne wyświetlenie ekranu poziomu)
+- śmierć od przeciwnika
+- śmierć od skoczenia w przepaść
+- śmierć od czasu
+- 100 monet = dodatkowe życie
+- gameover screen (gdy życia = 0)
+
+Koopa:
+- chodzenie (odbijanie się od ścian)
+- animacja chodzenia
+- skok na głowe i pozostawienie skorupy + dźwięk
+- dotknięcie skorupy powoduje wprawienie jej w ruch (odbijanie od ścian) + dźwięk
+- śmierć przeciwnika od skorupy + dźwięk
+- śmierć gracza od skorupy
+- dodanie + animacja punktów
+- śmierć od przeciwnika
+
+Grzyb i kwiat:
+- animacja wysunięcia grzybu ze znaku + dźwięk
+- poruszanie się grzyba
+- dotknięcie grzyba i urośnięcie + dźwięk
+- animacja wysunięcie kwiatka + dźwięk
+- dotknięcie kwiatka i zamiana w ognistego + dźwięk
+- możliwość strzelania kulami ognia
+- dźwięk strzelania
+- zabijanie kulami goomba, koopa i skorup
+- zdecydować czy wysunąć grzyb czy kwiat
+
+Gwiazda:
+- animacja wysunięcia gwiazdy + dźwięk
+- skakanie gwiazdy
+- dotknięcie gwiazdy: animacja bohatera + dotknięcie przeciwników ich zabija
+
+1UP:
+- niewidzialny blok
+- animacja wysunięcia + dźwięk
+- poruszanie się grzyba
+- dotknięcie daje dodatkowe życie
+
+Wygrana:
+- wysokość dotknięcia flagi i przypisanie odpowiednich punktów
+- interakcja z flagą (animacja flagi i bohatera, dźwięk, punkty i ich wywindowanie do góry)
+- pójście bohatera do zamku
+- muzyka zwycięstwa
+- zamiana czasu na punkty + dźwięk
+- ekran + wczytanie następnego poziomu
+
+Podziemie:
+- przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety
+- animacja monet
+- zbieranie monet
+- animacja wejścia do rury (w dół) + dźwięk + zablokowanie ruchu gracza
+- wejście do rury za pomocą strzałki w dół
+- przeniesie gracza do podziemia
+- animacja wejścia do rury (w bok) + dźwięk + zablokowanie ruchu gracza
+- wejście do rury za pomocą strzałki w prawo
+- wyniesienie gracza z podziemia
+- animacja wyjścia z rury (w góre) + dźwięk + zablokowanie ruchu gracza
+
+Menu główne:
+- przygotowanie części wizualnej
+- opcja rozpoczęcia gry
+- opcja wyjścia z gry
+- kursor
+
+Trolololio:
+- drugi poziom zrobić Trolio
+- przewracanie maria (odmrozić obracanie osi Z i dodać ground checky ze wszystkich stron + sprawdzić którą stroną mario jest skierowany do ziemi)
+- dodać rigidbody do bloków w późniejszej części poziomu
+- zapadająca się podłoga
+- zmienić Platform Effector na 180 stopni, dla dodatkowego boosta w góre
+- enemies superspeed
