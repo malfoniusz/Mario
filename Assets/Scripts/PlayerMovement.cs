@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    private AudioSource jumpAudio;
     private int direction = 0;
     private int groundMask;
     private bool jump = false;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        jumpAudio = GetComponent<AudioSource>();
         groundMask = LayerMask.NameToLayer("Ground");
 	}
 
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce));
             jump = true;
             grounded = false;
+            jumpAudio.Play();
         }
         if (grounded)
         {

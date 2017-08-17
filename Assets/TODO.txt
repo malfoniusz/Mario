@@ -1,6 +1,5 @@
 ﻿
 Mario:
-- dźwięk skakania
 - obracanie + animacja
 - przyspieszenie - akceleracja i maksymalna prędkość
 
@@ -77,6 +76,8 @@ Grzyb i kwiat:
 - zabijanie kulami goomba, koopa i skorup
 - zdecydować czy wysunąć grzyb czy kwiat
 - zniszczenie ceglanych bloków + dźwięk
+- uderzenie od przeciwnika zmniejsza poziom Maria
+- spadnięcie w przepaść dalej zabija bohatera
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk
