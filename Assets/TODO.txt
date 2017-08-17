@@ -1,9 +1,8 @@
 ﻿
 Mario:
-- animacja poruszania się
-- animacja skakania
-- przyspieszenie
-- dźwięk skakania
+- animacja skakania + dźwięk
+- obracanie + animacja
+- przyspieszenie - akceleracja i maksymalna prędkość
 
 Evironment:
 - background music
@@ -31,7 +30,7 @@ UI:
 - zmiana muzyki przy małym czasie
 
 Bloki:
-- zniszczenie ceglanych bloków + dźwięk
+- uderzenie w ceglany blok i jego nie zniszczenie + dźwięk
 - animacja bloku zapytania
 - zdobycie monet z bloku zapytania + dźwięk
 - zwiększenie ilości posiadanych monet
@@ -77,6 +76,7 @@ Grzyb i kwiat:
 - dźwięk strzelania
 - zabijanie kulami goomba, koopa i skorup
 - zdecydować czy wysunąć grzyb czy kwiat
+- zniszczenie ceglanych bloków + dźwięk
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk

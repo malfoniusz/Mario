@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform[] groundChecks;
 
     private Rigidbody2D rb;
+    private Animator anim;
     private int direction = 0;
     private int groundMask;
     private bool grounded = false;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 	void Awake ()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         groundMask = LayerMask.NameToLayer("Ground");
 	}
 
@@ -43,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Deaccelerate();
         }
+
+        WalkingAnimation();
     }
 
     void Accelerate()
@@ -55,6 +59,22 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(new Vector2(moveForce, 0));
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), rb.velocity.y);
+    }
+
+    void WalkingAnimation()
+    {
+        bool isWalking = rb.velocity.x != 0 ? true : false;
+        anim.SetBool("IsWalking", isWalking);
+
+        AnimationSpeed();
+    }
+
+    void AnimationSpeed()
+    {
+        bool isRight = rb.velocity.x >= 0 ? true : false;
+        float maxSpeedDir = isRight ? maxSpeed : -maxSpeed;
+        float animSpeed = 1 + Mathf.InverseLerp(0, maxSpeedDir, rb.velocity.x);
+        anim.speed = animSpeed;
     }
 
     void Deaccelerate()
