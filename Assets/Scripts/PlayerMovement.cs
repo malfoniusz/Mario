@@ -9,12 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed;
     public float changeDirectionMultiplier;
     public float jumpSpeed;
-    public Transform groundCheck;
+    public Transform[] groundChecks;
 
     private Rigidbody2D rb;
     private int direction = 0;
     private int groundMask;
-    private bool jump = false;
     private bool grounded = false;
 
 	void Awake ()
@@ -67,7 +66,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << groundMask);
+        for (int i = 0; i < groundChecks.Length; i++)
+        {
+            grounded = Physics2D.Linecast(transform.position, groundChecks[i].position, 1 << groundMask);
+            if (grounded == true)
+            {
+                break;
+            }
+        }
 
         if (Input.GetKey("up") && grounded == true)
         {

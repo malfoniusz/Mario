@@ -1,6 +1,4 @@
 ﻿
-- poprawić ground check (nie można skakać z krawędzi)
-
 Mario:
 - animacja poruszania się
 - animacja skakania
@@ -119,7 +117,7 @@ Menu główne:
 
 Trolololio:
 - drugi poziom zrobić Trolio
-- przewracanie maria (odmrozić obracanie osi Z i dodać ground checky ze wszystkich stron + sprawdzić którą stroną mario jest skierowany do ziemi)
+- przewracanie maria (odmrozić obracanie osi Z, dodać do okoła ground checky, sprawdzając rotacje maria użyć odpowiednich ground checków)
 - dodać rigidbody do bloków w późniejszej części poziomu
 - zapadająca się podłoga
 - zmienić Platform Effector na 180 stopni, dla dodatkowego boosta w góre
