@@ -1,6 +1,6 @@
 ﻿
 Mario:
-- animacja skakania + dźwięk
+- dźwięk skakania
 - obracanie + animacja
 - przyspieszenie - akceleracja i maksymalna prędkość
 

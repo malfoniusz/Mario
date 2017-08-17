@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private int direction = 0;
     private int groundMask;
-    private bool grounded = false;
+    private bool jump = false;
 
 	void Awake ()
     {
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             Deaccelerate();
         }
 
-        WalkingAnimation();
+        WalkAnimation();
     }
 
     void Accelerate()
@@ -61,7 +61,47 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), rb.velocity.y);
     }
 
-    void WalkingAnimation()
+    void Deaccelerate()
+    {
+        float speed = rb.velocity.x;
+        speed = Mathf.MoveTowards(speed, 0, deacceleration * Time.deltaTime);
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+    void Jump()
+    {
+        bool grounded = CheckGround();
+        if (Input.GetKey("up") && grounded == true)
+        {
+            float jumpForce = jumpSpeed * Time.deltaTime;
+            rb.AddForce(new Vector2(0, jumpForce));
+            jump = true;
+            grounded = false;
+        }
+        if (grounded)
+        {
+            jump = false;
+        }
+
+        JumpAnimation();
+    }
+
+    bool CheckGround()
+    {
+        bool grounded = false;
+        for (int i = 0; i < groundChecks.Length; i++)
+        {
+            grounded = Physics2D.Linecast(transform.position, groundChecks[i].position, 1 << groundMask);
+            if (grounded == true)
+            {
+                break;
+            }
+        }
+
+        return grounded;
+    }
+
+    void WalkAnimation()
     {
         bool isWalking = rb.velocity.x != 0 ? true : false;
         anim.SetBool("IsWalking", isWalking);
@@ -77,29 +117,8 @@ public class PlayerMovement : MonoBehaviour
         anim.speed = animSpeed;
     }
 
-    void Deaccelerate()
+    void JumpAnimation()
     {
-        float speed = rb.velocity.x;
-        speed = Mathf.MoveTowards(speed, 0, deacceleration * Time.deltaTime);
-        rb.velocity = new Vector2(speed, rb.velocity.y);
-    }
-
-    void Jump()
-    {
-        for (int i = 0; i < groundChecks.Length; i++)
-        {
-            grounded = Physics2D.Linecast(transform.position, groundChecks[i].position, 1 << groundMask);
-            if (grounded == true)
-            {
-                break;
-            }
-        }
-
-        if (Input.GetKey("up") && grounded == true)
-        {
-            float jumpForce = jumpSpeed * Time.deltaTime;
-            rb.AddForce(new Vector2(0, jumpForce));
-            grounded = false;
-        }
+        anim.SetBool("IsJumping", jump);
     }
 }

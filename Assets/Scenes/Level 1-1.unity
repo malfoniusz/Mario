@@ -5956,8 +5956,8 @@ GameObject:
   - component: {fileID: 1359979108}
   - component: {fileID: 1359979111}
   - component: {fileID: 1359979110}
-  - component: {fileID: 1359979112}
   - component: {fileID: 1359979113}
+  - component: {fileID: 1359979112}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
