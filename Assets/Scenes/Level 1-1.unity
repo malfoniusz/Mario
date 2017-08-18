@@ -6082,7 +6082,7 @@ MonoBehaviour:
   acceleration: 10000
   deacceleration: 200
   maxSpeed: 200
-  changeDirectionMultiplier: 2
+  changeDirectionMultiplier: 3
   jumpSpeed: 950000
   groundChecks:
   - {fileID: 784377393}

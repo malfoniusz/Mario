@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 70efaf66cd973a948bcb20a310191c03
-timeCreated: 1502968064
+timeCreated: 1503052642
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -211,20 +211,6 @@ TextureImporter:
         x: 300
         y: 172
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_10
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 172
-        width: 14
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -550,6 +536,20 @@ TextureImporter:
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mario_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 172
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

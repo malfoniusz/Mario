@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private int direction = 0;
     private int groundMask;
     private bool jump = false;
+    private float prevSpeed = 0;
 
 	void Awake ()
     {
@@ -33,11 +34,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate ()
     {
-        HorizontalMovement();
+        Walk();
+        Turn();
         Jump();
     }
 
-    void HorizontalMovement()
+    void Walk()
     {
         if (direction != 0)
         {
@@ -68,6 +70,30 @@ public class PlayerMovement : MonoBehaviour
         float speed = rb.velocity.x;
         speed = Mathf.MoveTowards(speed, 0, deacceleration * Time.deltaTime);
         rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+    void Turn()
+    {
+        if (rb.velocity.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        TurnAnimation();
+    }
+
+    void TurnAnimation()
+    {
+        bool slowing = Mathf.Abs(rb.velocity.x) < Mathf.Abs(prevSpeed);
+        bool opposite = direction == -Mathf.Sign(rb.velocity.x);
+        bool isTurning = (slowing && opposite) ? true : false;
+
+        anim.SetBool("IsTurning", isTurning);
+        prevSpeed = rb.velocity.x;
     }
 
     void Jump()
@@ -123,5 +149,11 @@ public class PlayerMovement : MonoBehaviour
     void JumpAnimation()
     {
         anim.SetBool("IsJumping", jump);
+    }
+
+    bool Right()
+    {
+        bool right = (transform.localScale.x == 1) ? true : false;
+        return right;
     }
 }

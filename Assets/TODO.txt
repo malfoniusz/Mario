@@ -1,6 +1,5 @@
 ﻿
 Mario:
-- obracanie + animacja
 - przyspieszenie - akceleracja i maksymalna prędkość
 
 Evironment:
