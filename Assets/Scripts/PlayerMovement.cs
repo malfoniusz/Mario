@@ -23,13 +23,17 @@ public class PlayerMovement : MonoBehaviour
     private bool jump = false;
     private float prevSpeed = 0;
 
-	void Awake ()
+    private float maxOffsetX;
+
+    void Awake ()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpAudio = GetComponent<AudioSource>();
         groundMask = LayerMask.NameToLayer("Ground");
-	}
+
+        maxOffsetX = MaxOffsetX();
+    }
 
     void Update()
     {
@@ -43,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
         Walk();
         Turn();
         Jump();
+
+        LeftCameraBoundary();
     }
 
     void Walk()
@@ -183,6 +189,31 @@ public class PlayerMovement : MonoBehaviour
     void JumpAnimation()
     {
         anim.SetBool("IsJumping", jump);
+    }
+
+    void LeftCameraBoundary()
+    {
+        float maxLeft = Camera.main.transform.position.x - maxOffsetX;
+        float new_x = Mathf.Clamp(transform.position.x, maxLeft, Mathf.Infinity);
+
+        if (transform.position.x != new_x)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            transform.position = new Vector3(new_x, transform.position.y, transform.position.z);
+        }
+    }
+
+    float MaxOffsetX()
+    {
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        float playerWidth = collider.size.x;
+
+        Camera cam = Camera.main;
+        float height = cam.orthographicSize * 2;
+        float camWidth = cam.aspect * height;
+
+        float maxOffsetX = camWidth / 2 - playerWidth / 2;
+        return maxOffsetX;
     }
 
 }

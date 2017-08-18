@@ -1,6 +1,5 @@
 ﻿
-Evironment:
-- background music
+Plansza:
 - dokończenie podłogi
 - model solidnych bloków i ich rozstawienie
 - ustawienie ceglanych bloków
@@ -12,10 +11,6 @@ Evironment:
 - ustawienie zamku
 - model przeciwnika gooma i ustawienie ich na planszy
 - model przeciwnika koopa i ustawienie ich na planszy
-
-Kamera:
-- podążanie kamerą za graczem
-- ograniczenie ruchu gracza w lewo
 
 UI:
 - liczba punktów
@@ -61,7 +56,7 @@ Koopa:
 - dodanie + animacja punktów
 - śmierć od przeciwnika
 
-Grzyb i kwiat:
+Powerupy:
 - animacja wysunięcia grzybu ze znaku + dźwięk
 - poruszanie się grzyba
 - dotknięcie grzyba i urośnięcie + dźwięk
