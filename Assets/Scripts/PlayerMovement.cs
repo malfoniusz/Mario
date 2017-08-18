@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float acceleration;
-    public float deacceleration;
-    public float maxSpeed;
+    public float walkSpeed;
+    public float slowdownSpeed;
+    public float maxWalkSpeed;
+    public float runSpeed;
+    public float maxRunSpeed;
     public float changeDirectionMultiplier;
     public float jumpSpeed;
     public Transform[] groundChecks;
@@ -14,7 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private AudioSource jumpAudio;
-    private int direction = 0;
+    private int walkKey = 0;
+    private bool jumpKey = false;
+    private bool runKey = false;
     private int groundMask;
     private bool jump = false;
     private float prevSpeed = 0;
@@ -29,7 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        direction = (int) Input.GetAxisRaw("Horizontal");
+        walkKey = (int) Input.GetAxisRaw("Horizontal");
+        jumpKey = Input.GetButton("Jump");
+        runKey = Input.GetButton("Run");
     }
 
     void FixedUpdate ()
@@ -41,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Walk()
     {
-        if (direction != 0)
+        if (walkKey != 0)
         {
             Accelerate();
         }
-        else if (direction == 0)
+        else if (walkKey == 0)
         {
             Deaccelerate();
         }
@@ -55,20 +61,47 @@ public class PlayerMovement : MonoBehaviour
 
     void Accelerate()
     {
-        float moveForce = acceleration * direction * Time.deltaTime;
+        float moveForce = MoveForce();
+        rb.AddForce(new Vector2(moveForce, 0));
+
+        SpeedLimit();
+    }
+
+    float MoveForce()
+    {
+        float moveForce = walkKey * walkSpeed * Time.deltaTime;
         if (Mathf.Sign(moveForce) != Mathf.Sign(rb.velocity.x))
         {
             moveForce *= changeDirectionMultiplier;
         }
+        else if (runKey)
+        {
+            moveForce = walkKey * runSpeed * Time.deltaTime;
+        }
 
-        rb.AddForce(new Vector2(moveForce, 0));
-        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed), rb.velocity.y);
+        return moveForce;
+    }
+
+    void SpeedLimit()
+    {
+        if (runKey)
+        {
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxRunSpeed, maxRunSpeed), rb.velocity.y);
+        }
+        else if (Mathf.Abs(rb.velocity.x) > maxWalkSpeed)
+        {
+            Deaccelerate();
+        }
+        else
+        {
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxWalkSpeed, maxWalkSpeed), rb.velocity.y);
+        }
     }
 
     void Deaccelerate()
     {
         float speed = rb.velocity.x;
-        speed = Mathf.MoveTowards(speed, 0, deacceleration * Time.deltaTime);
+        speed = Mathf.MoveTowards(speed, 0, slowdownSpeed * Time.deltaTime);
         rb.velocity = new Vector2(speed, rb.velocity.y);
     }
 
@@ -89,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     void TurnAnimation()
     {
         bool slowing = Mathf.Abs(rb.velocity.x) < Mathf.Abs(prevSpeed);
-        bool opposite = direction == -Mathf.Sign(rb.velocity.x);
+        bool opposite = walkKey == -Mathf.Sign(rb.velocity.x);
         bool isTurning = (slowing && opposite) ? true : false;
 
         anim.SetBool("IsTurning", isTurning);
@@ -99,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         bool grounded = CheckGround();
-        if (Input.GetKey("up") && grounded == true)
+        if (jumpKey && grounded == true)
         {
             float jumpForce = jumpSpeed * Time.deltaTime;
             rb.AddForce(new Vector2(0, jumpForce));
@@ -140,9 +173,10 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimationSpeed()
     {
-        bool isRight = rb.velocity.x >= 0 ? true : false;
-        float maxSpeedDir = isRight ? maxSpeed : -maxSpeed;
-        float animSpeed = 1 + Mathf.InverseLerp(0, maxSpeedDir, rb.velocity.x);
+        float curSpeed = Mathf.Abs(rb.velocity.x);
+        float animSpeed = 1;
+        animSpeed += Mathf.InverseLerp(0, maxWalkSpeed, curSpeed);
+        animSpeed += Mathf.InverseLerp(maxWalkSpeed, maxRunSpeed, curSpeed);
         anim.speed = animSpeed;
     }
 
@@ -151,9 +185,4 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("IsJumping", jump);
     }
 
-    bool Right()
-    {
-        bool right = (transform.localScale.x == 1) ? true : false;
-        return right;
-    }
 }

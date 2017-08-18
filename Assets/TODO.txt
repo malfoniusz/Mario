@@ -1,7 +1,4 @@
 ﻿
-Mario:
-- przyspieszenie - akceleracja i maksymalna prędkość
-
 Evironment:
 - background music
 - dokończenie podłogi
