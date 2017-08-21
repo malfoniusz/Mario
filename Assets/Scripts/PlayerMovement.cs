@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpAudio = GetComponent<AudioSource>();
-        groundMask = LayerMask.NameToLayer("Ground");
+        groundMask = LayerMask.NameToLayer("Floor");
 
         maxOffsetX = MaxOffsetX();
     }
@@ -127,8 +127,9 @@ public class PlayerMovement : MonoBehaviour
 
     void TurnAnimation()
     {
+        Debug.Log(rb.velocity);
         bool slowing = Mathf.Abs(rb.velocity.x) < Mathf.Abs(prevSpeed);
-        bool opposite = walkKey == -Mathf.Sign(rb.velocity.x);
+        bool opposite = (walkKey == -Mathf.Sign(rb.velocity.x));
         bool isTurning = (slowing && opposite) ? true : false;
 
         anim.SetBool("IsTurning", isTurning);
