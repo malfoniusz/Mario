@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212106704996179534}
   - component: {fileID: 61712511810667842}
   m_Layer: 8
-  m_Name: Indestructible2
+  m_Name: Indestructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

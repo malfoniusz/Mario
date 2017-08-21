@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float changeDirectionMultiplier;
     public float jumpSpeed;
     public Transform[] groundChecks;
+    public float minimalVelocity;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -113,11 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Turn()
     {
-        if (rb.velocity.x > 0)
+        if (rb.velocity.x > minimalVelocity)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (rb.velocity.x < 0)
+        else if (rb.velocity.x < -minimalVelocity)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -127,7 +128,6 @@ public class PlayerMovement : MonoBehaviour
 
     void TurnAnimation()
     {
-        Debug.Log(rb.velocity);
         bool slowing = Mathf.Abs(rb.velocity.x) < Mathf.Abs(prevSpeed);
         bool opposite = (walkKey == -Mathf.Sign(rb.velocity.x));
         bool isTurning = (slowing && opposite) ? true : false;
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
 
     void WalkAnimation()
     {
-        bool isWalking = rb.velocity.x != 0 ? true : false;
+        bool isWalking = Mathf.Abs(rb.velocity.x) > minimalVelocity ? true : false;
         anim.SetBool("IsWalking", isWalking);
 
         AnimationSpeed();

@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public float minDistance;
-    public float smoothing;
 
     private Transform player;
 
@@ -20,8 +19,7 @@ public class CameraMovement : MonoBehaviour
 
         if (dist < minDistance)
         {
-            float desired = Mathf.Lerp(transform.position.x, player.position.x + minDistance, smoothing * Time.deltaTime);
-            transform.position = new Vector3(desired, transform.position.y, transform.position.z);
+            transform.position = new Vector3(player.position.x + minDistance, transform.position.y, transform.position.z);
         }
     }
 
