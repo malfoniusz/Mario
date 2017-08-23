@@ -1,8 +1,4 @@
 ﻿
-UI:
-- zliczanie czasu
-- zmiana muzyki przy małym czasie
-
 Bloki:
 - uderzenie w ceglany blok i jego nie zniszczenie + dźwięk
 - animacja bloku zapytania

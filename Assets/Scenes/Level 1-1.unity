@@ -7043,6 +7043,7 @@ GameObject:
   - component: {fileID: 402585666}
   - component: {fileID: 402585668}
   - component: {fileID: 402585667}
+  - component: {fileID: 402585669}
   m_Layer: 5
   m_Name: TimeValueText
   m_TagString: Untagged
@@ -7065,8 +7066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15.700001, y: -15}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -39.960003, y: -15}
+  m_SizeDelta: {x: 46.77, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &402585667
 MonoBehaviour:
@@ -7094,19 +7095,34 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 200
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 400
+  m_Text: 000
 --- !u!222 &402585668
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402585665}
+--- !u!114 &402585669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402585665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f13cd3b752a8f48a5b36c18d16100a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentMusic: {fileID: 819367128}
+  hurryMusic: {fileID: 8300000, guid: 9190e2e67f1459347a79ac16a17f1f6e, type: 3}
+  countdownSpeed: 3
+  time: 400
 --- !u!1001 &404225700
 Prefab:
   m_ObjectHideFlags: 0
