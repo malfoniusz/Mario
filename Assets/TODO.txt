@@ -1,8 +1,6 @@
 ﻿
 UI:
-- liczba punktów
-- liczba monet
-- numer świata
+- animacja zdjecia monety
 - zliczanie czasu
 - zmiana muzyki przy małym czasie
 
