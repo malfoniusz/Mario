@@ -1,7 +1,4 @@
 ﻿
-- wysokość skoku zależy od długości trzymanego przyciska skoku
-- gdy trzymasz przycisk skoku prędkość wolnie się wytraca. AddForce zaczyna z pewną wartością i podczas trzymania przycisku zmierza do zera. Od razu po puszczeniu przycisku AddForce = 0.
-
 UI:
 - liczba punktów
 - liczba monet
@@ -72,8 +69,8 @@ Gwiazda:
 - dotknięcie daje dodatkowe życie
 
 Wygrana:
-- wysokość dotknięcia flagi i przypisanie odpowiednich punktów
-- interakcja z flagą (animacja flagi i bohatera, dźwięk, punkty i ich wywindowanie do góry)
+- wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
+- interakcja z flagą (animacja flagi (record animation), dźwięk, punkty i ich wywindowanie do góry)
 - pójście bohatera do zamku
 - muzyka zwycięstwa
 - zamiana czasu na punkty + dźwięk

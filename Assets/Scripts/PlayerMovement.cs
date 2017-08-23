@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxRunSpeed;
     public float changeDirectionMultiplier;
     public float jumpSpeed;
+    public float jumpSlowdown;
     public Transform[] groundChecks;
     public float minimalVelocity;
 
@@ -19,9 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource jumpAudio;
     private int walkKey = 0;
     private bool jumpKey = false;
+    private bool jumpKeyDown = false;
     private bool runKey = false;
     private int groundMask;
-    private bool jump = false;
+    private bool jumping = false;
+    private float jumpForce = 0;
     private float prevSpeed = 0;
 
     private float maxOffsetX;
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         walkKey = (int) Input.GetAxisRaw("Horizontal");
         jumpKey = Input.GetButton("Jump");
+        jumpKeyDown = (jumpKeyDown || Input.GetButtonDown("Jump"));
         runKey = Input.GetButton("Run");
     }
 
@@ -138,21 +142,40 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        CheckJump();
+        MakeAJump();
+        anim.SetBool("IsJumping", jumping);
+    }
+
+    void CheckJump()
+    {
         bool grounded = CheckGround();
-        if (jumpKey && grounded == true)
+        if (jumpKeyDown && grounded)
         {
-            float jumpForce = jumpSpeed * Time.deltaTime;
-            rb.AddForce(new Vector2(0, jumpForce));
-            jump = true;
+            jumpKeyDown = false;
+            jumping = true;
             grounded = false;
+
+            jumpForce = jumpSpeed * Time.deltaTime;
             jumpAudio.Play();
         }
-        if (grounded)
+        else if (jumping && grounded)
         {
-            jump = false;
+            jumping = false;
         }
+    }
 
-        JumpAnimation();
+    void MakeAJump()
+    {
+        if (!jumpKey)
+        {
+            jumpForce = 0;
+        }
+        else if (jumpForce != 0 && jumpKey)
+        {
+            jumpForce = Mathf.Lerp(jumpForce, 0, jumpSlowdown);
+            rb.AddForce(new Vector2(0, jumpForce));
+        }
     }
 
     bool CheckGround()
@@ -185,11 +208,6 @@ public class PlayerMovement : MonoBehaviour
         animSpeed += Mathf.InverseLerp(0, maxWalkSpeed, curSpeed);
         animSpeed += Mathf.InverseLerp(maxWalkSpeed, maxRunSpeed, curSpeed);
         anim.speed = animSpeed;
-    }
-
-    void JumpAnimation()
-    {
-        anim.SetBool("IsJumping", jump);
     }
 
     void LeftCameraBoundary()
