@@ -1,6 +1,5 @@
 ﻿
 Bloki:
-- animacja bloku zapytania - zmiana kolorów
 - zdobycie monet z bloku zapytania + dźwięk
 - zwiększenie ilości posiadanych monet
 - dodawanie punktów ze zdobytych monet
