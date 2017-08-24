@@ -1,7 +1,8 @@
 ﻿
+- jump force = 0 after hitting a block
+
 Bloki:
-- uderzenie w ceglany blok i jego nie zniszczenie + dźwięk
-- animacja bloku zapytania
+- animacja bloku zapytania - zmiana kolorów
 - zdobycie monet z bloku zapytania + dźwięk
 - zwiększenie ilości posiadanych monet
 - dodawanie punktów ze zdobytych monet
@@ -48,6 +49,7 @@ Powerupy:
 - zdecydować czy wysunąć grzyb czy kwiat
 - zniszczenie ceglanych bloków + dźwięk
 - uderzenie od przeciwnika zmniejsza poziom Maria
+- po byciu trafionym, niezniszczalność na kilka sekund
 - spadnięcie w przepaść dalej zabija bohatera
 
 Gwiazda:
