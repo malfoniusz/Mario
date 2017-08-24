@@ -1,6 +1,4 @@
 ﻿
-- jump force = 0 after hitting a block
-
 Bloki:
 - animacja bloku zapytania - zmiana kolorów
 - zdobycie monet z bloku zapytania + dźwięk

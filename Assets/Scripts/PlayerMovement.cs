@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
     public float jumpSlowdown;
     public Transform[] groundChecks;
+    public Transform[] topChecks;
     public float minimalVelocity;
 
     private Rigidbody2D rb;
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpKey = false;
     private bool jumpKeyDown = false;
     private bool runKey = false;
-    private int groundMask;
+    private int floorMask;
     private bool jumping = false;
     private float jumpForce = 0;
     private float prevSpeed = 0;
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpAudio = GetComponent<AudioSource>();
-        groundMask = LayerMask.NameToLayer("Floor");
+        floorMask = LayerMask.NameToLayer("Floor");
 
         maxOffsetX = MaxOffsetX();
     }
@@ -149,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        bool grounded = CheckGround();
+        bool grounded = CheckContact(groundChecks, floorMask);
         if (jumpKeyDown && grounded)
         {
             jumpKeyDown = false;
@@ -167,7 +168,8 @@ public class PlayerMovement : MonoBehaviour
 
     void MakeAJump()
     {
-        if (!jumpKey)
+        bool topContact = CheckContact(topChecks, floorMask);
+        if (!jumpKey || topContact)
         {
             jumpForce = 0;
         }
@@ -178,19 +180,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    bool CheckGround()
+    bool CheckContact(Transform[] contactChecks, int layerMask)
     {
-        bool grounded = false;
-        for (int i = 0; i < groundChecks.Length; i++)
+        bool contact = false;
+        for (int i = 0; i < contactChecks.Length; i++)
         {
-            grounded = Physics2D.Linecast(transform.position, groundChecks[i].position, 1 << groundMask);
-            if (grounded == true)
+            contact = Physics2D.Linecast(transform.position, contactChecks[i].position, 1 << layerMask);
+            if (contact == true)
             {
                 break;
             }
         }
 
-        return grounded;
+        return contact;
     }
 
     void WalkAnimation()
