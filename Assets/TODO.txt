@@ -1,10 +1,8 @@
 ﻿
 Bloki:
-- zdobycie monet z bloku zapytania + dźwięk
 - zwiększenie ilości posiadanych monet
 - dodawanie punktów ze zdobytych monet
 - animacja punktów (pojawia się tekst który idzie do góry)
-- dźwięk uderzenia w solidny blok
 - zdobycie do dziesięciu monet z ceglanego bloku - potem zamiana bloku w solidny blok
 
 Goomba:
@@ -21,7 +19,7 @@ Goomba:
 - śmierć od przeciwnika
 - śmierć od skoczenia w przepaść
 - śmierć od czasu
-- 100 monet = dodatkowe życie
+- 100 monet = dodatkowe życie + dźwięk
 - gameover screen (gdy życia = 0)
 
 Koopa:
@@ -43,6 +41,7 @@ Powerupy:
 - możliwość strzelania kulami ognia
 - dźwięk strzelania
 - zabijanie kulami goomba, koopa i skorup
+- inna animacja śmierci dla przeciwników zabitych od ognistych kul
 - zdecydować czy wysunąć grzyb czy kwiat
 - zniszczenie ceglanych bloków + dźwięk
 - uderzenie od przeciwnika zmniejsza poziom Maria
