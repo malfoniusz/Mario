@@ -7,8 +7,8 @@ public class QuestionBlock : BlockAnimated
     public GameObject coinFromBlock;
     public GameObject solidBlock;
 
-    private SpriteRenderer spriteRenderer;
-    private GameObject solidContainer;
+    protected SpriteRenderer spriteRenderer;
+    protected GameObject solidContainer;
 
     protected override void Awake()
     {
@@ -19,26 +19,40 @@ public class QuestionBlock : BlockAnimated
 
     protected override void Update()
     {
-        base.Update();
+        Sound();
+        Animation();
 
         if (playerHit)
         {
-            GameObject coin = Instantiate(coinFromBlock);
-            coin.transform.GetChild(0).transform.localPosition = coinSpawn.position;
-
-            GameObject solid = Instantiate(solidBlock);
-            solid.transform.GetChild(0).transform.localPosition = block.transform.position;
-            solid.transform.parent = solidContainer.transform;
-
-            spriteRenderer.enabled = false;
-            enabled = false;
+            SpawnCoin();
+            CreateSolidBlock();
+            Hide();
 
             audioSource.Play();
             StartCoroutine(WaitDestroy(audioSource.clip.length));
         }
     }
 
-    IEnumerator WaitDestroy(float seconds)
+    protected void SpawnCoin()
+    {
+        GameObject coin = Instantiate(coinFromBlock);
+        coin.transform.GetChild(0).transform.localPosition = coinSpawn.position;
+    }
+
+    protected void CreateSolidBlock()
+    {
+        GameObject solid = Instantiate(solidBlock);
+        solid.transform.GetChild(0).transform.localPosition = block.transform.position;
+        solid.transform.parent = solidContainer.transform;
+    }
+
+    protected void Hide()
+    {
+        spriteRenderer.enabled = false;
+        enabled = false;
+    }
+
+    protected IEnumerator WaitDestroy(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         Destroy(gameObject);

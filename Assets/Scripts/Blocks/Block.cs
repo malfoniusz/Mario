@@ -7,9 +7,10 @@ public class Block : MonoBehaviour
     public float soundDelay = 0.1f;
 
     protected AudioSource audioSource;
-    protected int playerMask;
     protected bool playerHit;
-    protected float time = 0;
+
+    private int playerMask;
+    private float time = 0;
 
     protected virtual void Awake()
     {
