@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class TimeCountdown : MonoBehaviour
+public class UITime : MonoBehaviour
 {
     public AudioSource environmentMusic;
     public AudioClip hurryMusic;

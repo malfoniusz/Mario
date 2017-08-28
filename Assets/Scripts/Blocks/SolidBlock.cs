@@ -7,7 +7,7 @@ public class SolidBlock : BlockAnimated
 
     protected override void Update()
     {
-        Sound();    // SoundDelay prevents sound from going off when awoken
+        Sound();
 
         if (hasAwaken)
         {

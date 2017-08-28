@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
-public class CoinFromBlock : MonoBehaviour
+public class CoinFromBlock : Coin
 {
     private Animator anim;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
+        UICoins.AddCoins(1);
+        UIPoints.AddPoints(points);
     }
 
     void Update()

@@ -1152,6 +1152,7 @@ GameObject:
   - component: {fileID: 49459195}
   - component: {fileID: 49459197}
   - component: {fileID: 49459196}
+  - component: {fileID: 49459198}
   m_Layer: 5
   m_Name: CoinValueText
   m_TagString: Untagged
@@ -1216,6 +1217,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 49459194}
+--- !u!114 &49459198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49459194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7121589f7883c4cb85cb4bdae514fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &51036426
 Prefab:
   m_ObjectHideFlags: 0
@@ -4441,6 +4453,7 @@ GameObject:
   - component: {fileID: 207503598}
   - component: {fileID: 207503600}
   - component: {fileID: 207503599}
+  - component: {fileID: 207503601}
   m_Layer: 5
   m_Name: PointValueText
   m_TagString: Untagged
@@ -4505,6 +4518,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 207503597}
+--- !u!114 &207503601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207503597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca4a8604390c164aa67eb8a8add8800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &209103663 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4006226624272978, guid: 644d11241734be443905324d14855349,

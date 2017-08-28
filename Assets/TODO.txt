@@ -1,9 +1,7 @@
 ﻿
 Bloki:
-- zwiększenie ilości posiadanych monet
-- dodawanie punktów ze zdobytych monet
 - animacja punktów (pojawia się tekst który idzie do góry)
-- zdobycie do dziesięciu monet z ceglanego bloku - potem zamiana bloku w solidny blok
+- zdobycie do dziesięciu monet z ceglanego bloku - potem zamiana bloku w solidny blok - nadpisac skrypt QuestionBlock
 
 Goomba:
 - chodzenie (odbijanie się od ścian)
