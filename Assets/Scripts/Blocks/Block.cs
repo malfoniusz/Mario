@@ -4,7 +4,7 @@ public class Block : MonoBehaviour
 {
     public GameObject block;
     public Transform[] bottomHitChecks;
-    public float soundDelay;
+    public float soundDelay = 0.1f;
 
     protected AudioSource audioSource;
     protected int playerMask;
@@ -19,6 +19,11 @@ public class Block : MonoBehaviour
 
     protected virtual void Update()
     {
+        Sound();
+    }
+
+    protected void Sound()
+    {
         time += Time.deltaTime;
 
         playerHit = PlayerHit();
@@ -29,7 +34,7 @@ public class Block : MonoBehaviour
         }
     }
 
-    protected bool PlayerHit()
+    bool PlayerHit()
     {
         bool playerHit = false;
         for (int i = 0; i < bottomHitChecks.Length; i++)

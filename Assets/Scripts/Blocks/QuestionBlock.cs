@@ -1,53 +1,47 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class QuestionBlock : BlockAnimated
 {
     public Transform coinSpawn;
     public GameObject coinFromBlock;
-    public Sprite solidBlock;
-    public AudioSource coinAudio;
-    public AudioSource blockHitAudio;
+    public GameObject solidBlock;
 
     private SpriteRenderer spriteRenderer;
-    private Animator animBlock;
-    private bool wasHit = false;
-    private bool animStooped = false;
+    private GameObject solidContainer;
 
     protected override void Awake()
     {
         base.Awake();
         spriteRenderer = block.GetComponent<SpriteRenderer>();
-        animBlock = block.GetComponent<Animator>();
+        solidContainer = GameObject.FindWithTag("SolidBlockContainer");
     }
 
     protected override void Update()
     {
         base.Update();
 
-        if (playerHit && wasHit == false)
+        if (playerHit)
         {
-            wasHit = true;
-
-            animBlock.enabled = false;  // Color change animation
-            spriteRenderer.sprite = solidBlock;
-
-            audioSource = blockHitAudio;
-            coinAudio.Play();
-
             GameObject coin = Instantiate(coinFromBlock);
             coin.transform.GetChild(0).transform.localPosition = coinSpawn.position;
-        }
 
-        StopAnimation();
+            GameObject solid = Instantiate(solidBlock);
+            solid.transform.GetChild(0).transform.localPosition = block.transform.position;
+            solid.transform.parent = solidContainer.transform;
+
+            spriteRenderer.enabled = false;
+            enabled = false;
+
+            audioSource.Play();
+            StartCoroutine(WaitDestroy(audioSource.clip.length));
+        }
     }
 
-    void StopAnimation()
+    IEnumerator WaitDestroy(float seconds)
     {
-        if (animStooped == false && wasHit == true && animFinished)
-        {
-            anim.enabled = false;   // Block hit animation
-            animStooped = true;
-        }
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
     }
 
 }

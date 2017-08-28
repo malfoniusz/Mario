@@ -14,7 +14,11 @@ public class BlockAnimated : Block
     protected override void Update()
     {
         base.Update();
+        Animation();
+    }
 
+    void Animation()
+    {
         if (playerHit && animFinished)
         {
             PlayAnimation();

@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 4fbab57100214d04d90dee6e28a0b666
-timeCreated: 1503741889
+timeCreated: 1503914003
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - block: {instanceID: 0}
+  - coinSpawn: {instanceID: 0}
+  - coinFromBlock: {instanceID: 0}
+  - solidBlock: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
