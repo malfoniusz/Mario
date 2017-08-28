@@ -1,6 +1,5 @@
 ﻿
 Bloki:
-- animacja punktów (pojawia się tekst który idzie do góry)
 - zdobycie do dziesięciu monet z ceglanego bloku - potem zamiana bloku w solidny blok - nadpisac skrypt QuestionBlock
 
 Goomba:
