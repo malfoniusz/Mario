@@ -5,18 +5,18 @@ public class BrickCoin : QuestionBlock
     public int coinNumber = 10;
     public float hitDelay = 0.1f;
 
-    private float time = 0;
+    private float hitTime = 0;
 
     protected override void Update()
     {
         Sound();
         Animation();
 
-        time += Time.deltaTime;
+        hitTime += Time.deltaTime;
 
-        if (playerHit && time > hitDelay)
+        if (playerHit && hitTime > hitDelay)
         {
-            time = 0;
+            hitTime = 0;
 
             SpawnCoin();
             coinNumber--;

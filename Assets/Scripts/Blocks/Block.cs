@@ -10,7 +10,7 @@ public class Block : MonoBehaviour
     protected bool playerHit;
 
     private int playerMask;
-    private float time = 0;
+    private float soundTime = 0;
 
     protected virtual void Awake()
     {
@@ -25,12 +25,12 @@ public class Block : MonoBehaviour
 
     protected void Sound()
     {
-        time += Time.deltaTime;
+        soundTime += Time.deltaTime;
 
         playerHit = PlayerHit();
-        if (playerHit && time > soundDelay)
+        if (playerHit && soundTime > soundDelay)
         {
-            time = 0;
+            soundTime = 0;
             audioSource.Play();
         }
     }
