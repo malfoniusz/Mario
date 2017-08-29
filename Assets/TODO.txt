@@ -1,8 +1,8 @@
 ﻿
 Goomba:
-- zabicie przez skok na głowe + dźwięk
+- punkty
+- aktywacja przeciwnika gdy kamera go widzi
 - animacja śmieci (drugi skrypt dla gracza)
-- dodanie punktów + ich animacja
 
 Śmierć:
 - animacja śmierci maria

@@ -22,6 +22,7 @@ AudioMixerController:
     - 5eb98d7cb859d4744aa49e61814f41df
     - ab7e1f79cd933964b85c4e2881dae7a6
     - ed49c4aa0038fcd49a2d204f813a233b
+    - d74a0dc9f69dfba48adef9b47076b18e
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -128,6 +129,7 @@ AudioMixerGroupController:
   - {fileID: 243035323506895524}
   - {fileID: 243773330445038022}
   - {fileID: 243135828007405830}
+  - {fileID: 243435734915714612}
   m_Volume: f170bfa1b6e0e674cbb66d3fca366f33
   m_Pitch: cb414c22f6f77764da57a582c810553f
   m_Effects:
@@ -149,6 +151,23 @@ AudioMixerGroupController:
   m_Pitch: 4cf55b33dd6bb724fb5ef1b3a8bbb334
   m_Effects:
   - {fileID: 244614784505515506}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &243435734915714612
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Stomp
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: d74a0dc9f69dfba48adef9b47076b18e
+  m_Children: []
+  m_Volume: 9f16c842cb914dd47ac3aa4606e3be8f
+  m_Pitch: ed1d58bf827dcea4f87ea38b4d615b01
+  m_Effects:
+  - {fileID: 244350087498877376}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -272,6 +291,19 @@ AudioMixerEffectController:
   m_EffectID: 86e73e254f758354f882fb42765ab8be
   m_EffectName: Attenuation
   m_MixLevel: 19f0daffdf0ef6d41823409538dae23d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244350087498877376
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 2ad8b3ae489e6f64b9b4157b99c984d3
+  m_EffectName: Attenuation
+  m_MixLevel: d2bbfb46af9aeec4ea505de6e01d1155
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
