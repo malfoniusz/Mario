@@ -17,8 +17,8 @@ TagManager:
   - Floor
   - Coin
   - Player
-  - 
-  - 
+  - Enemy
+  - EnemyTrigger
   - 
   - 
   - 

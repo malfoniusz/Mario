@@ -21,20 +21,23 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpKey = false;
     private bool jumpKeyDown = false;
     private bool runKey = false;
-    private int floorMask;
     private bool jumping = false;
     private float jumpForce = 0;
     private float prevSpeed = 0;
+    private int floorMask;
 
     private float maxOffsetX;
 
-    void Awake ()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpAudio = GetComponent<AudioSource>();
         floorMask = LayerMask.NameToLayer("Floor");
+    }
 
+    void Start()
+    {
         maxOffsetX = MaxOffsetX();
     }
 

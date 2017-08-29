@@ -1,9 +1,7 @@
 ﻿
 Goomba:
-- chodzenie (odbijanie się od ścian)
-- animacja chodzenia
 - zabicie przez skok na głowe + dźwięk
-- animacja śmieci
+- animacja śmieci (drugi skrypt dla gracza)
 - dodanie punktów + ich animacja
 
 Śmierć:
