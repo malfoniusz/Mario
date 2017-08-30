@@ -2,9 +2,13 @@
 
 public class PlayerCombo : MonoBehaviour
 {
-    public PlayerMovement playerMovement;
-
+    private PlayerMovement playerMovement;
     static private int combo = 0;
+
+    void Awake()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+    }
 
     void Update()
     {

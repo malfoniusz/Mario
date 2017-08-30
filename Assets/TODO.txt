@@ -1,7 +1,4 @@
 ﻿
-Goomba:
-- aktywacja przeciwnika gdy kamera go widzi
-
 Śmierć:
 - przechowywanie żyć i odejmowanie ich
 - animacja śmierci maria

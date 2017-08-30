@@ -19,6 +19,7 @@ public class Goomba : MonoBehaviour
     private float time = 0;
     private int playerMask;
     private int enemyMask;
+    private bool activated = false;
 
     private void Awake()
     {
@@ -34,17 +35,35 @@ public class Goomba : MonoBehaviour
     private void Start()
     {
         Physics2D.IgnoreLayerCollision(playerMask, enemyMask);
-        UpdateVelocity();
     }
 
     private void Update()
     {
-        time += Time.deltaTime;
-
-        if (Mathf.Abs(rb.velocity.x) < minimalVelocity && time > changeDirectionDelay)
+        if (activated == false)
         {
-            time = 0;
-            ChangeDirection();
+            CheckVisibility();
+        }
+        else
+        {
+            time += Time.deltaTime;
+
+            if (Mathf.Abs(rb.velocity.x) < minimalVelocity && time > changeDirectionDelay)
+            {
+                time = 0;
+                ChangeDirection();
+            }
+        }
+    }
+
+    void CheckVisibility()
+    {
+        Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
+        bool camVis = (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1);
+
+        if (camVis == true)
+        {
+            activated = true;
+            UpdateVelocity();
         }
     }
 
