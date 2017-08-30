@@ -14,7 +14,6 @@ public class CoinFromBlock : Coin
     void Start()
     {
         UICoins.AddCoins(1);
-        UIPoints.AddPoints(points);
     }
 
     void Update()

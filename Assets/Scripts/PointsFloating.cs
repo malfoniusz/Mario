@@ -11,7 +11,13 @@ public class PointsFloating : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         text = transform.GetChild(0).GetComponent<Text>();
+
         UpdateText();
+    }
+
+    void Start()
+    {
+        UIPoints.AddPoints(points);
     }
 
     void Update()

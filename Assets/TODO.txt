@@ -1,12 +1,10 @@
 ﻿
 Goomba:
-- punkty
 - aktywacja przeciwnika gdy kamera go widzi
-- animacja śmieci (drugi skrypt dla gracza)
 
 Śmierć:
+- przechowywanie żyć i odejmowanie ich
 - animacja śmierci maria
-- odjęcie życia
 - zresetowanie poziomu (automatyczne wyświetlenie ekranu poziomu)
 - śmierć od przeciwnika
 - śmierć od skoczenia w przepaść

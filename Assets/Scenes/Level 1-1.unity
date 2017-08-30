@@ -23735,6 +23735,7 @@ GameObject:
   - component: {fileID: 1359979113}
   - component: {fileID: 1359979114}
   - component: {fileID: 1359979112}
+  - component: {fileID: 1359979115}
   m_Layer: 10
   m_Name: Mario
   m_TagString: Player
@@ -23970,6 +23971,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1359979115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1359979107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fe48157d13dc94e881c1957b94ad87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1359979112}
 --- !u!4 &1364155529 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4006226624272978, guid: 644d11241734be443905324d14855349,

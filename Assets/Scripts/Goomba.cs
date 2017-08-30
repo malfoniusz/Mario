@@ -2,6 +2,8 @@
 
 public class Goomba : MonoBehaviour
 {
+    public GameObject pointsFloating;
+    public int points = 100;
     public float speed = 30;
     public float bounceHeight = 300;
     public float changeDirectionDelay = 0.1f;
@@ -66,6 +68,10 @@ public class Goomba : MonoBehaviour
             {
                 Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
                 playerRB.velocity = new Vector2(playerRB.velocity.x, bounceHeight);
+
+                GameObject pointsObject = Instantiate(pointsFloating);
+                pointsObject.transform.GetChild(0).position = transform.GetChild(0).position;
+                pointsObject.GetComponent<PointsFloating>().SetPoints(PlayerCombo.Combo(points));
 
                 anim.SetTrigger("IsDead");
                 DisableObject();

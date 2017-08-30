@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping = false;
     private float jumpForce = 0;
     private float prevSpeed = 0;
-    private int floorMask;
+    [HideInInspector] public int floorMask;
 
     private float maxOffsetX;
 
@@ -181,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    bool CheckContact(Transform[] contactChecks, int layerMask)
+    public bool CheckContact(Transform[] contactChecks, int layerMask)
     {
         bool contact = false;
         for (int i = 0; i < contactChecks.Length; i++)

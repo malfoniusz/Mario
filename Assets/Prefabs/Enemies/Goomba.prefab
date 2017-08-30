@@ -254,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d36760e9a9e3a469425ee0f8653c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
+    type: 2}
+  points: 100
   speed: 30
   bounceHeight: 300
   changeDirectionDelay: 0.1
