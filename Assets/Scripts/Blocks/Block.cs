@@ -2,18 +2,19 @@
 
 public class Block : MonoBehaviour
 {
-    public GameObject block;
     public Transform[] bottomHitChecks;
-    public float soundDelay = 0.1f;
 
+    protected GameObject parent;
     protected AudioSource audioSource;
     protected bool playerHit;
 
     private int playerMask;
+    private float soundDelay = 0.1f;
     private float soundTime = 0;
 
     protected virtual void Awake()
     {
+        parent = transform.parent.gameObject;
         audioSource = GetComponent<AudioSource>();
         playerMask = LayerMask.NameToLayer("Player");
     }
@@ -40,7 +41,7 @@ public class Block : MonoBehaviour
         bool playerHit = false;
         for (int i = 0; i < bottomHitChecks.Length; i++)
         {
-            playerHit = Physics2D.Linecast(block.transform.position, bottomHitChecks[i].position, 1 << playerMask);
+            playerHit = Physics2D.Linecast(transform.position, bottomHitChecks[i].position, 1 << playerMask);
             if (playerHit)
             {
                 break;

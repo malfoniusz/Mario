@@ -51,6 +51,8 @@ GameObject:
   - component: {fileID: 4764821669193288}
   - component: {fileID: 212162101336993266}
   - component: {fileID: 61360681135781250}
+  - component: {fileID: 82199117683498480}
+  - component: {fileID: 114015854770543616}
   m_Layer: 8
   m_Name: BrickCoin
   m_TagString: Untagged
@@ -67,8 +69,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4059772098288230}
   - component: {fileID: 95609067594248270}
-  - component: {fileID: 82346904841060216}
-  - component: {fileID: 114063708700991382}
   m_Layer: 8
   m_Name: BrickCoin
   m_TagString: Untagged
@@ -153,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076926709902182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -20.8, y: 43.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4305569218159770}
@@ -214,12 +214,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
---- !u!82 &82346904841060216
+--- !u!82 &82199117683498480
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1258300669755734}
+  m_GameObject: {fileID: 1076926709902182}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243135828007405830, guid: fd800232eb3362a48b6563de9c6ae88c,
@@ -312,23 +312,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114063708700991382
+--- !u!114 &114015854770543616
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1258300669755734}
+  m_GameObject: {fileID: 1076926709902182}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be5c39afe736a0c4d9795f691f3ff8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 1076926709902182}
   bottomHitChecks:
   - {fileID: 4305569218159770}
   - {fileID: 4040800811174636}
   - {fileID: 4806467122542966}
-  soundDelay: 0.1
   coinSpawn: {fileID: 4830998587221696}
   coinFromBlock: {fileID: 1199062671571300, guid: db35da657c135104198cf50af7b9c403,
     type: 2}

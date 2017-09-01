@@ -2,12 +2,11 @@
 
 public class Goomba : MonoBehaviour
 {
+    public GameObject child;
     public GameObject pointsFloating;
     public int points = 100;
     public float speed = 30;
     public float bounceHeight = 300;
-    public float changeDirectionDelay = 0.1f;
-    public float minimalVelocity = 1f;
     public float minimalJumpHeight = 10f;
 
     private PlayerDeath playerDeath;
@@ -17,7 +16,9 @@ public class Goomba : MonoBehaviour
     private BoxCollider2D objectCollider;
     private BoxCollider2D triggerCollider;
     private Vector2 direction = Vector2.left;
-    private float time = 0;
+    private float directionDelay = 0.1f;
+    private float directionTime = 0;
+    private float minimalVelocity = 1f;
     private int playerMask;
     private int enemyMask;
     private bool activated = false;
@@ -29,7 +30,7 @@ public class Goomba : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         objectCollider = GetComponent<BoxCollider2D>();
-        triggerCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        triggerCollider = child.GetComponent<BoxCollider2D>();
         playerMask = LayerMask.NameToLayer("Player");
         enemyMask = LayerMask.NameToLayer("Enemy");
     }
@@ -47,11 +48,11 @@ public class Goomba : MonoBehaviour
         }
         else
         {
-            time += Time.deltaTime;
+            directionTime += Time.deltaTime;
 
-            if (Mathf.Abs(rb.velocity.x) < minimalVelocity && time > changeDirectionDelay)
+            if (Mathf.Abs(rb.velocity.x) < minimalVelocity && directionTime > directionDelay)
             {
-                time = 0;
+                directionTime = 0;
                 ChangeDirection();
             }
         }

@@ -13,14 +13,13 @@ public class QuestionBlock : BlockAnimated
     protected override void Awake()
     {
         base.Awake();
-        spriteRenderer = block.GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         solidContainer = GameObject.FindWithTag("SolidBlockContainer");
     }
 
     protected override void Update()
     {
         Sound();
-        Animation();
 
         if (playerHit)
         {
@@ -42,7 +41,7 @@ public class QuestionBlock : BlockAnimated
     protected void CreateSolidBlock()
     {
         GameObject solid = Instantiate(solidBlock);
-        solid.transform.GetChild(0).transform.localPosition = block.transform.position;
+        solid.transform.GetChild(0).transform.localPosition = transform.position;
         solid.transform.parent = solidContainer.transform;
     }
 

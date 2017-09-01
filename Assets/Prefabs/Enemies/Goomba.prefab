@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4249030173779166}
   - component: {fileID: 95022830871753166}
-  - component: {fileID: 212948303461942924}
-  - component: {fileID: 82197075084382860}
-  - component: {fileID: 50531264118861312}
-  - component: {fileID: 61441544103177260}
-  - component: {fileID: 114901359393962592}
+  - component: {fileID: 212603749191430898}
+  - component: {fileID: 50527763894143476}
+  - component: {fileID: 61744408147061386}
+  - component: {fileID: 82592952652073302}
+  - component: {fileID: 114583444354809402}
   m_Layer: 11
   m_Name: Goomba
   m_TagString: Untagged
@@ -40,8 +40,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4596856579991476}
-  - component: {fileID: 61229209808297636}
-  m_Layer: 12
+  - component: {fileID: 61001882301636962}
+  m_Layer: 0
   m_Name: Goomba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414139178622316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 166.1, y: 16, z: 0}
+  m_LocalPosition: {x: 159.90561, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4596856579991476}
@@ -75,7 +75,7 @@ Transform:
   m_Father: {fileID: 4249030173779166}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50531264118861312
+--- !u!50 &50527763894143476
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61229209808297636
+--- !u!61 &61001882301636962
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,17 +110,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 16}
+    newSize: {x: 16, y: 16}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 20, y: 16}
   m_EdgeRadius: 0
---- !u!61 &61441544103177260
+--- !u!61 &61744408147061386
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -145,7 +145,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
---- !u!82 &82197075084382860
+--- !u!82 &82592952652073302
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -243,7 +243,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114901359393962592
+--- !u!114 &114583444354809402
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -254,15 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d36760e9a9e3a469425ee0f8653c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  child: {fileID: 1593247034546274}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
   points: 100
   speed: 30
   bounceHeight: 300
-  changeDirectionDelay: 0.1
-  minimalVelocity: 1
   minimalJumpHeight: 10
---- !u!212 &212948303461942924
+--- !u!212 &212603749191430898
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

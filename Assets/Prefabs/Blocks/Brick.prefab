@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4166798779433348}
   - component: {fileID: 95817887404952914}
-  - component: {fileID: 82573263403727854}
-  - component: {fileID: 114421718670506230}
   m_Layer: 8
   m_Name: Brick
   m_TagString: Untagged
@@ -69,6 +67,8 @@ GameObject:
   - component: {fileID: 4678685492286046}
   - component: {fileID: 212613402239879126}
   - component: {fileID: 61244180303741706}
+  - component: {fileID: 82088514094048072}
+  - component: {fileID: 114770987398886952}
   m_Layer: 8
   m_Name: Brick
   m_TagString: Untagged
@@ -138,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868495716317228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.7, y: 43.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4426474059845146}
@@ -185,12 +185,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
---- !u!82 &82573263403727854
+--- !u!82 &82088514094048072
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1040365942462796}
+  m_GameObject: {fileID: 1868495716317228}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243773330445038022, guid: fd800232eb3362a48b6563de9c6ae88c,
@@ -283,23 +283,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114421718670506230
+--- !u!114 &114770987398886952
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1040365942462796}
+  m_GameObject: {fileID: 1868495716317228}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cfc0a65cc1f5c54897f39c03b70f334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 1868495716317228}
   bottomHitChecks:
   - {fileID: 4426474059845146}
   - {fileID: 4209652740257956}
   - {fileID: 4896267314061910}
-  soundDelay: 0.1
 --- !u!212 &212613402239879126
 SpriteRenderer:
   m_ObjectHideFlags: 1
