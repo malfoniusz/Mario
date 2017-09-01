@@ -10,6 +10,7 @@ public class Goomba : MonoBehaviour
     public float minimalVelocity = 1f;
     public float minimalJumpHeight = 10f;
 
+    private PlayerDeath playerDeath;
     private Rigidbody2D rb;
     private Animator anim;
     private AudioSource audioSource;
@@ -23,6 +24,7 @@ public class Goomba : MonoBehaviour
 
     private void Awake()
     {
+        playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
@@ -102,9 +104,7 @@ public class Goomba : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            // Player touched enemy or stays in enemy - hurt player
-
-            // Debug.Log("NOT TOP");
+            playerDeath.Die();
         }
     }
 

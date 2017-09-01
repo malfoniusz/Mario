@@ -1,9 +1,8 @@
 ﻿
+- poprawić animacje - animator on parent object, scripts on child object
+
 Śmierć:
-- przechowywanie żyć i odejmowanie ich
-- animacja śmierci maria
-- zresetowanie poziomu (automatyczne wyświetlenie ekranu poziomu)
-- śmierć od przeciwnika
+- zresetowanie poziomu (automatyczne wyświetlenie ekranu poziomu, skrypt DontDestroy (DontDestroyOnLoad) dla wszytkiego co ma zostac)
 - śmierć od skoczenia w przepaść
 - śmierć od czasu
 - 100 monet = dodatkowe życie + dźwięk

@@ -21,7 +21,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300022, guid: 70efaf66cd973a948bcb20a310191c03, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Mario
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -32,7 +32,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 3684494234
       attribute: 0
       script: {fileID: 0}
       typeID: 212

@@ -13,9 +13,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform[] groundChecks;
     public Transform[] topChecks;
     public float minimalVelocity;
+    [HideInInspector] public bool playerDead = false;
+    [HideInInspector] public int floorMask;
 
+    private GameObject parent;
     private Rigidbody2D rb;
     private Animator anim;
+    private BoxCollider2D boxCollider;
     private AudioSource jumpAudio;
     private int walkKey = 0;
     private bool jumpKey = false;
@@ -24,14 +28,15 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping = false;
     private float jumpForce = 0;
     private float prevSpeed = 0;
-    [HideInInspector] public int floorMask;
 
     private float maxOffsetX;
 
     void Awake()
     {
+        parent = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = parent.GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
         jumpAudio = GetComponent<AudioSource>();
         floorMask = LayerMask.NameToLayer("Floor");
     }
@@ -43,19 +48,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        walkKey = (int) Input.GetAxisRaw("Horizontal");
-        jumpKey = Input.GetButton("Jump");
-        jumpKeyDown = (jumpKeyDown || Input.GetButtonDown("Jump"));
-        runKey = Input.GetButton("Run");
+        if (playerDead == false)
+        {
+            walkKey = (int)Input.GetAxisRaw("Horizontal");
+            jumpKey = Input.GetButton("Jump");
+            jumpKeyDown = (jumpKeyDown || Input.GetButtonDown("Jump"));
+            runKey = Input.GetButton("Run");
+        }
     }
 
     void FixedUpdate ()
     {
-        Walk();
-        Turn();
-        Jump();
+        if (playerDead == false)
+        {
+            Walk();
+            Turn();
+            Jump();
 
-        LeftCameraBoundary();
+            LeftCameraBoundary();
+        }
     }
 
     void Walk()
@@ -227,8 +238,7 @@ public class PlayerMovement : MonoBehaviour
 
     float MaxOffsetX()
     {
-        BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        float playerWidth = collider.size.x;
+        float playerWidth = boxCollider.size.x;
 
         Camera cam = Camera.main;
         float height = cam.orthographicSize * 2;
