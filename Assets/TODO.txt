@@ -1,6 +1,5 @@
 ﻿
 Śmierć:
-- śmierć od czasu
 - 100 monet = dodatkowe życie + dźwięk
 - gameover screen (gdy życia = 0)
 

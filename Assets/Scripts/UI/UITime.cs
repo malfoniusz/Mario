@@ -10,23 +10,25 @@ public class UITime : MonoBehaviour
     public float countdownSpeed = 3;
     public int time = 400;
 
+    private PlayerDeath playerDeath;
     private Text text;
     private float nextTimeInc;
     private float deltaTime = 0;
     private bool lowTime = false;
 
-    void Awake()
+    private void Awake()
     {
+        playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
         text = GetComponent<Text>();
         nextTimeInc = 1 / countdownSpeed;
     }
 
-    void Start()
+    private void Start()
     {
         SetText(time);
     }
 
-    void Update()
+    private void Update()
     {
         if (!stop)
         {
@@ -38,6 +40,7 @@ public class UITime : MonoBehaviour
     {
         TimeCounting();
         HurryMusic();
+        DeathByTime();
     }
 
     void TimeCounting()
@@ -58,6 +61,14 @@ public class UITime : MonoBehaviour
             lowTime = true;
             environmentMusic.clip = hurryMusic;
             environmentMusic.Play();
+        }
+    }
+
+    void DeathByTime()
+    {
+        if (time <= 0)
+        {
+            playerDeath.Die();
         }
     }
 

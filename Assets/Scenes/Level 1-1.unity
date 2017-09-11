@@ -7363,6 +7363,7 @@ MonoBehaviour:
   hurryMusic: {fileID: 8300000, guid: 9190e2e67f1459347a79ac16a17f1f6e, type: 3}
   countdownSpeed: 3
   time: 400
+  playerDeath: {fileID: 0}
 --- !u!1001 &404225700
 Prefab:
   m_ObjectHideFlags: 0
@@ -8168,7 +8169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9303eb4e750bf924ba781e231608b7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDeath: {fileID: 0}
 --- !u!68 &460755995
 EdgeCollider2D:
   m_ObjectHideFlags: 0

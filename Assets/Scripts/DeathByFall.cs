@@ -2,9 +2,9 @@
 
 public class DeathByFall : MonoBehaviour
 {
-    public PlayerDeath playerDeath;
+    private PlayerDeath playerDeath;
 
-    void Awake()
+    private void Awake()
     {
         playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
     }
