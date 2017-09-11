@@ -130,7 +130,7 @@ public class Goomba : MonoBehaviour
 
                 GameObject pointsObject = Instantiate(pointsFloating);
                 pointsObject.transform.GetChild(0).position = transform.GetChild(0).position;
-                pointsObject.GetComponent<PointsFloating>().SetPoints(PlayerCombo.Combo(points));
+                pointsObject.GetComponent<PointsFloating>().SetPoints(PlayerCombo.Combo(points), false);
 
                 anim.SetTrigger("IsDead");
                 DisableObject();

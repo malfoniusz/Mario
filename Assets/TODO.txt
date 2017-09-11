@@ -1,6 +1,5 @@
 ﻿
 Śmierć:
-- 100 monet = dodatkowe życie + dźwięk
 - gameover screen (gdy życia = 0)
 
 Koopa:

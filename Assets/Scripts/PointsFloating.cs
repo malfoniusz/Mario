@@ -11,8 +11,6 @@ public class PointsFloating : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         text = transform.GetChild(0).GetComponent<Text>();
-
-        UpdateText();
     }
 
     void Start()
@@ -28,14 +26,23 @@ public class PointsFloating : MonoBehaviour
         }
     }
 
-    void UpdateText()
-    {
-        text.text = points.ToString();
-    }
-
-    public void SetPoints(int points)
+    public void SetPoints(int points, bool extraLife)
     {
         this.points = points;
-        UpdateText();
+
+        if (extraLife)
+        {
+            SetText("1UP");
+        }
+        else
+        {
+            SetText(points.ToString());
+        }
     }
+
+    void SetText(string str)
+    {
+        text.text = str;
+    }
+
 }

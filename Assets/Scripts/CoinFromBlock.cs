@@ -5,6 +5,7 @@ public class CoinFromBlock : Coin
     public GameObject pointsFloating;
 
     private Animator anim;
+    private bool extraLife;
 
     void Awake()
     {
@@ -13,7 +14,7 @@ public class CoinFromBlock : Coin
 
     void Start()
     {
-        UICoins.AddCoins(1);
+        extraLife = UICoins.AddCoin();
     }
 
     void Update()
@@ -22,7 +23,7 @@ public class CoinFromBlock : Coin
         {
             GameObject pointsObject = Instantiate(pointsFloating);
             pointsObject.transform.GetChild(0).position = transform.GetChild(0).position;
-            pointsObject.GetComponent<PointsFloating>().SetPoints(points);
+            pointsObject.GetComponent<PointsFloating>().SetPoints(points, extraLife);
 
             Destroy(gameObject);
         }
