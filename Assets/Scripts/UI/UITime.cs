@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class UITime : MonoBehaviour
 {
+    static public bool stop = false; 
+
     public AudioSource environmentMusic;
     public AudioClip hurryMusic;
     public float countdownSpeed;
@@ -25,6 +27,14 @@ public class UITime : MonoBehaviour
     }
 
     void Update()
+    {
+        if (!stop)
+        {
+            CountTime();
+        }
+    }
+
+    void CountTime()
     {
         TimeCounting();
         HurryMusic();

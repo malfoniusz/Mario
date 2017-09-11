@@ -2,6 +2,8 @@
 
 public class Goomba : MonoBehaviour
 {
+    static public bool stop = false;
+
     public GameObject child;
     public GameObject pointsFloating;
     public int points = 100;
@@ -21,6 +23,7 @@ public class Goomba : MonoBehaviour
     private int playerMask;
     private int enemyMask;
     private bool activated = false;
+    private Vector2 savedVelocity = Vector2.zero;
 
     private void Awake()
     {
@@ -40,6 +43,33 @@ public class Goomba : MonoBehaviour
     }
 
     private void Update()
+    {
+        StopAndResume();
+
+        if (!stop)
+        {
+            MovingBehaviour();
+        }
+    }
+
+    void StopAndResume()
+    {
+        if (stop && savedVelocity == Vector2.zero)
+        {
+            savedVelocity = rb.velocity;
+            rb.velocity = Vector2.zero;
+            anim.enabled = false;
+        }
+
+        if (!stop && savedVelocity != Vector2.zero)
+        {
+            rb.velocity = savedVelocity;
+            savedVelocity = Vector2.zero;
+            anim.enabled = true;
+        }
+    }
+
+    void MovingBehaviour()
     {
         if (activated == false)
         {

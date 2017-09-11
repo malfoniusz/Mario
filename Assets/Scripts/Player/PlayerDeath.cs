@@ -2,7 +2,6 @@
 
 public class PlayerDeath : MonoBehaviour
 {
-    public AudioSource environment;
     public AudioClip deathClip;
 
     private GameObject parent;
@@ -37,7 +36,7 @@ public class PlayerDeath : MonoBehaviour
         {
             playerDied = true;
 
-            environment.Stop();
+            GameController.StopGame();
             playerMovement.playerDead = true;
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
