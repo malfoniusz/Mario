@@ -1,6 +1,4 @@
 ﻿
-- spadniecie na przeciwnika z duzej wysokosci zabija gracza
-
 Śmierć:
 - on death stop enemy movement and time
 - zresetowanie poziomu (automatyczne wyświetlenie ekranu poziomu, skrypt DontDestroy (DontDestroyOnLoad) dla wszytkiego co ma zostac)

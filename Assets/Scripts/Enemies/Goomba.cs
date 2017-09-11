@@ -7,7 +7,6 @@ public class Goomba : MonoBehaviour
     public int points = 100;
     public float speed = 30;
     public float bounceHeight = 300;
-    public float minimalJumpHeight = 10f;
 
     private PlayerDeath playerDeath;
     private Rigidbody2D rb;
@@ -86,7 +85,15 @@ public class Goomba : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Transform playerTrans = collision.gameObject.transform;
-            if (playerTrans.position.y > transform.position.y + minimalJumpHeight)
+            float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
+
+            const float MINIMAL_HEIGHT_BIG = 10f;
+            const float MINIMAL_HEIGHT_SMALL = 1f;
+            const float PLAYER_VELOCITY_SWITCH = 300f;
+
+            float minimalHeight = playerVelYAbs < PLAYER_VELOCITY_SWITCH ? MINIMAL_HEIGHT_BIG : MINIMAL_HEIGHT_SMALL;
+
+            if (playerTrans.position.y > transform.position.y + minimalHeight)
             {
                 Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
                 playerRB.velocity = new Vector2(playerRB.velocity.x, bounceHeight);
