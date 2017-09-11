@@ -259,8 +259,7 @@ MonoBehaviour:
     type: 2}
   points: 100
   speed: 30
-  bounceHeight: 300
-  minimalJumpHeight: 10
+  bounceHeight: 200
 --- !u!212 &212603749191430898
 SpriteRenderer:
   m_ObjectHideFlags: 1

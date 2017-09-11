@@ -1,6 +1,5 @@
 ﻿
 Śmierć:
-- zresetowanie poziomu (automatyczne wyświetlenie ekranu poziomu, skrypt DontDestroy (DontDestroyOnLoad) dla wszytkiego co ma zostac)
 - śmierć od skoczenia w przepaść
 - śmierć od czasu
 - 100 monet = dodatkowe życie + dźwięk

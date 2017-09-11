@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class UITime : MonoBehaviour
 {
-    static public bool stop = false; 
+    public static bool stop = false; 
 
     public AudioSource environmentMusic;
     public AudioClip hurryMusic;
-    public float countdownSpeed;
-    public int time;
+    public float countdownSpeed = 3;
+    public int time = 400;
 
     private Text text;
     private float nextTimeInc;

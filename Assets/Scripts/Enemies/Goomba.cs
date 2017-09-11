@@ -8,7 +8,7 @@ public class Goomba : MonoBehaviour
     public GameObject pointsFloating;
     public int points = 100;
     public float speed = 30;
-    public float bounceHeight = 300;
+    public float bounceHeight = 200;
 
     private PlayerDeath playerDeath;
     private Rigidbody2D rb;
