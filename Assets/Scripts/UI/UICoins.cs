@@ -5,7 +5,7 @@ public class UICoins : MonoBehaviour
 {
     private static Text coinText;
     private static AudioSource audioSource;
-    public static int coinValue = 99;
+    private static int coins = 0;
     private const int EXTRA_LIFE_COINS = 100;
 
     void Awake()
@@ -17,19 +17,19 @@ public class UICoins : MonoBehaviour
 
     static void UpdateText()
     {
-        if (coinValue > 9)
+        if (coins > 9)
         {
-            coinText.text = coinValue.ToString();
+            coinText.text = coins.ToString();
         }
         else
         {
-            coinText.text = "0" + coinValue.ToString();
+            coinText.text = "0" + coins.ToString();
         }
     }
 
     public static bool AddCoin()
     {
-        coinValue++;
+        coins++;
         bool extraLife = ExtraLife();
         UpdateText();
 
@@ -38,15 +38,20 @@ public class UICoins : MonoBehaviour
 
     private static bool ExtraLife()
     {
-        if (coinValue >= EXTRA_LIFE_COINS)
+        if (coins >= EXTRA_LIFE_COINS)
         {
-            coinValue -= EXTRA_LIFE_COINS;
+            coins -= EXTRA_LIFE_COINS;
             UILives.lives++;
             audioSource.Play();
             return true;
         }
 
         return false;
+    }
+
+    public static void ResetCoins()
+    {
+        coins = 0;
     }
 
 }

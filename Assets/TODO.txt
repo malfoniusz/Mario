@@ -1,7 +1,4 @@
 ﻿
-Śmierć:
-- gameover screen (gdy życia = 0)
-
 Koopa:
 - chodzenie (odbijanie się od ścian)
 - animacja chodzenia

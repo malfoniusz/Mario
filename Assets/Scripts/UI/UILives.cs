@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class UILives : MonoBehaviour
 {
-    public static int lives = 3;
+    public const int STARTING_LIVES = 3;
+    public static int lives = STARTING_LIVES;
 
     private Text livesText;
 
@@ -15,6 +16,11 @@ public class UILives : MonoBehaviour
     private void Start()
     {
         livesText.text = lives.ToString();
+    }
+
+    public static void ResetLives()
+    {
+        lives = STARTING_LIVES;
     }
 
 }

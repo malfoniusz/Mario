@@ -4,6 +4,7 @@ public class PlayerDeath : MonoBehaviour
 {
     public AudioClip deathClip;
 
+    private GameController gameController;
     private GameObject parent;
     private Animator anim;
     private Rigidbody2D rb;
@@ -14,6 +15,7 @@ public class PlayerDeath : MonoBehaviour
 
     void Awake()
     {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         parent = transform.parent.gameObject;
         anim = parent.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +28,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (playerDied && audioSource.isPlaying == false)
         {
-            GameController.PlayerDied();
+            gameController.PlayerDied();
         }
     }
 
@@ -36,7 +38,7 @@ public class PlayerDeath : MonoBehaviour
         {
             playerDied = true;
 
-            GameController.StopGame();
+            gameController.StopGame();
             playerMovement.playerDead = true;
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;

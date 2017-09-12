@@ -7,6 +7,7 @@ TagManager:
   - SolidBlockContainer
   - Environment
   - StartLevelScreen
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX
