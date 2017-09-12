@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4328448186830732}
   - component: {fileID: 61159540000009588}
   m_Layer: 0
-  m_Name: Koopa
+  m_Name: KoopaShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,14 +35,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4256679184062826}
-  - component: {fileID: 95825723274774108}
   - component: {fileID: 212475702598018190}
   - component: {fileID: 50171781777089054}
   - component: {fileID: 61487205341650270}
+  - component: {fileID: 82959519969732754}
   - component: {fileID: 82105864070445432}
-  - component: {fileID: 114985087817217264}
+  - component: {fileID: 114934976872281202}
   m_Layer: 11
-  m_Name: Koopa
+  m_Name: KoopaShell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819666856882012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90, y: 19, z: 0}
+  m_LocalPosition: {x: 124, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328448186830732}
@@ -118,7 +118,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 23}
+  m_Size: {x: 20, y: 14}
   m_EdgeRadius: 0
 --- !u!61 &61487205341650270
 BoxCollider2D:
@@ -136,16 +136,97 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 23}
+    oldSize: {x: 16, y: 14}
     newSize: {x: 16, y: 16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 23}
+  m_Size: {x: 16, y: 14}
   m_EdgeRadius: 0
 --- !u!82 &82105864070445432
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819666856882012}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243248401457827310, guid: fd800232eb3362a48b6563de9c6ae88c,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.121017456
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82959519969732754
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -156,7 +237,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243435734915714612, guid: fd800232eb3362a48b6563de9c6ae88c,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: dcee2e761eb3d9547960620c004d379d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -226,24 +307,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95825723274774108
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1819666856882012}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 04b22cf673a9c3944b86fcf8d9d7e3b0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114985087817217264
+--- !u!114 &114934976872281202
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -251,15 +315,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819666856882012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb7002c67185cb48a194e98d08c8ac2, type: 3}
+  m_Script: {fileID: 11500000, guid: 96c89fce04041384382aa746044b22ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
-    type: 2}
-  points: 100
-  speed: 30
-  bounceHeight: 200
-  koopaShell: {fileID: 1819666856882012, guid: 76e656828c2296347947058e55f786ae, type: 2}
 --- !u!212 &212475702598018190
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -292,7 +350,7 @@ SpriteRenderer:
   m_SortingLayerID: -750594997
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: cd896fb68655ae24d940dbc7141ff181, type: 3}
+  m_Sprite: {fileID: 21300024, guid: cd896fb68655ae24d940dbc7141ff181, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1,13 +1,9 @@
 ﻿
 Koopa:
-- chodzenie (odbijanie się od ścian)
-- animacja chodzenia
-- skok na głowe i pozostawienie skorupy + dźwięk
 - dotknięcie skorupy powoduje wprawienie jej w ruch (odbijanie od ścian) + dźwięk
-- śmierć przeciwnika od skorupy + dźwięk
+- zatrzymanie skorupy poprzez skok na nią
 - śmierć gracza od skorupy
-- dodanie punktów + ich animacja
-- śmierć od przeciwnika
+- śmierć przeciwnika od skorupy + specjalna animacja przeciwnika
 
 Powerupy:
 - animacja wysunięcia grzybu ze znaku + dźwięk
