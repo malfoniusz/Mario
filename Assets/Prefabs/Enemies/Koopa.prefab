@@ -259,6 +259,7 @@ MonoBehaviour:
   points: 100
   speed: 30
   bounceHeight: 200
+  MINIMAL_HEIGHT_BIG: 10
   koopaShell: {fileID: 1819666856882012, guid: 76e656828c2296347947058e55f786ae, type: 2}
 --- !u!212 &212475702598018190
 SpriteRenderer:

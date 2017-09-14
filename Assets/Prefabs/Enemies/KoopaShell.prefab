@@ -318,6 +318,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c89fce04041384382aa746044b22ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
+    type: 2}
+  points: 100
+  speed: 30
+  bounceHeight: 200
+  MINIMAL_HEIGHT_BIG: 10
+  audioKick: {fileID: 82105864070445432}
 --- !u!212 &212475702598018190
 SpriteRenderer:
   m_ObjectHideFlags: 1
