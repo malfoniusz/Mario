@@ -21,13 +21,11 @@ public class Goomba : MonoBehaviour
     private BoxCollider2D objectCollider;
     private BoxCollider2D triggerCollider;
     private Vector2 direction = Vector2.left;
-    private float directionDelay = 0.1f;
-    private float directionTime = 0;
-    private float minimalVelocity = 1f;
     private int playerMask;
     private int enemyMask;
     private bool activated = false;
     private Vector2 savedVelocity = Vector2.zero;
+    private WallBounce wallBounce = new WallBounce();
 
     protected virtual void Awake()
     {
@@ -82,11 +80,9 @@ public class Goomba : MonoBehaviour
         }
         else
         {
-            directionTime += Time.deltaTime;
-
-            if (Mathf.Abs(rb.velocity.x) < minimalVelocity && directionTime > directionDelay)
+            bool bounce = wallBounce.Bounce(rb);
+            if (bounce)
             {
-                directionTime = 0;
                 ChangeDirection();
             }
         }
