@@ -4,17 +4,23 @@ public class Enemy : MonoBehaviour
 {
     static public bool stop = false;
 
+    public AudioClip kickClip;
+    public BoxCollider2D objectCollider;
+    public BoxCollider2D triggerCollider;
     public GameObject pointsFloating;
+    public AudioSource audioSource;
+    public SpriteRenderer spriteRenderer;
+    public Animator anim;
     public int points = 100;
     public float speed = 30;
     public float bounceHeight = 200;
-
+    
+    protected GameObject player;
     protected Rigidbody2D rb;
-    protected Animator anim;
     protected PlayerDeath playerDeath;
     protected float time = 0;
     protected int direction = -1;
-
+    
     private float colliderHeight;
     private int playerMask;
     private int enemyMask;
@@ -26,21 +32,20 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Awake()
     {
-        anim = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
-        colliderHeight = GetComponent<BoxCollider2D>().size.y;
-
-        playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
+        playerDeath = player.GetComponent<PlayerDeath>();
         playerMask = LayerMask.NameToLayer("Player");
         enemyMask = LayerMask.NameToLayer("Enemy");
+        colliderHeight = objectCollider.size.y;
     }
 
     private void Start()
     {
-        Physics2D.IgnoreLayerCollision(playerMask, enemyMask);
+        Physics2D.IgnoreCollision(objectCollider, player.GetComponent<BoxCollider2D>());
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         time += Time.deltaTime;
     }
@@ -55,7 +60,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -162,13 +167,34 @@ public class Enemy : MonoBehaviour
     private void PointsSpawn()
     {
         GameObject pointsObject = Instantiate(pointsFloating);
-        pointsObject.transform.GetChild(0).position = transform.GetChild(0).position;
+        pointsObject.transform.GetChild(0).position = transform.position;
         pointsObject.GetComponent<PointsFloating>().SetPoints(PlayerCombo.Combo(points), false);
     }
 
     protected virtual void EnemyStompedBehaviour()
     {
         Destroy(gameObject);
+    }
+
+    protected void DisableObject()
+    {
+        enabled = false;
+        rb.velocity = Vector2.zero;
+        rb.isKinematic = true;
+        objectCollider.enabled = false;
+        triggerCollider.enabled = false;
+    }
+
+    public void EnemyFireballBehaviour(int fallDirection)
+    {
+        DisableObject();
+        rb.velocity = new Vector2(fallDirection * speed, 0);
+        spriteRenderer.flipY = true;
+
+        anim.SetTrigger("DeathByFireball");
+        audioSource.clip = kickClip;
+        audioSource.Play();
+        PointsSpawn();
     }
 
 }

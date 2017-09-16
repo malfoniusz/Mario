@@ -1,6 +1,7 @@
 ﻿
-Koopa:
-- śmierć przeciwnika od skorupy + specjalna animacja przeciwnika
+- animator dla koopaShell i zrobić zachowanie dwóch koopaShell zderzających się ze sobą
+- koopaShell combo points - if enough time passes, reset combo
+- odbijanie się od siebie przeciwników - ChangeDirection() zwraca prawdę jeśli curSpeed < speed
 
 Powerupy:
 - animacja wysunięcia grzybu ze znaku + dźwięk
@@ -62,3 +63,4 @@ Trolololio:
 - zapadająca się podłoga
 - zmienić Platform Effector na 180 stopni, dla dodatkowego boosta w góre
 - enemies superspeed
+- super fast koopashells

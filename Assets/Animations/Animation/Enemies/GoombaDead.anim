@@ -23,7 +23,7 @@ AnimationClip:
     - time: 0.5
       value: {fileID: 21300004, guid: cd896fb68655ae24d940dbc7141ff181, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Goomba
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -34,7 +34,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 4140407846
       attribute: 0
       script: {fileID: 0}
       typeID: 212

@@ -3,17 +3,25 @@
 public class KoopaShell : Enemy
 {
     public AudioSource audioKick;
-    public float overrideSpeed = 120;
+    public float overrideSpeed = 200;
 
-    private Transform player;
     private const float MINIMAL_VELOCITY = 1f;
     private bool moving = false;
+    private bool stopMultipleTriggers = false;
+    private float killDelay = 0;
+    private const float NEXT_ENEMY_KILL_DELAY = 0.00001f;
 
     protected override void Awake()
     {
         base.Awake();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         speed = overrideSpeed;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        stopMultipleTriggers = false;
+        killDelay += Time.deltaTime;
     }
 
     protected override void MovingBehaviour()
@@ -30,7 +38,7 @@ public class KoopaShell : Enemy
 
         if (Mathf.Abs(rb.velocity.x) < MINIMAL_VELOCITY)
         {
-            int direction = (int) Mathf.Sign(transform.position.x - player.position.x);
+            int direction = (int) Mathf.Sign(transform.position.x - player.transform.position.x);
             rb.velocity = new Vector2(direction * speed, rb.velocity.y);
 
             moving = true;
@@ -40,6 +48,20 @@ public class KoopaShell : Enemy
         else
         {
             base.EnemyCollision(collision);
+        }
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && rb.velocity.x > MINIMAL_VELOCITY && !stopMultipleTriggers)
+        {
+            stopMultipleTriggers = true;
+
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            int hitDirection = (int)Mathf.Sign(collision.gameObject.transform.position.y - transform.position.y);
+            enemy.EnemyFireballBehaviour(hitDirection);
         }
     }
 
