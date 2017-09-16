@@ -1,8 +1,5 @@
 ﻿
 Koopa:
-- dotknięcie skorupy powoduje wprawienie jej w ruch (odbijanie od ścian) + dźwięk
-- zatrzymanie skorupy poprzez skok na nią
-- śmierć gracza od skorupy
 - śmierć przeciwnika od skorupy + specjalna animacja przeciwnika
 
 Powerupy:

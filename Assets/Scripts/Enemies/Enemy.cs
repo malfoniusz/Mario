@@ -11,16 +11,18 @@ public class Enemy : MonoBehaviour
 
     protected Rigidbody2D rb;
     protected Animator anim;
-    private float colliderHeight;
+    protected PlayerDeath playerDeath;
+    protected float time = 0;
+    protected int direction = -1;
 
-    private PlayerDeath playerDeath;
-    private Vector2 direction = Vector2.left;
+    private float colliderHeight;
     private int playerMask;
     private int enemyMask;
     private bool activated = false;
     private Vector2 savedVelocity = Vector2.zero;
     private const float PLAYER_FALLING_FAST = 400f;
     private WallBounce wallBounce = new WallBounce();
+    private float PLAYER_IMMUNITY_DURATION = 0.4f;
 
     protected virtual void Awake()
     {
@@ -40,12 +42,38 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        time += Time.deltaTime;
+    }
+
+    private void FixedUpdate()
+    {
         StopAndResume();
 
         if (!stop)
         {
             MovingBehaviour();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            EnemyCollision(collision);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && time > PLAYER_IMMUNITY_DURATION)
+        {
+            EnemyKillingPlayer();
+        }
+    }
+
+    protected virtual void EnemyKillingPlayer()
+    {
+        playerDeath.Die();
     }
 
     void StopAndResume()
@@ -89,7 +117,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void ChangeDirection()
+    protected void ChangeDirection()
     {
         bool bounce = wallBounce.Bounce(rb);
         if (bounce)
@@ -101,15 +129,7 @@ public class Enemy : MonoBehaviour
 
     void UpdateVelocity()
     {
-        rb.velocity = direction * speed;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            EnemyCollision(collision);
-        }
+        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
     }
 
     protected virtual void EnemyCollision(Collider2D collision)
@@ -125,14 +145,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void EnemyStomped(Collider2D collision)
+    protected virtual void EnemyStomped(Collider2D collision)
     {
+        time = 0;
         PlayerBounce(collision);
         PointsSpawn();
         EnemyStompedBehaviour();
     }
 
-    private void PlayerBounce(Collider2D collision)
+    protected void PlayerBounce(Collider2D collision)
     {
         Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
         playerRB.velocity = new Vector2(playerRB.velocity.x, bounceHeight);
@@ -148,14 +169,6 @@ public class Enemy : MonoBehaviour
     protected virtual void EnemyStompedBehaviour()
     {
         Destroy(gameObject);
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            playerDeath.Die();
-        }
     }
 
 }
