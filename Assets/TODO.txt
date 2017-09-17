@@ -1,8 +1,4 @@
 ﻿
-- animator dla koopaShell i zrobić zachowanie dwóch koopaShell zderzających się ze sobą
-- koopaShell combo points - if enough time passes, reset combo
-- odbijanie się od siebie przeciwników - ChangeDirection() zwraca prawdę jeśli curSpeed < speed
-
 Powerupy:
 - animacja wysunięcia grzybu ze znaku + dźwięk
 - poruszanie się grzyba
@@ -19,16 +15,16 @@ Powerupy:
 - po byciu trafionym, niezniszczalność na kilka sekund
 - spadnięcie w przepaść dalej zabija bohatera
 
-Gwiazda:
-- animacja wysunięcia gwiazdy + dźwięk
-- skakanie gwiazdy
-- dotknięcie gwiazdy: animacja bohatera + dotknięcie przeciwników ich zabija
-
 1UP:
 - niewidzialny blok
 - animacja wysunięcia + dźwięk
 - poruszanie się grzyba
 - dotknięcie daje dodatkowe życie
+
+Gwiazda:
+- animacja wysunięcia gwiazdy + dźwięk
+- skakanie gwiazdy
+- dotknięcie gwiazdy: animacja bohatera + dotknięcie przeciwników ich zabija
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
@@ -56,7 +52,12 @@ Menu główne:
 - opcja wyjścia z gry
 - kursor
 
+Porządki:
+- odblokuj ekran startu poziomu
+- usuń niepotrzebne rzeczy z początku poziomu
+
 Trolololio:
+- w menu głównym dać dwa tryby gry: normalny i trolololio
 - drugi poziom zrobić Trolio
 - przewracanie maria (odmrozić obracanie osi Z, dodać do okoła ground checky, sprawdzając rotacje maria użyć odpowiednich ground checków)
 - dodać rigidbody do bloków w późniejszej części poziomu

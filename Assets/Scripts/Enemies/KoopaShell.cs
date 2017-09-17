@@ -3,7 +3,7 @@
 public class KoopaShell : Enemy
 {
     public AudioSource audioKick;
-    public float overrideSpeed = 200;
+    public float overrideSpeed = 230;
 
     private const float MINIMAL_VELOCITY = 1f;
     private bool moving = false;

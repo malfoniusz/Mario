@@ -14,4 +14,10 @@ public class Koopa : Enemy
         Destroy(gameObject);
     }
 
+    protected override void ChangeDirectionBehaviour()
+    {
+        base.ChangeDirectionBehaviour();
+        spriteRenderer.flipX = (Mathf.Sign(rb.velocity.x) == 1);
+    }
+
 }

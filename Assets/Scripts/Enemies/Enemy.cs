@@ -22,8 +22,6 @@ public class Enemy : MonoBehaviour
     protected int direction = -1;
     
     private float colliderHeight;
-    private int playerMask;
-    private int enemyMask;
     private bool activated = false;
     private Vector2 savedVelocity = Vector2.zero;
     private const float PLAYER_FALLING_FAST = 400f;
@@ -35,8 +33,6 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         playerDeath = player.GetComponent<PlayerDeath>();
-        playerMask = LayerMask.NameToLayer("Player");
-        enemyMask = LayerMask.NameToLayer("Enemy");
         colliderHeight = objectCollider.size.y;
     }
 
@@ -124,12 +120,17 @@ public class Enemy : MonoBehaviour
 
     protected void ChangeDirection()
     {
-        bool bounce = wallBounce.Bounce(rb);
+        bool bounce = wallBounce.Bounce(rb, speed);
         if (bounce)
         {
-            direction *= -1;
-            UpdateVelocity();
+            ChangeDirectionBehaviour();
         }
+    }
+
+    protected virtual void ChangeDirectionBehaviour()
+    {
+        direction *= -1;
+        UpdateVelocity();
     }
 
     void UpdateVelocity()
@@ -168,7 +169,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject pointsObject = Instantiate(pointsFloating);
         pointsObject.transform.GetChild(0).position = transform.position;
-        pointsObject.GetComponent<PointsFloating>().SetPoints(PlayerCombo.Combo(points), false);
+        pointsObject.GetComponent<PointsFloating>().SetPoints(ComboPoints.Combo(points), false);
     }
 
     protected virtual void EnemyStompedBehaviour()

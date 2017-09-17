@@ -318,7 +318,7 @@ Animator:
   m_GameObject: {fileID: 1819666856882012}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 070b95289d8f78549b75bc8bf8a7c072, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   anim: {fileID: 95347458585593872}
   points: 100
   speed: 30
-  bounceHeight: 200
+  bounceHeight: 230
   audioKick: {fileID: 82205217119020554}
   overrideSpeed: 200
 --- !u!212 &212907853301688144

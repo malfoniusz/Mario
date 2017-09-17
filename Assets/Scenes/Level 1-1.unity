@@ -1707,10 +1707,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1819666856882012, guid: 76e656828c2296347947058e55f786ae, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76e656828c2296347947058e55f786ae, type: 2}
   m_IsPrefabParent: 0
@@ -8491,8 +8487,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -99.97696, y: -99.941315}
-  - {x: 3600.1125, y: -99.831276}
+  - {x: -200.00096, y: -99.99634}
+  - {x: 3699.9956, y: -99.99566}
 --- !u!1001 &462106814
 Prefab:
   m_ObjectHideFlags: 0
@@ -24537,9 +24533,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -750594997
-  m_SortingLayer: 2
-  m_SortingOrder: 10
+  m_SortingLayerID: 700612937
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 70efaf66cd973a948bcb20a310191c03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24727,10 +24723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b7701eda56ac146b2fc1382191b6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 9000
+  walkSpeed: 7000
   slowdownSpeed: 200
   maxWalkSpeed: 150
-  runSpeed: 15000
+  runSpeed: 13000
   maxRunSpeed: 250
   changeDirectionMultiplier: 3
   jumpSpeed: 190000
