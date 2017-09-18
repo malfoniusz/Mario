@@ -9,7 +9,7 @@ public class BrickCoin : QuestionBlock
 
     protected override void Update()
     {
-        Sound();
+        PlayerHit();
         Animation();
 
         hitTime += Time.deltaTime;
@@ -24,7 +24,7 @@ public class BrickCoin : QuestionBlock
             if (coinNumber == 0)
             {
                 CreateSolidBlock();
-                Destroy(gameObject);
+                Destroy(parent);
             }
         }
     }

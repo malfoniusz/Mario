@@ -7,6 +7,7 @@ public class SolidBlock : BlockAnimated
 
     protected override void Update()
     {
+        PlayerHit();
         Sound();
 
         if (hasAwaken)

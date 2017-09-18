@@ -16,13 +16,14 @@ public class QuestionBlock : BlockAnimated
 
     protected override void Update()
     {
+        PlayerHit();
         Sound();
 
         if (playerHit)
         {
             SpawnCoin();
             CreateSolidBlock();
-            Destroy(gameObject);
+            Destroy(parent);
         }
     }
 

@@ -16,6 +16,7 @@ public class BlockAnimated : Block
 
     protected override void Update()
     {
+        PlayerHit();
         Sound();
         Animation();
     }

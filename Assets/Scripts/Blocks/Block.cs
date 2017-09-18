@@ -21,14 +21,13 @@ public class Block : MonoBehaviour
 
     protected virtual void Update()
     {
+        PlayerHit();
         Sound();
     }
 
     protected void Sound()
     {
         soundTime += Time.deltaTime;
-
-        playerHit = PlayerHit();
         if (playerHit && soundTime > soundDelay)
         {
             soundTime = 0;
@@ -36,9 +35,9 @@ public class Block : MonoBehaviour
         }
     }
 
-    bool PlayerHit()
+    protected void PlayerHit()
     {
-        bool playerHit = false;
+        playerHit = false;
         for (int i = 0; i < bottomHitChecks.Length; i++)
         {
             playerHit = Physics2D.Linecast(transform.position, bottomHitChecks[i].position, 1 << playerMask);
@@ -47,8 +46,6 @@ public class Block : MonoBehaviour
                 break;
             }
         }
-
-        return playerHit;
     }
 
 }
