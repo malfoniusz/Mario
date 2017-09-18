@@ -357,10 +357,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 212907853301688144}
   anim: {fileID: 95347458585593872}
   points: 100
-  speed: 30
-  bounceHeight: 230
+  speed: 230
+  bounceHeight: 200
   audioKick: {fileID: 82205217119020554}
-  overrideSpeed: 200
 --- !u!212 &212907853301688144
 SpriteRenderer:
   m_ObjectHideFlags: 1

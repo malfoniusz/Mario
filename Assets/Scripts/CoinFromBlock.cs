@@ -2,14 +2,19 @@
 
 public class CoinFromBlock : Coin
 {
+    public Animator animCoinJump;
     public GameObject pointsFloating;
 
-    private Animator anim;
+    private GameObject parent;
     private bool extraLife;
+    private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
+        parent = transform.parent.gameObject;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -19,13 +24,20 @@ public class CoinFromBlock : Coin
 
     void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (animCoinJump.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
-            GameObject pointsObject = Instantiate(pointsFloating);
-            pointsObject.transform.GetChild(0).position = transform.GetChild(0).position;
-            pointsObject.GetComponent<PointsFloating>().SetPoints(points, extraLife);
+            if (spriteRenderer.enabled)
+            {
+                GameObject pointsObject = Instantiate(pointsFloating);
+                pointsObject.transform.GetChild(0).position = transform.position;
+                pointsObject.GetComponent<PointsFloating>().SetPoints(points, extraLife);
+                spriteRenderer.enabled = false;
+            }
 
-            Destroy(gameObject);
+            if (audioSource.isPlaying == false)
+            {
+                Destroy(parent);
+            }
         }
     }
 

@@ -3,19 +3,12 @@
 public class KoopaShell : Enemy
 {
     public AudioSource audioKick;
-    public float overrideSpeed = 230;
 
     private const float MINIMAL_VELOCITY = 1f;
     private bool moving = false;
     private bool stopMultipleTriggers = false;
     private float killDelay = 0;
     private const float NEXT_ENEMY_KILL_DELAY = 0.00001f;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        speed = overrideSpeed;
-    }
 
     protected override void Update()
     {

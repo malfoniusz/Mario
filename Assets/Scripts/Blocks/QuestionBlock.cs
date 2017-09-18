@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class QuestionBlock : BlockAnimated
 {
@@ -7,13 +6,11 @@ public class QuestionBlock : BlockAnimated
     public GameObject coinFromBlock;
     public GameObject solidBlock;
 
-    protected SpriteRenderer spriteRenderer;
     protected GameObject solidContainer;
 
     protected override void Awake()
     {
         base.Awake();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         solidContainer = GameObject.FindWithTag("SolidBlockContainer");
     }
 
@@ -25,10 +22,7 @@ public class QuestionBlock : BlockAnimated
         {
             SpawnCoin();
             CreateSolidBlock();
-            Hide();
-
-            audioSource.Play();
-            StartCoroutine(WaitDestroy(audioSource.clip.length));
+            Destroy(gameObject);
         }
     }
 
@@ -43,18 +37,6 @@ public class QuestionBlock : BlockAnimated
         GameObject solid = Instantiate(solidBlock);
         solid.transform.GetChild(0).transform.localPosition = transform.position;
         solid.transform.parent = solidContainer.transform;
-    }
-
-    protected void Hide()
-    {
-        spriteRenderer.enabled = false;
-        enabled = false;
-    }
-
-    protected IEnumerator WaitDestroy(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        Destroy(gameObject);
     }
 
 }

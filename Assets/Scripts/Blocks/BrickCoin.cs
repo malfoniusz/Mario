@@ -24,10 +24,7 @@ public class BrickCoin : QuestionBlock
             if (coinNumber == 0)
             {
                 CreateSolidBlock();
-                Hide();
-                
-                audioSource.Play();
-                StartCoroutine(WaitDestroy(audioSource.clip.length));
+                Destroy(gameObject);
             }
         }
     }
