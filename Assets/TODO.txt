@@ -1,6 +1,5 @@
 ﻿
 Powerupy:
-- animacja wysunięcia grzybu ze znaku + dźwięk
 - poruszanie się grzyba
 - dotknięcie grzyba i urośnięcie + dźwięk
 - animacja wysunięcie kwiatka + dźwięk

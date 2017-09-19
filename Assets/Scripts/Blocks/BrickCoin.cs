@@ -23,7 +23,7 @@ public class BrickCoin : QuestionBlock
             
             if (coinNumber == 0)
             {
-                CreateSolidBlock();
+                CreateSolidBlock(true);
                 Destroy(parent);
             }
         }

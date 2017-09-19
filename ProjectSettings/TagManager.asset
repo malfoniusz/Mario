@@ -48,7 +48,10 @@ TagManager:
   - name: Background
     uniqueID: 2238699669
     locked: 0
-  - name: Foreground
+  - name: Items
+    uniqueID: 3619912343
+    locked: 0
+  - name: Blocks
     uniqueID: 3544372299
     locked: 0
   - name: Enemy
