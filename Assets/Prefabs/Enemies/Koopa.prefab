@@ -55,7 +55,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819666856882012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1266009374516376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 161.95, y: 19, z: 0}
+  m_LocalPosition: {x: 1727.1, y: 19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4256679184062826}
@@ -255,16 +255,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb7002c67185cb48a194e98d08c8ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  parent: {fileID: 1819666856882012}
   objectCollider: {fileID: 61159540000009588}
   triggerCollider: {fileID: 61586048605577824}
+  anim: {fileID: 95825723274774108}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
-  audioSource: {fileID: 82214559774299048}
-  spriteRenderer: {fileID: 212840722221361482}
-  anim: {fileID: 95825723274774108}
   points: 100
   speed: 30
+  audioSource: {fileID: 82214559774299048}
+  kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  spriteRenderer: {fileID: 212840722221361482}
   bounceHeight: 200
   koopaShell: {fileID: 1819666856882012, guid: 76e656828c2296347947058e55f786ae, type: 2}
 --- !u!114 &114931752303357692
@@ -308,7 +309,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1938015045
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: cd896fb68655ae24d940dbc7141ff181, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

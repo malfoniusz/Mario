@@ -1,18 +1,17 @@
 ﻿
-Powerupy:
-- poruszanie się grzyba
-- dotknięcie grzyba i urośnięcie + dźwięk
+Grzyb:
+- dotknięcie grzyba i urośnięcie + dźwięk + zachowanie prędkości
+- animacja wiekszego Maria
+- zniszczenie ceglanych bloków + dźwięk
+- uderzenie od przeciwnika zmniejsza poziom Maria + niezniszczalnosc + zatrzymanie przeciwnikow
+- spadniecie w przepasc automatycznie zabija
+
+Kwiat:
 - animacja wysunięcie kwiatka + dźwięk
 - dotknięcie kwiatka i zamiana w ognistego + dźwięk
-- możliwość strzelania kulami ognia
-- dźwięk strzelania
-- zabijanie kulami goomba, koopa i skorup
-- inna animacja śmierci dla przeciwników zabitych od ognistych kul
-- zdecydować czy wysunąć grzyb czy kwiat
-- zniszczenie ceglanych bloków + dźwięk
-- uderzenie od przeciwnika zmniejsza poziom Maria
-- po byciu trafionym, niezniszczalność na kilka sekund
-- spadnięcie w przepaść dalej zabija bohatera
+- animacja ognistego Maria
+- strzelania kulami ognia + dźwięk
+- zabijanie kulami goomba, koopa i skorup + animacja śmierci
 
 1UP:
 - niewidzialny blok

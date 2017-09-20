@@ -1,42 +1,30 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Moving
 {
-    static public bool stop = false;
-
-    public AudioClip kickClip;
-    public BoxCollider2D objectCollider;
-    public BoxCollider2D triggerCollider;
-    public GameObject pointsFloating;
     public AudioSource audioSource;
+    public AudioClip kickClip;
     public SpriteRenderer spriteRenderer;
-    public Animator anim;
-    public int points = 100;
-    public float speed = 30;
     public float bounceHeight = 200;
-    
+
     protected GameObject player;
-    protected Rigidbody2D rb;
     protected PlayerDeath playerDeath;
     protected float time = 0;
-    protected int direction = -1;
-    
+
+    private float PLAYER_IMMUNITY_DURATION = 0.4f;
+    private const float PLAYER_FALLING_FAST = 400f;
     private float colliderHeight;
     private bool activated = false;
-    private Vector2 savedVelocity = Vector2.zero;
-    private const float PLAYER_FALLING_FAST = 400f;
-    private WallBounce wallBounce = new WallBounce();
-    private float PLAYER_IMMUNITY_DURATION = 0.4f;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody2D>();
-        playerDeath = player.GetComponent<PlayerDeath>();
+        base.Awake();
         colliderHeight = objectCollider.size.y;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerDeath = player.GetComponent<PlayerDeath>();
     }
 
-    private void Start()
+    protected override void Start()
     {
         Physics2D.IgnoreCollision(objectCollider, player.GetComponent<BoxCollider2D>());
     }
@@ -46,21 +34,28 @@ public class Enemy : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    private void FixedUpdate()
+    protected override void MovingBehaviour()
     {
-        StopAndResume();
-
-        if (!stop)
+        if (activated == false)
         {
-            MovingBehaviour();
+            CheckVisibility();
+        }
+        else
+        {
+            ChangeDirection();
         }
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    protected override void CollisionEnter(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        Transform playerTrans = collision.gameObject.transform;
+        float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
+
+        bool fallingDownFast = playerVelYAbs > PLAYER_FALLING_FAST;
+        // sideToSide | player.y = enemy.y --- stomp | player.y - playerHeight/2 = enemy.y + enemyHeight/2 | playerHeight/2 is the allowed threshold
+        if (playerTrans.position.y > transform.position.y + colliderHeight / 2 || fallingDownFast)
         {
-            EnemyCollision(collision);
+            EnemyStomped(collision);
         }
     }
 
@@ -72,38 +67,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void EnemyKillingPlayer()
+    public void EnemyFireballBehaviour(int fallDirection)
     {
-        playerDeath.Die();
-    }
+        DisableObject();
+        rb.velocity = new Vector2(fallDirection * speed, 0);
+        spriteRenderer.flipY = true;
 
-    void StopAndResume()
-    {
-        if (stop && savedVelocity == Vector2.zero)
-        {
-            savedVelocity = rb.velocity;
-            rb.velocity = Vector2.zero;
-            if (anim != null) anim.enabled = false;
-        }
-
-        if (!stop && savedVelocity != Vector2.zero)
-        {
-            rb.velocity = savedVelocity;
-            savedVelocity = Vector2.zero;
-            if (anim != null) anim.enabled = true;
-        }
-    }
-
-    protected virtual void MovingBehaviour()
-    {
-        if (activated == false)
-        {
-            CheckVisibility();
-        }
-        else
-        {
-            ChangeDirection();
-        }
+        anim.SetTrigger("DeathByFireball");
+        audioSource.clip = kickClip;
+        audioSource.Play();
+        PointsSpawn();
     }
 
     void CheckVisibility()
@@ -118,37 +91,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected void ChangeDirection()
+    protected virtual void EnemyKillingPlayer()
     {
-        bool bounce = wallBounce.Bounce(rb, speed);
-        if (bounce)
-        {
-            ChangeDirectionBehaviour();
-        }
-    }
-
-    protected virtual void ChangeDirectionBehaviour()
-    {
-        direction *= -1;
-        UpdateVelocity();
-    }
-
-    void UpdateVelocity()
-    {
-        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
-    }
-
-    protected virtual void EnemyCollision(Collider2D collision)
-    {
-        Transform playerTrans = collision.gameObject.transform;
-        float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
-
-        bool fallingDownFast = playerVelYAbs > PLAYER_FALLING_FAST;
-        // sideToSide | player.y = enemy.y --- stomp | player.y - playerHeight/2 = enemy.y + enemyHeight/2 | playerHeight/2 is the allowed threshold
-        if (playerTrans.position.y > transform.position.y + colliderHeight / 2 || fallingDownFast)
-        {
-            EnemyStomped(collision);
-        }
+        playerDeath.Die();
     }
 
     protected virtual void EnemyStomped(Collider2D collision)
@@ -159,22 +104,15 @@ public class Enemy : MonoBehaviour
         EnemyStompedBehaviour();
     }
 
+    protected virtual void EnemyStompedBehaviour()
+    {
+        Destroy(parent);
+    }
+
     protected void PlayerBounce(Collider2D collision)
     {
         Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
         playerRB.velocity = new Vector2(playerRB.velocity.x, bounceHeight);
-    }
-
-    private void PointsSpawn()
-    {
-        GameObject pointsObject = Instantiate(pointsFloating);
-        pointsObject.transform.GetChild(0).position = transform.position;
-        pointsObject.GetComponent<PointsFloating>().SetPoints(ComboPoints.Combo(points), false);
-    }
-
-    protected virtual void EnemyStompedBehaviour()
-    {
-        Destroy(gameObject);
     }
 
     protected void DisableObject()
@@ -184,18 +122,6 @@ public class Enemy : MonoBehaviour
         rb.isKinematic = true;
         objectCollider.enabled = false;
         triggerCollider.enabled = false;
-    }
-
-    public void EnemyFireballBehaviour(int fallDirection)
-    {
-        DisableObject();
-        rb.velocity = new Vector2(fallDirection * speed, 0);
-        spriteRenderer.flipY = true;
-
-        anim.SetTrigger("DeathByFireball");
-        audioSource.clip = kickClip;
-        audioSource.Play();
-        PointsSpawn();
     }
 
 }

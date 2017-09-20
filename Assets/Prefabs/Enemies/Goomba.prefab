@@ -55,7 +55,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414139178622316}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593247034546274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 134.8, y: 16, z: 0}
+  m_LocalPosition: {x: 368, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4249030173779166}
@@ -255,16 +255,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d36760e9a9e3a469425ee0f8653c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  parent: {fileID: 1414139178622316}
   objectCollider: {fileID: 61001882301636962}
   triggerCollider: {fileID: 61176475905867612}
+  anim: {fileID: 95022830871753166}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
-  audioSource: {fileID: 82993677472381120}
-  spriteRenderer: {fileID: 212034566840255716}
-  anim: {fileID: 95022830871753166}
   points: 100
   speed: 30
+  audioSource: {fileID: 82993677472381120}
+  kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  spriteRenderer: {fileID: 212034566840255716}
   bounceHeight: 200
 --- !u!114 &114704549979697558
 MonoBehaviour:

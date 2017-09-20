@@ -25,7 +25,7 @@ public class KoopaShell : Enemy
         }
     }
 
-    protected override void EnemyCollision(Collider2D collision)
+    protected override void CollisionEnter(Collider2D collision)
     {
         audioKick.Play();
 
@@ -40,7 +40,7 @@ public class KoopaShell : Enemy
         }
         else
         {
-            base.EnemyCollision(collision);
+            base.CollisionEnter(collision);
         }
     }
 

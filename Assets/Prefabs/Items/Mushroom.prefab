@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212535624080976444}
   - component: {fileID: 50630240172746452}
   - component: {fileID: 61206026172717766}
-  - component: {fileID: 61983841594695010}
+  - component: {fileID: 61134680970458242}
   - component: {fileID: 82538257351234848}
   - component: {fileID: 114622780215945012}
   m_Layer: 0
@@ -95,6 +95,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &61134680970458242
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691698102388360}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 16}
+    newSize: {x: 16, y: 16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
+  m_EdgeRadius: 0
 --- !u!61 &61206026172717766
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -119,31 +144,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
---- !u!61 &61983841594695010
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1691698102388360}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 16}
-    newSize: {x: 16, y: 16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 16}
   m_EdgeRadius: 0
 --- !u!82 &82538257351234848
 AudioSource:
@@ -254,6 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e31af80eb27b264095dcec5f1595028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1327176714356794}
+  objectCollider: {fileID: 61206026172717766}
+  triggerCollider: {fileID: 61134680970458242}
+  anim: {fileID: 95686602114243272}
+  pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
+    type: 2}
+  points: 1000
+  speed: 60
 --- !u!212 &212535624080976444
 SpriteRenderer:
   m_ObjectHideFlags: 1

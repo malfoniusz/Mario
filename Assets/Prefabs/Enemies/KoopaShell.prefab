@@ -348,16 +348,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c89fce04041384382aa746044b22ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  parent: {fileID: 1819666856882012}
   objectCollider: {fileID: 61159540000009588}
   triggerCollider: {fileID: 61913148671875058}
+  anim: {fileID: 95347458585593872}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
-  audioSource: {fileID: 82344209842494884}
-  spriteRenderer: {fileID: 212907853301688144}
-  anim: {fileID: 95347458585593872}
   points: 100
   speed: 230
+  audioSource: {fileID: 82344209842494884}
+  kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
+  spriteRenderer: {fileID: 212907853301688144}
   bounceHeight: 200
   audioKick: {fileID: 82205217119020554}
 --- !u!212 &212907853301688144
@@ -390,7 +391,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1938015045
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300024, guid: cd896fb68655ae24d940dbc7141ff181, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
