@@ -11,26 +11,30 @@ public class Moving : MonoBehaviour
     public GameObject pointsFloating;
     public int points = 100;
     public float speed = 30;
-    
+
+    protected GameObject player;
     protected Rigidbody2D rb;
     protected int direction = -1;
 
-    private Vector2 savedVelocity = Vector2.zero;
-    private WallBounce wallBounce = new WallBounce();
-
+    private WallBounce wallBounce;
+    private StopMovement stopMovement;
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        wallBounce = new WallBounce();
+        stopMovement = new StopMovement();
     }
 
     protected virtual void Start()
     {
+        Physics2D.IgnoreCollision(objectCollider, player.GetComponent<BoxCollider2D>());
         UpdateVelocity();
     }
 
     private void FixedUpdate()
     {
-        StopAndResume();
+        stopMovement.StopAndRestore(rb, stop, anim);
 
         if (!stop)
         {
@@ -57,23 +61,6 @@ public class Moving : MonoBehaviour
         GameObject pointsObject = Instantiate(pointsFloating);
         pointsObject.transform.GetChild(0).position = transform.position;
         pointsObject.GetComponent<PointsFloating>().SetPoints(ComboPoints.Combo(points), false);
-    }
-
-    void StopAndResume()
-    {
-        if (stop && savedVelocity == Vector2.zero)
-        {
-            savedVelocity = rb.velocity;
-            rb.velocity = Vector2.zero;
-            if (anim != null) anim.enabled = false;
-        }
-
-        if (!stop && savedVelocity != Vector2.zero)
-        {
-            rb.velocity = savedVelocity;
-            savedVelocity = Vector2.zero;
-            if (anim != null) anim.enabled = true;
-        }
     }
 
     protected virtual void MovingBehaviour()

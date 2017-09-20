@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     private AudioSource environmentAudio;
     private AudioSource audioGameOver;
     private GameObject player;
+    private PlayerMovement playerMovement;
     private GameObject startLevelScreen;
     private GameObject gameOverScreen;
     private const float START_DELAY = 2;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
         environmentAudio = environment.GetComponent<AudioSource>();
         audioGameOver = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
         startLevelScreen = GameObject.FindGameObjectWithTag("StartLevelScreen");
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
     }
@@ -75,21 +77,21 @@ public class GameController : MonoBehaviour
     {
         startLevelScreen.SetActive(true);
         HideLevel();
-        StopGame();
+        StopGame(true);
     }
 
     void HideStartLevel()
     {
         startLevelScreen.SetActive(false);
         ShowLevel();
-        ResumeGame();
+        ResumeGame(true);
     }
 
     void ShowGameOver()
     {
         gameOverScreen.SetActive(true);
         HideLevel();
-        StopGame();
+        StopGame(true);
         audioGameOver.Play();
     }
 
@@ -97,21 +99,23 @@ public class GameController : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         ShowLevel();
-        ResumeGame();
+        ResumeGame(true);
     }
 
-    public void StopGame()
+    public void StopGame(bool pauseMusic)
     {
-        Goomba.stop = true;
+        Moving.stop = true;
         UITime.stop = true;
-        environmentAudio.Stop();
+        playerMovement.stop = true;
+        if (pauseMusic) environmentAudio.Pause();
     }
 
-    void ResumeGame()
+    public void ResumeGame(bool unPauseMusic)
     {
-        Goomba.stop = false;
+        Moving.stop = false;
         UITime.stop = false;
-        environmentAudio.Play();
+        playerMovement.stop = false;
+        if (unPauseMusic) environmentAudio.UnPause();
     }
 
     IEnumerator RestartGame(float seconds)

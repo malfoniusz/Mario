@@ -24897,7 +24897,7 @@ MonoBehaviour:
   - {fileID: 1785836057}
   - {fileID: 2123538052}
   minimalVelocity: 3
-  playerDead: 0
+  stop: 0
   floorMask: 0
 --- !u!114 &1359979116
 MonoBehaviour:
@@ -24910,8 +24910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcfd5e35d0dcf3442bae626df98f157a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  anim: {fileID: 482703196}
+  animBigMario: {fileID: 0}
+  animFireMario: {fileID: 0}
   powerupClip: {fileID: 8300000, guid: 4e49334a328ba7d409b006b73fd61076, type: 3}
+  level: 1
 --- !u!4 &1364155529 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4006226624272978, guid: 644d11241734be443905324d14855349,

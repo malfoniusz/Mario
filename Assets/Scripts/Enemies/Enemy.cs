@@ -7,8 +7,7 @@ public class Enemy : Moving
     public SpriteRenderer spriteRenderer;
     public float bounceHeight = 200;
 
-    protected GameObject player;
-    protected PlayerDeath playerDeath;
+    protected PlayerPowerup playerPowerup;
     protected float time = 0;
 
     private float PLAYER_IMMUNITY_DURATION = 0.4f;
@@ -20,8 +19,7 @@ public class Enemy : Moving
     {
         base.Awake();
         colliderHeight = objectCollider.size.y;
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerDeath = player.GetComponent<PlayerDeath>();
+        playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 
     protected override void Start()
@@ -63,7 +61,7 @@ public class Enemy : Moving
     {
         if (collision.gameObject.tag == "Player" && time > PLAYER_IMMUNITY_DURATION)
         {
-            EnemyKillingPlayer();
+            EnemyHittingPlayer();
         }
     }
 
@@ -91,9 +89,9 @@ public class Enemy : Moving
         }
     }
 
-    protected virtual void EnemyKillingPlayer()
+    protected virtual void EnemyHittingPlayer()
     {
-        playerDeath.Die();
+        playerPowerup.PlayerHit();
     }
 
     protected virtual void EnemyStomped(Collider2D collision)

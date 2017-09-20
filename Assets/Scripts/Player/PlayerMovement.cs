@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform[] groundChecks;
     public Transform[] topChecks;
     public float minimalVelocity;
-    [HideInInspector] public bool playerDead = false;
+    [HideInInspector] public bool stop = false;
     [HideInInspector] public int floorMask;
 
     private GameObject parent;
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping = false;
     private float jumpForce = 0;
     private float prevSpeed = 0;
+    private StopMovement stopMovement;
 
     private float maxOffsetX;
 
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         jumpAudio = GetComponent<AudioSource>();
         floorMask = LayerMask.NameToLayer("Floor");
+        stopMovement = new StopMovement();
     }
 
     void Start()
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (playerDead == false)
+        if (!stop)
         {
             walkKey = (int)Input.GetAxisRaw("Horizontal");
             jumpKey = Input.GetButton("Jump");
@@ -59,7 +61,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate ()
     {
-        if (playerDead == false)
+        stopMovement.StopAndRestore(rb, stop);
+
+        if (!stop)
         {
             Walk();
             Turn();

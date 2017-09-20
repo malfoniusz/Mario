@@ -10,7 +10,6 @@ public class PlayerDeath : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
     private AudioSource audioSource;
-    private PlayerMovement playerMovement;
     private bool playerDied = false;
 
     void Awake()
@@ -21,7 +20,6 @@ public class PlayerDeath : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         audioSource = GetComponent<AudioSource>();
-        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -38,9 +36,7 @@ public class PlayerDeath : MonoBehaviour
         {
             playerDied = true;
 
-            gameController.StopGame();
-            playerMovement.playerDead = true;
-            rb.velocity = Vector2.zero;
+            gameController.StopGame(true);
             rb.isKinematic = true;
             boxCollider.enabled = false;
 

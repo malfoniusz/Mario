@@ -71,10 +71,10 @@ public class KoopaShell : Enemy
         rb.velocity = Vector2.zero;
     }
 
-    protected override void EnemyKillingPlayer()
+    protected override void EnemyHittingPlayer()
     {
         audioKick.Stop();
-        playerDeath.Die();
+        playerPowerup.PlayerHit();
     }
 
 }
