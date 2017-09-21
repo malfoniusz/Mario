@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor.Animations;
 
 public class PlayerPowerup : MonoBehaviour
 {
@@ -7,8 +8,6 @@ public class PlayerPowerup : MonoBehaviour
     private PlayerDeath playerDeath;
 
     public Animator anim;
-    public Animator animBigMario;
-    public Animator animFireMario;
     public AudioClip powerupClip;
     public int level = 1;   // 1 - mario, 2 - bigMario, 3 - fireMario
 
@@ -32,6 +31,9 @@ public class PlayerPowerup : MonoBehaviour
 
         if (level == 1)
         {
+            anim.SetTrigger("Powerup");
+            // powiekszenie boxcollidera
+            // isKinematic = true
             // podmienic animatora na BigMario - nie bawic sie z zachowanie animacji np. skoku
             // uruchomic Powerup sound on Mario
         }
@@ -52,6 +54,7 @@ public class PlayerPowerup : MonoBehaviour
         }
 
         gameController.ResumeGame(false);
+        yield return null;
     }
 
     public void PlayerHit()
@@ -69,6 +72,7 @@ public class PlayerPowerup : MonoBehaviour
     private void Powerdown()
     {
         // po uderzeniu: animacja + zatrzymanie przeciwnikow + niezniszczalnosc (migotanie)
+        // zmniejszenie box collidera
 
         if (level == 2)
         {

@@ -1,6 +1,6 @@
 ﻿
 Grzyb:
-- dotknięcie grzyba i urośnięcie + dźwięk + zachowanie prędkości
+- dotknięcie grzyba i urośnięcie + dźwięk
 - animacja wiekszego Maria
 - zniszczenie ceglanych bloków + dźwięk
 - uderzenie od przeciwnika zmniejsza poziom Maria + niezniszczalnosc + zatrzymanie przeciwnikow
