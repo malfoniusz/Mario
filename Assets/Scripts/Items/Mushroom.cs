@@ -31,11 +31,19 @@ public class Mushroom : Moving
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            CollisionEnter(collision);
+        }
+    }
+
     protected override void CollisionEnter(Collider2D collision)
     {
         if (activated)
         {
-            playerPowerup.Powerup();
+            playerPowerup.MushroomPowerup();
             PointsSpawn();
             Destroy(parent);
         }

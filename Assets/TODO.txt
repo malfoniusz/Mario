@@ -1,10 +1,10 @@
 ﻿
+- nieaktywni przeciwnicy lekko się poruszają - dodać box collidery do bloków podłogi i schodów oraz usunąć edge collidery
+- po wzięciu grzyba, dwa goomba na górze nie aktywują się ponownie
+
 Grzyb:
-- dotknięcie grzyba i urośnięcie + dźwięk
-- animacja wiekszego Maria
 - zniszczenie ceglanych bloków + dźwięk
-- uderzenie od przeciwnika zmniejsza poziom Maria + niezniszczalnosc + zatrzymanie przeciwnikow
-- spadniecie w przepasc automatycznie zabija
+- (spróbować zrobić to na stanach animacji) uderzenie od przeciwnika zmniejsza poziom Maria + niezniszczalnosc + zatrzymanie przeciwnikow
 
 Kwiat:
 - animacja wysunięcie kwiatka + dźwięk

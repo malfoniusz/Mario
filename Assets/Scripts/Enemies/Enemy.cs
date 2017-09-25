@@ -10,6 +10,7 @@ public class Enemy : Moving
     protected PlayerPowerup playerPowerup;
     protected float time = 0;
 
+    private const float COLLISION_ERROR = 8f;
     private float PLAYER_IMMUNITY_DURATION = 0.4f;
     private const float PLAYER_FALLING_FAST = 400f;
     private float colliderHeight;
@@ -46,12 +47,14 @@ public class Enemy : Moving
 
     protected override void CollisionEnter(Collider2D collision)
     {
-        Transform playerTrans = collision.gameObject.transform;
-        float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        GameObject player = collision.gameObject;
+        Transform playerTrans = player.transform;
+        BoxCollider2D playerCollider = player.GetComponent<BoxCollider2D>();
 
+        float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
         bool fallingDownFast = playerVelYAbs > PLAYER_FALLING_FAST;
-        // sideToSide | player.y = enemy.y --- stomp | player.y - playerHeight/2 = enemy.y + enemyHeight/2 | playerHeight/2 is the allowed threshold
-        if (playerTrans.position.y > transform.position.y + colliderHeight / 2 || fallingDownFast)
+
+        if (playerTrans.position.y > transform.position.y + colliderHeight / 2 + playerCollider.size.y / 2 - COLLISION_ERROR || fallingDownFast)
         {
             EnemyStomped(collision);
         }

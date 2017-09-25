@@ -2,6 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    public AudioSource jumpAudio;
     public float walkSpeed;
     public float slowdownSpeed;
     public float maxWalkSpeed;
@@ -13,14 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform[] groundChecks;
     public Transform[] topChecks;
     public float minimalVelocity;
-    [HideInInspector] public bool stop = false;
     [HideInInspector] public int floorMask;
 
     private GameObject parent;
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D boxCollider;
-    private AudioSource jumpAudio;
     private int walkKey = 0;
     private bool jumpKey = false;
     private bool jumpKeyDown = false;
@@ -29,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpForce = 0;
     private float prevSpeed = 0;
     private StopMovement stopMovement;
+    private bool stop = false;
 
     private float maxOffsetX;
 
@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = parent.GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        jumpAudio = GetComponent<AudioSource>();
         floorMask = LayerMask.NameToLayer("Floor");
         stopMovement = new StopMovement();
     }
@@ -252,4 +251,24 @@ public class PlayerMovement : MonoBehaviour
         return maxOffsetX;
     }
 
+    public void UpdateModel(BoxCollider2D bc, Transform[] gc, Transform[] tc)
+    {
+        boxCollider.size = bc.size;
+
+        for (int i = 0; i < groundChecks.Length; i++)
+        {
+            groundChecks[i].localPosition = gc[i].localPosition;
+        }
+
+        for (int i = 0; i < topChecks.Length; i++)
+        {
+            topChecks[i].localPosition = tc[i].localPosition;
+        }
+    }
+
+    public void Stop(bool value)
+    {
+        stop = value;
+        rb.isKinematic = value;
+    }
 }

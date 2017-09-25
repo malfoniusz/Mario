@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -106,7 +105,7 @@ public class GameController : MonoBehaviour
     {
         Moving.stop = true;
         UITime.stop = true;
-        playerMovement.stop = true;
+        playerMovement.Stop(true);
         if (pauseMusic) environmentAudio.Pause();
     }
 
@@ -114,7 +113,7 @@ public class GameController : MonoBehaviour
     {
         Moving.stop = false;
         UITime.stop = false;
-        playerMovement.stop = false;
+        playerMovement.Stop(false);
         if (unPauseMusic) environmentAudio.UnPause();
     }
 
