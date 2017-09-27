@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform[] groundChecks;
     public Transform[] topChecks;
     public float minimalVelocity;
-    [HideInInspector] public int floorMask;
+    [HideInInspector] public int jumpableMask;
 
     private GameObject parent;
     private Rigidbody2D rb;
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = parent.GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        floorMask = LayerMask.NameToLayer("Floor");
+        jumpableMask = LayerMask.NameToLayer("Jumpable");
         stopMovement = new StopMovement();
     }
 
@@ -165,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        bool grounded = CheckContact(groundChecks, floorMask);
+        bool grounded = CheckContact(groundChecks, jumpableMask);
         if (jumpKeyDown && grounded)
         {
             jumpKeyDown = false;
@@ -183,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MakeAJump()
     {
-        bool topContact = CheckContact(topChecks, floorMask);
+        bool topContact = CheckContact(topChecks, jumpableMask);
         if (!jumpKey || topContact)
         {
             jumpForce = 0;

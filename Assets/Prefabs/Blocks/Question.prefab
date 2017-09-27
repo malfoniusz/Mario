@@ -327,10 +327,10 @@ MonoBehaviour:
   - {fileID: 4305569218159770}
   - {fileID: 4040800811174636}
   - {fileID: 4806467122542966}
+  solidBlock: {fileID: 1906685237222168, guid: d9e12a35408d4304ebbc033206136e70, type: 2}
   coinSpawn: {fileID: 4830998587221696}
   coinFromBlock: {fileID: 1199062671571300, guid: db35da657c135104198cf50af7b9c403,
     type: 2}
-  solidBlock: {fileID: 1906685237222168, guid: d9e12a35408d4304ebbc033206136e70, type: 2}
 --- !u!212 &212162101336993266
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -361,7 +361,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -750594997
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d36e72005292c4b4e96fa6a70567a820, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -11,17 +11,23 @@ public class StopMovement
 
     public bool StopAndRestore(Rigidbody2D rb, bool stop, Animator anim = null)
     {
-        if (stop && savedVelocity == Vector2.zero)
+        if (stop)
         {
-            savedVelocity = rb.velocity;
-            rb.velocity = Vector2.zero;
+            if (savedVelocity == Vector2.zero)
+            {
+                savedVelocity = rb.velocity;
+                rb.velocity = Vector2.zero;
+            }
             if (anim != null) anim.enabled = false;
         }
 
-        if (!stop && savedVelocity != Vector2.zero)
+        if (!stop)
         {
-            rb.velocity = savedVelocity;
-            savedVelocity = Vector2.zero;
+            if (savedVelocity != Vector2.zero)
+            {
+                rb.velocity = savedVelocity;
+                savedVelocity = Vector2.zero;
+            }
             if (anim != null) anim.enabled = true;
         }
 
