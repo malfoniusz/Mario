@@ -1,6 +1,5 @@
 ﻿
 Grzyb:
-- zniszczenie ceglanych bloków + dźwięk
 - (spróbować zrobić to na stanach animacji) uderzenie od przeciwnika zmniejsza poziom Maria + niezniszczalnosc + zatrzymanie przeciwnikow
 
 Kwiat:

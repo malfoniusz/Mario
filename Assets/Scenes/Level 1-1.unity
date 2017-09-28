@@ -576,7 +576,7 @@ MonoBehaviour:
   - {fileID: 491735198}
   - {fileID: 1341521393}
   minimalVelocity: 3
-  floorMask: 0
+  jumpableMask: 0
 --- !u!82 &14115804
 AudioSource:
   m_ObjectHideFlags: 0
