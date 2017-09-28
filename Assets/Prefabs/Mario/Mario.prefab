@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114580305938503406}
   - component: {fileID: 114550731141452870}
   - component: {fileID: 114827842464579164}
+  - component: {fileID: 114270182364545084}
   m_Layer: 10
   m_Name: Mario
   m_TagString: Player
@@ -583,6 +584,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114270182364545084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1139364347148212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba1a507116e0cf43b5fb2d19d3dd1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marioPrefab: {fileID: 1139364347148212}
+  bigMarioPrefab: {fileID: 1471188855436864, guid: e3d0ec960c07edb4dba332f154004dea,
+    type: 2}
+  playerBoxCollider: {fileID: 61381111926535732}
+  playerGroundChecks:
+  - {fileID: 4004770814546312}
+  - {fileID: 4865132179052892}
+  playerTopChecks:
+  - {fileID: 4437583016031344}
+  - {fileID: 4754354129713686}
 --- !u!114 &114550731141452870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,9 +688,6 @@ MonoBehaviour:
   powerupAudio: {fileID: 82615106608075416}
   powerdownAudio: {fileID: 82676922590547148}
   level: 1
-  marioModel: {fileID: 1139364347148212}
-  bigMarioModel: {fileID: 1471188855436864, guid: e3d0ec960c07edb4dba332f154004dea,
-    type: 2}
 --- !u!212 &212509232462521712
 SpriteRenderer:
   m_ObjectHideFlags: 1

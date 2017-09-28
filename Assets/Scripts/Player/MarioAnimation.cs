@@ -8,13 +8,13 @@ public class MarioAnimation : MonoBehaviour
 
     private GameController gameController;
     private GameObject player;
-    private PlayerPowerup playerPowerup;
+    private MarioModel marioModel;
 
     private void Awake()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         player = GameObject.FindGameObjectWithTag("Player");
-        playerPowerup = player.GetComponent<PlayerPowerup>();
+        marioModel = player.GetComponent<MarioModel>();
     }
 
     private void Start()
@@ -30,7 +30,7 @@ public class MarioAnimation : MonoBehaviour
     void ResumeAndUpdateModel_Event()
     {
         gameController.ResumeGame(false);
-        playerPowerup.UpdateModel();
+        marioModel.UpdateModel();
     }
 
     void PowerupPositionUp_Event()

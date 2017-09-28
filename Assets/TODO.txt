@@ -1,7 +1,7 @@
 ﻿
-- marioModel - osobny skrypt
 - Mario prefab apply - psuje działanie skryptu UpdateModel
 - zmniejszyć szerokość colliderów na Mariu, aby mógł się przecisnąć pomiędzy blokami
+- zmienić nazwy skryptów z Player na Mario
 
 Kwiat:
 - animacja wysunięcie kwiatka + dźwięk

@@ -34314,9 +34314,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114827842464579164, guid: b424bbcd3cc56654dbf57025b9f370fb,
+    - target: {fileID: 114270182364545084, guid: b424bbcd3cc56654dbf57025b9f370fb,
         type: 2}
-      propertyPath: marioModel
+      propertyPath: marioPrefab
       value: 
       objectReference: {fileID: 1139364347148212, guid: b424bbcd3cc56654dbf57025b9f370fb,
         type: 2}

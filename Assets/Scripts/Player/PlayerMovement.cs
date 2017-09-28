@@ -251,21 +251,6 @@ public class PlayerMovement : MonoBehaviour
         return maxOffsetX;
     }
 
-    public void UpdateModel(BoxCollider2D bc, Transform[] gc, Transform[] tc)
-    {
-        boxCollider.size = bc.size;
-
-        for (int i = 0; i < groundChecks.Length; i++)
-        {
-            groundChecks[i].localPosition = gc[i].localPosition;
-        }
-
-        for (int i = 0; i < topChecks.Length; i++)
-        {
-            topChecks[i].localPosition = tc[i].localPosition;
-        }
-    }
-
     public void Stop(bool value)
     {
         stop = value;
