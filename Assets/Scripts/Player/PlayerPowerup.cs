@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerPowerup : MonoBehaviour
 {
@@ -20,11 +21,14 @@ public class PlayerPowerup : MonoBehaviour
     private BoxCollider2D bigMarioCollider;
     private Transform[] bigMarioGroundChecks;
     private Transform[] bigMarioTopChecks;
+    private const float INVINCIBILITY_DURATION = 2.5f;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerDeath = GetComponent<PlayerDeath>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         InitModels();
     }
 
@@ -51,7 +55,7 @@ public class PlayerPowerup : MonoBehaviour
     {
         if (level == 1)
         {
-            PowerupBehaviour();
+            PowerupBehaviour(2);
         }
     }
 
@@ -59,14 +63,13 @@ public class PlayerPowerup : MonoBehaviour
     {
         if (level == 1 || level == 2)
         {
-            level = 2;
-            PowerupBehaviour();
+            PowerupBehaviour(3);
         }
     }
 
-    private void PowerupBehaviour()
+    private void PowerupBehaviour(int newLevel)
     {
-        level++;
+        level = newLevel;
         anim.SetTrigger("Powerup");
         anim.speed = 1;
         powerupAudio.Play();
@@ -87,20 +90,34 @@ public class PlayerPowerup : MonoBehaviour
 
     private void Powerdown()
     {
-        jumpAudio.clip = jumpClip;
+        level--;
+        anim.SetTrigger("Powerdown");
+        anim.speed = 1;
+        powerdownAudio.Play();
 
-        // niezniszczalnosc (migotanie)
-
-        if (level == 2)
+        if (level == 1)
         {
-
+            jumpAudio.clip = jumpClip;
         }
-        else if (level == 3)
-        {
 
-        }
+        StartCoroutine(Invincibility(INVINCIBILITY_DURATION));
     }
     
+    private IEnumerator Invincibility(float sec)
+    {
+        Color trans = spriteRenderer.color;
+
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
+        trans.a = 0.5f;
+        spriteRenderer.color = trans;
+
+        yield return new WaitForSeconds(sec);
+
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+        trans.a = 1f;
+        spriteRenderer.color = trans;
+    }
+
     public void UpdateModel()
     {
         if (level == 1)

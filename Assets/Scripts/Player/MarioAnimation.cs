@@ -22,12 +22,12 @@ public class MarioAnimation : MonoBehaviour
         colliderDifference = (bigMarioCollider.size.y - marioCollider.size.y) / 2;
     }
 
-    void PowerupStart_Event()
+    void StopGame_Event()
     {
         gameController.StopGame(false);
     }
 
-    void PowerupEnd_Event()
+    void ResumeAndUpdateModel_Event()
     {
         gameController.ResumeGame(false);
         playerPowerup.UpdateModel();
