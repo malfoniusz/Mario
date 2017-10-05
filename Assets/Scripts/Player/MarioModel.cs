@@ -68,8 +68,4 @@ public class MarioModel : MonoBehaviour
         }
     }
 
-    // playerPowerup initModel
-    // playerPowerup updateModel
-    // playerMovement updateModel
-    // pin script to mario
 }

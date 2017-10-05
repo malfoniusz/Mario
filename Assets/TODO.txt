@@ -1,7 +1,4 @@
 ﻿
-- grzyb - po upadnięciu na ziemię dziwnie się porusza
-- grzyb - pierwszy do zdobycia w grze porusza się w złą stronę
-
 Kwiat:
 - strzelania kulami ognia + dźwięk
 - zabijanie kulami goomba, koopa i skorup + animacja śmierci

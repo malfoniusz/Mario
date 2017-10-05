@@ -23,6 +23,7 @@ public class PlayerPowerup : MonoBehaviour
 
     public void MushroomPowerup()
     {
+        powerupAudio.Play();
         if (level == 1)
         {
             PowerupBehaviour(2);
@@ -31,6 +32,7 @@ public class PlayerPowerup : MonoBehaviour
 
     public void FireFlowerPowerup()
     {
+        powerupAudio.Play();
         if (level == 1 || level == 2)
         {
             PowerupBehaviour(3);
@@ -42,7 +44,6 @@ public class PlayerPowerup : MonoBehaviour
         level = newLevel;
         anim.SetTrigger("Powerup");
         anim.speed = 1;
-        powerupAudio.Play();
         jumpAudio.clip = bigJumpClip;
     }
 
