@@ -1,10 +1,8 @@
 ﻿
-- zmienić nazwy skryptów z Player na Mario
+- grzyb - po upadnięciu na ziemię dziwnie się porusza
+- grzyb - pierwszy do zdobycia w grze porusza się w złą stronę
 
 Kwiat:
-- animacja wysunięcie kwiatka + dźwięk
-- dotknięcie kwiatka i zamiana w ognistego + dźwięk
-- animacja ognistego Maria
 - strzelania kulami ognia + dźwięk
 - zabijanie kulami goomba, koopa i skorup + animacja śmierci
 
@@ -12,7 +10,7 @@ Kwiat:
 - niewidzialny blok
 - animacja wysunięcia + dźwięk
 - poruszanie się grzyba
-- dotknięcie daje dodatkowe życie
+- dotknięcie daje dodatkowe życie + dźwięk
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk

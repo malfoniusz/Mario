@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 70efaf66cd973a948bcb20a310191c03
-timeCreated: 1503052642
+timeCreated: 1507199397
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -247,34 +247,6 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Mario_24
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 143
-        width: 13
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_25
-      rect:
-        serializedVersion: 2
-        x: 361
-        y: 142
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Mario_33
       rect:
         serializedVersion: 2
@@ -352,48 +324,6 @@ TextureImporter:
         y: 104
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_39
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 109
-        width: 16
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_54
-      rect:
-        serializedVersion: 2
-        x: 363
-        y: 72
-        width: 14
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_55
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 70
-        width: 14
-        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,48 +429,6 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Mario_71
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 39
-        width: 16
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_86
-      rect:
-        serializedVersion: 2
-        x: 363
-        y: 2
-        width: 14
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_87
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 0
-        width: 14
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Mario_0
       rect:
         serializedVersion: 2
@@ -549,7 +437,7 @@ TextureImporter:
         width: 14
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

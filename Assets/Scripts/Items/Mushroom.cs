@@ -2,8 +2,8 @@
 
 public class Mushroom : Moving
 {
-    private PlayerPowerup playerPowerup;
-    private bool activated = false;
+    protected PlayerPowerup playerPowerup;
+    protected bool activated = false;
 
     protected override void Awake()
     {

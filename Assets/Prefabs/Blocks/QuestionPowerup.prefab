@@ -125,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770169282769794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.5, y: 51.2, z: 0}
+  m_LocalPosition: {x: -0.3, y: 53.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4473874415432950}
@@ -300,6 +300,7 @@ MonoBehaviour:
   - {fileID: 4607036559827994}
   solidBlock: {fileID: 1906685237222168, guid: d9e12a35408d4304ebbc033206136e70, type: 2}
   mushroom: {fileID: 1327176714356794, guid: 08f17a2005810eb4b9953c25df0cb0b0, type: 2}
+  fireFlower: {fileID: 1327176714356794, guid: c351f60b25db65849b22f2712cbd15b6, type: 2}
 --- !u!212 &212843779740197210
 SpriteRenderer:
   m_ObjectHideFlags: 1
