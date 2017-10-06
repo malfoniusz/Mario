@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform[] groundChecks;
     public Transform[] topChecks;
     public float minimalVelocity;
-    [HideInInspector] public int jumpableMask;
 
     private GameObject parent;
     private Rigidbody2D rb;
@@ -38,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = parent.GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        jumpableMask = LayerMask.NameToLayer("Jumpable");
         stopMovement = new StopMovement();
     }
 
@@ -165,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        bool grounded = CheckContact(groundChecks, jumpableMask);
+        bool grounded = Contact.CheckContactGround(transform.position, groundChecks);
         if (jumpKeyDown && grounded)
         {
             jumpKeyDown = false;
@@ -183,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MakeAJump()
     {
-        bool topContact = CheckContact(topChecks, jumpableMask);
+        bool topContact = Contact.CheckContactGround(transform.position, topChecks);
         if (!jumpKey || topContact)
         {
             jumpForce = 0;
@@ -193,21 +191,6 @@ public class PlayerMovement : MonoBehaviour
             jumpForce = Mathf.Lerp(jumpForce, 0, jumpSlowdown);
             rb.AddForce(new Vector2(0, jumpForce));
         }
-    }
-
-    public bool CheckContact(Transform[] contactChecks, int layerMask)
-    {
-        bool contact = false;
-        for (int i = 0; i < contactChecks.Length; i++)
-        {
-            contact = Physics2D.Linecast(transform.position, contactChecks[i].position, 1 << layerMask);
-            if (contact == true)
-            {
-                break;
-            }
-        }
-
-        return contact;
     }
 
     void WalkAnimation()

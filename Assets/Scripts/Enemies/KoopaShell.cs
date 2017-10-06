@@ -53,8 +53,8 @@ public class KoopaShell : Enemy
             stopMultipleTriggers = true;
 
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            int hitDirection = (int)Mathf.Sign(collision.gameObject.transform.position.y - transform.position.y);
-            enemy.EnemyFireballBehaviour(hitDirection);
+            float hitDirection = Mathf.Sign(collision.gameObject.transform.position.y - transform.position.y);
+            enemy.HitByFireball(hitDirection);
         }
     }
 

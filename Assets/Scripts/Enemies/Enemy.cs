@@ -68,7 +68,7 @@ public class Enemy : Moving
         }
     }
 
-    public void EnemyFireballBehaviour(int fallDirection)
+    public void HitByFireball(float fallDirection)
     {
         DisableObject();
         rb.velocity = new Vector2(fallDirection * speed, 0);
