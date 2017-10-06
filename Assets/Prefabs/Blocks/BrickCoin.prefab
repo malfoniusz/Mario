@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4764821669193288}
   - component: {fileID: 212162101336993266}
-  - component: {fileID: 61360681135781250}
+  - component: {fileID: 60485856052319900}
   - component: {fileID: 114015854770543616}
   m_Layer: 8
   m_Name: BrickCoin
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076926709902182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 45.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4305569218159770}
@@ -188,8 +188,8 @@ Transform:
   m_Father: {fileID: 4764821669193288}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61360681135781250
-BoxCollider2D:
+--- !u!60 &60485856052319900
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -210,9 +210,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -7, y: 8}
+      - {x: -8, y: 7}
+      - {x: -8, y: -7}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+      - {x: 8, y: -7}
+      - {x: 8, y: 7}
+      - {x: 7, y: 8}
 --- !u!95 &95609067594248270
 Animator:
   serializedVersion: 3

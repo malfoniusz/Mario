@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4847431799941680}
   - component: {fileID: 212993296167626840}
-  - component: {fileID: 61680477267843516}
+  - component: {fileID: 60406587674568268}
   m_Layer: 8
   m_Name: UndergroundBrick
   m_TagString: Untagged
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61680477267843516
-BoxCollider2D:
+--- !u!60 &60406587674568268
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -58,14 +58,21 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 16, y: 16}
-    newSize: {x: 15, y: 16}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -7, y: 8}
+      - {x: -8, y: 7}
+      - {x: -8, y: -7}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+      - {x: 8, y: -7}
+      - {x: 8, y: 7}
+      - {x: 7, y: 8}
 --- !u!212 &212993296167626840
 SpriteRenderer:
   m_ObjectHideFlags: 1

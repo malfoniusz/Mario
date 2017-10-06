@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4810568604730080}
   - component: {fileID: 212725439613764808}
-  - component: {fileID: 61282993975080360}
+  - component: {fileID: 60276356909883864}
   - component: {fileID: 82162578928282744}
   - component: {fileID: 114447341178086766}
   m_Layer: 8
@@ -151,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631345895950686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.475998, y: 43.57589, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4758797322369204}
@@ -160,8 +160,8 @@ Transform:
   m_Father: {fileID: 4533370051425510}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61282993975080360
-BoxCollider2D:
+--- !u!60 &60276356909883864
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -177,14 +177,21 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 16, y: 16}
-    newSize: {x: 16, y: 16}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -7, y: 8}
+      - {x: -8, y: 7}
+      - {x: -8, y: -7}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+      - {x: 8, y: -7}
+      - {x: 8, y: 7}
+      - {x: 7, y: 8}
 --- !u!82 &82162578928282744
 AudioSource:
   m_ObjectHideFlags: 1

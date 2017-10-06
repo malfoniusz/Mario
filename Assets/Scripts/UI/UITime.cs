@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class UITime : MonoBehaviour
 {
-    public static bool stop = false; 
+    public static bool stop = false;
 
+    public AudioClip clipHurry;
     public float countdownSpeed = 3;
     public int time = 400;
 
     private AudioSource audioEnvironment;
-    private AudioSource audioHurry;
     private PlayerDeath playerDeath;
     private Text text;
     private float nextTimeInc;
@@ -19,7 +19,6 @@ public class UITime : MonoBehaviour
     private void Awake()
     {
         audioEnvironment = GameObject.FindGameObjectWithTag("Environment").GetComponent<AudioSource>();
-        audioHurry = GetComponent<AudioSource>();
         playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
         text = GetComponent<Text>();
         nextTimeInc = 1 / countdownSpeed;
@@ -62,7 +61,8 @@ public class UITime : MonoBehaviour
         {
             lowTime = true;
             audioEnvironment.Stop();
-            audioHurry.Play();
+            audioEnvironment.clip = clipHurry;
+            audioEnvironment.Play();
         }
     }
 

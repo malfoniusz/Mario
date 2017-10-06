@@ -66,9 +66,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4678685492286046}
   - component: {fileID: 212613402239879126}
-  - component: {fileID: 61244180303741706}
+  - component: {fileID: 60424885740180140}
   - component: {fileID: 82088514094048072}
-  - component: {fileID: 114770987398886952}
   - component: {fileID: 114057031703525490}
   m_Layer: 8
   m_Name: Brick
@@ -139,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868495716317228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.6, y: 51.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4426474059845146}
@@ -161,8 +160,8 @@ Transform:
   m_Father: {fileID: 4678685492286046}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61244180303741706
-BoxCollider2D:
+--- !u!60 &60424885740180140
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -183,9 +182,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -7, y: 8}
+      - {x: -8, y: 7}
+      - {x: -8, y: -7}
+      - {x: -7, y: -8}
+      - {x: 7, y: -8}
+      - {x: 8, y: -7}
+      - {x: 8, y: 7}
+      - {x: 7, y: 8}
 --- !u!82 &82088514094048072
 AudioSource:
   m_ObjectHideFlags: 1
@@ -301,21 +307,6 @@ MonoBehaviour:
   - {fileID: 4896267314061910}
   brickBroken: {fileID: 1040365942462796, guid: 63d2a1a6183d47f4e983d6a5ba17e91c,
     type: 2}
---- !u!114 &114770987398886952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1868495716317228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cfc0a65cc1f5c54897f39c03b70f334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bottomHitChecks:
-  - {fileID: 4426474059845146}
-  - {fileID: 4209652740257956}
-  - {fileID: 4896267314061910}
 --- !u!212 &212613402239879126
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -10,9 +10,9 @@ public class Enemy : Moving
     protected PlayerPowerup playerPowerup;
     protected float time = 0;
 
-    private const float COLLISION_ERROR = 8f;
+    private const float COLLISION_ERROR = 3f;
     private float PLAYER_IMMUNITY_DURATION = 0.4f;
-    private const float PLAYER_FALLING_FAST = 400f;
+    private const float PLAYER_FALLING_FAST = 200f;
     private float colliderHeight;
     private bool activated = false;
 
