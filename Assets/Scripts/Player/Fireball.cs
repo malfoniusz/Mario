@@ -3,12 +3,16 @@
 public class Fireball : MonoBehaviour
 {
     public Transform[] groundChecks;
+    public Transform[] sideChecks;
     public float speed = 250f;
     public float bounceForce = 250f;
 
     private GameObject player;
     private Rigidbody2D rb;
     private float direction;
+    private const float FALL_SPEED_SWITCH = 400f;
+    private const float STAY_DELAY = 0.1f;
+    private float time = 0;
 
     private void Awake()
     {
@@ -21,6 +25,12 @@ public class Fireball : MonoBehaviour
     {
         direction = Mathf.Sign(player.transform.localScale.x);
         rb.velocity = Vector2.right * direction * speed;
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+        if (Mathf.Abs(rb.velocity.y) >= FALL_SPEED_SWITCH) time = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,7 +49,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (Contact.CheckContactGround(transform.position, sideChecks) && time > STAY_DELAY)
         {
             Destroy(gameObject);
         }
