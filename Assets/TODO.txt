@@ -1,5 +1,4 @@
 ﻿
-- create Utility folder for Scripts
 - zmień nazwę Layer z Jumpable to Ground
 - bug - wzięcie grzyba w chwili uderzenia kuli ognia w przeciwnika - prawdopodownie trzeba zatrzymać kule ognia
 - edge collider pod poziomem - wszystko co w niego wejdzie ma być zniszczone
