@@ -14,8 +14,7 @@ public class QuestionBlock : BlockTurnSolid
 
     protected void SpawnCoin()
     {
-        GameObject coin = Instantiate(coinFromBlock);
-        coin.transform.GetChild(0).transform.localPosition = coinSpawn.position;
+        Instantiate(coinFromBlock, coinSpawn.position, Quaternion.identity);
     }
 
 }

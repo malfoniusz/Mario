@@ -29,7 +29,7 @@ AnimationClip:
     - time: 0.16666667
       value: {fileID: 21300054, guid: 510fb7578c672684aab01f45d0a9924f, type: 3}
     attribute: m_Sprite
-    path: CoinFromBlock
+    path: 
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -40,7 +40,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3218298675
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212

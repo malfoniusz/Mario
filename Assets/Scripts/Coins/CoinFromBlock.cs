@@ -4,27 +4,31 @@ public class CoinFromBlock : Coin
 {
     public Animator animCoinJump;
     public GameObject pointsFloating;
+    public float jumpForce = 400;
 
-    private GameObject parent;
     private bool extraLife;
     private SpriteRenderer spriteRenderer;
     private AudioSource audioSource;
+    private Rigidbody2D rb;
+    private float destroyJumpSwitch;
 
     void Awake()
     {
-        parent = transform.parent.gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
         extraLife = UICoins.AddCoin();
+        rb.velocity = new Vector2(0, jumpForce);
+        destroyJumpSwitch = -jumpForce * ((float)4/5);
     }
 
     void Update()
     {
-        if (animCoinJump.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (rb.velocity.y < destroyJumpSwitch)
         {
             if (spriteRenderer.enabled)
             {
@@ -36,7 +40,7 @@ public class CoinFromBlock : Coin
 
             if (audioSource.isPlaying == false)
             {
-                Destroy(parent);
+                Destroy(gameObject);
             }
         }
     }

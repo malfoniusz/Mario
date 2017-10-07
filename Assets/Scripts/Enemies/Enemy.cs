@@ -55,7 +55,8 @@ public class Enemy : Moving
         float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
         bool fallingDownFast = playerVelYAbs > PLAYER_FALLING_FAST;
 
-        if (playerTrans.position.y > transform.position.y + colliderHeight / 2 + playerCollider.size.y / 2 - COLLISION_ERROR || fallingDownFast)
+        if (playerTrans.position.y + playerCollider.offset.y
+            > transform.position.y + objectCollider.offset.y + colliderHeight / 2 + playerCollider.size.y / 2 - COLLISION_ERROR || fallingDownFast)
         {
             EnemyStomped(collision);
         }

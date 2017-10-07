@@ -1,6 +1,5 @@
 ﻿
-- KoopaShell czasami odbija sie od przeciwnikow
-- coinJump i coinFromBlock zrobić za pomocą fizyki - usunąć animacje
+- KoopaShell - uderzenie w przeciwnik od tyłu
 
 - bug - wzięcie grzyba w chwili uderzenia kuli ognia w przeciwnika - prawdopodownie trzeba zatrzymać kule ognia
 - edge collider pod poziomem - wszystko co w niego wejdzie ma być zniszczone
