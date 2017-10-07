@@ -9,8 +9,7 @@ public class Koopa : Enemy
     protected override void EnemyStompedBehaviour()
     {
         Vector2 shellPos = new Vector2(transform.position.x, transform.position.y - SHELL_OFFSET);
-        GameObject shellObject = Instantiate(koopaShell);
-        shellObject.transform.GetChild(0).position = shellPos;
+        Instantiate(koopaShell, shellPos, Quaternion.identity);
         Destroy(parent);
     }
 

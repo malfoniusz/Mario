@@ -15,6 +15,7 @@ public class Enemy : Moving
     private const float PLAYER_FALLING_FAST = 200f;
     private float colliderHeight;
     private bool activated = false;
+    private Vector2 FIREBALL_KNOCKBACK = new Vector2(60, 320);
 
     protected override void Awake()
     {
@@ -70,11 +71,10 @@ public class Enemy : Moving
 
     public void HitByFireball(float fallDirection)
     {
-        DisableObject();
-        rb.velocity = new Vector2(fallDirection * speed, 0);
+        DisableObject(false);
+        rb.velocity = Vector2.right * fallDirection + FIREBALL_KNOCKBACK;
         spriteRenderer.flipY = true;
 
-        anim.SetTrigger("DeathByFireball");
         audioSource.clip = kickClip;
         audioSource.Play();
         PointsSpawn();
@@ -116,11 +116,11 @@ public class Enemy : Moving
         playerRB.velocity = new Vector2(playerRB.velocity.x, bounceHeight);
     }
 
-    protected void DisableObject()
+    protected void DisableObject(bool kinema)
     {
         enabled = false;
         rb.velocity = Vector2.zero;
-        rb.isKinematic = true;
+        rb.isKinematic = kinema;
         objectCollider.enabled = false;
         triggerCollider.enabled = false;
     }

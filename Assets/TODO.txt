@@ -1,5 +1,7 @@
 ﻿
-- zmień nazwę Layer z Jumpable to Ground
+- KoopaShell czasami odbija sie od przeciwnikow
+- coinJump i coinFromBlock zrobić za pomocą fizyki - usunąć animacje
+
 - bug - wzięcie grzyba w chwili uderzenia kuli ognia w przeciwnika - prawdopodownie trzeba zatrzymać kule ognia
 - edge collider pod poziomem - wszystko co w niego wejdzie ma być zniszczone
 - bug - za zabicie przeciwnika kulą ognia, gracza dostaje 100+200 punktów
@@ -58,3 +60,4 @@ Trolololio:
 - zmienić Platform Effector na 180 stopni, dla dodatkowego boosta w góre
 - enemies superspeed
 - super fast koopashells
+- po uderzeniu w Koopa, nie zniszczyć jego obiektu

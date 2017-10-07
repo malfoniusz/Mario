@@ -2,10 +2,11 @@
 
 public class Contact : MonoBehaviour
 {
+    private static int groundMask = LayerMask.NameToLayer("Ground");
+
     public static bool CheckContactGround(Vector3 position, Transform[] contactChecks)
     {
-        int jumpableMask = LayerMask.NameToLayer("Jumpable");
-        bool contact = CheckContact(position, contactChecks, jumpableMask);
+        bool contact = CheckContact(position, contactChecks, groundMask);
         return contact;
     }
 

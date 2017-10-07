@@ -23,7 +23,7 @@ AnimationClip:
     - time: 0.5
       value: {fileID: 21300004, guid: cd896fb68655ae24d940dbc7141ff181, type: 3}
     attribute: m_Sprite
-    path: Goomba
+    path: 
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -34,7 +34,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 4140407846
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -68,11 +68,4 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events:
-  - time: 0.5
-    functionName: Event_Destroy
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
