@@ -122,6 +122,7 @@ public class Enemy : Moving
         enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = kinema;
+        anim.enabled = false;
         objectCollider.enabled = false;
         triggerCollider.enabled = false;
     }
