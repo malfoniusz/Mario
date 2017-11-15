@@ -1,6 +1,4 @@
 ﻿
-- edge collider pod poziomem - wszystko co w niego wejdzie ma być zniszczone (uderzeniu przeciwnicy, kule ognia, etc.)
-- max fireballs on screen
 - bug - wzięcie grzyba w chwili uderzenia kuli ognia w przeciwnika - prawdopodownie trzeba zatrzymać kule ognia
 - bug - za zabicie przeciwnika kulą ognia, gracza dostaje 100+200 punktów
 - unieważnić combo punkty za przedmioty

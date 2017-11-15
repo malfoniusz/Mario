@@ -8440,8 +8440,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -200.00096, y: -99.99634}
-  - {x: 3699.9956, y: -99.99566}
+  - {x: -342.43, y: -99.99634}
+  - {x: 3822.9, y: -99.99566}
 --- !u!1001 &462106814
 Prefab:
   m_ObjectHideFlags: 0

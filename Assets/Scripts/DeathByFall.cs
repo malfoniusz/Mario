@@ -15,6 +15,10 @@ public class DeathByFall : MonoBehaviour
         {
             playerDeath.Die();
         }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
 }

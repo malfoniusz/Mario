@@ -2,6 +2,9 @@
 
 public class Fireball : MonoBehaviour
 {
+    public static int numberOfFireballs = 0;
+    public const int MAX_FIREBALLS = 2;
+
     public Transform[] groundChecks;
     public Transform[] sideChecks;
     public float speed = 250f;
@@ -24,6 +27,7 @@ public class Fireball : MonoBehaviour
 
     private void Start()
     {
+        numberOfFireballs++;
         mainCam = Camera.main;
         direction = Mathf.Sign(player.transform.localScale.x);
         rb.velocity = Vector2.right * direction * speed;
@@ -66,6 +70,11 @@ public class Fireball : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        numberOfFireballs--;
     }
 
 }

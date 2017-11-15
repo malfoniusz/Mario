@@ -72,7 +72,7 @@ public class Enemy : Moving
 
     public void HitByFireball(float fallDirection)
     {
-        DisableObject(false);
+        DisableObject(false, false);
         rb.velocity = Vector2.right * fallDirection + FIREBALL_KNOCKBACK;
         spriteRenderer.flipY = true;
 
@@ -117,12 +117,12 @@ public class Enemy : Moving
         playerRB.velocity = new Vector2(playerRB.velocity.x, bounceHeight);
     }
 
-    protected void DisableObject(bool kinema)
+    protected void DisableObject(bool kinema, bool animation)
     {
         enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = kinema;
-        anim.enabled = false;
+        anim.enabled = animation;
         objectCollider.enabled = false;
         triggerCollider.enabled = false;
     }

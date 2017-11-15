@@ -9,7 +9,7 @@ public class Goomba : Enemy
     {
         anim.SetTrigger("IsDead");
         audioSource.Play();
-        DisableObject(true);
+        DisableObject(true, true);
 
         StartCoroutine(Destruction.DelayedDestroy(DESTROY_DELAY, parent));
     }
