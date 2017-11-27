@@ -15,7 +15,7 @@ public class FireFlower : Mushroom
         if (activated)
         {
             playerPowerup.FireFlowerPowerup();
-            PointsSpawn();
+            PointsSpawn(false);
             Destroy(parent);
         }
     }

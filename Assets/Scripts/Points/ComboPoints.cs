@@ -5,7 +5,7 @@ public class ComboPoints : MonoBehaviour
     static private int combo = 0;
     static private float time = 0;
 
-    private const float COMBO_DURATION = 0.5f;
+    private const float COMBO_DURATION = 0.75f;
 
     void Update()
     {

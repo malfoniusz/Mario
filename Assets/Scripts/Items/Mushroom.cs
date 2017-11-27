@@ -44,7 +44,7 @@ public class Mushroom : Moving
         if (activated)
         {
             playerPowerup.MushroomPowerup();
-            PointsSpawn();
+            PointsSpawn(false);
             Destroy(parent);
         }
     }

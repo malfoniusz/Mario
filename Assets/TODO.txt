@@ -1,6 +1,6 @@
 ﻿
-- unieważnić combo punkty za przedmioty
-- jako level=1 wzięcie kwiatka powinno zamienić w ognistego maria
+- uniemozliwienie strzelania kulami ognia podczas transformacji
+- sprawdzenie zachowan powerupow - level_1 + kwiatek, level_2 + grzyb
 
 1UP:
 - niewidzialny blok

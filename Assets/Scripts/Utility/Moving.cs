@@ -52,15 +52,17 @@ public class Moving : MonoBehaviour
 
     protected virtual void CollisionEnter(Collider2D collision)
     {
-        PointsSpawn();
+        PointsSpawn(true);
         Destroy(parent);
     }
 
-    protected void PointsSpawn()
+    protected void PointsSpawn(bool combo)
     {
+        int pointsValue = (combo == false ? points : ComboPoints.Combo(points));
+
         GameObject pointsObject = Instantiate(pointsFloating);
         pointsObject.transform.GetChild(0).position = transform.position;
-        pointsObject.GetComponent<PointsFloating>().SetPoints(ComboPoints.Combo(points), false);
+        pointsObject.GetComponent<PointsFloating>().SetPoints(pointsValue, false);
     }
 
     protected virtual void MovingBehaviour()
