@@ -1,6 +1,4 @@
 ﻿
-- bug - wzięcie grzyba w chwili uderzenia kuli ognia w przeciwnika - prawdopodownie trzeba zatrzymać kule ognia
-- bug - za zabicie przeciwnika kulą ognia, gracza dostaje 100+200 punktów
 - unieważnić combo punkty za przedmioty
 - jako level=1 wzięcie kwiatka powinno zamienić w ognistego maria
 

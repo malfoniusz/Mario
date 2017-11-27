@@ -17,6 +17,7 @@ public class Fireball : MonoBehaviour
     private const float FALL_SPEED_SWITCH = 400f;
     private const float STAY_DELAY = 0.1f;
     private float time = 0;
+    private bool isColliding = false;   // Prevent triggering collider twice on the same frame
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class Fireball : MonoBehaviour
 
     private void Update()
     {
+        isColliding = false;
+
         time += Time.deltaTime;
         if (Mathf.Abs(rb.velocity.y) >= FALL_SPEED_SWITCH) time = 0;
 
@@ -43,6 +46,9 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isColliding) return;
+        isColliding = true;
+
         if (collision.gameObject.tag == "Enemy")
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
