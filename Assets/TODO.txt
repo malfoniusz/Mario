@@ -1,5 +1,4 @@
 ﻿
-- uniemozliwienie strzelania kulami ognia podczas transformacji
 - sprawdzenie zachowan powerupow - level_1 + kwiatek, level_2 + grzyb
 
 1UP:

@@ -106,6 +106,7 @@ public class GameController : MonoBehaviour
         Moving.stop = true;
         UITime.stop = true;
         playerMovement.Stop(true);
+        PlayerFireball.Stop(true);
         if (pauseMusic) environmentAudio.Pause();
     }
 
@@ -114,6 +115,7 @@ public class GameController : MonoBehaviour
         Moving.stop = false;
         UITime.stop = false;
         playerMovement.Stop(false);
+        PlayerFireball.Stop(false);
         if (unPauseMusic) environmentAudio.UnPause();
     }
 
