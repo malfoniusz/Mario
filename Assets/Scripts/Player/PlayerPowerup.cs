@@ -33,7 +33,11 @@ public class PlayerPowerup : MonoBehaviour
     public void FireFlowerPowerup()
     {
         powerupAudio.Play();
-        if (level == 1 || level == 2)
+        if (level == 1)
+        {
+            PowerupBehaviour(2);
+        }
+        else if (level == 2)
         {
             PowerupBehaviour(3);
         }

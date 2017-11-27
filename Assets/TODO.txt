@@ -1,5 +1,5 @@
 ﻿
-- sprawdzenie zachowan powerupow - level_1 + kwiatek, level_2 + grzyb
+- poprawic odbijanie sie od siebie przeciwnikow (Goomba)
 
 1UP:
 - niewidzialny blok
