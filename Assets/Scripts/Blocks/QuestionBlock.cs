@@ -8,8 +8,7 @@ public class QuestionBlock : BlockTurnSolid
     protected override void HitBehaviour()
     {
         SpawnCoin();
-        CreateSolidBlock(true);
-        Destroy(parent);
+        base.HitBehaviour();
     }
 
     protected void SpawnCoin()

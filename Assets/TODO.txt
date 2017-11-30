@@ -1,7 +1,8 @@
 ﻿
 1UP:
 - niewidzialny blok
-- animacja wysunięcia + dźwięk
+- uderzenie od dołu materializuje blok
+- animacja wysunięcia grzyba + dźwięk
 - poruszanie się grzyba
 - dotknięcie daje dodatkowe życie + dźwięk
 
