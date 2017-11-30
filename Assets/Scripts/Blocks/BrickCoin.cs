@@ -9,8 +9,8 @@ public class BrickCoin : QuestionBlock
 
     protected override void Update()
     {
-        PlayerHit();
-        Animation();
+        playerHit = PlayerHit();
+        Animation(playerHit);
 
         hitTime += Time.deltaTime;
 

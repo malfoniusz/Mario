@@ -1,10 +1,10 @@
 ﻿
 1UP:
-- niewidzialny blok
-- uderzenie od dołu materializuje blok
 - animacja wysunięcia grzyba + dźwięk
 - poruszanie się grzyba
 - dotknięcie daje dodatkowe życie + dźwięk
+
+- bugfix - przeciwnicy czasami odbijają się, gdy idą po płaskiej podłodze (shadow vertex)
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk

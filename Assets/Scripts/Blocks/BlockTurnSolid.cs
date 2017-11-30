@@ -14,8 +14,7 @@ public class BlockTurnSolid : BlockAnimated
 
     protected override void Update()
     {
-        PlayerHit();
-
+        playerHit = PlayerHit();
         if (playerHit)
         {
             HitBehaviour();

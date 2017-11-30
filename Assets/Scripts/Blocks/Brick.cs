@@ -4,14 +4,12 @@ public class Brick : BlockAnimated
 {
     public GameObject brickBroken;
 
-    private GameObject player;
     private PlayerPowerup playerPowerup;
 
     protected override void Awake()
     {
         base.Awake();
 
-        player = GameObject.FindGameObjectWithTag("Player");
         playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 

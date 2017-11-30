@@ -5,13 +5,11 @@ public class QuestionPowerup : BlockTurnSolid
     public GameObject mushroom;
     public GameObject fireFlower;
 
-    private GameObject player;
     private PlayerPowerup playerPowerup;
 
     protected override void Awake()
     {
         base.Awake();
-        player = GameObject.FindGameObjectWithTag("Player").gameObject;
         playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 

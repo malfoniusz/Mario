@@ -16,12 +16,11 @@ public class BlockAnimated : Block
 
     protected override void Update()
     {
-        PlayerHit();
-        Sound();
-        Animation();
+        base.Update();
+        Animation(playerHit);
     }
 
-    protected void Animation()
+    protected void Animation(bool playerHit)
     {
         animFinished = anim.GetCurrentAnimatorStateInfo(0).IsName("Empty");
         animTime += Time.deltaTime;

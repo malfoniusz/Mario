@@ -11,8 +11,8 @@ public class SolidBlock : BlockAnimated
 
     protected override void Update()
     {
-        PlayerHit();
-        Sound();
+        playerHit = PlayerHit();
+        Sound(playerHit);
     }
 
 }
