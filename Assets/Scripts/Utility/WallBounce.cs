@@ -1,19 +1,21 @@
-﻿using UnityEngine;
+﻿using UnityEngine; 
 
 public class WallBounce
 {
-    private const float MINIMAL_VELOCITY = 1f;
-    private const float DIRECTION_DELAY = 0.1f;
-    private float directionTime = 0;
+    private const float TIME_DELAY = 0.1f;
+    private float time = 0;
     private const float SPEED_ERROR = 5f;
 
     public bool Bounce(Rigidbody2D rb, float maxSpeed)
     {
-        directionTime += Time.deltaTime;
+        time += Time.deltaTime;
+        float curSpeed = Mathf.Abs(rb.velocity.x);
+        float absMaxSpeed = Mathf.Abs(maxSpeed);
+        float minimalSpeed = absMaxSpeed - SPEED_ERROR;
 
-        if (Mathf.Abs(rb.velocity.x) < maxSpeed - SPEED_ERROR && directionTime > DIRECTION_DELAY)
+        if (curSpeed < minimalSpeed && time > TIME_DELAY)
         {
-            directionTime = 0;
+            time = 0;
             return true;
         }
 

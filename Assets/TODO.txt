@@ -1,6 +1,4 @@
 ﻿
-- poprawic odbijanie sie od siebie przeciwnikow (Goomba)
-
 1UP:
 - niewidzialny blok
 - animacja wysunięcia + dźwięk
