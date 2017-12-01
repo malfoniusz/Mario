@@ -19818,10 +19818,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 1926935624325454, guid: 57ea4ee7ee639654b9c608f8b2bd6fd8, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57ea4ee7ee639654b9c608f8b2bd6fd8, type: 2}
   m_IsPrefabParent: 0
@@ -36282,27 +36278,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 60214138471507988, guid: 016d9e1e9cb623142b6abd86d55ac74d,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1449516153043858, guid: 016d9e1e9cb623142b6abd86d55ac74d, type: 2}
-      propertyPath: m_Name
-      value: OneUpBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428080664360668, guid: 016d9e1e9cb623142b6abd86d55ac74d, type: 2}
-      propertyPath: m_Name
-      value: OneUpBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 114947553178548638, guid: 016d9e1e9cb623142b6abd86d55ac74d,
-        type: 2}
-      propertyPath: OneUpMushroom
-      value: 
-      objectReference: {fileID: 1327176714356794, guid: 08f17a2005810eb4b9953c25df0cb0b0,
-        type: 2}
-    m_RemovedComponents:
-    - {fileID: 60214138471507988, guid: 016d9e1e9cb623142b6abd86d55ac74d, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 016d9e1e9cb623142b6abd86d55ac74d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2036724577

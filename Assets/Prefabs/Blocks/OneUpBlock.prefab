@@ -50,10 +50,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4597393967183322}
   - component: {fileID: 212908274061987440}
-  - component: {fileID: 60214138471507988}
   - component: {fileID: 114947553178548638}
   m_Layer: 8
-  m_Name: Block1Up
+  m_Name: OneUpBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,38 +157,6 @@ Transform:
   m_Father: {fileID: 4597393967183322}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60214138471507988
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1428080664360668}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: e56a2ebe7b7abb844a5d6465a3b8cc12, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 16}
-    newSize: {x: 16, y: 16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -7, y: 8}
-      - {x: -8, y: 7}
-      - {x: -8, y: -7}
-      - {x: -7, y: -8}
-      - {x: 7, y: -8}
-      - {x: 8, y: -7}
-      - {x: 8, y: 7}
-      - {x: 7, y: 8}
 --- !u!114 &114947553178548638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,7 +173,8 @@ MonoBehaviour:
   - {fileID: 4853326451138776}
   - {fileID: 4467443722440718}
   solidBlock: {fileID: 1906685237222168, guid: d9e12a35408d4304ebbc033206136e70, type: 2}
-  OneUpMushroom: {fileID: 0}
+  oneUpMushroom: {fileID: 1926935624325454, guid: 57ea4ee7ee639654b9c608f8b2bd6fd8,
+    type: 2}
 --- !u!212 &212908274061987440
 SpriteRenderer:
   m_ObjectHideFlags: 1

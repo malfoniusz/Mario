@@ -2,7 +2,7 @@
 
 public class OneUpBlock : BlockTurnSolid
 {
-    public GameObject OneUpMushroom;
+    public GameObject oneUpMushroom;
 
     private SpriteRenderer spriteRenderer;
 
@@ -26,11 +26,8 @@ public class OneUpBlock : BlockTurnSolid
 
     private void Spawn1Up()
     {
-        // TODO: uzupelnij definicje
-
-        //GameObject powerupObject;
-        //powerupObject = (playerPowerup.level == 1) ? Instantiate(mushroom) : Instantiate(fireFlower);
-        //powerupObject.transform.GetChild(0).transform.localPosition = transform.position;
+        GameObject oneUpObject = Instantiate(oneUpMushroom);
+        oneUpObject.transform.GetChild(0).transform.localPosition = transform.position;
     }
 
 }
