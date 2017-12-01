@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Block1Up : BlockTurnSolid
+public class OneUpBlock : BlockTurnSolid
 {
     public GameObject OneUpMushroom;
 

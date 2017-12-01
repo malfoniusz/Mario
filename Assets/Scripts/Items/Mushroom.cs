@@ -43,10 +43,15 @@ public class Mushroom : Moving
     {
         if (activated)
         {
-            playerPowerup.MushroomPowerup();
-            PointsSpawn(false);
-            Destroy(parent);
+            CollisionBehaviour();
         }
+    }
+
+    protected virtual void CollisionBehaviour()
+    {
+        playerPowerup.MushroomPowerup();
+        PointsSpawn(false);
+        Destroy(parent);
     }
 
 }
