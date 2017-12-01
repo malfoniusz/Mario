@@ -18,6 +18,7 @@ public class Moving : MonoBehaviour
 
     private WallBounce wallBounce;
     private StopMovement stopMovement;
+
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

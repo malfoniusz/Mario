@@ -1,6 +1,5 @@
 ﻿
 - bugfix - przeciwnicy czasami odbijają się, gdy idą po płaskiej podłodze (shadow vertex)
-- odbicie się od dwóch goombas (tymi pomiędzy rurami) nie działa
 - usunąć parent'a z bloków (przerobić animacje)
 - usunąć parent'a z przedmiotów (przerobić animacje)
 

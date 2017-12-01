@@ -5,6 +5,7 @@ public class Enemy : Moving
     public AudioSource audioSource;
     public AudioClip kickClip;
     public SpriteRenderer spriteRenderer;
+    public Transform[] stompedChecks;
     public float bounceHeight = 200;
 
     protected PlayerPowerup playerPowerup;
@@ -12,15 +13,12 @@ public class Enemy : Moving
 
     private const float COLLISION_ERROR = 3f;
     private float PLAYER_IMMUNITY_DURATION = 0.4f;
-    private const float PLAYER_FALLING_FAST = 200f;
-    private float colliderHeight;
     private bool activated = false;
     private Vector2 FIREBALL_KNOCKBACK = new Vector2(60, 320);
 
     protected override void Awake()
     {
         base.Awake();
-        colliderHeight = objectCollider.size.y;
         playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 
@@ -48,15 +46,11 @@ public class Enemy : Moving
 
     protected override void CollisionEnter(Collider2D collision)
     {
-        GameObject player = collision.gameObject;
-        Transform playerTrans = player.transform;
-        BoxCollider2D playerCollider = player.GetComponent<BoxCollider2D>();
+        bool enemyStomped = Contact.CheckEnemyStomped(transform.position, stompedChecks);
+        float playerVelY = collision.gameObject.GetComponent<Rigidbody2D>().velocity.y;
+        bool playerFalling = (playerVelY < 0);
 
-        float playerVelYAbs = Mathf.Abs(collision.gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        bool fallingDownFast = playerVelYAbs > PLAYER_FALLING_FAST;
-
-        if (playerTrans.position.y + playerCollider.offset.y
-            > transform.position.y + objectCollider.offset.y + colliderHeight / 2 + playerCollider.size.y / 2 - COLLISION_ERROR || fallingDownFast)
+        if (enemyStomped && playerFalling)
         {
             EnemyStomped(collision);
         }
@@ -122,7 +116,7 @@ public class Enemy : Moving
         enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = kinema;
-        anim.enabled = animation;
+        if (anim != null) anim.enabled = animation;
         objectCollider.enabled = false;
         triggerCollider.enabled = false;
     }
