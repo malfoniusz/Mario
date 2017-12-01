@@ -4,10 +4,10 @@
 - poruszanie się grzyba
 - dotknięcie daje dodatkowe życie + dźwięk
 
-- PointsFloating (Moving) - rozbić metodę dodającą punkty na punkty i OneUp
 - bugfix - przeciwnicy czasami odbijają się, gdy idą po płaskiej podłodze (shadow vertex)
 - usunąć parent'a z bloków (przerobić animacje)
 - usunąć parent'a z przedmiotów (przerobić animacje)
+- odbicie się od dwóch goombas (tymi pomiędzy rurami) nie działa
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk

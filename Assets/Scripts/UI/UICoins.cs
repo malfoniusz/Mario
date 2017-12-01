@@ -4,14 +4,12 @@ using UnityEngine.UI;
 public class UICoins : MonoBehaviour
 {
     private static Text coinText;
-    private static AudioSource audioSource;
     private static int coins = 0;
     private const int EXTRA_LIFE_COINS = 100;
 
     void Awake()
     {
         coinText = GetComponent<Text>();
-        audioSource = GetComponent<AudioSource>();
         UpdateText();
     }
 
@@ -42,7 +40,6 @@ public class UICoins : MonoBehaviour
         {
             coins -= EXTRA_LIFE_COINS;
             UILives.lives++;
-            audioSource.Play();
             return true;
         }
 

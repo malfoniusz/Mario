@@ -260,7 +260,7 @@ MonoBehaviour:
   anim: {fileID: 95170975233885210}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
-  points: 0
+  points: 5000
   speed: 60
 --- !u!212 &212093862557508450
 SpriteRenderer:

@@ -34,7 +34,7 @@ public class CoinFromBlock : Coin
             {
                 GameObject pointsObject = Instantiate(pointsFloating);
                 pointsObject.transform.GetChild(0).position = transform.position;
-                pointsObject.GetComponent<PointsFloating>().SetPoints(points, extraLife);
+                pointsObject.GetComponent<PointsFloating>().SetPointsAndExtraLife(points, extraLife);
                 spriteRenderer.enabled = false;
             }
 

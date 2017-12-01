@@ -50,7 +50,7 @@ public class Mushroom : Moving
     protected virtual void CollisionBehaviour()
     {
         playerPowerup.MushroomPowerup();
-        PointsSpawn(false);
+        SpawnPoints();
         Destroy(parent);
     }
 

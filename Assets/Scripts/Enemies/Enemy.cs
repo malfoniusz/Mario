@@ -78,7 +78,7 @@ public class Enemy : Moving
 
         audioSource.clip = kickClip;
         audioSource.Play();
-        PointsSpawn(true);
+        SpawnComboPoints();
     }
 
     void CheckVisibility()
@@ -102,7 +102,7 @@ public class Enemy : Moving
     {
         time = 0;
         PlayerBounce(collision);
-        PointsSpawn(true);
+        SpawnComboPoints();
         EnemyStompedBehaviour();
     }
 
