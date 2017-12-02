@@ -9,7 +9,6 @@ public class Brick : BlockAnimated
     protected override void Awake()
     {
         base.Awake();
-
         playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 
@@ -20,7 +19,7 @@ public class Brick : BlockAnimated
         if (playerHit && playerPowerup.level > 1)
         {
             Instantiate(brickBroken, transform.localPosition, Quaternion.identity);
-            Destroy(parent);
+            Destroy(gameObject);
         }
     }
 

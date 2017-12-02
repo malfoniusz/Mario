@@ -4,7 +4,6 @@ public class Block : MonoBehaviour
 {
     public Transform[] bottomHitChecks;
 
-    protected GameObject parent;
     protected GameObject player;
     protected AudioSource audioSource;
     protected bool playerHit = false;
@@ -16,7 +15,6 @@ public class Block : MonoBehaviour
 
     protected virtual void Awake()
     {
-        parent = transform.parent.gameObject;
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
         playerRB = player.GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();

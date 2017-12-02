@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class OneUpBlock : BlockTurnSolid
+public class OneUpBlock : SolidIfHit
 {
     public GameObject oneUpMushroom;
 
@@ -17,11 +17,10 @@ public class OneUpBlock : BlockTurnSolid
         spriteRenderer.enabled = false;
     }
 
-    protected override void HitBehaviour()
+    protected override void HitBehaviour(bool hitOnAwake)
     {
         Spawn1Up();
-        CreateSolidBlock(false);
-        Destroy(parent);
+        base.HitBehaviour(false);
     }
 
     private void Spawn1Up()

@@ -2,17 +2,22 @@
 
 public class SolidBlock : BlockAnimated
 {
-    public bool hitOnAwake = true;
+    private bool hitOnAwake;
 
     private void Start()
     {
-        if (hitOnAwake) PlayAnimation();
+        SetMoveBlockUp(hitOnAwake);
     }
 
     protected override void Update()
     {
         playerHit = PlayerHit();
         Sound(playerHit);
+    }
+
+    public void SetHitOnAwake(bool hitOnAwake)
+    {
+        this.hitOnAwake = hitOnAwake;
     }
 
 }

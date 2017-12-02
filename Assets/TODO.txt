@@ -1,6 +1,6 @@
 ﻿
-- usunąć parent'a z bloków (przerobić animacje)
-- usunąć parent'a z innych prefabow (items, etc.)
+- usunąć parent'a z innych prefabow (items, etc.) - QuestionPowerup, OneUpBlock (getChild)
+- bug - fireball rzucony z małej rury znika
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk

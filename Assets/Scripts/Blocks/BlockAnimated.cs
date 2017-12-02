@@ -2,40 +2,84 @@
 
 public class BlockAnimated : Block
 {
-    protected Animator anim;
-    protected bool animFinished = true;
+    private bool moveBlockUp = false;
+    private bool moveBlockDown = false;
 
-    private float animDelay = 0.1f;
-    private float animTime = 0;
+    private Vector3 startPos;
+    private Vector3 endPos;
+    private Vector3 MOVE_DISTANCE = new Vector2(0f, 8f);
+
+    private float curLerpTime = 0f;
+    private const float MAX_LERP_TIME = 1f;
+    private const float MOVE_SPEED_MULTIPLIER = 5f;
 
     protected override void Awake()
     {
         base.Awake();
-        anim = parent.GetComponent<Animator>();
+        startPos = transform.position;
+        endPos = startPos + MOVE_DISTANCE;
     }
 
     protected override void Update()
     {
         base.Update();
-        Animation(playerHit);
+        if (playerHit && !moveBlockUp && !moveBlockDown) moveBlockUp = true;
     }
 
-    protected void Animation(bool playerHit)
+    private void FixedUpdate()
     {
-        animFinished = anim.GetCurrentAnimatorStateInfo(0).IsName("Empty");
-        animTime += Time.deltaTime;
+        BlockHit();
+    }
 
-        if (playerHit && animFinished && animTime > animDelay)
+    private void BlockHit()
+    {
+        if (moveBlockUp)
         {
-            animTime = 0;
-            PlayAnimation();
+            transform.position = CalcNewPosition(startPos, endPos);
+
+            if (transform.position.Equals(endPos))
+            {
+                curLerpTime = 0f;
+                moveBlockUp = false;
+                moveBlockDown = true;
+            }
+        }
+        else if (moveBlockDown)
+        {
+            transform.position = CalcNewPosition(endPos, startPos);
+
+            if (transform.position.Equals(startPos))
+            {
+                curLerpTime = 0f;
+                moveBlockDown = false;
+            }
         }
     }
 
-    protected void PlayAnimation()
+    private Vector2 CalcNewPosition(Vector2 pos1, Vector2 pos2)
     {
-        animFinished = false;
-        anim.SetTrigger("IsHit");
+        IncLerp();
+
+        float percentage = curLerpTime / MAX_LERP_TIME;
+        Vector2 newPos = Vector2.Lerp(pos1, pos2, percentage);
+
+        return newPos;
+    }
+
+    private void IncLerp()
+    {
+        curLerpTime += (Time.deltaTime * MOVE_SPEED_MULTIPLIER);
+        if (curLerpTime > MAX_LERP_TIME) curLerpTime = MAX_LERP_TIME;
+    }
+
+    protected void SetMoveBlockUp(bool moveBlockUp)
+    {
+        this.moveBlockUp = moveBlockUp;
+    }
+
+    protected void SetMoveBlockDown(bool moveBlockDown)
+    {
+        this.moveBlockDown = moveBlockDown;
     }
 
 }

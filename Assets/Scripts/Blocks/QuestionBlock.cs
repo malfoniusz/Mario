@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 
-public class QuestionBlock : BlockTurnSolid
+public class QuestionBlock : SolidIfHit
 {
     public Transform coinSpawn;
     public GameObject coinFromBlock;
 
-    protected override void HitBehaviour()
+    protected override void HitBehaviour(bool hitOnAwake)
     {
-        SpawnCoin();
-        base.HitBehaviour();
+        SpawnCoin(coinSpawn, coinFromBlock);
+        base.HitBehaviour(hitOnAwake);
     }
 
-    protected void SpawnCoin()
+    static public void SpawnCoin(Transform coinSpawn, GameObject coinFromBlock)
     {
         Instantiate(coinFromBlock, coinSpawn.position, Quaternion.identity);
     }

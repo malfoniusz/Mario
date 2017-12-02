@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class QuestionPowerup : BlockTurnSolid
+public class QuestionPowerup : SolidIfHit
 {
     public GameObject mushroom;
     public GameObject fireFlower;
@@ -13,11 +13,10 @@ public class QuestionPowerup : BlockTurnSolid
         playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 
-    protected override void HitBehaviour()
+    protected override void HitBehaviour(bool hitOnAwake)
     {
         SpawnPowerup();
-        CreateSolidBlock(false);
-        Destroy(parent);
+        base.HitBehaviour(false);
     }
 
     private void SpawnPowerup()
