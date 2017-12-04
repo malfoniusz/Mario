@@ -5,19 +5,16 @@ public class BlockAnimated : Block
     private bool moveBlockUp = false;
     private bool moveBlockDown = false;
 
-    private Vector3 startPos;
-    private Vector3 endPos;
-    private Vector3 MOVE_DISTANCE = new Vector2(0f, 8f);
-
-    private float curLerpTime = 0f;
-    private const float MAX_LERP_TIME = 1f;
+    private MoveObject moveObject;
+    private Vector2 moveDistance = new Vector2(0f, 8f);
     private const float MOVE_SPEED_MULTIPLIER = 5f;
 
     protected override void Awake()
     {
         base.Awake();
-        startPos = transform.position;
-        endPos = startPos + MOVE_DISTANCE;
+
+        Vector2 startPos = transform.position;
+        this.moveObject = new MoveObject(startPos, moveDistance, MOVE_SPEED_MULTIPLIER);
     }
 
     protected override void Update()
@@ -35,41 +32,29 @@ public class BlockAnimated : Block
     {
         if (moveBlockUp)
         {
-            transform.position = CalcNewPosition(startPos, endPos);
+            transform.position = moveObject.NextPosition();
 
-            if (transform.position.Equals(endPos))
+            if (moveObject.ReachedEnd())
             {
-                curLerpTime = 0f;
                 moveBlockUp = false;
                 moveBlockDown = true;
+
+                Vector2 endPos = transform.position;
+                moveObject = new MoveObject(endPos, -moveDistance, MOVE_SPEED_MULTIPLIER);
             }
         }
         else if (moveBlockDown)
         {
-            transform.position = CalcNewPosition(endPos, startPos);
+            transform.position = moveObject.NextPosition();
 
-            if (transform.position.Equals(startPos))
+            if (moveObject.ReachedEnd())
             {
-                curLerpTime = 0f;
                 moveBlockDown = false;
+
+                Vector2 startPos = transform.position;
+                moveObject = new MoveObject(startPos, moveDistance, MOVE_SPEED_MULTIPLIER);
             }
         }
-    }
-
-    private Vector2 CalcNewPosition(Vector2 pos1, Vector2 pos2)
-    {
-        IncLerp();
-
-        float percentage = curLerpTime / MAX_LERP_TIME;
-        Vector2 newPos = Vector2.Lerp(pos1, pos2, percentage);
-
-        return newPos;
-    }
-
-    private void IncLerp()
-    {
-        curLerpTime += (Time.deltaTime * MOVE_SPEED_MULTIPLIER);
-        if (curLerpTime > MAX_LERP_TIME) curLerpTime = MAX_LERP_TIME;
     }
 
     protected void SetMoveBlockUp(bool moveBlockUp)

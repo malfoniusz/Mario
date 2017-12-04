@@ -1,5 +1,4 @@
 ﻿
-- podmienic kod z BlockAnimated na MoveObject
 - usunąć ze skryptu Moving: parent
 - bug - fireball rzucony z małej rury znika
 - bug - pierwszy grzyb odbija się od płaskiej podłogi - trochę wyżej tworzyć grzyba
