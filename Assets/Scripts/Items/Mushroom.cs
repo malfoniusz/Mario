@@ -3,12 +3,20 @@
 public class Mushroom : Moving
 {
     protected PlayerPowerup playerPowerup;
-    protected bool activated = false;
+    protected bool appearAnim = true;
+    protected bool stayKinematic = false;
+
+    private MoveObject moveObject;
+    private Vector2 moveDistance = new Vector2(0f, 16.1f);
+    private const float MOVE_SPEED_MULTIPLIER = 1f;
 
     protected override void Awake()
     {
         base.Awake();
-        playerPowerup = player.GetComponent<PlayerPowerup>();
+        this.playerPowerup = player.GetComponent<PlayerPowerup>();
+
+        Vector2 startPos = transform.position;
+        this.moveObject = new MoveObject(startPos, moveDistance, MOVE_SPEED_MULTIPLIER);
     }
 
     protected override void Start()
@@ -19,14 +27,18 @@ public class Mushroom : Moving
 
     protected override void MovingBehaviour()
     {
-        if (activated)
+        if (appearAnim) PowerupAppear();
+        else            ChangeDirection();
+    }
+
+    private void PowerupAppear()
+    {
+        transform.position = moveObject.NextPosition();
+
+        if (moveObject.ReachedEnd())
         {
-            ChangeDirection();
-        }
-        else if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-        {
-            activated = true;
-            rb.isKinematic = false;
+            appearAnim = false;
+            rb.isKinematic = stayKinematic;
             UpdateVelocity();
         }
     }
@@ -41,7 +53,7 @@ public class Mushroom : Moving
 
     protected override void CollisionEnter(Collider2D collision)
     {
-        if (activated)
+        if (appearAnim == false)
         {
             CollisionBehaviour();
         }
@@ -51,7 +63,7 @@ public class Mushroom : Moving
     {
         playerPowerup.MushroomPowerup();
         SpawnPoints();
-        Destroy(parent);
+        Destroy(gameObject);
     }
 
 }

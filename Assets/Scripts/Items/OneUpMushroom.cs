@@ -5,7 +5,7 @@ public class OneUpMushroom : Mushroom
     protected override void CollisionBehaviour()
     {
         SpawnPointsAndExtraLife();
-        Destroy(parent);
+        Destroy(gameObject);
     }
 
 }

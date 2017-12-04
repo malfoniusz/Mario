@@ -25,8 +25,7 @@ public class OneUpBlock : SolidIfHit
 
     private void Spawn1Up()
     {
-        GameObject oneUpObject = Instantiate(oneUpMushroom);
-        oneUpObject.transform.GetChild(0).transform.localPosition = transform.position;
+        Instantiate(oneUpMushroom, transform.position, Quaternion.identity);
     }
 
 }

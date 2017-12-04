@@ -2,22 +2,17 @@
 
 public class FireFlower : Mushroom
 {
-    protected override void MovingBehaviour()
+    protected override void Awake()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && activated == false)
-        {
-            activated = true;
-        }
+        base.Awake();
+        stayKinematic = true;
     }
 
-    protected override void CollisionEnter(Collider2D collision)
+    protected override void CollisionBehaviour()
     {
-        if (activated)
-        {
-            playerPowerup.FireFlowerPowerup();
-            SpawnPoints();
-            Destroy(parent);
-        }
+        playerPowerup.FireFlowerPowerup();
+        SpawnPoints();
+        Destroy(gameObject);
     }
 
 }

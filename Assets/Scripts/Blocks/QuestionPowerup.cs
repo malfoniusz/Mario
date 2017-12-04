@@ -21,9 +21,8 @@ public class QuestionPowerup : SolidIfHit
 
     private void SpawnPowerup()
     {
-        GameObject powerupObject;
-        powerupObject = (playerPowerup.level == 1) ? Instantiate(mushroom) : Instantiate(fireFlower);
-        powerupObject.transform.GetChild(0).transform.localPosition = transform.position;
+        if (playerPowerup.level == 1) Instantiate(mushroom, transform.position, Quaternion.identity);
+        else Instantiate(fireFlower, transform.position, Quaternion.identity);
     }
 
 }

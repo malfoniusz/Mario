@@ -1,6 +1,9 @@
 ﻿
-- usunąć parent'a z innych prefabow (items, etc.) - QuestionPowerup, OneUpBlock (getChild)
+- podmienic kod z BlockAnimated na MoveObject
+- usunąć ze skryptu Moving: parent
 - bug - fireball rzucony z małej rury znika
+- bug - pierwszy grzyb odbija się od płaskiej podłogi - trochę wyżej tworzyć grzyba
+- bug - czasami animacja rośnięcia Maria jest przyspieszona - sprawdzić kontrole parametru anim.speed w PlayerMovement i PlayerPowerup
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk
