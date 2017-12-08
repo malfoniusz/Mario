@@ -5,9 +5,9 @@ public class Contact : MonoBehaviour
     private static int groundMask = LayerMask.NameToLayer("Ground");
     private static int playerMask = LayerMask.NameToLayer("Player");
 
-    public static bool CheckContactGround(Vector3 playerPos, Transform[] contactChecks)
+    public static bool CheckContactGround(Vector3 objectPos, Transform[] contactChecks)
     {
-        bool contact = CheckContact(playerPos, contactChecks, groundMask);
+        bool contact = CheckContact(objectPos, contactChecks, groundMask);
         return contact;
     }
 

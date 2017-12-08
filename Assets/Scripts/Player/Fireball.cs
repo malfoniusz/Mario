@@ -14,14 +14,10 @@ public class Fireball : MonoBehaviour
     private Rigidbody2D rb;
     private Camera mainCam;
     private float direction;
-    private const float FALL_SPEED_SWITCH = 400f;
-    private const float STAY_DELAY = 0.1f;
-    private float time = 0;
     private bool isColliding = false;   // Prevent triggering collider twice on the same frame
 
     private void Awake()
     {
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Fireball"));
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
     }
@@ -37,9 +33,6 @@ public class Fireball : MonoBehaviour
     private void Update()
     {
         isColliding = false;
-
-        time += Time.deltaTime;
-        if (Mathf.Abs(rb.velocity.y) >= FALL_SPEED_SWITCH) time = 0;
 
         OutOfViewport();
     }
@@ -63,7 +56,8 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Contact.CheckContactGround(transform.position, sideChecks) && time > STAY_DELAY)
+        bool sideContact = Contact.CheckContactGround(transform.position, sideChecks);
+        if (sideContact)
         {
             Destroy(gameObject);
         }
