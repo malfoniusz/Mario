@@ -4,7 +4,6 @@ public class Moving : MonoBehaviour
 {
     static public bool stop = false;
 
-    public GameObject parent;
     public BoxCollider2D objectCollider;
     public BoxCollider2D triggerCollider;
     public Animator anim;
@@ -54,7 +53,7 @@ public class Moving : MonoBehaviour
     protected virtual void CollisionEnter(Collider2D collision)
     {
         SpawnComboPoints();
-        Destroy(parent);
+        Destroy(gameObject);
     }
 
     protected void SpawnPoints()

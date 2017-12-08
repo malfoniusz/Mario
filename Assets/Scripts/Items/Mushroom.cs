@@ -7,7 +7,7 @@ public class Mushroom : Moving
     protected bool stayKinematic = false;
 
     private MoveObject moveObject;
-    private Vector2 moveDistance = new Vector2(0f, 16.1f);
+    private Vector2 moveDistance = new Vector2(0f, 16.1f);  // 0.1f aby grzyb po wyjsciu nie zahaczyl o podloze kolejnego bloku
     private const float MOVE_SPEED_MULTIPLIER = 1f;
 
     protected override void Awake()

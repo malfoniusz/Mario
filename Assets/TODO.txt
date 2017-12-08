@@ -1,8 +1,7 @@
 ﻿
-- usunąć ze skryptu Moving: parent
-- bug - fireball rzucony z małej rury znika
-- bug - pierwszy grzyb odbija się od płaskiej podłogi - trochę wyżej tworzyć grzyba
+- bug - fireball rzucony z małej rury znika - podać dodatkowe punkty wewnątrz fireballa do sprawdzenia kolizji
 - bug - czasami animacja rośnięcia Maria jest przyspieszona - sprawdzić kontrole parametru anim.speed w PlayerMovement i PlayerPowerup
+- bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
 
 Gwiazda:
 - animacja wysunięcia gwiazdy + dźwięk

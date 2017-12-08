@@ -10,7 +10,7 @@ public class Goomba : Enemy
         audioSource.Play();
         DisableObject(true, true);
 
-        StartCoroutine(Destruction.DelayedDestroy(DESTROY_DELAY, parent));
+        StartCoroutine(Destruction.DelayedDestroy(DESTROY_DELAY, gameObject));
     }
 
 }

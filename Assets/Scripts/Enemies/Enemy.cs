@@ -15,6 +15,7 @@ public class Enemy : Moving
     private float PLAYER_IMMUNITY_DURATION = 0.4f;
     private bool activated = false;
     private Vector2 FIREBALL_KNOCKBACK = new Vector2(60, 320);
+    private float FIREBALL_DESTRUCTION_DELAY = 3f;
 
     protected override void Awake()
     {
@@ -73,6 +74,8 @@ public class Enemy : Moving
         audioSource.clip = kickClip;
         audioSource.Play();
         SpawnComboPoints();
+
+        StartCoroutine(Destruction.DelayedDestroy(FIREBALL_DESTRUCTION_DELAY, gameObject));
     }
 
     void CheckVisibility()
@@ -102,7 +105,7 @@ public class Enemy : Moving
 
     protected virtual void EnemyStompedBehaviour()
     {
-        Destroy(parent);
+        Destroy(gameObject);
     }
 
     protected void PlayerBounce(Collider2D collision)

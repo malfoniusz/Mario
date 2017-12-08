@@ -6,11 +6,11 @@ public class Koopa : Enemy
     public GameObject koopaShell;
 
     private const float SHELL_OFFSET = 4.5f;
-    private const float DELAY = 0.02f;
+    private const float SPAWN_SHELL_DELAY = 0.02f;
 
     protected override void EnemyStompedBehaviour()
     {
-        StartCoroutine(DelayedBehaviour(DELAY));
+        StartCoroutine(DelayedBehaviour(SPAWN_SHELL_DELAY));
     }
 
     protected override void ChangeDirectionBehaviour()
@@ -25,7 +25,6 @@ public class Koopa : Enemy
 
         Vector2 shellPos = new Vector2(transform.position.x, transform.position.y - SHELL_OFFSET);
         Instantiate(koopaShell, shellPos, Quaternion.identity);
-        Destroy(parent);
-        
+        Destroy(gameObject);
     }
 }
