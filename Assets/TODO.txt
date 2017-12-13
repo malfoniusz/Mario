@@ -3,9 +3,12 @@
 - bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
 
 Gwiazda:
-- animacja wysunięcia gwiazdy + dźwięk
+- dźwięk dotknięcia gwiazdy (powerup) - zrobić po stronie maria (MarioInvincibility)
 - skakanie gwiazdy
-- dotknięcie gwiazdy: animacja bohatera + dotknięcie przeciwników ich zabija
+- niezniszczalność (zabijanie przeciwników przez dotyk) - zrobić po stronie przeciwników
+- animacja maria kiedy jest niezniszczalny (dla wszystkich trzech jego poziomów)
+- zmiana muzyki - 2-3 sekundy przed wygaśnięciem niezniszczalności, przywrócić normalną muzykę i zwolnić animacje niezniszczalności
+- wstawić blok w odpowiednie miejsca
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
