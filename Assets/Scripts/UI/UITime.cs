@@ -5,20 +5,20 @@ public class UITime : MonoBehaviour
 {
     public static bool stop = false;
 
-    public AudioClip clipHurry;
     public float countdownSpeed = 3;
     public int time = 400;
+    public int hurryTime = 100;
 
-    private AudioSource audioEnvironment;
+    private Environment environment;
     private PlayerDeath playerDeath;
     private Text text;
     private float nextTimeInc;
     private float deltaTime = 0;
-    private bool lowTime = false;
+    private bool hurryTimeSwitch = false;
 
     private void Awake()
     {
-        audioEnvironment = GameObject.FindGameObjectWithTag("Environment").GetComponent<AudioSource>();
+        environment = GameObject.FindGameObjectWithTag("Environment").GetComponent<Environment>();
         playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
         text = GetComponent<Text>();
         nextTimeInc = 1 / countdownSpeed;
@@ -57,12 +57,10 @@ public class UITime : MonoBehaviour
 
     void HurryMusic()
     {
-        if (time <= 100 && lowTime == false)
+        if (time <= hurryTime && hurryTimeSwitch == false)
         {
-            lowTime = true;
-            audioEnvironment.Stop();
-            audioEnvironment.clip = clipHurry;
-            audioEnvironment.Play();
+            hurryTimeSwitch = true;
+            environment.PlayHurry(true);
         }
     }
 

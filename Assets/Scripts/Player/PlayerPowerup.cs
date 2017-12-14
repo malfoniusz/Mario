@@ -12,7 +12,7 @@ public class PlayerPowerup : MonoBehaviour
     public int level = 1;   // 1 - mario, 2 - bigMario, 3 - fireMario
 
     private PlayerDeath playerDeath;
-    private const float INVINCIBILITY_DURATION = 2.5f;
+    private float powerdownInvDur = 2.5f;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
@@ -75,10 +75,10 @@ public class PlayerPowerup : MonoBehaviour
             jumpAudio.clip = jumpClip;
         }
 
-        StartCoroutine(Invincibility(INVINCIBILITY_DURATION));
+        StartCoroutine(PowerdownInvincibility(powerdownInvDur));
     }
     
-    private IEnumerator Invincibility(float sec)
+    private IEnumerator PowerdownInvincibility(float sec)
     {
         Color trans = spriteRenderer.color;
 

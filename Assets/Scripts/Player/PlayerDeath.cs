@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public AudioSource deathAudio;
+    public AudioClip deathClip;
 
+    private Environment environment;
     private GameController gameController;
     private GameObject parent;
     private Animator anim;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
-    private bool playerDied = false;
 
     void Awake()
     {
+        environment = GameObject.FindGameObjectWithTag("Environment").GetComponent<Environment>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         parent = transform.parent.gameObject;
         anim = parent.GetComponent<Animator>();
@@ -20,29 +22,25 @@ public class PlayerDeath : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    void Update()
-    {
-        if (playerDied && deathAudio.isPlaying == false)
-        {
-            gameController.PlayerDied();
-        }
-    }
-
     public void Die()
     {
-        if (playerDied == false)
-        {
-            playerDied = true;
+        gameController.StopGame(false);
+        rb.isKinematic = true;
+        boxCollider.enabled = false;
 
-            gameController.StopGame(true);
-            rb.isKinematic = true;
-            boxCollider.enabled = false;
+        anim.speed = 1;
+        anim.SetBool("IsJumping", false);
+        anim.SetTrigger("IsDead");
+        environment.PlayDeath(true);
 
-            anim.speed = 1;
-            anim.SetBool("IsJumping", false);
-            anim.SetTrigger("IsDead");
-            deathAudio.Play();
-        }
+        StartCoroutine(endGame(deathClip.length));
+    }
+
+    private IEnumerator endGame(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        gameController.PlayerDied();
     }
 
 }

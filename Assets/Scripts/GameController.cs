@@ -6,8 +6,8 @@ public class GameController : MonoBehaviour
 {
     public bool quickStart = false;
 
-    private GameObject environment;
-    private AudioSource environmentAudio;
+    private GameObject environmentObject;
+    private Environment environment;
     private AudioSource audioGameOver;
     private GameObject player;
     private PlayerMovement playerMovement;
@@ -17,8 +17,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        environment = GameObject.FindGameObjectWithTag("Environment");
-        environmentAudio = environment.GetComponent<AudioSource>();
+        environmentObject = GameObject.FindGameObjectWithTag("Environment");
+        environment = environmentObject.GetComponent<Environment>();
         audioGameOver = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
@@ -57,18 +57,17 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        
     }
 
     void ShowLevel()
     {
-        environment.SetActive(true);
+        environmentObject.SetActive(true);
         player.SetActive(true);
     }
 
     void HideLevel()
     {
-        environment.SetActive(false);
+        environmentObject.SetActive(false);
         player.SetActive(false);
     }
 
@@ -107,7 +106,7 @@ public class GameController : MonoBehaviour
         UITime.stop = true;
         playerMovement.Stop(true);
         PlayerFireball.Stop(true);
-        if (pauseMusic) environmentAudio.Pause();
+        if (pauseMusic) environment.PauseCurrentMusic();
     }
 
     public void ResumeGame(bool unPauseMusic)
@@ -116,7 +115,7 @@ public class GameController : MonoBehaviour
         UITime.stop = false;
         playerMovement.Stop(false);
         PlayerFireball.Stop(false);
-        if (unPauseMusic) environmentAudio.UnPause();
+        if (unPauseMusic) environment.PlayCurrentMusic();
     }
 
     IEnumerator RestartGame(float seconds)

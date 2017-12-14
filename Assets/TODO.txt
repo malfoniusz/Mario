@@ -2,13 +2,15 @@
 - bug - czasami są dziwne kolizje - zmienić collidery bloków na boxCollider i sprawdzić (poprzez obserwacje przeciwników), czy wszystko działa dobrze
 - bug - czasami animacja rośnięcia Maria jest przyspieszona - sprawdzić kontrole parametru anim.speed w PlayerMovement i PlayerPowerup
 - bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
+- refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów i layer'ów - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów i layer'ów i sprawdzić czy gra dalej dobrze działa
+- refaktoryzacja - zmienić ustawienie edytora, aby usuwał whitespaces
+- refaktoryzacja - sprawdzić kontrole muzyki w GameController
 
 Gwiazda:
-- dźwięk dotknięcia gwiazdy (powerup) - zrobić po stronie maria (MarioInvincibility)
 - niezniszczalność (zabijanie przeciwników przez dotyk) - zrobić po stronie przeciwników
 - animacja maria kiedy jest niezniszczalny (dla wszystkich trzech jego poziomów)
 - zmiana muzyki - 2-3 sekundy przed wygaśnięciem niezniszczalności, przywrócić normalną muzykę i zwolnić animacje niezniszczalności
-- wstawić blok w odpowiednie miejsca
+- wstawić bloki z gwiazdą w odpowiednie miejsca
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów

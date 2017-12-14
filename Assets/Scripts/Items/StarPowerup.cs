@@ -6,6 +6,7 @@ public class StarPowerup : Mushroom
     public float jumpStrength = 260f;
     public float gravityScale = 0.5f;
 
+    private PlayerInvincibility playerInv;
     private bool feltFromBlock = false;
     private bool grounded = true;
 
@@ -14,6 +15,7 @@ public class StarPowerup : Mushroom
         base.Awake();
 
         rb.gravityScale = gravityScale;
+        playerInv = player.GetComponent<PlayerInvincibility>();
     }
 
     private void Update()
@@ -48,15 +50,9 @@ public class StarPowerup : Mushroom
 
     protected override void CollisionBehaviour()
     {
-        GrantInvincibility();
-
+        playerInv.Invincibility();
         SpawnPoints();
         Destroy(gameObject);
-    }
-
-    private void GrantInvincibility()
-    {
-        // TODO: uzupelnic
     }
 
 }
