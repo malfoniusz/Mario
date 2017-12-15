@@ -1,14 +1,15 @@
 ﻿
+- bug - chodzienie przyspiesza animacje co źle wygląda dla niezniszczalności - spróbować to zmienić np. zamiast przyspieszać animacje zmniejszyć jej loop time
+- refaktoryzacja - podmienić sprity z Mario.png na MarioColors.png i zmienić nazwe z MarioColors.png na Mario.png
 - bug - czasami są dziwne kolizje - zmienić collidery bloków na boxCollider i sprawdzić (poprzez obserwacje przeciwników), czy wszystko działa dobrze
 - bug - czasami animacja rośnięcia Maria jest przyspieszona - sprawdzić kontrole parametru anim.speed w PlayerMovement i PlayerPowerup
 - bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
-- refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów i layer'ów - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów i layer'ów i sprawdzić czy gra dalej dobrze działa
+- refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
 - refaktoryzacja - zmienić ustawienie edytora, aby usuwał whitespaces
 - refaktoryzacja - sprawdzić kontrole muzyki w GameController
-- refaktoryzacja - podmienić sprity z Mario.png na MarioColors.png i zmienić nazwe z MarioColors.png na Mario.png
 
 Gwiazda:
-- animacja maria kiedy jest niezniszczalny (dla wszystkich trzech jego poziomów)
+- pod koniec niezniszczalności zmniejszyć prędkość animacji (najlepiej nie przez anim.speed, zmniejszyć loop lub coś)
 - wstawić bloki z gwiazdą w odpowiednie miejsca
 
 Wygrana:
@@ -36,6 +37,9 @@ Menu główne:
 - opcja rozpoczęcia gry
 - opcja wyjścia z gry
 - kursor
+
+Dodatkowe:
+- pauzowanie gry
 
 Porządki:
 - odblokuj ekran startu poziomu

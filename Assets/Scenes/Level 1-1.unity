@@ -10678,6 +10678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ba3d481c4132449b465d9bcfe084c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 148816463}
   audioPowerup: {fileID: 579763861}
   invDuration: 10
   invCloseToEndTime: 2

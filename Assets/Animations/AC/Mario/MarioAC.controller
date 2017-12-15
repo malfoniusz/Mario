@@ -13,43 +13,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsTurning
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsDead
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Powerup
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Powerdown
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: FireballShot
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -62,6 +62,57 @@ AnimatorController:
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: Invincibility
+    m_StateMachine: {fileID: 1107024449762111092}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102262594109180600}
+      m_Motion: {fileID: 7400000, guid: 373c1d6dd83ee7647a4bdca70a00fd8f, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102765285969711110}
+      m_Motion: {fileID: 7400000, guid: cb766de2e29d42b4088a7cc52c14624e, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102442531387025476}
+      m_Motion: {fileID: 7400000, guid: 4affe466322698d4896b49d1b8af5f24, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102194888945618284}
+      m_Motion: {fileID: 7400000, guid: 99c7b9f63f1bb57488cb6e326bece18b, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102256653027261842}
+      m_Motion: {fileID: 7400000, guid: c5a488848f944764a8460c00bf163457, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102432816280925036}
+      m_Motion: {fileID: 7400000, guid: 8ba2f62407e2d8644b9ca1a0c968fc85, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102792823681393882}
+      m_Motion: {fileID: 7400000, guid: c61fc880eeb254049a4a2bc86c0f8f77, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102714830878256806}
+      m_Motion: {fileID: 7400000, guid: d44025ac0fb3b4d4bae40d540f5a9944, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102859591094086120}
+      m_Motion: {fileID: 7400000, guid: c5a488848f944764a8460c00bf163457, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102808555974943926}
+      m_Motion: {fileID: 7400000, guid: 8ba2f62407e2d8644b9ca1a0c968fc85, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102419229768773498}
+      m_Motion: {fileID: 7400000, guid: c61fc880eeb254049a4a2bc86c0f8f77, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102045701792498634}
+      m_Motion: {fileID: 7400000, guid: d44025ac0fb3b4d4bae40d540f5a9944, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102222331679685586}
+      m_Motion: {fileID: 7400000, guid: cde27d9e715aa0548b70dd9b6b422409, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 0
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 1
     m_Controller: {fileID: 9100000}
 --- !u!206 &206669338603611838
 BlendTree:
@@ -145,6 +196,27 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.9
   m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1101031932640793858
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 1107518781858499036}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.9
+  m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -451,6 +523,27 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.9
   m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1101299368261511216
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.1
+  m_TransitionOffset: 0
+  m_ExitTime: 0.9
+  m_HasExitTime: 1
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1813,6 +1906,27 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
+--- !u!1107 &1107024449762111092
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Invincibility
+  m_ChildStates: []
+  m_ChildStateMachines:
+  - serializedVersion: 1
+    m_StateMachine: {fileID: 1107508586129964136}
+    m_Position: {x: 0, y: 36, z: 0}
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 24, y: -72, z: 0}
+  m_EntryPosition: {x: 24, y: -36, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &1107140101380916830
 AnimatorStateMachine:
   serializedVersion: 5
@@ -1940,6 +2054,24 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 204, y: -84, z: 0}
   m_ParentStateMachinePosition: {x: 252, y: 84, z: 0}
   m_DefaultState: {fileID: 1102256653027261842}
+--- !u!1107 &1107508586129964136
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SmallInvincible
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 48, y: 72, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &1107518781858499036
 AnimatorStateMachine:
   serializedVersion: 5

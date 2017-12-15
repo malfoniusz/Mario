@@ -3,16 +3,19 @@ using System.Collections;
 
 public class PlayerInvincibility : MonoBehaviour
 {
+    public Animator anim;
     public AudioSource audioPowerup;
     public float invDuration = 10f;
     public float invCloseToEndTime = 2f;
 
     private Environment environment;
+    private int animInvLayerIndex;
     private bool invincible = false;
 
     private void Awake()
     {
         environment = GameObject.FindGameObjectWithTag("Environment").GetComponent<Environment>();
+        animInvLayerIndex = anim.GetLayerIndex("Invincibility");
     }
 
     public void Invincibility()
@@ -24,7 +27,7 @@ public class PlayerInvincibility : MonoBehaviour
     {
         audioPowerup.Play();
         environment.PlayInvincibility(true);
-        // Start animation
+        anim.SetLayerWeight(animInvLayerIndex, 1);
         invincible = true;
 
         yield return new WaitForSeconds(invDuration - invCloseToEndTime);
@@ -34,7 +37,7 @@ public class PlayerInvincibility : MonoBehaviour
 
         yield return new WaitForSeconds(invCloseToEndTime);
 
-        // End animation
+        anim.SetLayerWeight(animInvLayerIndex, 0);
         invincible = false;
     }
 
