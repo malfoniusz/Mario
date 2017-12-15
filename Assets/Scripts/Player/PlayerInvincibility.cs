@@ -30,6 +30,7 @@ public class PlayerInvincibility : MonoBehaviour
         yield return new WaitForSeconds(invDuration - invCloseToEndTime);
 
         environment.PlayMain(true);
+        // Zwolnienie animacji
 
         yield return new WaitForSeconds(invCloseToEndTime);
 

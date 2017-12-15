@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 70efaf66cd973a948bcb20a310191c03
-timeCreated: 1507199397
+timeCreated: 1513344648
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -173,8 +173,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6.5, y: 8}
+        - {x: -6.5, y: -8}
+        - {x: 6.5, y: -8}
+        - {x: 6.5, y: 8}
+      physicsShape:
+      - - {x: -6.5, y: 8}
+        - {x: -6.5, y: -8}
+        - {x: 6.5, y: -8}
+        - {x: 6.5, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_7
@@ -187,8 +195,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 7.5}
+        - {x: -7, y: 6.5}
+        - {x: -7, y: -7.5}
+        - {x: 6, y: -7.5}
+        - {x: 7, y: -4.5}
+        - {x: 7, y: 7.5}
+      physicsShape:
+      - - {x: -6, y: 7.5}
+        - {x: -7, y: 6.5}
+        - {x: -7, y: -7.5}
+        - {x: 6, y: -7.5}
+        - {x: 7, y: -4.5}
+        - {x: 7, y: 7.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_8
@@ -201,8 +221,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 5, y: -8}
+        - {x: 6, y: -7}
+        - {x: 6, y: 8}
+      physicsShape:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 5, y: -8}
+        - {x: 6, y: -7}
+        - {x: 6, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_9
@@ -215,8 +245,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      physicsShape:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_11
@@ -229,8 +267,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -4.5, y: 8}
+        - {x: -8.5, y: 3}
+        - {x: -8.5, y: -8}
+        - {x: 8.5, y: -8}
+        - {x: 8.5, y: 8}
+      physicsShape:
+      - - {x: -4.5, y: 8}
+        - {x: -8.5, y: 3}
+        - {x: -8.5, y: -8}
+        - {x: 8.5, y: -8}
+        - {x: 8.5, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_13
@@ -243,8 +291,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -7.5, y: 7}
+        - {x: -7.5, y: -7}
+        - {x: 7.5, y: -7}
+        - {x: 7.5, y: 7}
+      physicsShape:
+      - - {x: -7.5, y: 7}
+        - {x: -7.5, y: -7}
+        - {x: 7.5, y: -7}
+        - {x: 7.5, y: 7}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_33
@@ -257,8 +313,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_34
@@ -271,8 +339,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_35
@@ -285,8 +365,26 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_36
@@ -299,22 +397,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_37
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 104
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_38
@@ -327,8 +421,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_64
@@ -341,8 +447,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_65
@@ -355,8 +473,20 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_66
@@ -369,8 +499,26 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_67
@@ -383,8 +531,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_68
@@ -397,22 +555,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Mario_69
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 34
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -8, y: 15}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -8, y: 15}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
       tessellationDetail: 0
     - serializedVersion: 2
       name: Mario_70
@@ -425,22 +577,96 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Mario_0
+      name: Mario_1
       rect:
         serializedVersion: 2
-        x: 60
+        x: 331
         y: 172
         width: 14
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: -7, y: 8}
+        - {x: -7, y: -8}
+        - {x: 4, y: -8}
+        - {x: 7, y: -6}
+        - {x: 7, y: 8}
+      physicsShape:
+      - - {x: -7, y: 8}
+        - {x: -7, y: -8}
+        - {x: 4, y: -8}
+        - {x: 7, y: -6}
+        - {x: 7, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mario_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 104
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mario_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 34
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
       tessellationDetail: 0
     outline: []
     physicsShape: []

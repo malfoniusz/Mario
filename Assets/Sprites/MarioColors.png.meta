@@ -1,0 +1,1695 @@
+fileFormatVersion: 2
+guid: a712ba88d8d4f3946b487ef1b837ca96
+timeCreated: 1513344811
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MarioColors_1
+    21300002: MarioColors_2
+    21300004: MarioColors_3
+    21300006: MarioColors_4
+    21300008: MarioColors_5
+    21300010: MarioColors_6
+    21300012: MarioColors_22
+    21300014: MarioColors_23
+    21300016: MarioColors_24
+    21300018: MarioColors_25
+    21300020: MarioColors_26
+    21300022: MarioColors_27
+    21300024: MarioColors_75
+    21300026: MarioColors_76
+    21300028: MarioColors_77
+    21300030: MarioColors_78
+    21300032: MarioColors_79
+    21300034: MarioColors_95
+    21300036: MarioColors_96
+    21300038: MarioColors_97
+    21300040: MarioColors_98
+    21300042: MarioColors_99
+    21300044: MarioColors_100
+    21300046: MarioColors_112
+    21300048: MarioColors_113
+    21300050: MarioColors_114
+    21300052: MarioColors_115
+    21300054: MarioColors_116
+    21300056: MarioColors_132
+    21300058: MarioColors_133
+    21300060: MarioColors_134
+    21300062: MarioColors_135
+    21300064: MarioColors_136
+    21300066: MarioColors_137
+    21300068: MarioColors_148
+    21300070: MarioColors_149
+    21300072: MarioColors_150
+    21300074: MarioColors_151
+    21300076: MarioColors_152
+    21300078: MarioColors_168
+    21300080: MarioColors_169
+    21300082: MarioColors_170
+    21300084: MarioColors_171
+    21300086: MarioColors_172
+    21300088: MarioColors_173
+    21300090: MarioColors_175
+    21300092: MarioColors_184
+    21300094: MarioColors_185
+    21300096: MarioColors_186
+    21300098: MarioColors_187
+    21300100: MarioColors_188
+    21300102: MarioColors_204
+    21300104: MarioColors_205
+    21300106: MarioColors_206
+    21300108: MarioColors_207
+    21300110: MarioColors_208
+    21300112: MarioColors_209
+    21300114: MarioColors_260
+    21300116: MarioColors_0
+    21300118: MarioColors_7
+    21300120: MarioColors_8
+    21300122: MarioColors_9
+    21300124: MarioColors_10
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MarioColors_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 654
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 654
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_5
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 654
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_6
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 654
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_22
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 637
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: 8}
+      physicsShape:
+      - - {x: -4.5, y: 10}
+        - {x: -7.5, y: 1}
+        - {x: -7.5, y: -10}
+        - {x: 7.5, y: -10}
+        - {x: 7.5, y: 10}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_23
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 637
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      physicsShape:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_24
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 637
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_25
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 637
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      physicsShape:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_26
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 637
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_27
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 637
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      physicsShape:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_75
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 526
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_76
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 526
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_77
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 526
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_78
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 526
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_79
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 526
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_95
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 509
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: 8}
+      physicsShape:
+      - - {x: -4.5, y: 10}
+        - {x: -7.5, y: 1}
+        - {x: -7.5, y: -10}
+        - {x: 7.5, y: -10}
+        - {x: 7.5, y: 10}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_96
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 509
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      physicsShape:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_97
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 509
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_98
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 509
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      physicsShape:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_99
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 509
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_100
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 509
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      physicsShape:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_112
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 463
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_113
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 463
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_114
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 463
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_115
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 463
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_116
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 463
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_132
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 446
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: 8}
+      physicsShape:
+      - - {x: -4.5, y: 10}
+        - {x: -7.5, y: 1}
+        - {x: -7.5, y: -10}
+        - {x: 7.5, y: -10}
+        - {x: 7.5, y: 10}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_133
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 446
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      physicsShape:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_134
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 446
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_135
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 446
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      physicsShape:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_136
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 446
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_137
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 446
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      physicsShape:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_148
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 400
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_149
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 400
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_150
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 400
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_151
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 400
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_152
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 400
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_168
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 383
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: 8}
+      physicsShape:
+      - - {x: -4.5, y: 10}
+        - {x: -7.5, y: 1}
+        - {x: -7.5, y: -10}
+        - {x: 7.5, y: -10}
+        - {x: 7.5, y: 10}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_169
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 383
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      physicsShape:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_170
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 383
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_171
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 383
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      physicsShape:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_172
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 383
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_173
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 383
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      physicsShape:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_175
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 383
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 8}
+        - {x: -6.5, y: -8}
+        - {x: 6.5, y: -8}
+        - {x: 6.5, y: 5}
+        - {x: 4.5, y: 8}
+      physicsShape:
+      - - {x: -6.5, y: 8}
+        - {x: -6.5, y: -8}
+        - {x: 6.5, y: -8}
+        - {x: 6.5, y: 5}
+        - {x: 4.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_184
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 337
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_185
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 337
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      physicsShape:
+      - - {x: -6, y: 15.5}
+        - {x: -7, y: 13.5}
+        - {x: -7, y: -10.5}
+        - {x: -6, y: -14.5}
+        - {x: -5, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 7, y: -11.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_186
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 337
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 14}
+        - {x: 6, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_187
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 337
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -15}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -9}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_188
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 337
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -5, y: 16}
+        - {x: -8, y: 11}
+        - {x: -8, y: -16}
+        - {x: 2, y: -16}
+        - {x: 8, y: -14}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_204
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 320
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -6, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: 8}
+      physicsShape:
+      - - {x: -4.5, y: 10}
+        - {x: -7.5, y: 1}
+        - {x: -7.5, y: -10}
+        - {x: 7.5, y: -10}
+        - {x: 7.5, y: 10}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_205
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 320
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      physicsShape:
+      - - {x: -6.5, y: 7.5}
+        - {x: -6.5, y: -7.5}
+        - {x: 5.5, y: -7.5}
+        - {x: 6.5, y: -6.5}
+        - {x: 6.5, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_206
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 320
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -5.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 5.5, y: -7}
+        - {x: 5.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_207
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 320
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      physicsShape:
+      - - {x: -7.5, y: 8}
+        - {x: -7.5, y: -8}
+        - {x: 7.5, y: -8}
+        - {x: 7.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_208
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 320
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      physicsShape:
+      - - {x: -5.5, y: 8}
+        - {x: -6.5, y: 7}
+        - {x: -6.5, y: -8}
+        - {x: 4.5, y: -8}
+        - {x: 6.5, y: -6}
+        - {x: 6.5, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_209
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 320
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      physicsShape:
+      - - {x: -4, y: 8}
+        - {x: -8, y: 3}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_0
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 639
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 7}
+        - {x: -7, y: -7}
+        - {x: 7, y: -7}
+        - {x: 7, y: 7}
+      physicsShape:
+      - - {x: -7, y: 7}
+        - {x: -7, y: -7}
+        - {x: 7, y: -7}
+        - {x: 7, y: 7}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 526
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 463
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 400
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 337
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      physicsShape:
+      - - {x: -6, y: 16}
+        - {x: -8, y: 13}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 15}
+        - {x: 7, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 654
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 7.9197845, y: 16}
+      physicsShape:
+      - - {x: -8, y: 16}
+        - {x: -8, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 16}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: MarioColors_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 654
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15}
+        - {x: -8, y: 11}
+        - {x: -8, y: -15}
+        - {x: 8, y: -15}
+        - {x: 8, y: 15}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
