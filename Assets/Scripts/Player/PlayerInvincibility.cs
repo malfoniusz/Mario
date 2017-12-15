@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerInvincibility : MonoBehaviour
 {
     public AudioSource audioPowerup;
-    public float invDuration = 12f;
+    public float invDuration = 10f;
+    public float invCloseToEndTime = 2f;
 
     private Environment environment;
     private bool invincible = false;
@@ -16,26 +17,23 @@ public class PlayerInvincibility : MonoBehaviour
 
     public void Invincibility()
     {
-        StartCoroutine(InvincibilityMain(invDuration));
+        StartCoroutine(InvincibilityMain());
     }
 
-    private IEnumerator InvincibilityMain(float seconds)
-    {
-        StartInvincibility();
-        yield return new WaitForSeconds(seconds);
-        EndInvincibility();
-    }
-
-    private void StartInvincibility()
+    private IEnumerator InvincibilityMain()
     {
         audioPowerup.Play();
         environment.PlayInvincibility(true);
+        // Start animation
         invincible = true;
-    }
 
-    private void EndInvincibility()
-    {
+        yield return new WaitForSeconds(invDuration - invCloseToEndTime);
+
         environment.PlayMain(true);
+
+        yield return new WaitForSeconds(invCloseToEndTime);
+
+        // End animation
         invincible = false;
     }
 
