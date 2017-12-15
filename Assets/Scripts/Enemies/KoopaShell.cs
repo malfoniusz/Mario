@@ -29,7 +29,8 @@ public class KoopaShell : Enemy
     {
         audioKick.Play();
 
-        if (Mathf.Abs(rb.velocity.x) < MINIMAL_VELOCITY)
+        bool notMoving = (Mathf.Abs(rb.velocity.x) < MINIMAL_VELOCITY);
+        if (notMoving)
         {
             int direction = (int) Mathf.Sign(transform.position.x - player.transform.position.x);
             rb.velocity = new Vector2(direction * speed, rb.velocity.y);
@@ -40,20 +41,27 @@ public class KoopaShell : Enemy
         }
         else
         {
-            base.CollisionEnter(collision);
+            base.CollisionEnter(collision); // Shell stomped
         }
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && rb.velocity.x > MINIMAL_VELOCITY && !stopMultipleTriggers)
+        EnemyHitByShell(collision);
+    }
+
+    private void EnemyHitByShell(Collider2D collision)
+    {
+        bool shellHitsEnemy = (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && rb.velocity.x > MINIMAL_VELOCITY);
+        if (shellHitsEnemy && !stopMultipleTriggers)
         {
             stopMultipleTriggers = true;
 
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            float hitDirection = Mathf.Sign(collision.gameObject.transform.position.y - transform.position.y);
+
+            Transform playerT = collision.gameObject.transform;
+            float hitDirection = Direction.HitDirection(playerT, transform);
             enemy.HitByFireball(hitDirection);
         }
     }

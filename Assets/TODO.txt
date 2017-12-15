@@ -7,9 +7,8 @@
 - refaktoryzacja - sprawdzić kontrole muzyki w GameController
 
 Gwiazda:
-- niezniszczalność (zabijanie przeciwników przez dotyk) - zrobić po stronie przeciwników
-- animacja maria kiedy jest niezniszczalny (dla wszystkich trzech jego poziomów)
 - zmiana muzyki - 2-3 sekundy przed wygaśnięciem niezniszczalności, przywrócić normalną muzykę i zwolnić animacje niezniszczalności
+- animacja maria kiedy jest niezniszczalny (dla wszystkich trzech jego poziomów)
 - wstawić bloki z gwiazdą w odpowiednie miejsca
 
 Wygrana:

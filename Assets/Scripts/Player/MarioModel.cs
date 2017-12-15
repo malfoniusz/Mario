@@ -42,7 +42,7 @@ public class MarioModel : MonoBehaviour
 
     public void UpdateModel()
     {
-        int level = playerPowerup.level;
+        int level = playerPowerup.GetLevel();
         if (level == 1)
         {
             UpdateModelBehaviour(marioCollider, marioGroundChecks, marioTopChecks);

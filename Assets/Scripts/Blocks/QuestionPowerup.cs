@@ -21,7 +21,7 @@ public class QuestionPowerup : SolidIfHit
 
     private void SpawnPowerup()
     {
-        if (playerPowerup.level == 1) Instantiate(mushroom, transform.position, Quaternion.identity);
+        if (playerPowerup.GetLevel() == 1) Instantiate(mushroom, transform.position, Quaternion.identity);
         else Instantiate(fireFlower, transform.position, Quaternion.identity);
     }
 

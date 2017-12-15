@@ -21,7 +21,7 @@ public class PlayerFireball : MonoBehaviour
             return;
         }
 
-        if (playerPowerup.level == 3 && Input.GetButtonDown("Run") && Fireball.numberOfFireballs < Fireball.MAX_FIREBALLS)
+        if (playerPowerup.GetLevel() == 3 && Input.GetButtonDown("Run") && Fireball.numberOfFireballs < Fireball.MAX_FIREBALLS)
         {
             Instantiate(fireball, fireballSpawn.transform.position, Quaternion.identity);
             anim.SetTrigger("FireballShot");

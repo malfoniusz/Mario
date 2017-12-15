@@ -9,8 +9,8 @@ public class PlayerPowerup : MonoBehaviour
     public AudioSource jumpAudio;
     public AudioSource powerupAudio;
     public AudioSource powerdownAudio;
-    public int level = 1;   // 1 - mario, 2 - bigMario, 3 - fireMario
 
+    private int level = 1;   // 1 - mario, 2 - bigMario, 3 - fireMario
     private PlayerDeath playerDeath;
     private float powerdownInvDur = 2.5f;
     private SpriteRenderer spriteRenderer;
@@ -91,6 +91,11 @@ public class PlayerPowerup : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
         trans.a = 1f;
         spriteRenderer.color = trans;
+    }
+
+    public int GetLevel()
+    {
+        return level;
     }
 
 }

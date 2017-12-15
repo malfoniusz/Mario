@@ -39,4 +39,9 @@ public class PlayerInvincibility : MonoBehaviour
         invincible = false;
     }
 
+    public bool GetInvincible()
+    {
+        return invincible;
+    }
+
 }

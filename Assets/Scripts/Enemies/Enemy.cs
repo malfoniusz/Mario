@@ -9,6 +9,7 @@ public class Enemy : Moving
     public float bounceHeight = 200;
 
     protected PlayerPowerup playerPowerup;
+    protected PlayerInvincibility playerInv;
     protected float time = 0;
 
     private const float COLLISION_ERROR = 3f;
@@ -21,6 +22,7 @@ public class Enemy : Moving
     {
         base.Awake();
         playerPowerup = player.GetComponent<PlayerPowerup>();
+        playerInv = player.GetComponent<PlayerInvincibility>();
     }
 
     protected override void Start()
@@ -57,12 +59,29 @@ public class Enemy : Moving
         }
     }
 
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (playerInv.GetInvincible())  HitByInvPlayer(collision);
+            else                            CollisionEnter(collision);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && time > PLAYER_IMMUNITY_DURATION)
+        if (collision.gameObject.tag == "Player")
         {
-            EnemyHittingPlayer();
+            if (playerInv.GetInvincible())              HitByInvPlayer(collision);
+            else if (time > PLAYER_IMMUNITY_DURATION)   EnemyHittingPlayer();
         }
+    }
+
+    protected void HitByInvPlayer(Collider2D playerCollider)
+    {
+        Transform playerT = playerCollider.gameObject.transform;
+        float hitDirection = Direction.HitDirection(playerT, transform);
+        HitByFireball(hitDirection);
     }
 
     public void HitByFireball(float fallDirection)
