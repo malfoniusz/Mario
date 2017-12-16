@@ -1,20 +1,10 @@
 ﻿
-- refaktoryzacja - podmienić sprity z Mario.png na MarioColors.png i zmienić nazwe z MarioColors.png na Mario.png
-
 - bug - podczas niezniszczalności - animacja chodzenia jest przyspieszona, co dziwnie wygląda gdy niezniszczalność się kończy
 - bug - czasami są dziwne kolizje o kanty - zmienić collidery bloków na boxCollider i sprawdzić (poprzez obserwacje przeciwników), czy wszystko działa dobrze
 - bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
 - refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
 - refaktoryzacja - zmienić ustawienie edytora, aby usuwał whitespaces
 - refaktoryzacja - sprawdzić kontrole muzyki w GameController
-
-Wygrana:
-- wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
-- interakcja z flagą (animacja flagi (record animation), dźwięk, punkty i ich wywindowanie do góry)
-- pójście bohatera do zamku
-- muzyka zwycięstwa
-- zamiana czasu na punkty + dźwięk
-- ekran + wczytanie następnego poziomu
 
 Podziemie:
 - przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety
@@ -27,6 +17,14 @@ Podziemie:
 - wejście do rury za pomocą strzałki w prawo
 - wyniesienie gracza z podziemia
 - animacja wyjścia z rury (w góre) + dźwięk + zablokowanie ruchu gracza
+
+Wygrana:
+- wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
+- interakcja z flagą (animacja flagi (record animation), dźwięk, punkty i ich wywindowanie do góry)
+- pójście bohatera do zamku
+- muzyka zwycięstwa
+- zamiana czasu na punkty + dźwięk
+- ekran + wczytanie następnego poziomu
 
 Menu główne:
 - przygotowanie części wizualnej
