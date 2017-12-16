@@ -47,7 +47,6 @@ public class PlayerPowerup : MonoBehaviour
     {
         level = newLevel;
         anim.SetTrigger("Powerup");
-        anim.speed = 1;
         jumpAudio.clip = bigJumpClip;
     }
 
@@ -67,7 +66,6 @@ public class PlayerPowerup : MonoBehaviour
     {
         level--;
         anim.SetTrigger("Powerdown");
-        anim.speed = 1;
         powerdownAudio.Play();
 
         if (level == 1)

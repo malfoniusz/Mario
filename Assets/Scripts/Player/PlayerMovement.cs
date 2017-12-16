@@ -198,16 +198,16 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = Mathf.Abs(rb.velocity.x) > minimalVelocity ? true : false;
         anim.SetBool("IsWalking", isWalking);
 
-        AnimationSpeed();
+        WalkAnimationSpeed();
     }
 
-    void AnimationSpeed()
+    void WalkAnimationSpeed()
     {
         float curSpeed = Mathf.Abs(rb.velocity.x);
-        float animSpeed = 1;
-        animSpeed += Mathf.InverseLerp(0, maxWalkSpeed, curSpeed);
-        animSpeed += Mathf.InverseLerp(maxWalkSpeed, maxRunSpeed, curSpeed);
-        anim.speed = animSpeed;
+        float walkMultiplier = 1;
+        walkMultiplier += (Mathf.InverseLerp(0, maxRunSpeed, curSpeed) * 2);
+
+        anim.SetFloat("WalkSpeedMultiplier", walkMultiplier);
     }
 
     void LeftCameraBoundary()

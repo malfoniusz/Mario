@@ -28,7 +28,6 @@ public class PlayerDeath : MonoBehaviour
         rb.isKinematic = true;
         boxCollider.enabled = false;
 
-        anim.speed = 1;
         anim.SetBool("IsJumping", false);
         anim.SetTrigger("IsDead");
         environment.PlayDeath(true);
