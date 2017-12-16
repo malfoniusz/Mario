@@ -1,15 +1,12 @@
 ﻿
 - refaktoryzacja - podmienić sprity z Mario.png na MarioColors.png i zmienić nazwe z MarioColors.png na Mario.png
 
-- bug - czasami są dziwne kolizje - zmienić collidery bloków na boxCollider i sprawdzić (poprzez obserwacje przeciwników), czy wszystko działa dobrze
+- bug - podczas niezniszczalności - animacja chodzenia jest przyspieszona, co dziwnie wygląda gdy niezniszczalność się kończy
+- bug - czasami są dziwne kolizje o kanty - zmienić collidery bloków na boxCollider i sprawdzić (poprzez obserwacje przeciwników), czy wszystko działa dobrze
 - bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
 - refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
 - refaktoryzacja - zmienić ustawienie edytora, aby usuwał whitespaces
 - refaktoryzacja - sprawdzić kontrole muzyki w GameController
-
-Gwiazda:
-- pod koniec niezniszczalności zmniejszyć prędkość animacji (najlepiej nie przez anim.speed, zmniejszyć loop lub coś)
-- wstawić bloki z gwiazdą w odpowiednie miejsca
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
