@@ -36,11 +36,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300052, guid: a712ba88d8d4f3946b487ef1b837ca96, type: 3}
-    - time: 0.05
+    - time: 0.083333336
       value: {fileID: 21300074, guid: a712ba88d8d4f3946b487ef1b837ca96, type: 3}
     - time: 0.1
       value: {fileID: 21300098, guid: a712ba88d8d4f3946b487ef1b837ca96, type: 3}
-    - time: 0.15
+    - time: 0.16666667
       value: {fileID: 21300052, guid: a712ba88d8d4f3946b487ef1b837ca96, type: 3}
     attribute: m_Sprite
     path: Mario
@@ -77,7 +77,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 0.18333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
