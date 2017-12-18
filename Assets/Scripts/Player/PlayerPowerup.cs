@@ -75,7 +75,7 @@ public class PlayerPowerup : MonoBehaviour
 
         StartCoroutine(PowerdownInvincibility(powerdownInvDur));
     }
-    
+
     private IEnumerator PowerdownInvincibility(float sec)
     {
         Color trans = spriteRenderer.color;
