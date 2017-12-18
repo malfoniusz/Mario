@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4006226624272978}
   - component: {fileID: 212556134424129490}
-  - component: {fileID: 60504316135897926}
+  - component: {fileID: 61738592128247018}
   m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
@@ -41,8 +41,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60504316135897926
-PolygonCollider2D:
+--- !u!61 &61738592128247018
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -63,16 +63,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -7, y: 8}
-      - {x: -8, y: 7}
-      - {x: -8, y: -7}
-      - {x: -7, y: -8}
-      - {x: 7, y: -8}
-      - {x: 8, y: -7}
-      - {x: 8, y: 7}
-      - {x: 7, y: 8}
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16}
+  m_EdgeRadius: 0
 --- !u!212 &212556134424129490
 SpriteRenderer:
   m_ObjectHideFlags: 1

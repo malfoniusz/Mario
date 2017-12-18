@@ -21,7 +21,7 @@ public class KoopaShell : Enemy
     {
         if (moving)
         {
-            ChangeDirection();
+            base.MovingBehaviour();
         }
     }
 

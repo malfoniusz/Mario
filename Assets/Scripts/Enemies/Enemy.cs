@@ -43,7 +43,7 @@ public class Enemy : Moving
         }
         else
         {
-            ChangeDirection();
+            base.MovingBehaviour();
         }
     }
 

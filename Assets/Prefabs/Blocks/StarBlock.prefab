@@ -65,7 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108345875473016}
   - component: {fileID: 212878962994814596}
-  - component: {fileID: 60046383931825202}
+  - component: {fileID: 61770333798859468}
   - component: {fileID: 114036860394074402}
   m_Layer: 8
   m_Name: StarBlock
@@ -129,8 +129,8 @@ Transform:
   m_Father: {fileID: 4108345875473016}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60046383931825202
-PolygonCollider2D:
+--- !u!61 &61770333798859468
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -151,16 +151,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -7, y: 8}
-      - {x: -8, y: 7}
-      - {x: -8, y: -7}
-      - {x: -7, y: -8}
-      - {x: 7, y: -8}
-      - {x: 8, y: -7}
-      - {x: 8, y: 7}
-      - {x: 7, y: 8}
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16}
+  m_EdgeRadius: 0
 --- !u!114 &114036860394074402
 MonoBehaviour:
   m_ObjectHideFlags: 1

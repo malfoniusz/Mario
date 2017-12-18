@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4059772098288230}
   - component: {fileID: 95853894704728112}
   - component: {fileID: 212152085807799624}
-  - component: {fileID: 60920658068459752}
+  - component: {fileID: 61045637784983688}
   - component: {fileID: 114452882535777284}
   m_Layer: 8
   m_Name: QuestionBlock
@@ -159,8 +159,8 @@ Transform:
   m_Father: {fileID: 4059772098288230}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60920658068459752
-PolygonCollider2D:
+--- !u!61 &61045637784983688
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -181,16 +181,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -7, y: 8}
-      - {x: -8, y: 7}
-      - {x: -8, y: -7}
-      - {x: -7, y: -8}
-      - {x: 7, y: -8}
-      - {x: 8, y: -7}
-      - {x: 8, y: 7}
-      - {x: 7, y: 8}
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16}
+  m_EdgeRadius: 0
 --- !u!95 &95853894704728112
 Animator:
   serializedVersion: 3

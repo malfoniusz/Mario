@@ -28,7 +28,7 @@ public class Mushroom : Moving
     protected override void MovingBehaviour()
     {
         if (appearAnim) PowerupAppear();
-        else            ChangeDirection();
+        else            base.MovingBehaviour();
     }
 
     private void PowerupAppear()

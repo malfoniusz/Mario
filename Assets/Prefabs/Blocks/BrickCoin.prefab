@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4059772098288230}
   - component: {fileID: 212723698379549928}
-  - component: {fileID: 60496215142899458}
+  - component: {fileID: 61447213847598044}
   - component: {fileID: 82064419689109694}
   - component: {fileID: 114526697612443732}
   m_Layer: 8
@@ -159,8 +159,8 @@ Transform:
   m_Father: {fileID: 4059772098288230}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60496215142899458
-PolygonCollider2D:
+--- !u!61 &61447213847598044
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -181,16 +181,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -7, y: 8}
-      - {x: -8, y: 7}
-      - {x: -8, y: -7}
-      - {x: -7, y: -8}
-      - {x: 7, y: -8}
-      - {x: 8, y: -7}
-      - {x: 8, y: 7}
-      - {x: 7, y: 8}
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16}
+  m_EdgeRadius: 0
 --- !u!82 &82064419689109694
 AudioSource:
   m_ObjectHideFlags: 1

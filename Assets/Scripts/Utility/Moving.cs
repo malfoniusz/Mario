@@ -91,6 +91,7 @@ public class Moving : MonoBehaviour
 
     protected virtual void MovingBehaviour()
     {
+        MaxSpeed();
         ChangeDirection();
     }
 
@@ -112,6 +113,14 @@ public class Moving : MonoBehaviour
     protected void UpdateVelocity()
     {
         rb.velocity = new Vector2(direction * speed, rb.velocity.y);
+    }
+
+    private void MaxSpeed()
+    {
+        if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(speed))
+        {
+            UpdateVelocity();
+        }
     }
 
 }

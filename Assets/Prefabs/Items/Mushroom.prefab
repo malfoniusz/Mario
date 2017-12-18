@@ -88,8 +88,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Size: {x: 12, y: 12}
+  m_EdgeRadius: 2
 --- !u!61 &61984094353993384
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e31af80eb27b264095dcec5f1595028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   objectCollider: {fileID: 61984094353993384}
   triggerCollider: {fileID: 61330171363678004}
   anim: {fileID: 0}
