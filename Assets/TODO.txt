@@ -4,7 +4,6 @@
 - bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
 - refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
 - refaktoryzacja - zmienić ustawienie edytora, aby usuwał whitespaces
-- refaktoryzacja - sprawdzić kontrole muzyki w GameController
 
 Podziemie:
 - przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety

@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    IEnumerator StartLevel()
+    private IEnumerator StartLevel()
     {
         yield return new WaitForSeconds(START_DELAY);
         HideStartLevel();
@@ -59,33 +59,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void ShowLevel()
-    {
-        environmentObject.SetActive(true);
-        player.SetActive(true);
-    }
-
-    void HideLevel()
-    {
-        environmentObject.SetActive(false);
-        player.SetActive(false);
-    }
-
-    void ShowStartLevel()
-    {
-        startLevelScreen.SetActive(true);
-        HideLevel();
-        StopGame(true);
-    }
-
-    void HideStartLevel()
-    {
-        startLevelScreen.SetActive(false);
-        ShowLevel();
-        ResumeGame(true);
-    }
-
-    void ShowGameOver()
+    private void ShowGameOver()
     {
         gameOverScreen.SetActive(true);
         HideLevel();
@@ -93,11 +67,33 @@ public class GameController : MonoBehaviour
         audioGameOver.Play();
     }
 
-    void HideGameOver()
+    private void HideGameOver()
     {
         gameOverScreen.SetActive(false);
         ShowLevel();
         ResumeGame(true);
+    }
+
+    private IEnumerator RestartGame(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        UIPoints.ResetPoints();
+        UICoins.ResetCoins();
+        UILives.ResetLives();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void ShowStartLevel()
+    {
+        startLevelScreen.SetActive(true);
+        HideLevel();
+        StopGame(true);
+    }
+
+    private void HideLevel()
+    {
+        environmentObject.SetActive(false);
+        player.SetActive(false);
     }
 
     public void StopGame(bool pauseMusic)
@@ -106,25 +102,29 @@ public class GameController : MonoBehaviour
         UITime.stop = true;
         playerMovement.Stop(true);
         PlayerFireball.Stop(true);
-        if (pauseMusic) environment.PauseCurrentMusic();
+        if (pauseMusic) environment.PauseCurrentMusic();    // environmentObject.SetActive(false); - rowniez wylacza muzyke
     }
 
-    public void ResumeGame(bool unPauseMusic)
+    private void HideStartLevel()
+    {
+        startLevelScreen.SetActive(false);
+        ShowLevel();
+        ResumeGame(true);
+    }
+
+    private void ShowLevel()
+    {
+        environmentObject.SetActive(true);
+        player.SetActive(true);
+    }
+
+    public void ResumeGame(bool playMusic)
     {
         Moving.stop = false;
         UITime.stop = false;
         playerMovement.Stop(false);
         PlayerFireball.Stop(false);
-        if (unPauseMusic) environment.PlayCurrentMusic();
-    }
-
-    IEnumerator RestartGame(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        UIPoints.ResetPoints();
-        UICoins.ResetCoins();
-        UILives.ResetLives();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (playMusic) environment.PlayCurrentMusic();
     }
 
 }
