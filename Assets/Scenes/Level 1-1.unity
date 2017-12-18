@@ -10757,7 +10757,7 @@ MonoBehaviour:
   anim: {fileID: 148816463}
   audioPowerup: {fileID: 579763861}
   invDuration: 10
-  invExpireTime: 2
+  invExpireTime: 7
 --- !u!1001 &580766531
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 ﻿
-- bug - podczas niezniszczalności - animacja chodzenia jest przyspieszona, co dziwnie wygląda gdy niezniszczalność się kończy - jak się nie uda to ustawić sprity co jedną klatkę i usunąć co drugi sprite
 - bug - czasami są dziwne kolizje o kanty - zmienić collidery bloków na boxCollider i sprawdzić (poprzez obserwacje przeciwników), czy wszystko działa dobrze
-- bug - czasami nie rejestruje, gdy Mario uderzy głową o blok
+- bug - czasami nie rejestruje, gdy Mario uderzy głową o blok - poprawić BottomHitChecks na blokach i odległości pomiędzy nimi
 - refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
 
 Podziemie:
