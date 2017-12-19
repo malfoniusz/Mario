@@ -1,5 +1,4 @@
 ﻿
-- bug - czasami nie rejestruje, gdy Mario uderzy głową o blok - poprawić BottomHitChecks na blokach - zwiększyć ich odległości i je obniżyć
 - refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
 
 Podziemie:
