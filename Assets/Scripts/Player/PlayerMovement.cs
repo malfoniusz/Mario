@@ -49,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!stop)
         {
-            walkKey = (int)Input.GetAxisRaw("Horizontal");
-            jumpKey = Input.GetButton("Jump");
-            jumpKeyDown = (jumpKeyDown || Input.GetButtonDown("Jump"));
-            runKey = Input.GetButton("Run");
+            walkKey = (int) ButtonNames.GetRawHorizontal();
+            jumpKey = ButtonNames.GetJump();
+            jumpKeyDown = (jumpKeyDown || ButtonNames.GetJumpDown());
+            runKey = ButtonNames.GetRun();
         }
     }
 
@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
         bool opposite = (walkKey == -Mathf.Sign(rb.velocity.x));
         bool isTurning = (slowing && opposite) ? true : false;
 
-        anim.SetBool("IsTurning", isTurning);
+        anim.SetBool(AnimatorNames.playerIsTurning, isTurning);
         prevSpeed = rb.velocity.x;
     }
 
@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckJump();
         MakeAJump();
-        anim.SetBool("IsJumping", jumping);
+        anim.SetBool(AnimatorNames.playerIsJumping, jumping);
     }
 
     void CheckJump()
@@ -196,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
     void WalkAnimation()
     {
         bool isWalking = Mathf.Abs(rb.velocity.x) > minimalVelocity ? true : false;
-        anim.SetBool("IsWalking", isWalking);
+        anim.SetBool(AnimatorNames.playerIsWalking, isWalking);
 
         WalkAnimationSpeed();
     }
@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
         float walkMultiplier = 1;
         walkMultiplier += (Mathf.InverseLerp(0, maxRunSpeed, curSpeed) * 2);
 
-        anim.SetFloat("WalkSpeedMultiplier", walkMultiplier);
+        anim.SetFloat(AnimatorNames.playerWalkSpeedMultiplier, walkMultiplier);
     }
 
     void LeftCameraBoundary()

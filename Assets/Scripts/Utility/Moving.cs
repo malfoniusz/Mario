@@ -21,7 +21,7 @@ public class Moving : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = TagNames.GetPlayer();
         wallBounce = new WallBounce();
         stopMovement = new StopMovement();
     }
@@ -44,7 +44,7 @@ public class Moving : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == TagNames.player)
         {
             CollisionEnter(collision);
         }

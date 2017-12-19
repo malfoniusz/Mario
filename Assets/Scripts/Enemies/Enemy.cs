@@ -61,7 +61,7 @@ public class Enemy : Moving
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == TagNames.player)
         {
             if (playerInv.GetInvincible())  HitByInvPlayer(collision);
             else                            CollisionEnter(collision);
@@ -70,7 +70,7 @@ public class Enemy : Moving
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == TagNames.player)
         {
             if (playerInv.GetInvincible())              HitByInvPlayer(collision);
             else if (time > PLAYER_IMMUNITY_DURATION)   EnemyHittingPlayer();

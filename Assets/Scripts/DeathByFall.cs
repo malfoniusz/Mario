@@ -6,12 +6,12 @@ public class DeathByFall : MonoBehaviour
 
     private void Awake()
     {
-        playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
+        playerDeath = TagNames.GetPlayer().GetComponent<PlayerDeath>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == TagNames.player)
         {
             playerDeath.Die();
         }

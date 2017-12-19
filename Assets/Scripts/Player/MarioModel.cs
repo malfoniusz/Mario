@@ -20,24 +20,24 @@ public class MarioModel : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = TagNames.GetPlayer();
         playerPowerup = player.GetComponent<PlayerPowerup>();
 
         marioCollider = marioPrefab.GetComponent<BoxCollider2D>();
         marioGroundChecks = new Transform[2];
-        marioGroundChecks[0] = marioPrefab.transform.Find("GroundCheck1");
-        marioGroundChecks[1] = marioPrefab.transform.Find("GroundCheck2");
+        marioGroundChecks[0] = marioPrefab.transform.Find(PrefabNames.marioGroundCheck1);
+        marioGroundChecks[1] = marioPrefab.transform.Find(PrefabNames.marioGroundCheck2);
         marioTopChecks = new Transform[2];
-        marioTopChecks[0] = marioPrefab.transform.Find("TopCheck1");
-        marioTopChecks[1] = marioPrefab.transform.Find("TopCheck2");
+        marioTopChecks[0] = marioPrefab.transform.Find(PrefabNames.marioTopCheck1);
+        marioTopChecks[1] = marioPrefab.transform.Find(PrefabNames.marioTopCheck2);
 
         bigMarioCollider = bigMarioPrefab.GetComponent<BoxCollider2D>();
         bigMarioGroundChecks = new Transform[2];
-        bigMarioGroundChecks[0] = bigMarioPrefab.transform.Find("GroundCheck1");
-        bigMarioGroundChecks[1] = bigMarioPrefab.transform.Find("GroundCheck2");
+        bigMarioGroundChecks[0] = bigMarioPrefab.transform.Find(PrefabNames.marioGroundCheck1);
+        bigMarioGroundChecks[1] = bigMarioPrefab.transform.Find(PrefabNames.marioGroundCheck2);
         bigMarioTopChecks = new Transform[2];
-        bigMarioTopChecks[0] = bigMarioPrefab.transform.Find("TopCheck1");
-        bigMarioTopChecks[1] = bigMarioPrefab.transform.Find("TopCheck2");
+        bigMarioTopChecks[0] = bigMarioPrefab.transform.Find(PrefabNames.marioTopCheck1);
+        bigMarioTopChecks[1] = bigMarioPrefab.transform.Find(PrefabNames.marioTopCheck2);
     }
 
     public void UpdateModel()

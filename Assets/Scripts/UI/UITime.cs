@@ -18,8 +18,8 @@ public class UITime : MonoBehaviour
 
     private void Awake()
     {
-        environment = GameObject.FindGameObjectWithTag("Environment").GetComponent<Environment>();
-        playerDeath = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
+        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        playerDeath = TagNames.GetPlayer().GetComponent<PlayerDeath>();
         text = GetComponent<Text>();
         nextTimeInc = 1 / countdownSpeed;
     }

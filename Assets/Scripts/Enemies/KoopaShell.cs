@@ -53,7 +53,7 @@ public class KoopaShell : Enemy
 
     private void EnemyHitByShell(Collider2D collision)
     {
-        bool shellHitsEnemy = (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && rb.velocity.x > MINIMAL_VELOCITY);
+        bool shellHitsEnemy = (collision.gameObject.layer == LayerNames.GetEnemy() && rb.velocity.x > MINIMAL_VELOCITY);
         if (shellHitsEnemy && !stopMultipleTriggers)
         {
             stopMultipleTriggers = true;

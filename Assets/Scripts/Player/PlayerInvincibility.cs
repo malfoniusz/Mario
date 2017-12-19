@@ -15,9 +15,9 @@ public class PlayerInvincibility : MonoBehaviour
 
     private void Awake()
     {
-        environment = GameObject.FindGameObjectWithTag("Environment").GetComponent<Environment>();
-        animInvLayerIndex = anim.GetLayerIndex("Invincibility");
-        animInvExpiereLayerIndex = anim.GetLayerIndex("InvincibilityExpire");
+        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        animInvLayerIndex = AnimatorNames.GetPlayerInvincibilityLayer(anim);
+        animInvExpiereLayerIndex = AnimatorNames.GetPlayerInvincibilityExpireLayer(anim);
     }
 
     public void Invincibility()

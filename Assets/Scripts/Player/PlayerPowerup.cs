@@ -46,7 +46,7 @@ public class PlayerPowerup : MonoBehaviour
     private void PowerupBehaviour(int newLevel)
     {
         level = newLevel;
-        anim.SetTrigger("Powerup");
+        anim.SetTrigger(AnimatorNames.playerPowerup);
         jumpAudio.clip = bigJumpClip;
     }
 
@@ -65,7 +65,7 @@ public class PlayerPowerup : MonoBehaviour
     private void Powerdown()
     {
         level--;
-        anim.SetTrigger("Powerdown");
+        anim.SetTrigger(AnimatorNames.playerPowerdown);
         powerdownAudio.Play();
 
         if (level == 1)
@@ -80,13 +80,13 @@ public class PlayerPowerup : MonoBehaviour
     {
         Color trans = spriteRenderer.color;
 
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
+        Physics2D.IgnoreLayerCollision(LayerNames.GetPlayer(), LayerNames.GetEnemy());
         trans.a = 0.5f;
         spriteRenderer.color = trans;
 
         yield return new WaitForSeconds(sec);
 
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+        Physics2D.IgnoreLayerCollision(LayerNames.GetPlayer(), LayerNames.GetEnemy(), false);
         trans.a = 1f;
         spriteRenderer.color = trans;
     }

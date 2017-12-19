@@ -12,8 +12,8 @@ public class MarioAnimation : MonoBehaviour
 
     private void Awake()
     {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        gameController = TagNames.GetGameController().GetComponent<GameController>();
+        player = TagNames.GetPlayer();
         marioModel = player.GetComponent<MarioModel>();
     }
 

@@ -2,8 +2,8 @@
 
 public class Contact : MonoBehaviour
 {
-    private static int groundMask = LayerMask.NameToLayer("Ground");
-    private static int playerMask = LayerMask.NameToLayer("Player");
+    private static int groundMask = LayerNames.GetGround();
+    private static int playerMask = LayerNames.GetPlayer();
 
     public static bool CheckContactGround(Vector3 objectPos, Transform[] contactChecks)
     {

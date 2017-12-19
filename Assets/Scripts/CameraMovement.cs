@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = TagNames.GetPlayer().transform;
     }
 
     void LateUpdate()

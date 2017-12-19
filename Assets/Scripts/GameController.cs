@@ -17,13 +17,13 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        environmentObject = GameObject.FindGameObjectWithTag("Environment");
+        environmentObject = TagNames.GetEnvironment();
         environment = environmentObject.GetComponent<Environment>();
         audioGameOver = GetComponent<AudioSource>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
-        startLevelScreen = GameObject.FindGameObjectWithTag("StartLevelScreen");
-        gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen");
+        startLevelScreen = TagNames.GetStartLevelScreen();
+        gameOverScreen = TagNames.GetGameOverScreen();
     }
 
     private void Start()

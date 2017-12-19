@@ -15,10 +15,10 @@ public class Block : MonoBehaviour
 
     protected virtual void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        player = TagNames.GetPlayer();
         playerRB = player.GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-        playerMask = LayerMask.NameToLayer("Player");
+        playerMask = LayerNames.GetPlayer();
     }
 
     protected virtual void Update()

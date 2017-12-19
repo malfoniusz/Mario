@@ -1,5 +1,5 @@
 ﻿
-- refaktoryzacja - zrobić statyczną klasę przechowującą wszystkie nazwy tag'ów, layer'ów i anim layer'ów (szukać cudzysłowów) - znaleźć wszystkie skrypty używające nazw własnych - po zmianie zmienić nazwy tag'ów, layer'ów i anim layer'ów oraz sprawdzić czy gra dalej dobrze działa
+- bug - shell czasami odbija się od przeciwników
 
 Podziemie:
 - przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety
@@ -26,6 +26,7 @@ Menu główne:
 - opcja rozpoczęcia gry
 - opcja wyjścia z gry
 - kursor
+- po wypraceniu żyć, powrót do menu
 
 Porządki:
 - odblokuj ekran startu poziomu

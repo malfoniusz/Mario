@@ -18,7 +18,7 @@ public class Fireball : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = TagNames.GetPlayer();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -42,7 +42,7 @@ public class Fireball : MonoBehaviour
         if (isColliding) return;
         isColliding = true;
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == TagNames.enemy)
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.HitByFireball(direction);

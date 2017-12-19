@@ -14,8 +14,8 @@ public class PlayerDeath : MonoBehaviour
 
     void Awake()
     {
-        environment = GameObject.FindGameObjectWithTag("Environment").GetComponent<Environment>();
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        gameController = TagNames.GetGameController().GetComponent<GameController>();
         parent = transform.parent.gameObject;
         anim = parent.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -28,8 +28,8 @@ public class PlayerDeath : MonoBehaviour
         rb.isKinematic = true;
         boxCollider.enabled = false;
 
-        anim.SetBool("IsJumping", false);
-        anim.SetTrigger("IsDead");
+        anim.SetBool(AnimatorNames.playerIsJumping, false);
+        anim.SetTrigger(AnimatorNames.playerIsDead);
         environment.PlayDeath(true);
 
         StartCoroutine(endGame(deathClip.length));
