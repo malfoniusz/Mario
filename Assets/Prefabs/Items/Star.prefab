@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4596974141621986}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheck1
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4891383880723682}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheck2
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4102323851903990}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LeftCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4576015393058606}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheck3
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4802971767393458}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RightCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4235060993450742}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LeftCheck1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 61147042569468366}
   - component: {fileID: 82250066748201830}
   - component: {fileID: 114875178780518430}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4073732905695140}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RightCheck1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}

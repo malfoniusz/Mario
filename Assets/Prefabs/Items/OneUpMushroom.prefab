@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4303222628909558}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RightCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4398805761843800}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LeftCheck1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4360342988181546}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RightCheck1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 61595271298098718}
   - component: {fileID: 82320499712542952}
   - component: {fileID: 114938169381986556}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: OneUpMushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4662032397463848}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LeftCheck2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}

@@ -1,5 +1,4 @@
 ﻿
-- dodać Item layer - sprawdzić czy nie dodać innych layer'ów - zmodyfikować odpowiednio CollisionMatrix
 - bug - fireball'e zbyt często znikają gdy trafią w ziemię ze średniej wysokości
 
 Podziemie:

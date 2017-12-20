@@ -12,7 +12,7 @@ public class Koopa : Enemy
     {
         base.Update();
 
-        spriteRenderer.flipX = (direction == -1);
+        spriteRenderer.flipX = (direction == 1);
     }
 
     protected override void EnemyStompedBehaviour()

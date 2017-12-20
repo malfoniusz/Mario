@@ -504,7 +504,7 @@ MonoBehaviour:
   - {fileID: 4699492231456782}
   - {fileID: 4193509728139946}
   points: 100
-  direction: 1
+  direction: -1
   speed: 230
   audioSource: {fileID: 82614875442359854}
   kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}

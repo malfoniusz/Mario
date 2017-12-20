@@ -18,6 +18,15 @@ public class Contact : MonoBehaviour
         return contact;
     }
 
+    public static bool ContactPoints(Transform[] contactChecks, int[] layers)
+    {
+        int combinedMask = CombineMask(layers);
+
+        bool contact = OverlapPoint(contactChecks, combinedMask);
+
+        return contact;
+    }
+
     public static bool ContactPointsIgnore(Transform[] contactChecks, int layer)
     {
         int ignoredLayerMask = ~(1 << layer);
@@ -29,23 +38,29 @@ public class Contact : MonoBehaviour
 
     public static bool ContactPointsIgnore(Transform[] contactChecks, int[] layers)
     {
+        int combinedMask = CombineMask(layers);
+        int ignoredCombinedMask = ~combinedMask;
+
+        bool contact = OverlapPoint(contactChecks, ignoredCombinedMask);
+
+        return contact;
+    }
+
+    private static int CombineMask(int[] layers)
+    {
         int[] layerMasks = new int[layers.Length];
         for (int i = 0; i < layerMasks.Length; i++)
         {
             layerMasks[i] = 1 << layers[i];
         }
 
-        int combinedLayers = 0;
+        int combinedMask = 0;
         foreach (int layerMask in layerMasks)
         {
-            combinedLayers |= layerMask;
+            combinedMask |= layerMask;
         }
 
-        int ignoredCombinedLayers = ~combinedLayers;
-
-        bool contact = OverlapPoint(contactChecks, ignoredCombinedLayers);
-
-        return contact;
+        return combinedMask;
     }
 
     private static bool OverlapPoint(Transform[] contactChecks, int layerMask)

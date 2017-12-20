@@ -500,8 +500,8 @@ MonoBehaviour:
   - {fileID: 4611350132229484}
   - {fileID: 4710304529710396}
   points: 100
-  direction: 1
-  speed: -30
+  direction: -1
+  speed: 30
   audioSource: {fileID: 82506768372530534}
   kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}
   spriteRenderer: {fileID: 212552518472094306}

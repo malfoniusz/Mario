@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751988480467472}
   - component: {fileID: 61325668610559614}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Pipe_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4978417773888456}
   - component: {fileID: 212234214427172484}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Pipe_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4361635426996318}
   - component: {fileID: 212665151181544176}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Pipe_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -750594997
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4dfe517176e5ce458829885ab5bd8f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -750594997
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a1127ddb367c8984d8f69ca86ac7eba9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

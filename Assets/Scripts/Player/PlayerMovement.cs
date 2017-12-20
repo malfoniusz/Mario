@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float prevSpeed = 0;
     private StopMovement stopMovement;
     private bool stop = false;
+    private int[] jumpableLayers;
 
     private float maxOffsetX;
 
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         anim = parent.GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         stopMovement = new StopMovement();
+        jumpableLayers = new int[] { LayerNames.GetGround(), LayerNames.GetPipe() };
     }
 
     void Start()
@@ -163,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        bool grounded = Contact.ContactPoints(groundChecks, LayerNames.GetGround());
+        bool grounded = Contact.ContactPoints(groundChecks, jumpableLayers);
         if (jumpKeyDown && grounded)
         {
             jumpKeyDown = false;
@@ -181,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MakeAJump()
     {
-        bool topContact = Contact.ContactPoints(topChecks, LayerNames.GetGround());
+        bool topContact = Contact.ContactPoints(topChecks, jumpableLayers);
         if (!jumpKey || topContact)
         {
             jumpForce = 0;

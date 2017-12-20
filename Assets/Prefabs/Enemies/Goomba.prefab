@@ -440,7 +440,7 @@ MonoBehaviour:
   - {fileID: 4204088495647926}
   - {fileID: 4901415705522014}
   points: 100
-  direction: 1
+  direction: -1
   speed: 30
   audioSource: {fileID: 82664629270095682}
   kickClip: {fileID: 8300000, guid: 4ab7efeddaa800b46b96f78f74db021e, type: 3}

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 61732872704292624}
   - component: {fileID: 82133251361842482}
   - component: {fileID: 114018062099496924}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FireFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
