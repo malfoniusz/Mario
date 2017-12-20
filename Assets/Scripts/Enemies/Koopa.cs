@@ -8,15 +8,16 @@ public class Koopa : Enemy
     private const float SHELL_OFFSET = 4.5f;
     private const float SPAWN_SHELL_DELAY = 0.02f;
 
+    protected override void Update()
+    {
+        base.Update();
+
+        spriteRenderer.flipX = (direction == -1);
+    }
+
     protected override void EnemyStompedBehaviour()
     {
         StartCoroutine(DelayedBehaviour(SPAWN_SHELL_DELAY));
-    }
-
-    protected override void ChangeDirectionBehaviour()
-    {
-        base.ChangeDirectionBehaviour();
-        spriteRenderer.flipX = (Mathf.Sign(rb.velocity.x) == 1);
     }
 
     IEnumerator DelayedBehaviour(float sec)

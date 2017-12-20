@@ -8,21 +8,21 @@ public class Moving : MonoBehaviour
     public BoxCollider2D triggerCollider;
     public Animator anim;
     public GameObject pointsFloating;
+    public Transform[] leftChecks;
+    public Transform[] rightChecks;
     public int points = 100;
+    public int direction = 1;
     public float speed = 30;
 
     protected GameObject player;
     protected Rigidbody2D rb;
-    protected int direction = -1;
 
-    private WallBounce wallBounce;
     private StopMovement stopMovement;
 
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = TagNames.GetPlayer();
-        wallBounce = new WallBounce();
         stopMovement = new StopMovement();
     }
 
@@ -40,6 +40,26 @@ public class Moving : MonoBehaviour
         {
             MovingBehaviour();
         }
+    }
+
+    protected virtual void MovingBehaviour()
+    {
+        ChangeDirection();
+        UpdateVelocity();
+    }
+
+    protected virtual void ChangeDirection()
+    {
+        bool leftContact = Contact.CheckContactPointIgnore(leftChecks, LayerNames.GetPlayer());
+        bool rightContact = Contact.CheckContactPointIgnore(rightChecks, LayerNames.GetPlayer());
+
+        if (leftContact)        direction = 1;
+        else if (rightContact)  direction = -1;
+    }
+
+    protected void UpdateVelocity()
+    {
+        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -87,40 +107,6 @@ public class Moving : MonoBehaviour
         GameObject pointsObject = Instantiate(pointsFloating);
         pointsObject.transform.GetChild(0).position = transform.position;
         return pointsObject;
-    }
-
-    protected virtual void MovingBehaviour()
-    {
-        MaxSpeed();
-        ChangeDirection();
-    }
-
-    protected void ChangeDirection()
-    {
-        bool bounce = wallBounce.Bounce(rb, speed);
-        if (bounce)
-        {
-            ChangeDirectionBehaviour();
-        }
-    }
-
-    protected virtual void ChangeDirectionBehaviour()
-    {
-        direction *= -1;
-        UpdateVelocity();
-    }
-
-    protected void UpdateVelocity()
-    {
-        rb.velocity = new Vector2(direction * speed, rb.velocity.y);
-    }
-
-    private void MaxSpeed()
-    {
-        if (Mathf.Abs(rb.velocity.x) > Mathf.Abs(speed))
-        {
-            UpdateVelocity();
-        }
     }
 
 }

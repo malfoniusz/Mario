@@ -25,6 +25,16 @@ public class KoopaShell : Enemy
         }
     }
 
+    protected override void ChangeDirection()
+    {
+        int[] ignoredLayers = { LayerNames.GetPlayer(), LayerNames.GetEnemy() };
+
+        bool leftContact = Contact.CheckContactPointIgnore(leftChecks, ignoredLayers);
+        bool rightContact = Contact.CheckContactPointIgnore(rightChecks, ignoredLayers);
+
+        if (leftContact || rightContact) direction *= -1;
+    }
+
     protected override void CollisionEnter(Collider2D collision)
     {
         audioKick.Play();

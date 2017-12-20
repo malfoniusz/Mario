@@ -89,8 +89,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Size: {x: 12, y: 12}
+  m_EdgeRadius: 2
 --- !u!61 &61732872704292624
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -114,8 +114,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_Size: {x: 12, y: 12}
+  m_EdgeRadius: 2
 --- !u!82 &82133251361842482
 AudioSource:
   m_ObjectHideFlags: 1
@@ -225,13 +225,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66a25ad7afd16644b4d68a2af4d7d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   objectCollider: {fileID: 61169697344857604}
   triggerCollider: {fileID: 61732872704292624}
   anim: {fileID: 0}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
+  leftChecks: []
+  rightChecks: []
   points: 2000
+  direction: -1
   speed: 0
 --- !u!212 &212016441683239906
 SpriteRenderer:

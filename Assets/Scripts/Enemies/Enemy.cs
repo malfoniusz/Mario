@@ -37,14 +37,8 @@ public class Enemy : Moving
 
     protected override void MovingBehaviour()
     {
-        if (activated == false)
-        {
-            CheckVisibility();
-        }
-        else
-        {
-            base.MovingBehaviour();
-        }
+        if (activated == false) CheckVisibility();
+        else                    base.MovingBehaviour();
     }
 
     protected override void CollisionEnter(Collider2D collision)

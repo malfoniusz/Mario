@@ -1,5 +1,7 @@
 ﻿
-- bug - shell czasami odbija się od przeciwników
+- umożliwić gwieździe skakanie po przeciwnikach
+- refaktoryzacja implementacji funkcji i ich nazw w Contact.cs
+- szybko sprawdzić czy zmiana Linecast na OverlapPoint poprawi detekcje kolizji gdy postać uderzy w blok od dołu przy jego krawędzi
 
 Podziemie:
 - przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety
