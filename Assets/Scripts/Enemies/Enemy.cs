@@ -43,7 +43,7 @@ public class Enemy : Moving
 
     protected override void CollisionEnter(Collider2D collision)
     {
-        bool enemyStomped = Contact.CheckEnemyStomped(transform.position, stompedChecks);
+        bool enemyStomped = Contact.ContactPoints(stompedChecks, LayerNames.GetPlayer());
         float playerVelY = collision.gameObject.GetComponent<Rigidbody2D>().velocity.y;
         bool playerFalling = (playerVelY < 0);
 

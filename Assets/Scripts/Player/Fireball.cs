@@ -48,7 +48,7 @@ public class Fireball : MonoBehaviour
             enemy.HitByFireball(direction);
             Destroy(gameObject);
         }
-        else if (Contact.CheckContactGround(transform.position, groundChecks))
+        else if (Contact.ContactPoints(groundChecks))
         {
             rb.velocity = new Vector2(rb.velocity.x, bounceForce);
         }
@@ -56,7 +56,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        bool sideContact = Contact.CheckContactGround(transform.position, sideChecks);
+        bool sideContact = Contact.ContactPoints(sideChecks);
         if (sideContact)
         {
             Destroy(gameObject);

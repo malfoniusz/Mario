@@ -29,8 +29,8 @@ public class KoopaShell : Enemy
     {
         int[] ignoredLayers = { LayerNames.GetPlayer(), LayerNames.GetEnemy() };
 
-        bool leftContact = Contact.CheckContactPointIgnore(leftChecks, ignoredLayers);
-        bool rightContact = Contact.CheckContactPointIgnore(rightChecks, ignoredLayers);
+        bool leftContact = Contact.ContactPointsIgnore(leftChecks, ignoredLayers);
+        bool rightContact = Contact.ContactPointsIgnore(rightChecks, ignoredLayers);
 
         if (leftContact || rightContact) direction *= -1;
     }

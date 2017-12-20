@@ -50,8 +50,8 @@ public class Moving : MonoBehaviour
 
     protected virtual void ChangeDirection()
     {
-        bool leftContact = Contact.CheckContactPointIgnore(leftChecks, LayerNames.GetPlayer());
-        bool rightContact = Contact.CheckContactPointIgnore(rightChecks, LayerNames.GetPlayer());
+        bool leftContact = Contact.ContactPointsIgnore(leftChecks, LayerNames.GetPlayer());
+        bool rightContact = Contact.ContactPointsIgnore(rightChecks, LayerNames.GetPlayer());
 
         if (leftContact)        direction = 1;
         else if (rightContact)  direction = -1;

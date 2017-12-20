@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckJump()
     {
-        bool grounded = Contact.CheckContactGround(transform.position, groundChecks);
+        bool grounded = Contact.ContactPoints(groundChecks, LayerNames.GetGround());
         if (jumpKeyDown && grounded)
         {
             jumpKeyDown = false;
@@ -181,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MakeAJump()
     {
-        bool topContact = Contact.CheckContactGround(transform.position, topChecks);
+        bool topContact = Contact.ContactPoints(topChecks, LayerNames.GetGround());
         if (!jumpKey || topContact)
         {
             jumpForce = 0;

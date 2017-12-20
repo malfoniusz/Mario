@@ -20,7 +20,7 @@ public class StarPowerup : Mushroom
 
     private void Update()
     {
-        grounded = Contact.CheckContactGround(transform.position, groundChecks);
+        grounded = Contact.ContactPoints(groundChecks);
         SwitchFelt();
     }
 
