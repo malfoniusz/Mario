@@ -1,6 +1,4 @@
 ﻿
-- bug - fireball'e zbyt często znikają gdy trafią w ziemię ze średniej wysokości
-
 Podziemie:
 - przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety
 - animacja monet

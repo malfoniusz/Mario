@@ -57,10 +57,8 @@ public class Fireball : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         bool sideContact = Contact.ContactPoints(sideChecks);
-        if (sideContact)
-        {
-            Destroy(gameObject);
-        }
+
+        if (sideContact)    Destroy(gameObject);
     }
 
     private void OutOfViewport()
