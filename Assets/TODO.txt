@@ -1,14 +1,12 @@
 ﻿
 Podziemie:
-- przygotowanie na tej samej scenie podziemia: podłoga, bloki, rura, monety
-- animacja monet
-- zbieranie monet
-- animacja wejścia do rury (w dół) + dźwięk + zablokowanie ruchu gracza
+- wydajność: poprawić wydajność skrypt'ów brick'ów
 - wejście do rury za pomocą strzałki w dół
-- przeniesie gracza do podziemia
-- animacja wejścia do rury (w bok) + dźwięk + zablokowanie ruchu gracza
+- animacja wejścia do rury (w dół) + dźwięk + zablokowanie ruchu gracza
+- kamera na podziemie + background kamery na czarno + zmiana muzyki + zrzucenie gracza
 - wejście do rury za pomocą strzałki w prawo
-- wyniesienie gracza z podziemia
+- animacja wejścia do rury (w bok) + dźwięk + zablokowanie ruchu gracza
+- przeniesienie kamery na zewnątrz
 - animacja wyjścia z rury (w góre) + dźwięk + zablokowanie ruchu gracza
 
 Wygrana:

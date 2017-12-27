@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class CoinFromBlock : Coin
+public class CoinFromBlock : MonoBehaviour
 {
-    public Animator animCoinJump;
+    public int points = 200;
     public GameObject pointsFloating;
     public float jumpForce = 400;
 
