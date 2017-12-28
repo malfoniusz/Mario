@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 68013336005594784}
   m_Layer: 14
   m_Name: SidePipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

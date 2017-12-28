@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 61655164564516170}
   m_Layer: 14
   m_Name: Pipe_medium
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

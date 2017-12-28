@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114588336402924024}
   m_Layer: 9
   m_Name: CoinFromBlock
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 200
-  animCoinJump: {fileID: 95339473741535382}
   pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
     type: 2}
   jumpForce: 400

@@ -9,6 +9,11 @@ TagManager:
   - StartLevelScreen
   - GameOverScreen
   - Enemy
+  - Block
+  - Coin
+  - Pipe
+  - Item
+  - Background
   layers:
   - Default
   - TransparentFX

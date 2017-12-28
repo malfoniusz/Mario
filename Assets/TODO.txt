@@ -1,12 +1,10 @@
 ﻿
 Podziemie:
-- wydajność: poprawić wydajność skrypt'ów brick'ów
-- wejście do rury za pomocą strzałki w dół
-- animacja wejścia do rury (w dół) + dźwięk + zablokowanie ruchu gracza
+- bug - ActiveObject, nowe obiekty (np. koopa shell) nie są rejestrowane
+- wejście do rury (strzałka w dół) + animacja + dźwięk + zablokowanie ruchu gracza
 - kamera na podziemie + background kamery na czarno + zmiana muzyki + zrzucenie gracza
-- wejście do rury za pomocą strzałki w prawo
-- animacja wejścia do rury (w bok) + dźwięk + zablokowanie ruchu gracza
-- przeniesienie kamery na zewnątrz
+- wejście do rury (strzałka w prawo) + animacja + dźwięk + zablokowanie ruchu gracza
+- kamera na zewnątrz + background kamery + muzyka
 - animacja wyjścia z rury (w góre) + dźwięk + zablokowanie ruchu gracza
 
 Wygrana:
@@ -22,11 +20,12 @@ Menu główne:
 - opcja rozpoczęcia gry
 - opcja wyjścia z gry
 - kursor
-- po wypraceniu żyć, powrót do menu
+- po utracie wszystkich żyć, powrót do menu
 
 Porządki:
-- odblokuj ekran startu poziomu
-- usuń niepotrzebne rzeczy z początku poziomu
+- usunąć niepotrzebne rzeczy z początku poziomu
+- odblokować ekran startu poziomu
+- wyłączyć FPSCounter
 
 Trolololio:
 - w menu głównym dać dwa tryby gry: normalny i trolololio
