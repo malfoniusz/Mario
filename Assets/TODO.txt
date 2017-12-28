@@ -1,6 +1,8 @@
 ﻿
 Podziemie:
+- GM - GameController - dodać opcje nieśmiertelności (nie ginięcia i możliwości zabijania potworów)
 - bug - ActiveObject, nowe obiekty (np. koopa shell) nie są rejestrowane
+- bug - uderzenie w przeciwnika spowalnia postać (prawdopodobnie wina DisableObject)
 - wejście do rury (strzałka w dół) + animacja + dźwięk + zablokowanie ruchu gracza
 - kamera na podziemie + background kamery na czarno + zmiana muzyki + zrzucenie gracza
 - wejście do rury (strzałka w prawo) + animacja + dźwięk + zablokowanie ruchu gracza

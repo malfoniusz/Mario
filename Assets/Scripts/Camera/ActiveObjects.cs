@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 public class ActiveObjects : MonoBehaviour
 {
-    private List<GameObject> objects = new List<GameObject>();
+    public float refreshTime = 1f;
 
+    private List<GameObject> objects = new List<GameObject>();
     private Vector2 CAM_EXPAND = new Vector2(1.0f, 0.1f);
     private Vector2 CAM_VIEW_MIN;
     private Vector2 CAM_VIEW_MAX;
+    private float time;
 
     private void Start()
     {
@@ -20,12 +22,23 @@ public class ActiveObjects : MonoBehaviour
 
         CAM_VIEW_MIN = Vector2.zero - CAM_EXPAND;
         CAM_VIEW_MAX = Vector2.one + CAM_EXPAND;
-}
+
+        time = refreshTime; // Aby pierwszy Update sie wykonal
+    }
 
     private void Update()
     {
-        objects.RemoveAll(obj => obj == null);
+        time += Time.deltaTime;
+        if (time > refreshTime)
+        {
+            time = 0;
+            ControlActiveObjects();
+        }
+    }
 
+    private void ControlActiveObjects()
+    {
+        objects.RemoveAll(obj => obj == null);
         foreach (GameObject o in objects)
         {
             Active(o);
