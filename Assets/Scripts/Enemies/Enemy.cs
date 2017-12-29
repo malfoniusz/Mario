@@ -16,18 +16,13 @@ public class Enemy : Moving
     private float PLAYER_IMMUNITY_DURATION = 0.4f;
     private bool activated = false;
     private Vector2 FIREBALL_KNOCKBACK = new Vector2(60, 320);
-    private float FIREBALL_DESTRUCTION_DELAY = 3f;
+    private float FIREBALL_DESTRUCTION_DELAY = 2f;
 
     protected override void Awake()
     {
         base.Awake();
         playerPowerup = player.GetComponent<PlayerPowerup>();
         playerInv = player.GetComponent<PlayerInvincibility>();
-    }
-
-    protected override void Start()
-    {
-        Physics2D.IgnoreCollision(objectCollider, player.GetComponent<BoxCollider2D>());
     }
 
     protected virtual void Update()
@@ -134,7 +129,7 @@ public class Enemy : Moving
         rb.isKinematic = kinema;
         if (anim != null) anim.enabled = animation;
         objectCollider.enabled = false;
-        triggerCollider.enabled = false;
+        Physics2D.IgnoreCollision(triggerCollider, player.GetComponent<BoxCollider2D>());   // Only for player so that DeathByFall can register collision
     }
 
 }

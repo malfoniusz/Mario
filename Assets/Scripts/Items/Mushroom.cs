@@ -19,7 +19,7 @@ public class Mushroom : Moving
         this.moveObject = new MoveObject(startPos, moveDistance, MOVE_SPEED_MULTIPLIER);
     }
 
-    protected override void Start()
+    private void Start()
     {
         direction = 1;
         Physics2D.IgnoreCollision(objectCollider, player.GetComponent<BoxCollider2D>());

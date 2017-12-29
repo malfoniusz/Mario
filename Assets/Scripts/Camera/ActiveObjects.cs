@@ -6,7 +6,7 @@ public class ActiveObjects : MonoBehaviour
     public float refreshTime = 1f;
 
     private List<GameObject> objects = new List<GameObject>();
-    private Vector2 CAM_EXPAND = new Vector2(1.0f, 0.1f);
+    private Vector2 CAM_EXPAND = new Vector2(1.0f, 0.4f);   // 0.4f so that everything to DeathByFall is active
     private Vector2 CAM_VIEW_MIN;
     private Vector2 CAM_VIEW_MAX;
     private float time;

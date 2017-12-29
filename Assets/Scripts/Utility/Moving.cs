@@ -26,10 +26,9 @@ public class Moving : MonoBehaviour
         stopMovement = new StopMovement();
     }
 
-    protected virtual void Start()
+    private void OnEnable()
     {
         Physics2D.IgnoreCollision(objectCollider, player.GetComponent<BoxCollider2D>());
-        UpdateVelocity();
     }
 
     private void FixedUpdate()

@@ -3440,7 +3440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quickStart: 1
-  playerInvincible: 1
+  playerInvincible: 0
 --- !u!4 &145972166
 Transform:
   m_ObjectHideFlags: 0
