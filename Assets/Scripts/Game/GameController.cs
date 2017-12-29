@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public bool quickStart = false;
+    public static bool quickStart = false;
 
     private GameObject environmentObject;
     private Environment environment;
