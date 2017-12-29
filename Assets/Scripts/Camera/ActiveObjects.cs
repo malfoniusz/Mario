@@ -13,12 +13,7 @@ public class ActiveObjects : MonoBehaviour
 
     private void Start()
     {
-        objects.AddRange(TagNames.GetBlocks());
-        objects.AddRange(TagNames.GetEnemies());
-        objects.AddRange(TagNames.GetItems());
-        objects.AddRange(TagNames.GetCoins());
-        objects.AddRange(TagNames.GetPipes());
-        objects.AddRange(TagNames.GetBackgrounds());
+        objects = GetActiveObjects();
 
         CAM_VIEW_MIN = Vector2.zero - CAM_EXPAND;
         CAM_VIEW_MAX = Vector2.one + CAM_EXPAND;
@@ -32,8 +27,35 @@ public class ActiveObjects : MonoBehaviour
         if (time > refreshTime)
         {
             time = 0;
+            NewObjects();
             ControlActiveObjects();
         }
+    }
+
+    private void NewObjects()
+    {
+        List<GameObject> newObjects = GetActiveObjects();
+
+        foreach (GameObject o in newObjects)
+        {
+            if (objects.Contains(o) == false)
+            {
+                objects.Add(o);
+            }
+        }
+    }
+
+    private List<GameObject> GetActiveObjects()
+    {
+        List<GameObject> obj = new List<GameObject>();
+        obj.AddRange(TagNames.GetBlocks());
+        obj.AddRange(TagNames.GetEnemies());
+        obj.AddRange(TagNames.GetItems());
+        obj.AddRange(TagNames.GetCoins());
+        obj.AddRange(TagNames.GetPipes());
+        obj.AddRange(TagNames.GetBackgrounds());
+
+        return obj;
     }
 
     private void ControlActiveObjects()
