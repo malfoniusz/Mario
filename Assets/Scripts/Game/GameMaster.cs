@@ -2,8 +2,10 @@
 
 public class GameMaster : MonoBehaviour
 {
+    public bool showFPS = false;
     public bool quickStart = false;
     public bool playerInvincible = false;
+    public GameObject FPSCounter;
 
     private GameObject player;
     private PlayerInvincibility invincibility;
@@ -16,6 +18,7 @@ public class GameMaster : MonoBehaviour
 
     private void Start()
     {
+        if (!showFPS) FPSCounter.SetActive(false);
         GameController.quickStart = quickStart;
         invincibility.SetInvincible(playerInvincible);
     }

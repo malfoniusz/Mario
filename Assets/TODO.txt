@@ -1,10 +1,9 @@
 ﻿
 Podziemie:
-- wejście do rury (strzałka w dół) + animacja + dźwięk + zablokowanie ruchu gracza
-- kamera na podziemie + background kamery na czarno + zmiana muzyki + zrzucenie gracza
+- kamera na podziemie + background kamery na czarno + zmiana muzyki + zrzucenie gracza + odblokowanie ruchu gracza
 - wejście do rury (strzałka w prawo) + animacja + dźwięk + zablokowanie ruchu gracza
 - kamera na zewnątrz + background kamery + muzyka
-- animacja wyjścia z rury (w góre) + dźwięk + zablokowanie ruchu gracza
+- animacja wyjścia z rury (w góre) + dźwięk + odblokowanie ruchu gracza
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów

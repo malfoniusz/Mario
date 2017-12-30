@@ -52,9 +52,9 @@ public class PlayerMovement : MonoBehaviour
         if (!stop)
         {
             walkKey = (int) ButtonNames.GetRawHorizontal();
-            jumpKey = ButtonNames.GetJump();
-            jumpKeyDown = (jumpKeyDown || ButtonNames.GetJumpDown());
-            runKey = ButtonNames.GetRun();
+            jumpKey = ButtonNames.JumpHeld();
+            jumpKeyDown = (jumpKeyDown || ButtonNames.JumpPressed());
+            runKey = ButtonNames.RunHeld();
         }
     }
 
@@ -241,4 +241,11 @@ public class PlayerMovement : MonoBehaviour
         stop = value;
         rb.isKinematic = value;
     }
+
+    public void DisablePlayer(bool disable)
+    {
+        ButtonNames.disableInput = disable;
+        rb.isKinematic = disable;
+    }
+
 }

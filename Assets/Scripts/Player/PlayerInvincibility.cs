@@ -28,13 +28,13 @@ public class PlayerInvincibility : MonoBehaviour
     private IEnumerator InvincibilityMain()
     {
         audioPowerup.Play();
-        environment.PlayInvincibility(true);
+        environment.Play(MusicNames.invincibility, true);
         anim.SetLayerWeight(animInvLayerIndex, 1);
         invincible = true;
 
         yield return new WaitForSeconds(invDuration - invExpireTime);
 
-        environment.PlayMain(true);
+        environment.Play(MusicNames.main, true);
         anim.SetLayerWeight(animInvLayerIndex, 0);
         anim.SetLayerWeight(animInvExpiereLayerIndex, 1);
 

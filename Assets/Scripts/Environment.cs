@@ -9,28 +9,33 @@ public class Environment : MonoBehaviour
 
     private int curAudioIndex = 0;
 
-    public void PlayMain(bool reset)
+    public void Play(string musicName, bool reset)
     {
-        PlayAudio(audioSources[0], reset);
-        curAudioIndex = 0;
-    }
-
-    public void PlayHurry(bool reset)
-    {
-        PlayAudio(audioSources[1], reset);
-        curAudioIndex = 1;
-    }
-
-    public void PlayInvincibility(bool reset)
-    {
-        PlayAudio(audioSources[2], reset);
-        curAudioIndex = 2;
-    }
-
-    public void PlayDeath(bool reset)
-    {
-        PlayAudio(audioSources[3], reset);
-        curAudioIndex = 3;
+        if (musicName.Equals(MusicNames.main))
+        {
+            PlayAudio(audioSources[0], reset);
+            curAudioIndex = 0;
+        }
+        else if (musicName.Equals(MusicNames.hurry))
+        {
+            PlayAudio(audioSources[1], reset);
+            curAudioIndex = 1;
+        }
+        else if (musicName.Equals(MusicNames.invincibility))
+        {
+            PlayAudio(audioSources[2], reset);
+            curAudioIndex = 2;
+        }
+        else if (musicName.Equals(MusicNames.death))
+        {
+            PlayAudio(audioSources[3], reset);
+            curAudioIndex = 3;
+        }
+        else if (musicName.Equals(MusicNames.underground))
+        {
+            PlayAudio(audioSources[4], reset);
+            curAudioIndex = 4;
+        }
     }
 
     private void PlayAudio(AudioSource audioSource, bool reset)

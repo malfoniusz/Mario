@@ -30,7 +30,7 @@ public class PlayerDeath : MonoBehaviour
 
         anim.SetBool(AnimatorNames.playerIsJumping, false);
         anim.SetTrigger(AnimatorNames.playerIsDead);
-        environment.PlayDeath(true);
+        environment.Play(MusicNames.death, true);
 
         StartCoroutine(endGame(deathClip.length));
     }

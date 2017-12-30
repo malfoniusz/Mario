@@ -14,6 +14,7 @@ public class TagNames : MonoBehaviour
     public static string coin = "Coin";
     public static string pipe = "Pipe";
     public static string background = "Background";
+    public static string mainCamera = "MainCamera";
 
     public static GameObject GetPlayer()
     {
@@ -103,6 +104,11 @@ public class TagNames : MonoBehaviour
     public static GameObject[] GetBackgrounds()
     {
         return GameObject.FindGameObjectsWithTag(background);
+    }
+
+    public static GameObject GetMainCamera()
+    {
+        return GameObject.FindGameObjectWithTag(mainCamera);
     }
 
 }
