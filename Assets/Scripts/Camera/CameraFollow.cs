@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
     public float minDistance;
 
     private Transform player;
+    private bool pause = false;
 
-    void Awake()
+    private void Awake()
     {
         player = TagNames.GetPlayer().transform;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
+    {
+        if (!pause) Follow();
+    }
+
+    private void Follow()
     {
         float dist = transform.position.x - player.position.x;
 
@@ -19,6 +25,11 @@ public class CameraMovement : MonoBehaviour
         {
             transform.position = new Vector3(player.position.x + minDistance, transform.position.y, transform.position.z);
         }
+    }
+
+    public void Pause(bool pause)
+    {
+        this.pause = pause;
     }
 
 }

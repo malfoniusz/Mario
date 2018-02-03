@@ -1,9 +1,10 @@
 ﻿
 Podziemie:
-- kamera na podziemie + background kamery na czarno + zmiana muzyki + zrzucenie gracza + odblokowanie ruchu gracza
 - wejście do rury (strzałka w prawo) + animacja + dźwięk + zablokowanie ruchu gracza
-- kamera na zewnątrz + background kamery + muzyka
-- animacja wyjścia z rury (w góre) + dźwięk + odblokowanie ruchu gracza
+- kamera na zewnątrz + normalny background kamery + muzyka + animacja wyjścia z rury (w góre) + dźwięk + odblokowanie ruchu gracza
+
+- bug: kliknięcie skoku w powietrzu powoduje bufer; puszczenie skoku w powietrzu powinno ten bufer likwidować
+- bug: mario domyślnie lekko lewituje nad ziemią
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów

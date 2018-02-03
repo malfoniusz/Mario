@@ -4,36 +4,25 @@ public class Contact : MonoBehaviour
 {
     public static bool ContactPoints(Transform[] contactChecks)
     {
-        bool contact = OverlapPoint(contactChecks, ~0);
-
-        return contact;
+        return OverlapPoint(contactChecks, ~0);
     }
 
     public static bool ContactPoints(Transform[] contactChecks, int layer)
     {
         int layerMask = (1 << layer);
-
-        bool contact = OverlapPoint(contactChecks, layerMask);
-
-        return contact;
+        return OverlapPoint(contactChecks, layerMask);
     }
 
     public static bool ContactPoints(Transform[] contactChecks, int[] layers)
     {
         int combinedMask = CombineMask(layers);
-
-        bool contact = OverlapPoint(contactChecks, combinedMask);
-
-        return contact;
+        return OverlapPoint(contactChecks, combinedMask);
     }
 
     public static bool ContactPointsIgnore(Transform[] contactChecks, int layer)
     {
         int ignoredLayerMask = ~(1 << layer);
-
-        bool contact = OverlapPoint(contactChecks, ignoredLayerMask);
-
-        return contact;
+        return OverlapPoint(contactChecks, ignoredLayerMask);
     }
 
     public static bool ContactPointsIgnore(Transform[] contactChecks, int[] layers)
@@ -41,9 +30,7 @@ public class Contact : MonoBehaviour
         int combinedMask = CombineMask(layers);
         int ignoredCombinedMask = ~combinedMask;
 
-        bool contact = OverlapPoint(contactChecks, ignoredCombinedMask);
-
-        return contact;
+        return OverlapPoint(contactChecks, ignoredCombinedMask);
     }
 
     private static int CombineMask(int[] layers)
@@ -68,6 +55,35 @@ public class Contact : MonoBehaviour
         for (int i = 0; i < contactChecks.Length; i++)
         {
             bool contact = Physics2D.OverlapPoint(contactChecks[i].position, layerMask);
+
+            if (contact) return true;
+        }
+
+        return false;
+    }
+
+    public static bool ContactLines(Vector2 objPos, Transform[] contactChecks)
+    {
+        return LineCast(objPos, contactChecks, ~0);
+    }
+
+    public static bool ContactLines(Vector2 objPos, Transform[] contactChecks, int layer)
+    {
+        int layerMask = (1 << layer);
+        return LineCast(objPos, contactChecks, layerMask);
+    }
+
+    public static bool ContactLines(Vector2 objPos, Transform[] contactChecks, int[] layers)
+    {
+        int combinedMask = CombineMask(layers);
+        return LineCast(objPos, contactChecks, combinedMask);
+    }
+
+    private static bool LineCast(Vector2 objPos, Transform[] contactChecks, int layerMask)
+    {
+        for (int i = 0; i < contactChecks.Length; i++)
+        {
+            bool contact = Physics2D.Linecast(objPos, contactChecks[i].position, layerMask);
 
             if (contact) return true;
         }

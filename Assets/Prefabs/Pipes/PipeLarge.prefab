@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 4831965248442270}
   - component: {fileID: 61815127006171034}
   - component: {fileID: 82343906854450136}
-  - component: {fileID: 114532051318161834}
   m_Layer: 14
   m_Name: PipeLarge
   m_TagString: Pipe
@@ -384,21 +383,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114532051318161834
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1528896663436546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa7b2777861e1d42bf1dd68f1bbe9a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entrances:
-  - {fileID: 4957087679451302}
-  - {fileID: 4320361073004694}
-  audioPipeEnter: {fileID: 82343906854450136}
 --- !u!212 &212069421662671312
 SpriteRenderer:
   m_ObjectHideFlags: 1

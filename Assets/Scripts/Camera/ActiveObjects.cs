@@ -27,9 +27,14 @@ public class ActiveObjects : MonoBehaviour
         if (time > refreshTime)
         {
             time = 0;
-            NewObjects();
-            ControlActiveObjects();
+            Refresh();
         }
+    }
+
+    public void Refresh()
+    {
+        NewObjects();
+        ControlActiveObjects();
     }
 
     private void NewObjects()
