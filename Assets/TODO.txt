@@ -2,9 +2,11 @@
 Podziemie:
 - wejście do rury (strzałka w prawo) + animacja + dźwięk + zablokowanie ruchu gracza
 - kamera na zewnątrz + normalny background kamery + muzyka + animacja wyjścia z rury (w góre) + dźwięk + odblokowanie ruchu gracza
+- dodać do prefabów pipe: audioSource z pipeEnter + entrances + exitCamPos + exit point (y = 100)
 
 - bug: kliknięcie skoku w powietrzu powoduje bufer; puszczenie skoku w powietrzu powinno ten bufer likwidować
 - bug: mario domyślnie lekko lewituje nad ziemią
+- bug: w podziemiach, bloki zasłaniają tekst na górze
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
