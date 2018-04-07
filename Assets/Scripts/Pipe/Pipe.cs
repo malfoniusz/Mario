@@ -8,8 +8,10 @@ public class Pipe : MonoBehaviour
     public Transform[] entrances;
     public AudioSource audioPipeEnter;
     public ButtonDir enterButton;
-    public Transform playerNewPos;
-    public Transform cameraNewPos;
+    public Transform newPlayerPos;
+    public bool defaultCamPos = false;
+    public Transform newCameraPos;
+    public ColorNames.Colors exitBackground;
     public bool staticCamOnExit;
     public bool noExitAnim;
     public ButtonDir exitDirection;
@@ -108,12 +110,13 @@ public class Pipe : MonoBehaviour
 
     private void ExitingPipe()
     {
-        activeObjects.SetStopDisabling(true);
-
         enteringPipe = false;
 
         // Potrzebny enum do wyboru muzyki i koloru backgroundu
-        transferScreen.Transfer(MusicNames.underground, playerNewPos.position, cameraNewPos.position, ColorNames.underground, staticCamOnExit);
+        if (defaultCamPos == false) transferScreen.Transfer(MusicNames.underground, newPlayerPos.position, newCameraPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
+        else                        transferScreen.Transfer(MusicNames.underground, newPlayerPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
+
+        activeObjects.SetStopDisabling(true);
 
         // Coroutine musi się wykonać przed wykonaniem reszty kodu za if'em
         if (noExitAnim == false)
