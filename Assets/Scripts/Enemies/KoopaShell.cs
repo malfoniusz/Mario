@@ -71,7 +71,7 @@ public class KoopaShell : Enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             Transform playerT = collision.gameObject.transform;
-            float hitDirection = Direction.HitDirection(playerT, transform);
+            float hitDirection = Mathf.Sign(playerT.position.y - transform.position.y);
             enemy.HitByFireball(hitDirection);
         }
     }

@@ -10,7 +10,7 @@ public class ActiveObjects : MonoBehaviour
     private Vector2 CAM_VIEW_MIN;
     private Vector2 CAM_VIEW_MAX;
     private float time;
-    private bool stopDisabling = false;
+    private bool objectDisablingActive = false;
 
     private void Start()
     {
@@ -35,11 +35,7 @@ public class ActiveObjects : MonoBehaviour
     public void Refresh()
     {
         NewObjects();
-
-        if (stopDisabling == false)
-        {
-            ControlActiveObjects();
-        }
+        ControlActiveObjects();
     }
 
     private void NewObjects()
@@ -84,18 +80,18 @@ public class ActiveObjects : MonoBehaviour
 
         bool camVis = (objPos.x >= CAM_VIEW_MIN.x && objPos.x <= CAM_VIEW_MAX.x) && (objPos.y >= CAM_VIEW_MIN.y && objPos.y <= CAM_VIEW_MAX.y);
 
-        if (camVis) gameObject.SetActive(true);
-        else        gameObject.SetActive(false);
+        if (camVis)                     gameObject.SetActive(true);
+        else if (objectDisablingActive) gameObject.SetActive(false);
     }
 
-    public void SetStopDisabling(bool stopDisabling)
+    public void SetObjectDisablingActive(bool objectDisablingActive)
     {
-        this.stopDisabling = stopDisabling;
+        this.objectDisablingActive = objectDisablingActive;
     }
 
-    public bool GetStopDisabling()
+    public bool GetObjectDisablingActive()
     {
-        return stopDisabling;
+        return objectDisablingActive;
     }
 
 }

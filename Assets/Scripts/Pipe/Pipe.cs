@@ -3,18 +3,17 @@ using System.Collections;
 
 public class Pipe : MonoBehaviour
 {
-    public enum ButtonDir { Up, Down, Left, Right };
-
     public Transform[] entrances;
     public AudioSource audioPipeEnter;
-    public ButtonDir enterButton;
+    public Direction enterDirection;
     public Transform newPlayerPos;
     public bool defaultCamPos = false;
     public Transform newCameraPos;
     public ColorNames.Colors exitBackground;
+    public MusicNames.Musics exitMusic;
     public bool staticCamOnExit;
-    public bool noExitAnim;
-    public ButtonDir exitDirection;
+    public bool exitPipeAnim;
+    public Direction exitDirection;
 
     private GameObject player;
     private PlayerMovement playerMov;
@@ -22,10 +21,12 @@ public class Pipe : MonoBehaviour
     private TransferScreen transferScreen;
     private ActiveObjects activeObjects;
     private MoveObject moveObject;
-    private float MOVE_DISTANCE = 32f;
-    private float MOVE_SPEED_MULTIPLIER = 1f;
-    private Vector2 enterDirection;
-    private Vector2 exitDirectionValue;
+    private float ENTER_PIPE_DISTANCE = 32f;
+    private float ENTER_PIPE_SPEED_MULTIPLIER = 1f;
+    private float EXIT_PIPE_DISTANCE = 100f;
+    private float EXIT_PIPE_SPEED_MULTIPLIER = 1f;
+    private Vector2 enterDistance;
+    private Vector2 exitDistance;
     private bool enteringPipe = false;
 
     private void Awake()
@@ -35,29 +36,29 @@ public class Pipe : MonoBehaviour
         cam = TagNames.GetMainCamera();
         transferScreen = cam.GetComponent<TransferScreen>();
         activeObjects = cam.GetComponent<ActiveObjects>();
-        enterDirection = CalcEnterDirection(enterButton);
-        exitDirectionValue = CalcEnterDirection(exitDirection);
+        enterDistance = CalcDistance(enterDirection, ENTER_PIPE_DISTANCE);
+        exitDistance = CalcDistance(exitDirection, EXIT_PIPE_DISTANCE);
     }
 
-    private Vector2 CalcEnterDirection(ButtonDir btnDir)
+    private Vector2 CalcDistance(Direction direction, float distance)
     {
         Vector2 enterDirection = Vector2.zero;
 
-        if (btnDir == ButtonDir.Up)
+        if (direction == Direction.Up)
         {
-            enterDirection = new Vector2(0, MOVE_DISTANCE);
+            enterDirection = new Vector2(0, distance);
         }
-        else if (btnDir == ButtonDir.Down)
+        else if (direction == Direction.Down)
         {
-            enterDirection = new Vector2(0, -MOVE_DISTANCE);
+            enterDirection = new Vector2(0, -distance);
         }
-        else if (btnDir == ButtonDir.Left)
+        else if (direction == Direction.Left)
         {
-            enterDirection = new Vector2(-MOVE_DISTANCE, 0);
+            enterDirection = new Vector2(-distance, 0);
         }
-        else if (btnDir == ButtonDir.Right)
+        else if (direction == Direction.Right)
         {
-            enterDirection = new Vector2(MOVE_DISTANCE, 0);
+            enterDirection = new Vector2(distance, 0);
         }
 
         return enterDirection;
@@ -69,10 +70,10 @@ public class Pipe : MonoBehaviour
         {
             bool playerOnEntrance = Contact.ContactPoints(entrances, LayerNames.GetPlayer());
             bool enterButtonHold =
-                (enterButton == ButtonDir.Up && ButtonNames.UpHeld()) ||
-                (enterButton == ButtonDir.Down && ButtonNames.DownHeld()) ||
-                (enterButton == ButtonDir.Left && ButtonNames.LeftHeld()) ||
-                (enterButton == ButtonDir.Right && ButtonNames.RightHeld());
+                (enterDirection == Direction.Up && ButtonNames.UpHeld()) ||
+                (enterDirection == Direction.Down && ButtonNames.DownHeld()) ||
+                (enterDirection == Direction.Left && ButtonNames.LeftHeld()) ||
+                (enterDirection == Direction.Right && ButtonNames.RightHeld());
 
             if (playerOnEntrance && enterButtonHold)
             {
@@ -85,7 +86,7 @@ public class Pipe : MonoBehaviour
     {
         enteringPipe = true;
         audioPipeEnter.Play();
-        moveObject = new MoveObject(player.transform.position, enterDirection, MOVE_SPEED_MULTIPLIER);
+        moveObject = new MoveObject(player.transform.position, enterDistance, ENTER_PIPE_SPEED_MULTIPLIER);
 
         playerMov.DisablePlayer(true);
 
@@ -110,37 +111,47 @@ public class Pipe : MonoBehaviour
 
     private void ExitingPipe()
     {
-        enteringPipe = false;
+        activeObjects.SetObjectDisablingActive(false);
 
-        // Potrzebny enum do wyboru muzyki i koloru backgroundu
-        if (defaultCamPos == false) transferScreen.Transfer(MusicNames.underground, newPlayerPos.position, newCameraPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
-        else                        transferScreen.Transfer(MusicNames.underground, newPlayerPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
+        if (defaultCamPos == false) transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, newCameraPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
+        else                        transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
 
-        activeObjects.SetStopDisabling(true);
-
-        // Coroutine musi się wykonać przed wykonaniem reszty kodu za if'em
-        if (noExitAnim == false)
+        if (exitPipeAnim)
         {
-            BoxCollider2D playerCollider = player.GetComponent<BoxCollider2D>();
-
-            moveObject = new MoveObject(player.transform.position, exitDirectionValue, MOVE_SPEED_MULTIPLIER);
-            // Zmienić nazwę EnterPipeAnim
-            StartCoroutine(EnterPipeAnim());
-
-            // Windowanie gracza
+            StartCoroutine(ExitPipeAnim());
+            return;
         }
 
+        FinishExit();
+    }
+
+    private IEnumerator ExitPipeAnim()
+    {
+        moveObject = new MoveObject(player.transform.position, exitDistance, EXIT_PIPE_SPEED_MULTIPLIER);
+
+        while (true)
+        {
+            player.transform.position = moveObject.NextPosition();
+
+            // dodać warunek sprawdzający czy gracz wyszedł z rury
+            // do sprawdzenia tego użyć player i pipe colliderów, sprawdzić czy collidery ze sobą nie kolidują
+            // lub spróbuj zrobić to przy pomocy groundChecków gracza
+            /*if ()
+            {
+                break;
+            }*/
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        FinishExit();
+    }
+
+    private void FinishExit()
+    {
+        enteringPipe = false;
         playerMov.DisablePlayer(false);
-
-        activeObjects.SetStopDisabling(false);
-
-
-
-        // Problem z animacją wyjścia: po zmianie kamery obiekt przestaje być aktywny i reszta skryptu nie może być wykonana
-        // Rozwiązanie: zatrzymać automatyczne odświeżanie ActiveObejcts przed wejściem i wznowić je po skończeniu skryptu
-        // 				lub dodać dodatkowy skrypt do gracza: PlayerExitsPipe
-        //              po przeniesieniu gracza zacząć go windować w górę do momentu, aż cały sprite będzie widoczny
-
+        activeObjects.SetObjectDisablingActive(true);
     }
 
 }

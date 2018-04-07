@@ -2,7 +2,8 @@
 
 public class ColorNames : MonoBehaviour
 {
-    public enum Colors {
+    public enum Colors
+    {
         normalBackground,
         undergroundBackground,
     }
@@ -12,12 +13,15 @@ public class ColorNames : MonoBehaviour
         switch (color)
         {
             case Colors.normalBackground:
-                return new Color32(139, 158, 251, 0);
+                return normalBackground;
             case Colors.undergroundBackground:
-                return Color.black;
+                return undergroundBackground;
             default:
-                throw new System.Exception("Color dosen't exist.");
+                throw new System.Exception("Chosen color dosen't exist.");
         }
     }
+
+    static public Color normalBackground = new Color32(139, 158, 251, 0);
+    static public Color undergroundBackground = Color.black;
 
 }

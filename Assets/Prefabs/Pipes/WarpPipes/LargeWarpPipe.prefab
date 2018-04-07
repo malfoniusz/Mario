@@ -457,12 +457,14 @@ MonoBehaviour:
   - {fileID: 4068356364008184}
   - {fileID: 4588786314499384}
   audioPipeEnter: {fileID: 82948480461837564}
-  enterButton: 1
+  enterDirection: 1
   newPlayerPos: {fileID: 4897244579975554}
+  defaultCamPos: 0
   newCameraPos: {fileID: 4905941118706248}
   exitBackground: 1
+  exitMusic: 4
   staticCamOnExit: 1
-  noExitAnim: 1
+  exitPipeAnim: 0
   exitDirection: 0
 --- !u!212 &212429348994096950
 SpriteRenderer:

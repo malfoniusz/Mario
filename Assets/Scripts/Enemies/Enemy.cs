@@ -69,7 +69,7 @@ public class Enemy : Moving
     protected void HitByInvPlayer(Collider2D playerCollider)
     {
         Transform playerT = playerCollider.gameObject.transform;
-        float hitDirection = Direction.HitDirection(playerT, transform);
+        float hitDirection = Mathf.Sign(playerT.position.y - transform.position.y);
         HitByFireball(hitDirection);
     }
 
