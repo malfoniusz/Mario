@@ -1,9 +1,8 @@
 ﻿
 Podziemie:
-- wejście do rury (strzałka w prawo) + animacja + dźwięk + zablokowanie ruchu gracza
 - kamera na zewnątrz + normalny background kamery + muzyka + animacja wyjścia z rury (w góre) + dźwięk + odblokowanie ruchu gracza
-- dodać do prefabów pipe: audioSource z pipeEnter + entrances + exitCamPos + exit point (y = 100)
 
+- fix: unity dynamic inspektor - dla WarpPipe.css ukryć część opcji w inspektorze w zależności od zaznaczonych checkboxów (wybranych opcji)
 - bug: kliknięcie skoku w powietrzu powoduje bufer; puszczenie skoku w powietrzu powinno ten bufer likwidować
 - bug: mario domyślnie lekko lewituje nad ziemią
 - bug: w podziemiach, bloki zasłaniają tekst na górze

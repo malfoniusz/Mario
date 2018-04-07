@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pipe : MonoBehaviour
+public class WarpPipe : MonoBehaviour
 {
     public Transform[] entrances;
     public AudioSource audioPipeEnter;
