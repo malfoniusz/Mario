@@ -3,49 +3,57 @@ using System.Collections;
 
 public class Pipe : MonoBehaviour
 {
+    public enum ButtonDir { Up, Down, Left, Right };
+
     public Transform[] entrances;
     public AudioSource audioPipeEnter;
+    public ButtonDir enterButton;
     public Transform playerNewPos;
     public Transform cameraNewPos;
     public bool staticCamOnExit;
-
-    public enum ButtonDir { Up, Down, Left, Right };
-    public ButtonDir enterButton;
+    public bool noExitAnim;
+    public ButtonDir exitDirection;
 
     private GameObject player;
     private PlayerMovement playerMov;
+    private GameObject cam;
     private TransferScreen transferScreen;
+    private ActiveObjects activeObjects;
     private MoveObject moveObject;
     private float MOVE_DISTANCE = 32f;
     private float MOVE_SPEED_MULTIPLIER = 1f;
     private Vector2 enterDirection;
+    private Vector2 exitDirectionValue;
     private bool enteringPipe = false;
 
     private void Awake()
     {
         player = TagNames.GetPlayer();
         playerMov = player.GetComponent<PlayerMovement>();
-        transferScreen = TagNames.GetMainCamera().GetComponent<TransferScreen>();
-        enterDirection = CalcEnterDirection();
+        cam = TagNames.GetMainCamera();
+        transferScreen = cam.GetComponent<TransferScreen>();
+        activeObjects = cam.GetComponent<ActiveObjects>();
+        enterDirection = CalcEnterDirection(enterButton);
+        exitDirectionValue = CalcEnterDirection(exitDirection);
     }
 
-    private Vector2 CalcEnterDirection()
+    private Vector2 CalcEnterDirection(ButtonDir btnDir)
     {
         Vector2 enterDirection = Vector2.zero;
 
-        if (enterButton == ButtonDir.Up)
+        if (btnDir == ButtonDir.Up)
         {
             enterDirection = new Vector2(0, MOVE_DISTANCE);
         }
-        else if (enterButton == ButtonDir.Down)
+        else if (btnDir == ButtonDir.Down)
         {
             enterDirection = new Vector2(0, -MOVE_DISTANCE);
         }
-        else if (enterButton == ButtonDir.Left)
+        else if (btnDir == ButtonDir.Left)
         {
             enterDirection = new Vector2(-MOVE_DISTANCE, 0);
         }
-        else if (enterButton == ButtonDir.Right)
+        else if (btnDir == ButtonDir.Right)
         {
             enterDirection = new Vector2(MOVE_DISTANCE, 0);
         }
@@ -90,7 +98,7 @@ public class Pipe : MonoBehaviour
 
             if (moveObject.ReachedEnd())
             {
-                PipedEntered();
+                ExitingPipe();
                 break;
             }
 
@@ -98,18 +106,38 @@ public class Pipe : MonoBehaviour
         }
     }
 
-    private void PipedEntered()
+    private void ExitingPipe()
     {
+        activeObjects.SetStopDisabling(true);
+
         enteringPipe = false;
-        // Zatrzymać automatyczne odświeżanie ActiveObjects
+
+        // Potrzebny enum do wyboru muzyki i koloru backgroundu
         transferScreen.Transfer(MusicNames.underground, playerNewPos.position, cameraNewPos.position, ColorNames.underground, staticCamOnExit);
-        // Windowanie gracza
+
+        // Coroutine musi się wykonać przed wykonaniem reszty kodu za if'em
+        if (noExitAnim == false)
+        {
+            BoxCollider2D playerCollider = player.GetComponent<BoxCollider2D>();
+
+            moveObject = new MoveObject(player.transform.position, exitDirectionValue, MOVE_SPEED_MULTIPLIER);
+            // Zmienić nazwę EnterPipeAnim
+            StartCoroutine(EnterPipeAnim());
+
+            // Windowanie gracza
+        }
+
         playerMov.DisablePlayer(false);
-        // Wznowić automatyczne odświeżanie ActiveObjects
+
+        activeObjects.SetStopDisabling(false);
+
+
 
         // Problem z animacją wyjścia: po zmianie kamery obiekt przestaje być aktywny i reszta skryptu nie może być wykonana
         // Rozwiązanie: zatrzymać automatyczne odświeżanie ActiveObejcts przed wejściem i wznowić je po skończeniu skryptu
+        // 				lub dodać dodatkowy skrypt do gracza: PlayerExitsPipe
         //              po przeniesieniu gracza zacząć go windować w górę do momentu, aż cały sprite będzie widoczny
+
     }
 
 }

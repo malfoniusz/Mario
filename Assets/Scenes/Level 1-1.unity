@@ -6211,6 +6211,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4006226624272978, guid: 644d11241734be443905324d14855349,
     type: 2}
   m_PrefabInternal: {fileID: 786017189}
+--- !u!1 &252296352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 252296353}
+  m_Layer: 14
+  m_Name: PlayerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &252296353
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 252296352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1669448845}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &258239884
 Prefab:
   m_ObjectHideFlags: 0
@@ -11721,6 +11749,7 @@ GameObject:
   - component: {fileID: 550433505}
   - component: {fileID: 550433504}
   - component: {fileID: 550433507}
+  - component: {fileID: 550433506}
   m_Layer: 14
   m_Name: SidePipe
   m_TagString: Pipe
@@ -11780,6 +11809,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 62.34362, y: 32.022537}
   m_EdgeRadius: 0
+--- !u!114 &550433506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550433503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa7b2777861e1d42bf1dd68f1bbe9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entrances:
+  - {fileID: 9330358}
+  - {fileID: 1731395790}
+  audioPipeEnter: {fileID: 550433507}
+  playerNewPos: {fileID: 0}
+  cameraNewPos: {fileID: 0}
+  staticCamOnExit: 0
+  noExitAnim: 0
+  enterButton: 3
 --- !u!82 &550433507
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19511,6 +19560,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4006226624272978, guid: 644d11241734be443905324d14855349,
     type: 2}
   m_PrefabInternal: {fileID: 1276666717}
+--- !u!1 &856784003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 856784004}
+  m_Layer: 14
+  m_Name: CamPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &856784004
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856784003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1669448845}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &863414664
 Prefab:
   m_ObjectHideFlags: 0
@@ -35843,8 +35920,13 @@ MonoBehaviour:
   playerNewPos: {fileID: 289434906}
   cameraNewPos: {fileID: 338884152}
   staticCamOnExit: 1
-  exitPipeAnim: 0
+  noExitAnim: 1
   enterButton: 1
+--- !u!4 &1579237508 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4831965248442270, guid: 2329f8350fbf00f41baeab1280d0895d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1579237501}
 --- !u!1001 &1579303259
 Prefab:
   m_ObjectHideFlags: 0
@@ -37789,6 +37871,36 @@ Transform:
   m_PrefabParentObject: {fileID: 4006226624272978, guid: 644d11241734be443905324d14855349,
     type: 2}
   m_PrefabInternal: {fileID: 996868440}
+--- !u!1 &1669448844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1669448845}
+  m_Layer: 14
+  m_Name: Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1669448845
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669448844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 252296353}
+  - {fileID: 856784004}
+  m_Father: {fileID: 1579237508}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1672395793
 Prefab:
   m_ObjectHideFlags: 0

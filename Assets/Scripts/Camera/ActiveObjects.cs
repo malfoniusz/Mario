@@ -10,6 +10,7 @@ public class ActiveObjects : MonoBehaviour
     private Vector2 CAM_VIEW_MIN;
     private Vector2 CAM_VIEW_MAX;
     private float time;
+    private bool stopDisabling = false;
 
     private void Start()
     {
@@ -34,7 +35,11 @@ public class ActiveObjects : MonoBehaviour
     public void Refresh()
     {
         NewObjects();
-        ControlActiveObjects();
+
+        if (stopDisabling == false)
+        {
+            ControlActiveObjects();
+        }
     }
 
     private void NewObjects()
@@ -81,6 +86,16 @@ public class ActiveObjects : MonoBehaviour
 
         if (camVis) gameObject.SetActive(true);
         else        gameObject.SetActive(false);
+    }
+
+    public void SetStopDisabling(bool stopDisabling)
+    {
+        this.stopDisabling = stopDisabling;
+    }
+
+    public bool GetStopDisabling()
+    {
+        return stopDisabling;
     }
 
 }
