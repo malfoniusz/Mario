@@ -24,7 +24,7 @@ public class WarpPipe : MonoBehaviour
     private float ENTER_PIPE_DISTANCE = 32f;
     private float ENTER_PIPE_SPEED_MULTIPLIER = 1f;
     private float EXIT_PIPE_DISTANCE = 100f;
-    private float EXIT_PIPE_SPEED_MULTIPLIER = 1f;
+    private float EXIT_PIPE_SPEED_MULTIPLIER = 0.3f;
     private Vector2 enterDistance;
     private Vector2 exitDistance;
     private bool enteringPipe = false;
@@ -128,18 +128,17 @@ public class WarpPipe : MonoBehaviour
     private IEnumerator ExitPipeAnim()
     {
         moveObject = new MoveObject(player.transform.position, exitDistance, EXIT_PIPE_SPEED_MULTIPLIER);
+        Transform[] playerGroundChecks = player.GetComponent<PlayerMovement>().groundChecks;
 
         while (true)
         {
             player.transform.position = moveObject.NextPosition();
+            bool standingInPipe = Contact.ContactPoints(playerGroundChecks, LayerNames.GetPipe());
 
-            // dodać warunek sprawdzający czy gracz wyszedł z rury
-            // do sprawdzenia tego użyć player i pipe colliderów, sprawdzić czy collidery ze sobą nie kolidują
-            // lub spróbuj zrobić to przy pomocy groundChecków gracza
-            /*if ()
+            if (!standingInPipe)
             {
                 break;
-            }*/
+            }
 
             yield return new WaitForEndOfFrame();
         }

@@ -1,7 +1,4 @@
 ﻿
-Podziemie:
-- kamera na zewnątrz + normalny background kamery + muzyka + animacja wyjścia z rury (w góre) + dźwięk + odblokowanie ruchu gracza
-
 - fix: unity dynamic inspektor - dla WarpPipe.css ukryć część opcji w inspektorze w zależności od zaznaczonych checkboxów (wybranych opcji)
 - bug: kliknięcie skoku w powietrzu powoduje bufer; puszczenie skoku w powietrzu powinno ten bufer likwidować
 - bug: mario domyślnie lekko lewituje nad ziemią
