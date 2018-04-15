@@ -1,16 +1,16 @@
 ﻿
-- bug: kliknięcie skoku w powietrzu powoduje bufer; puszczenie skoku w powietrzu powinno ten bufer likwidować
-- bug: mario domyślnie lekko lewituje nad ziemią
-
 Wygrana:
-- wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów
-- interakcja z flagą (animacja flagi (record animation), dźwięk, punkty i ich wywindowanie do góry)
-- pójście bohatera do zamku
-- muzyka zwycięstwa
-- zamiana czasu na punkty + dźwięk
-- ekran + wczytanie następnego poziomu
+- dotknięcie flagi spawnuje odpowiednią ilość punktów przy podstawie flagi (po drugiej stronie) + sprite gracza dotykającego flage
+- obniżenie grasza, odniżenie flagi, wywindowanie punktów, muzyczka windowania punktów
+- dodanie punktów do gracza, gdy punkty znajdą się na samym szczycie (nie usuwać sprita punktów, ma on tam zostać)
+- odwrócenie gracza na drugą stronę gdy flaga dotknie ziemi
+- po skończeniu muzyczki: muzyczka zwycięstwa + pujście gracza do zamku + zniknięcie gracza przy bramie
+- po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
+- po zliczeniu punktów: flaga na zamku
+- wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego
 
 Menu główne:
+- osobna scena
 - przygotowanie części wizualnej
 - opcja rozpoczęcia gry
 - opcja wyjścia z gry
@@ -18,17 +18,12 @@ Menu główne:
 - po utracie wszystkich żyć, powrót do menu
 
 Porządki:
-- usunąć niepotrzebne rzeczy z początku poziomu
-- ustawić odpowiednie opcje GameMaster'a
-- wyłączyć FPSCounter
+- usunięcie niepotrzebnych rzeczy z początku poziomu
+- ustawienie odpowiednich opcji w GameMasterze
 
 Trolololio:
 - w menu głównym dać dwa tryby gry: normalny i trolololio
-- drugi poziom zrobić Trolio
-- przewracanie maria (odmrozić obracanie osi Z, dodać do okoła ground checky, sprawdzając rotacje maria użyć odpowiednich ground checków)
-- dodać rigidbody do bloków w późniejszej części poziomu
-- zapadająca się podłoga
-- zmienić Platform Effector na 180 stopni, dla dodatkowego boosta w góre
-- enemies superspeed
-- super fast koopashells
-- po uderzeniu w Koopa, nie zniszczyć jego obiektu
+- dodać rigidbody do bloków (żeby mogły interaktować z fizyką)
+- zapadająca się podłoga (rigidbody + można odskoczyć zanim się zapadnie)
+- dodać dużo przeciwników
+- super szybkość przeciwników

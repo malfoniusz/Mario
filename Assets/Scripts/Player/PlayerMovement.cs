@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
     private int walkKey = 0;
-    private bool jumpKey = false;
-    private bool jumpKeyDown = false;
+    private bool jumpKeyHeld = false;
+    private bool jumpKeyPressed = false;
     private bool runKey = false;
-    private bool jumping = false;
+    private bool playerIsJumping = false;
     private float jumpForce = 0;
     private float prevSpeed = 0;
     private StopMovement stopMovement;
@@ -52,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
         if (!stop)
         {
             walkKey = (int) ButtonNames.GetRawHorizontal();
-            jumpKey = ButtonNames.JumpHeld();
-            jumpKeyDown = (jumpKeyDown || ButtonNames.JumpPressed());
+            jumpKeyHeld = ButtonNames.JumpHeld();
+            jumpKeyPressed = (jumpKeyPressed || ButtonNames.JumpPressed());
             runKey = ButtonNames.RunHeld();
         }
     }
@@ -160,35 +160,35 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckJump();
         MakeAJump();
-        anim.SetBool(AnimatorNames.playerIsJumping, jumping);
+        anim.SetBool(AnimatorNames.playerIsJumping, playerIsJumping);
     }
 
     void CheckJump()
     {
         bool grounded = Contact.ContactPoints(groundChecks, jumpableLayers);
-        if (jumpKeyDown && grounded)
+        if (jumpKeyPressed && jumpKeyHeld && grounded)  // Skok gdy: jumpKey+ground || jumpKeyPressedAndHeldWhileInAir
         {
-            jumpKeyDown = false;
-            jumping = true;
+            jumpKeyPressed = false;
+            playerIsJumping = true;
             grounded = false;
 
             jumpForce = jumpSpeed * Time.deltaTime;
             jumpAudio.Play();
         }
-        else if (jumping && grounded)
+        else if (playerIsJumping && grounded)
         {
-            jumping = false;
+            playerIsJumping = false;
         }
     }
 
     void MakeAJump()
     {
         bool topContact = Contact.ContactPoints(topChecks, jumpableLayers);
-        if (!jumpKey || topContact)
+        if (!jumpKeyHeld || topContact)
         {
             jumpForce = 0;
         }
-        else if (jumpForce != 0 && jumpKey)
+        else if (jumpForce != 0 && jumpKeyHeld)
         {
             jumpForce = Mathf.Lerp(jumpForce, 0, jumpSlowdown);
             rb.AddForce(new Vector2(0, jumpForce));
