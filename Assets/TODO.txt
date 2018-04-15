@@ -1,7 +1,6 @@
 ﻿
 - bug: kliknięcie skoku w powietrzu powoduje bufer; puszczenie skoku w powietrzu powinno ten bufer likwidować
 - bug: mario domyślnie lekko lewituje nad ziemią
-- bug: w podziemiach, bloki zasłaniają tekst na górze
 
 Wygrana:
 - wysokość dotknięcia flagi i otrzymanie odpowiedniej ilości punktów

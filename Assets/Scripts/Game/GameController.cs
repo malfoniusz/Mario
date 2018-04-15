@@ -4,15 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public static bool quickStart = false;
+    [HideInInspector] public bool quickStart = false;
+    public GameObject startLevelScreen;
+    public GameObject gameOverScreen;
 
     private GameObject environmentObject;
     private Environment environment;
     private AudioSource audioGameOver;
     private GameObject player;
     private PlayerMovement playerMovement;
-    private GameObject startLevelScreen;
-    private GameObject gameOverScreen;
     private const float START_DELAY = 2;
 
     private void Awake()
@@ -22,8 +22,6 @@ public class GameController : MonoBehaviour
         audioGameOver = GetComponent<AudioSource>();
         player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
-        startLevelScreen = TagNames.GetStartLevelScreen();
-        gameOverScreen = TagNames.GetGameOverScreen();
     }
 
     private void Start()
@@ -31,7 +29,7 @@ public class GameController : MonoBehaviour
         HideStartLevel();
         HideGameOver();
 
-        if (!quickStart)
+        if (quickStart == false)
         {
             ShowStartLevel();
             StartCoroutine(StartLevel());
