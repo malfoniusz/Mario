@@ -16,12 +16,16 @@ public class GameMaster : MonoBehaviour
         player = TagNames.GetPlayer();
         invincibility = player.GetComponent<PlayerInvincibility>();
         gameController = GetComponent<GameController>();
+
+        if (gameController != null)
+        {
+            gameController.SetQuickStart(quickStart); // If run in Start it doesn't set GameController.quickStart
+        }
     }
 
     private void Start()
     {
         if (!showFPS) FPSCounter.SetActive(false);
-        gameController.quickStart = quickStart;
         invincibility.SetInvincible(playerInvincible);
     }
 

@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [HideInInspector] public bool quickStart = false;
     public GameObject startLevelScreen;
     public GameObject gameOverScreen;
 
@@ -14,6 +13,7 @@ public class GameController : MonoBehaviour
     private GameObject player;
     private PlayerMovement playerMovement;
     private const float START_DELAY = 2;
+    private bool quickStart;
 
     private void Awake()
     {
@@ -123,6 +123,16 @@ public class GameController : MonoBehaviour
         playerMovement.Stop(false);
         PlayerFireball.Stop(false);
         if (playMusic) environment.PlayCurrentMusic();
+    }
+
+    public bool GetQuickStart()
+    {
+        return quickStart;
+    }
+
+    public void SetQuickStart(bool quickStart)
+    {
+        this.quickStart = quickStart;
     }
 
 }
