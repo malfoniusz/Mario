@@ -34685,6 +34685,26 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -270.12
       objectReference: {fileID: 0}
+    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
+        type: 2}
+      propertyPath: defaultCamPos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
+        type: 2}
+      propertyPath: enterDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
+        type: 2}
+      propertyPath: exitPipeAnim
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
+        type: 2}
+      propertyPath: newCameraPosOnPlayer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aad896c5530f9b4389d4829337ab776, type: 2}
   m_IsPrefabParent: 0
@@ -42636,6 +42656,11 @@ Prefab:
     - target: {fileID: 4277065961620126, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
       propertyPath: m_LocalPosition.y
       value: 329
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201506730701296, guid: a362ab5f3d91c7d419044921d040db9f,
+        type: 2}
+      propertyPath: defaultCamPos
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}

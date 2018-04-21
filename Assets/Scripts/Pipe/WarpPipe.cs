@@ -7,7 +7,7 @@ public class WarpPipe : MonoBehaviour
     public AudioSource audioPipeEnter;
     public Direction enterDirection;
     public Transform newPlayerPos;
-    public bool defaultCamPos = false;
+    public bool newCameraPosOnPlayer = true;
     public Transform newCameraPos;
     public ColorNames.Colors exitBackground;
     public MusicNames.Musics exitMusic;
@@ -113,8 +113,8 @@ public class WarpPipe : MonoBehaviour
     {
         activeObjects.SetObjectDisablingActive(false);
 
-        if (defaultCamPos == false) transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, newCameraPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
-        else                        transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
+        if (newCameraPosOnPlayer)   transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
+        else                        transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, newCameraPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
 
         if (exitPipeAnim)
         {
