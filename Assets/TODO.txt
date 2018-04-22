@@ -1,6 +1,4 @@
 ﻿
-- Fix: CustomEditor dla WarpPipe.css
-
 Wygrana:
 - dotknięcie flagi spawnuje odpowiednią ilość punktów przy podstawie flagi (po drugiej stronie) + sprite gracza dotykającego flage
 - obniżenie grasza, odniżenie flagi, wywindowanie punktów, muzyczka windowania punktów
