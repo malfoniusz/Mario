@@ -16233,7 +16233,7 @@ MonoBehaviour:
   - {fileID: 723251879}
   - {fileID: 723251878}
   - {fileID: 723251877}
-  pointsForCollider: 00000000a00f0000d0070000200300009001000064000000
+  pointsForCollider: 88130000a00f0000d0070000200300009001000064000000
   flagPoleBase: {fileID: 24703974}
   spawnPointsPos: {fileID: 2968141}
 --- !u!61 &723251877

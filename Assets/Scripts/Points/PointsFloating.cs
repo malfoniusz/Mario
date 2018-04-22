@@ -51,7 +51,7 @@ public class PointsFloating : MonoBehaviour
         }
     }
 
-    void SetText(string str)
+    private void SetText(string str)
     {
         text.text = str;
     }
