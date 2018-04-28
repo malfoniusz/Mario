@@ -111,7 +111,7 @@ public class WarpPipe : MonoBehaviour
 
     private void ExitingPipe()
     {
-        activeObjects.SetObjectDisablingActive(false);
+        activeObjects.SetStopDisabling(true);
 
         if (newCameraPosOnPlayer)   transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
         else                        transferScreen.Transfer(MusicNames.GetMusic(exitMusic), newPlayerPos.position, newCameraPos.position, ColorNames.GetColor(exitBackground), staticCamOnExit);
@@ -150,7 +150,7 @@ public class WarpPipe : MonoBehaviour
     {
         enteringPipe = false;
         playerMov.DisablePlayer(false);
-        activeObjects.SetObjectDisablingActive(true);
+        activeObjects.SetStopDisabling(false);
     }
 
 }
