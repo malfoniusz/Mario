@@ -3,15 +3,17 @@ using UnityEngine.UI;
 
 public class PointsFloating : MonoBehaviour
 {
-    private Animator anim;
-    private AudioSource audioSource;
-    private Text text;
-    private int points = 0;
-    private bool extraLife = false;
+    public int points = 0;
+    public bool extraLife = false;
+    public float upDistance = 15;
+    public float upSpeedMultiplier = 1;
+    public AudioSource audioSource;
+    public Text text;
+
+    private MoveObject moveObject;
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         text = transform.GetChild(0).GetComponent<Text>();
     }
@@ -20,11 +22,13 @@ public class PointsFloating : MonoBehaviour
     {
         if (extraLife) audioSource.Play();
         UIPoints.AddPoints(points);
+        moveObject = new MoveObject(transform.position, Vector3.up * upDistance, upSpeedMultiplier);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        transform.position = moveObject.NextPosition();
+        if (moveObject.ReachedEnd())
         {
             Destroy(gameObject);
         }
@@ -54,6 +58,26 @@ public class PointsFloating : MonoBehaviour
     private void SetText(string str)
     {
         text.text = str;
+    }
+
+    public void SetUpDistance(float upDistance)
+    {
+        this.upDistance = upDistance;
+    }
+
+    public float GetUpDistance()
+    {
+        return upDistance;
+    }
+
+    public void SetUpSpeedMultiplier(float upSpeedMultiplier)
+    {
+        this.upSpeedMultiplier = upSpeedMultiplier;
+    }
+
+    public float GetUpSpeedMultiplier()
+    {
+        return upSpeedMultiplier;
     }
 
 }

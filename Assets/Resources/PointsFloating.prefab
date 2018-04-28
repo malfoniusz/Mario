@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4642564418976516}
-  - component: {fileID: 95905783383963622}
   - component: {fileID: 82401923037009800}
   - component: {fileID: 114199033721738776}
   m_Layer: 0
@@ -54,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318919515756202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3080.7422, y: 99.52798, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224352052350640820}
@@ -142,23 +141,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95905783383963622
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1318919515756202}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c95729a23e107604ea2edcf8ab6ea494, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114086869591731698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,6 +185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c109a9a77617afe44900c43bdbc9e4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 100
+  extraLife: 0
+  upDistance: 15
+  upSpeedMultiplier: 1
+  audioSource: {fileID: 82401923037009800}
+  text: {fileID: 114086869591731698}
 --- !u!222 &222420224676210282
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -226,7 +214,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -750594997
+  m_SortingLayerID: -1796788319
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &224352052350640820

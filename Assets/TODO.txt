@@ -1,5 +1,4 @@
 ﻿
-- PointsFloating: usunąć animacje wznoszenia się punktów i zamienić ją na fizyke, z możliwością kontroli szybkośći i maksymalnego pułapu
 - PointsFloating: dodać zmienną zatrzymującą usuwanie punktów, gdy osiągną maksymalny pułap
 - PointsFloating: dodać zmienną zmieniającą moment dodawania punktów z przy ich tworzeniu na po osiągnięciu pułapu
 
