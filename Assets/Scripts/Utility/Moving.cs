@@ -7,7 +7,6 @@ public class Moving : MonoBehaviour
     public BoxCollider2D objectCollider;
     public BoxCollider2D triggerCollider;
     public Animator anim;
-    public GameObject pointsFloating;
     public Transform[] leftChecks;
     public Transform[] rightChecks;
     public int points = 100;
@@ -77,35 +76,23 @@ public class Moving : MonoBehaviour
 
     protected void SpawnPoints()
     {
-        GameObject pointsObject = CreatePointsFloating();
-        pointsObject.GetComponent<PointsFloating>().SetPoints(points);
+        SpawnPointsFloating.Points(transform.position, points);
     }
 
     protected void SpawnComboPoints()
     {
         int comboPoints = ComboPoints.Combo(points);
-
-        GameObject pointsObject = CreatePointsFloating();
-        pointsObject.GetComponent<PointsFloating>().SetPoints(comboPoints);
+        SpawnPointsFloating.Points(transform.position, comboPoints);
     }
 
     protected void SpawnExtraLife()
     {
-        GameObject pointsObject = CreatePointsFloating();
-        pointsObject.GetComponent<PointsFloating>().SetExtraLife(true);
+        SpawnPointsFloating.ExtraLife(transform.position);
     }
 
     protected void SpawnPointsAndExtraLife()
     {
-        GameObject pointsObject = CreatePointsFloating();
-        pointsObject.GetComponent<PointsFloating>().SetPointsAndExtraLife(points, true);
-    }
-
-    private GameObject CreatePointsFloating()
-    {
-        GameObject pointsObject = Instantiate(pointsFloating);
-        pointsObject.transform.GetChild(0).position = transform.position;
-        return pointsObject;
+        SpawnPointsFloating.PointsAndExtraLife(transform.position, points);
     }
 
 }

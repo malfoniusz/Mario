@@ -3,7 +3,6 @@
 public class CoinFromBlock : MonoBehaviour
 {
     public int points = 200;
-    public GameObject pointsFloating;
     public float jumpForce = 400;
 
     private bool extraLife;
@@ -32,9 +31,9 @@ public class CoinFromBlock : MonoBehaviour
         {
             if (spriteRenderer.enabled)
             {
-                GameObject pointsObject = Instantiate(pointsFloating);
-                pointsObject.transform.GetChild(0).position = transform.position;
-                pointsObject.GetComponent<PointsFloating>().SetPointsAndExtraLife(points, extraLife);
+                if (extraLife)  SpawnPointsFloating.PointsAndExtraLife(transform.position, points);
+                else            SpawnPointsFloating.Points(transform.position, points);
+
                 spriteRenderer.enabled = false;
             }
 
