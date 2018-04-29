@@ -2,28 +2,29 @@
 
 public class SpawnPointsFloating : MonoBehaviour
 {
-    public static void Points(Vector3 pos, int points)
+    public static PointsFloating Points(Vector3 pos, int points, bool extraLife)
     {
-        GameObject pointsObject = CreatePoints(pos);
-        pointsObject.GetComponent<PointsFloating>().SetPoints(points);
+        PointsFloating pointsFloating = CreatePoints(pos);
+        pointsFloating.SetPointsAndExtraLife(points, extraLife);
+        return pointsFloating;
     }
 
-    public static void ExtraLife(Vector3 pos)
+    public static void FlagPole(Vector3 pos, int points, bool extraLife, float riseDistance, float riseTimeInSeconds)
     {
-        GameObject pointsObject = CreatePoints(pos);
-        pointsObject.GetComponent<PointsFloating>().SetExtraLife(true);
+        PointsFloating pointsFloating = Points(pos, points, extraLife);
+
+        pointsFloating.SetExtraLifePlaySound(false);
+        pointsFloating.SetRiseDistance(riseDistance);
+        pointsFloating.SetRiseTimeInSeconds(riseTimeInSeconds);
+        pointsFloating.SetDeleteAfterReachingEnd(false);
+        pointsFloating.SetAddPointsAtEnd(true);
     }
 
-    public static void PointsAndExtraLife(Vector3 pos, int points)
-    {
-        GameObject pointsObject = CreatePoints(pos);
-        pointsObject.GetComponent<PointsFloating>().SetPointsAndExtraLife(points, true);
-    }
-
-    private static GameObject CreatePoints(Vector3 pos)
+    private static PointsFloating CreatePoints(Vector3 pos)
     {
         GameObject pointsObject = (GameObject)Instantiate(Resources.Load(ResourcesNames.pointsFloating), pos, Quaternion.identity);
-        return pointsObject;
+        PointsFloating pointsFloating = pointsObject.GetComponent<PointsFloating>();
+        return pointsFloating;
     }
 
 }

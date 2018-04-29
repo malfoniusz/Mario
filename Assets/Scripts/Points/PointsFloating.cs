@@ -3,14 +3,18 @@ using UnityEngine.UI;
 
 public class PointsFloating : MonoBehaviour
 {
-    public int points = 0;
-    public bool extraLife = false;
-    public float upDistance = 15;
-    public float upSpeedMultiplier = 1;
     public AudioSource audioSource;
     public Text text;
 
+    private int points = 0;
+    private bool extraLife = false;
+    private bool extraLifePlaySound = true;
+    private float riseDistance = 15;
+    private float riseTimeInSeconds = 1;
+    private bool deleteAfterReachingEnd = true;
+    private bool addPointsAtEnd = false;
     private MoveObject moveObject;
+    private bool updateOn = true;
 
     void Awake()
     {
@@ -20,17 +24,22 @@ public class PointsFloating : MonoBehaviour
 
     void Start()
     {
-        if (extraLife) audioSource.Play();
-        UIPoints.AddPoints(points);
-        moveObject = new MoveObject(transform.position, Vector3.up * upDistance, upSpeedMultiplier);
+        if (extraLife && extraLifePlaySound) audioSource.Play();
+        if (addPointsAtEnd == false) UIPoints.AddPoints(points);
+        moveObject = new MoveObject(transform.position, Vector3.up * riseDistance, riseTimeInSeconds);
     }
 
     void FixedUpdate()
     {
-        transform.position = moveObject.NextPosition();
-        if (moveObject.ReachedEnd())
+        if (updateOn)
         {
-            Destroy(gameObject);
+            transform.position = moveObject.NextPosition();
+            if (moveObject.ReachedEnd())
+            {
+                if (addPointsAtEnd) UIPoints.AddPoints(points);
+                if (deleteAfterReachingEnd) Destroy(gameObject);
+                updateOn = false;
+            }
         }
     }
 
@@ -60,24 +69,54 @@ public class PointsFloating : MonoBehaviour
         text.text = str;
     }
 
-    public void SetUpDistance(float upDistance)
+    public void SetExtraLifePlaySound(bool extraLifePlaySound)
     {
-        this.upDistance = upDistance;
+        this.extraLifePlaySound = extraLifePlaySound;
     }
 
-    public float GetUpDistance()
+    public bool GetExtraLifePlaySound()
     {
-        return upDistance;
+        return extraLifePlaySound;
     }
 
-    public void SetUpSpeedMultiplier(float upSpeedMultiplier)
+    public void SetRiseDistance(float riseDistance)
     {
-        this.upSpeedMultiplier = upSpeedMultiplier;
+        this.riseDistance = riseDistance;
     }
 
-    public float GetUpSpeedMultiplier()
+    public float GetRiseDistance()
     {
-        return upSpeedMultiplier;
+        return riseDistance;
+    }
+
+    public void SetRiseTimeInSeconds(float riseTimeInSeconds)
+    {
+        this.riseTimeInSeconds = riseTimeInSeconds;
+    }
+
+    public float GetRiseTimeInSeconds()
+    {
+        return riseTimeInSeconds;
+    }
+
+    public void SetDeleteAfterReachingEnd(bool deleteAfterReachingEnd)
+    {
+        this.deleteAfterReachingEnd = deleteAfterReachingEnd;
+    }
+
+    public bool GetDeleteAfterReachingEnd()
+    {
+        return deleteAfterReachingEnd;
+    }
+
+    public void SetAddPointsAtEnd(bool addPointsAtEnd)
+    {
+        this.addPointsAtEnd = addPointsAtEnd;
+    }
+
+    public bool GetAddPointsAtEnd()
+    {
+        return addPointsAtEnd;
     }
 
 }

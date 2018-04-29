@@ -16236,6 +16236,8 @@ MonoBehaviour:
   pointsForCollider: 88130000a00f0000d0070000200300009001000064000000
   flagPoleBase: {fileID: 24703974}
   spawnPointsPos: {fileID: 2968141}
+  pointsRiseDistance: 135
+  pointsRiseTimeInSeconds: 1
 --- !u!61 &723251877
 BoxCollider2D:
   m_ObjectHideFlags: 0

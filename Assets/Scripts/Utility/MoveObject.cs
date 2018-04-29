@@ -8,25 +8,25 @@ public class MoveObject
 
     private float curLerpTime = 0f;
     private const float MAX_LERP_TIME = 1f;
-    private float moveSpeedMultiplier;
+    private float moveTimeInSeconds;
 
-    public MoveObject(Vector2 startPos, Vector2 moveDistance, float moveSpeedMultiplier)
+    public MoveObject(Vector2 startPos, Vector2 moveDistance, float moveTimeInSeconds)
     {
         Vector2 endPos = startPos + moveDistance;
-        SetMoveObject(startPos, endPos, moveSpeedMultiplier);
+        SetMoveObject(startPos, endPos, moveTimeInSeconds);
     }
 
-    public MoveObject(float moveSpeedMultiplier, Vector2 startPos, Vector2 endPos)
+    public MoveObject(float moveTimeInSeconds, Vector2 startPos, Vector2 endPos)
     {
-        SetMoveObject(startPos, endPos, moveSpeedMultiplier);
+        SetMoveObject(startPos, endPos, moveTimeInSeconds);
     }
 
-    private void SetMoveObject(Vector2 startPos, Vector2 endPos, float moveSpeedMultiplier)
+    private void SetMoveObject(Vector2 startPos, Vector2 endPos, float moveTimeInSeconds)
     {
         this.startPos = startPos;
         this.curPos = startPos;
         this.endPos = endPos;
-        this.moveSpeedMultiplier = moveSpeedMultiplier;
+        this.moveTimeInSeconds = moveTimeInSeconds;
     }
 
     public Vector2 NextPosition()
@@ -47,7 +47,7 @@ public class MoveObject
 
     private void IncLerp()
     {
-        curLerpTime += (Time.deltaTime * moveSpeedMultiplier);
+        curLerpTime += (Time.deltaTime * moveTimeInSeconds);
         if (curLerpTime > MAX_LERP_TIME) curLerpTime = MAX_LERP_TIME;
     }
 

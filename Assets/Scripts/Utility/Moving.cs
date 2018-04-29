@@ -76,23 +76,23 @@ public class Moving : MonoBehaviour
 
     protected void SpawnPoints()
     {
-        SpawnPointsFloating.Points(transform.position, points);
+        SpawnPointsFloating.Points(transform.position, points, false);
     }
 
     protected void SpawnComboPoints()
     {
         int comboPoints = ComboPoints.Combo(points);
-        SpawnPointsFloating.Points(transform.position, comboPoints);
+        SpawnPointsFloating.Points(transform.position, comboPoints, false);
     }
 
     protected void SpawnExtraLife()
     {
-        SpawnPointsFloating.ExtraLife(transform.position);
+        SpawnPointsFloating.Points(transform.position, 0, true);
     }
 
     protected void SpawnPointsAndExtraLife()
     {
-        SpawnPointsFloating.PointsAndExtraLife(transform.position, points);
+        SpawnPointsFloating.Points(transform.position, points, true);
     }
 
 }

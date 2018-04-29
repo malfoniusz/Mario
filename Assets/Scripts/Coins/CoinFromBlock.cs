@@ -31,9 +31,7 @@ public class CoinFromBlock : MonoBehaviour
         {
             if (spriteRenderer.enabled)
             {
-                if (extraLife)  SpawnPointsFloating.PointsAndExtraLife(transform.position, points);
-                else            SpawnPointsFloating.Points(transform.position, points);
-
+                SpawnPointsFloating.Points(transform.position, points, extraLife);
                 spriteRenderer.enabled = false;
             }
 

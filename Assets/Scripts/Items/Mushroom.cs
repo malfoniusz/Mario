@@ -8,7 +8,7 @@ public class Mushroom : Moving
 
     private MoveObject moveObject;
     private Vector2 moveDistance = new Vector2(0f, 16.1f);  // 0.1f aby grzyb po wyjsciu nie zahaczyl o podloze kolejnego bloku
-    private const float MOVE_SPEED_MULTIPLIER = 1f;
+    private const float MOVE_TIME_IN_SECONDS = 1f;
 
     protected override void Awake()
     {
@@ -16,7 +16,7 @@ public class Mushroom : Moving
         this.playerPowerup = player.GetComponent<PlayerPowerup>();
 
         Vector2 startPos = transform.position;
-        this.moveObject = new MoveObject(startPos, moveDistance, MOVE_SPEED_MULTIPLIER);
+        this.moveObject = new MoveObject(startPos, moveDistance, MOVE_TIME_IN_SECONDS);
     }
 
     private void Start()
