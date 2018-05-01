@@ -20,6 +20,12 @@ public class TransferScreen : MonoBehaviour
         camDefaultY = transform.position.y;
     }
 
+    private void Start()
+    {
+        // Starting position of camera in relation to player starting position
+        transform.position = new Vector3(player.transform.position.x + CAM_DEFAULT_X_RIGHT_FROM_PLAYER, camDefaultY, transform.position.z);
+    }
+
     public void Transfer(MusicEnum newMusicName, Vector2 newPlayerPos, Color backgroundColor, bool staticCam)
     {
         Vector2 newCameraPos = new Vector2(newPlayerPos.x + CAM_DEFAULT_X_RIGHT_FROM_PLAYER, camDefaultY);
