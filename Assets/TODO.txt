@@ -1,4 +1,8 @@
 ﻿
+- deathByFall
+- gameController - gameOver music - place it in musicController 
+- camera - on start, position camera on player
+
 Wygrana:
 - sprite maria dotykającego flage + unieruchomienie gracza
 - obniżenie grasza, obniżenie flagi

@@ -7,8 +7,8 @@ public class TransferScreen : MonoBehaviour
     private ActiveObjects activeObjects;
     private CameraFollow camFollow;
     private Camera cam;
-    private float camDefaultXRightFromPlayer;
     private float camDefaultY;
+    private float CAM_DEFAULT_X_RIGHT_FROM_PLAYER = 110;
 
     private void Awake()
     {
@@ -17,13 +17,12 @@ public class TransferScreen : MonoBehaviour
         activeObjects = GetComponent<ActiveObjects>();
         camFollow = GetComponent<CameraFollow>();
         cam = GetComponent<Camera>();
-        camDefaultXRightFromPlayer = transform.position.x - player.transform.position.x;
         camDefaultY = transform.position.y;
     }
 
     public void Transfer(string newMusicName, Vector2 newPlayerPos, Color backgroundColor, bool staticCam)
     {
-        Vector2 newCameraPos = new Vector2(newPlayerPos.x + camDefaultXRightFromPlayer, camDefaultY);
+        Vector2 newCameraPos = new Vector2(newPlayerPos.x + CAM_DEFAULT_X_RIGHT_FROM_PLAYER, camDefaultY);
 
         Transfer(newMusicName, newPlayerPos, newCameraPos, backgroundColor, staticCam);
     }
