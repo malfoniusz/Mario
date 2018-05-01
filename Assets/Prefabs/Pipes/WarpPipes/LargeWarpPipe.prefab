@@ -258,7 +258,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893023149655436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.19, y: 16, z: 0}
+  m_LocalPosition: {x: 919.88, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4913886894844864}
@@ -290,7 +290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781911276256130}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 203, y: -166, z: 0}
+  m_LocalPosition: {x: 100.29, y: -176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4788014164798530}
@@ -303,7 +303,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1448367302053740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 319, y: -265, z: 0}
+  m_LocalPosition: {x: 215.3, y: -270.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4788014164798530}
@@ -459,7 +459,7 @@ MonoBehaviour:
   audioPipeEnter: {fileID: 82948480461837564}
   enterDirection: 1
   newPlayerPos: {fileID: 4897244579975554}
-  defaultCamPos: 0
+  newCameraPosOnPlayer: 0
   newCameraPos: {fileID: 4905941118706248}
   exitBackground: 1
   exitMusic: 4

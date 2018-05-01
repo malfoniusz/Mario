@@ -9,7 +9,7 @@ public class WarpPipe : MonoBehaviour
     public Transform newPlayerPos;
     public bool newCameraPosOnPlayer = true;
     public Transform newCameraPos;
-    public ColorNames.Colors exitBackground;
+    public ColorEnum exitBackground;
     public MusicEnum exitMusic;
     public bool staticCamOnExit;
     public bool exitPipeAnim;

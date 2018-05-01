@@ -34780,42 +34780,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4897244579975554, guid: 5aad896c5530f9b4389d4829337ab776, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 100.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 4897244579975554, guid: 5aad896c5530f9b4389d4829337ab776, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -176
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905941118706248, guid: 5aad896c5530f9b4389d4829337ab776, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 215.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905941118706248, guid: 5aad896c5530f9b4389d4829337ab776, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -270.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
-        type: 2}
-      propertyPath: defaultCamPos
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
-        type: 2}
-      propertyPath: enterDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
-        type: 2}
-      propertyPath: exitPipeAnim
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114390828930976772, guid: 5aad896c5530f9b4389d4829337ab776,
-        type: 2}
-      propertyPath: newCameraPosOnPlayer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aad896c5530f9b4389d4829337ab776, type: 2}
   m_IsPrefabParent: 0
@@ -42734,44 +42698,6 @@ Prefab:
     - target: {fileID: 1475193258290710, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
       propertyPath: m_Name
       value: SideWarpPipe
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201506730701296, guid: a362ab5f3d91c7d419044921d040db9f,
-        type: 2}
-      propertyPath: newCameraPos
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424154984064934, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424154984064934, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424154984064934, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424154984064934, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424154984064934, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4277065961620126, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1318.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4277065961620126, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 329
-      objectReference: {fileID: 0}
-    - target: {fileID: 114201506730701296, guid: a362ab5f3d91c7d419044921d040db9f,
-        type: 2}
-      propertyPath: defaultCamPos
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}

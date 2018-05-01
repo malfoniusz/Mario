@@ -2,19 +2,13 @@
 
 public class ColorNames : MonoBehaviour
 {
-    public enum Colors
-    {
-        normalBackground,
-        undergroundBackground,
-    }
-
-    static public Color GetColor(Colors color)
+    static public Color GetColor(ColorEnum color)
     {
         switch (color)
         {
-            case Colors.normalBackground:
+            case ColorEnum.normalBackground:
                 return normalBackground;
-            case Colors.undergroundBackground:
+            case ColorEnum.undergroundBackground:
                 return undergroundBackground;
             default:
                 throw new System.Exception("Chosen color dosen't exist.");
