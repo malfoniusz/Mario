@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour
 
     private GameObject environmentObject;
     private MusicController musicController;
-    private AudioSource audioGameOver;
     private GameObject player;
     private PlayerMovement playerMovement;
     private const float START_DELAY = 2;
@@ -19,7 +18,6 @@ public class GameController : MonoBehaviour
     {
         environmentObject = TagNames.GetEnvironment();
         musicController = TagNames.GetMusicController().GetComponent<MusicController>();
-        audioGameOver = GetComponent<AudioSource>();
         player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
     }
@@ -49,7 +47,7 @@ public class GameController : MonoBehaviour
         if (UILives.lives <= 0)
         {
             ShowGameOver();
-            StartCoroutine(RestartGame(audioGameOver.clip.length));
+            StartCoroutine(RestartGame());
         }
         else
         {
@@ -62,7 +60,7 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(true);
         HideLevel();
         StopGame(true);
-        audioGameOver.Play();
+        musicController.Play(MusicNames.gameOver, true);
     }
 
     private void HideGameOver()
@@ -72,9 +70,11 @@ public class GameController : MonoBehaviour
         ResumeGame(true);
     }
 
-    private IEnumerator RestartGame(float seconds)
+    private IEnumerator RestartGame()
     {
-        yield return new WaitForSeconds(seconds);
+        float gameOverMusicLength = musicController.GetMusicLength(MusicNames.gameOver);
+
+        yield return new WaitForSeconds(gameOverMusicLength);
         UIPoints.ResetPoints();
         UICoins.ResetCoins();
         UILives.ResetLives();

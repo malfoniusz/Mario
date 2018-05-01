@@ -10,6 +10,7 @@ public class MusicNames : MonoBehaviour
         death,
         underground,
         stageCleared,
+        gameOver,
     }
 
     public static string main = "Main";
@@ -18,6 +19,7 @@ public class MusicNames : MonoBehaviour
     public static string death = "Death";
     public static string underground = "Underground";
     public static string stageCleared = "StageCleared";
+    public static string gameOver = "GameOver";
 
     static public string GetMusic(Musics music)
     {
@@ -35,6 +37,8 @@ public class MusicNames : MonoBehaviour
                 return underground;
             case Musics.stageCleared:
                 return stageCleared;
+            case Musics.gameOver:
+                return gameOver;
             default:
                 throw new System.Exception("Chosen music dosen't exist.");
         }

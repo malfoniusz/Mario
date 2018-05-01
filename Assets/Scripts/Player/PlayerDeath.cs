@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public AudioClip deathClip;
-
     private MusicController musicController;
     private GameController gameController;
     private GameObject parent;
@@ -32,7 +30,7 @@ public class PlayerDeath : MonoBehaviour
         anim.SetTrigger(AnimatorNames.playerIsDead);
         musicController.Play(MusicNames.death, true);
 
-        StartCoroutine(endGame(deathClip.length));
+        StartCoroutine(endGame(musicController.GetMusicLength(MusicNames.death)));
     }
 
     private IEnumerator endGame(float seconds)

@@ -1,7 +1,7 @@
 ﻿
-- deathByFall
-- gameController - gameOver music - place it in musicController 
+- musicController - zrób na switch na enum, zamiast na string
 - camera - on start, position camera on player
+- zmienić nazwę skryptu z End na FlagpoleAndCastle
 
 Wygrana:
 - sprite maria dotykającego flage + unieruchomienie gracza
