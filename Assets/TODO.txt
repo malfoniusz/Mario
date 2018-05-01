@@ -1,5 +1,4 @@
 ﻿
-- musicController - zrób na switch na enum, zamiast na string
 - camera - on start, position camera on player
 
 Wygrana:

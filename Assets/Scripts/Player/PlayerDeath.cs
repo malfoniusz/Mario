@@ -28,9 +28,9 @@ public class PlayerDeath : MonoBehaviour
 
         anim.SetBool(AnimatorNames.playerIsJumping, false);
         anim.SetTrigger(AnimatorNames.playerIsDead);
-        musicController.Play(MusicNames.death, true);
+        musicController.Play(MusicEnum.death, true);
 
-        StartCoroutine(endGame(musicController.GetMusicLength(MusicNames.death)));
+        StartCoroutine(endGame(musicController.GetMusicLength(MusicEnum.death)));
     }
 
     private IEnumerator endGame(float seconds)

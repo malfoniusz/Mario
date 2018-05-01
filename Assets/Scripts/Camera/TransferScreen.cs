@@ -20,14 +20,14 @@ public class TransferScreen : MonoBehaviour
         camDefaultY = transform.position.y;
     }
 
-    public void Transfer(string newMusicName, Vector2 newPlayerPos, Color backgroundColor, bool staticCam)
+    public void Transfer(MusicEnum newMusicName, Vector2 newPlayerPos, Color backgroundColor, bool staticCam)
     {
         Vector2 newCameraPos = new Vector2(newPlayerPos.x + CAM_DEFAULT_X_RIGHT_FROM_PLAYER, camDefaultY);
 
         Transfer(newMusicName, newPlayerPos, newCameraPos, backgroundColor, staticCam);
     }
 
-    public void Transfer(string newMusicName, Vector2 newPlayerPos, Vector2 newCameraPos, Color backgroundColor, bool staticCam)
+    public void Transfer(MusicEnum newMusicName, Vector2 newPlayerPos, Vector2 newCameraPos, Color backgroundColor, bool staticCam)
     {
         musicController.Play(newMusicName, true);
         player.transform.position = newPlayerPos;

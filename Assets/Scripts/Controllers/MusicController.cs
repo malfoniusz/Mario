@@ -9,39 +9,33 @@ public class MusicController : MonoBehaviour
 
     private int curAudioIndex = 0;
 
-    public void Play(string musicName, bool startFromBeginning)
+    public void Play(MusicEnum musicName, bool startFromBeginning)
     {
-        if (musicName.Equals(MusicNames.main))
+        switch(musicName)
         {
-            PlayAudio(0, startFromBeginning);
-        }
-        else if (musicName.Equals(MusicNames.hurry))
-        {
-            PlayAudio(1, startFromBeginning);
-        }
-        else if (musicName.Equals(MusicNames.invincibility))
-        {
-            PlayAudio(2, startFromBeginning);
-        }
-        else if (musicName.Equals(MusicNames.death))
-        {
-            PlayAudio(3, startFromBeginning);
-        }
-        else if (musicName.Equals(MusicNames.underground))
-        {
-            PlayAudio(4, startFromBeginning);
-        }
-        else if (musicName.Equals(MusicNames.stageCleared))
-        {
-            PlayAudio(5, startFromBeginning);
-        }
-        else if (musicName.Equals(MusicNames.gameOver))
-        {
-            PlayAudio(6, startFromBeginning);
-        }
-        else
-        {
-            throw new System.Exception("No such music exists.");
+            case MusicEnum.main:
+                PlayAudio(0, startFromBeginning);
+                break;
+            case MusicEnum.hurry:
+                PlayAudio(1, startFromBeginning);
+                break;
+            case MusicEnum.invincibility:
+                PlayAudio(2, startFromBeginning);
+                break;
+            case MusicEnum.death:
+                PlayAudio(3, startFromBeginning);
+                break;
+            case MusicEnum.underground:
+                PlayAudio(4, startFromBeginning);
+                break;
+            case MusicEnum.stageCleared:
+                PlayAudio(5, startFromBeginning);
+                break;
+            case MusicEnum.gameOver:
+                PlayAudio(6, startFromBeginning);
+                break;
+            default:
+                throw new System.Exception("No such music exists.");
         }
     }
 
@@ -54,39 +48,26 @@ public class MusicController : MonoBehaviour
         audioSources[audioIndex].Play();
     }
 
-    public float GetMusicLength(string musicName)
+    public float GetMusicLength(MusicEnum musicName)
     {
-        if (musicName.Equals(MusicNames.main))
+        switch (musicName)
         {
-            return audioSources[0].clip.length;
-        }
-        else if (musicName.Equals(MusicNames.hurry))
-        {
-            return audioSources[1].clip.length;
-        }
-        else if (musicName.Equals(MusicNames.invincibility))
-        {
-            return audioSources[2].clip.length;
-        }
-        else if (musicName.Equals(MusicNames.death))
-        {
-            return audioSources[3].clip.length;
-        }
-        else if (musicName.Equals(MusicNames.underground))
-        {
-            return audioSources[4].clip.length;
-        }
-        else if (musicName.Equals(MusicNames.stageCleared))
-        {
-            return audioSources[5].clip.length;
-        }
-        else if (musicName.Equals(MusicNames.gameOver))
-        {
-            return audioSources[6].clip.length;
-        }
-        else
-        {
-            throw new System.Exception("No such music exists.");
+            case MusicEnum.main:
+                return audioSources[0].clip.length;
+            case MusicEnum.hurry:
+                return audioSources[1].clip.length;
+            case MusicEnum.invincibility:
+                return audioSources[2].clip.length;
+            case MusicEnum.death:
+                return audioSources[3].clip.length;
+            case MusicEnum.underground:
+                return audioSources[4].clip.length;
+            case MusicEnum.stageCleared:
+                return audioSources[5].clip.length;
+            case MusicEnum.gameOver:
+                return audioSources[6].clip.length;
+            default:
+                throw new System.Exception("No such music exists.");
         }
     }
 

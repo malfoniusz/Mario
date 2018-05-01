@@ -60,7 +60,7 @@ public class UITime : MonoBehaviour
         if (time <= hurryTime && hurryTimeSwitch == false)
         {
             hurryTimeSwitch = true;
-            musicController.Play(MusicNames.hurry, true);
+            musicController.Play(MusicEnum.hurry, true);
         }
     }
 

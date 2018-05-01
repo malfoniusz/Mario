@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(true);
         HideLevel();
         StopGame(true);
-        musicController.Play(MusicNames.gameOver, true);
+        musicController.Play(MusicEnum.gameOver, true);
     }
 
     private void HideGameOver()
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
-        float gameOverMusicLength = musicController.GetMusicLength(MusicNames.gameOver);
+        float gameOverMusicLength = musicController.GetMusicLength(MusicEnum.gameOver);
 
         yield return new WaitForSeconds(gameOverMusicLength);
         UIPoints.ResetPoints();
