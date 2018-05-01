@@ -3,7 +3,7 @@
 public class TransferScreen : MonoBehaviour
 {
     private GameObject player;
-    private Environment environment;
+    private MusicController musicController;
     private ActiveObjects activeObjects;
     private CameraFollow camFollow;
     private Camera cam;
@@ -13,7 +13,7 @@ public class TransferScreen : MonoBehaviour
     private void Awake()
     {
         player = TagNames.GetPlayer();
-        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         activeObjects = GetComponent<ActiveObjects>();
         camFollow = GetComponent<CameraFollow>();
         cam = GetComponent<Camera>();
@@ -30,7 +30,7 @@ public class TransferScreen : MonoBehaviour
 
     public void Transfer(string newMusicName, Vector2 newPlayerPos, Vector2 newCameraPos, Color backgroundColor, bool staticCam)
     {
-        environment.Play(newMusicName, true);
+        musicController.Play(newMusicName, true);
         player.transform.position = newPlayerPos;
 
         transform.position = new Vector3(newCameraPos.x, newCameraPos.y, transform.position.z);

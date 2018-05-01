@@ -8,18 +8,18 @@ public class End : MonoBehaviour
     public float pointsRiseDistance = 135;
     public float pointsRiseTimeInSeconds = 1;
 
-    private Environment environment;
+    private MusicController musicController;
 
     private void Start()
     {
-        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        musicController = TagNames.GetMusicController().GetComponent<MusicController>();
     }
 
     public IEnumerator ClearStage(int flagpolePoints, bool extraLife)
     {
         SpawnPointsFloating.Flagpole(spawnPointsPos.position, flagpolePoints, extraLife, pointsRiseDistance, pointsRiseTimeInSeconds);
 
-        environment.PauseCurrentMusic();
+        musicController.PauseCurrentMusic();
         audioFlagpole.Play();
 
         yield return new WaitForSeconds(audioFlagpole.clip.length);

@@ -1,9 +1,9 @@
 ﻿
 Wygrana:
 - sprite maria dotykającego flage + unieruchomienie gracza
-- obniżenie grasza, obniżenie flagi, muzyczka windowania punktów
+- obniżenie grasza, obniżenie flagi
 - odwrócenie gracza na drugą stronę gdy flaga dotknie ziemi
-- po skończeniu muzyczki: muzyczka zwycięstwa + pujście gracza do zamku + zniknięcie gracza przy bramie
+- po skończeniu muzyczki flagi: muzyczka zwycięstwa + pujście gracza do zamku + zniknięcie gracza przy bramie
 - po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
 - po zliczeniu punktów: flaga na zamku
 - wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego

@@ -9,7 +9,7 @@ public class UITime : MonoBehaviour
     public int time = 400;
     public int hurryTime = 100;
 
-    private Environment environment;
+    private MusicController musicController;
     private PlayerDeath playerDeath;
     private Text text;
     private float nextTimeInc;
@@ -18,7 +18,7 @@ public class UITime : MonoBehaviour
 
     private void Awake()
     {
-        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         playerDeath = TagNames.GetPlayer().GetComponent<PlayerDeath>();
         text = GetComponent<Text>();
         nextTimeInc = 1 / countdownSpeed;
@@ -60,7 +60,7 @@ public class UITime : MonoBehaviour
         if (time <= hurryTime && hurryTimeSwitch == false)
         {
             hurryTimeSwitch = true;
-            environment.Play(MusicNames.hurry, true);
+            musicController.Play(MusicNames.hurry, true);
         }
     }
 

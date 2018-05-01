@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Environment : MonoBehaviour
+public class MusicController : MonoBehaviour
 {
     // Powody uzycia kilku audioSource'ow zamiast clip'ow
     // 1. Mozliwosc latwego ustawienie opcji kazdego audioSource'a

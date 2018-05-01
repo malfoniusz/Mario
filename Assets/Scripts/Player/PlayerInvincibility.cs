@@ -8,14 +8,14 @@ public class PlayerInvincibility : MonoBehaviour
     public float invDuration = 10f;
     public float invExpireTime = 2f;
 
-    private Environment environment;
+    private MusicController musicController;
     private int animInvLayerIndex;
     private int animInvExpiereLayerIndex;
     private bool invincible = false;
 
     private void Awake()
     {
-        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         animInvLayerIndex = AnimatorNames.GetPlayerInvincibilityLayer(anim);
         animInvExpiereLayerIndex = AnimatorNames.GetPlayerInvincibilityExpireLayer(anim);
     }
@@ -28,13 +28,13 @@ public class PlayerInvincibility : MonoBehaviour
     private IEnumerator InvincibilityMain()
     {
         audioPowerup.Play();
-        environment.Play(MusicNames.invincibility, true);
+        musicController.Play(MusicNames.invincibility, true);
         anim.SetLayerWeight(animInvLayerIndex, 1);
         invincible = true;
 
         yield return new WaitForSeconds(invDuration - invExpireTime);
 
-        environment.Play(MusicNames.main, true);
+        musicController.Play(MusicNames.main, true);
         anim.SetLayerWeight(animInvLayerIndex, 0);
         anim.SetLayerWeight(animInvExpiereLayerIndex, 1);
 

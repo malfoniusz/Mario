@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - SolidBlockContainer
-  - Environment
   - StartLevelScreen
   - GameOverScreen
   - Enemy
@@ -14,6 +13,10 @@ TagManager:
   - Pipe
   - Item
   - Background
+  - MusicController
+  - Environment
+  - Flagpole
+  - Castle
   layers:
   - Default
   - TransparentFX

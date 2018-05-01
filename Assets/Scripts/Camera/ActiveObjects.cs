@@ -60,6 +60,8 @@ public class ActiveObjects : MonoBehaviour
         obj.AddRange(TagNames.GetCoins());
         obj.AddRange(TagNames.GetPipes());
         obj.AddRange(TagNames.GetBackgrounds());
+        obj.AddRange(TagNames.GetFlagpoles());
+        obj.AddRange(TagNames.GetCastles());
 
         return obj;
     }

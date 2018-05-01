@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public GameObject gameOverScreen;
 
     private GameObject environmentObject;
-    private Environment environment;
+    private MusicController musicController;
     private AudioSource audioGameOver;
     private GameObject player;
     private PlayerMovement playerMovement;
@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         environmentObject = TagNames.GetEnvironment();
-        environment = environmentObject.GetComponent<Environment>();
+        musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         audioGameOver = GetComponent<AudioSource>();
         player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
         UITime.stop = true;
         playerMovement.Stop(true);
         PlayerFireball.Stop(true);
-        if (pauseMusic) environment.PauseCurrentMusic();    // environmentObject.SetActive(false); - rowniez wylacza muzyke
+        if (pauseMusic) musicController.PauseCurrentMusic();    // environmentObject.SetActive(false); - rowniez wylacza muzyke
     }
 
     private void HideStartLevel()
@@ -122,7 +122,7 @@ public class GameController : MonoBehaviour
         UITime.stop = false;
         playerMovement.Stop(false);
         PlayerFireball.Stop(false);
-        if (playMusic) environment.PlayCurrentMusic();
+        if (playMusic) musicController.PlayCurrentMusic();
     }
 
     public bool GetQuickStart()

@@ -5,7 +5,7 @@ public class PlayerDeath : MonoBehaviour
 {
     public AudioClip deathClip;
 
-    private Environment environment;
+    private MusicController musicController;
     private GameController gameController;
     private GameObject parent;
     private Animator anim;
@@ -14,7 +14,7 @@ public class PlayerDeath : MonoBehaviour
 
     void Awake()
     {
-        environment = TagNames.GetEnvironment().GetComponent<Environment>();
+        musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         gameController = TagNames.GetGameController().GetComponent<GameController>();
         parent = transform.parent.gameObject;
         anim = parent.GetComponent<Animator>();
@@ -30,7 +30,7 @@ public class PlayerDeath : MonoBehaviour
 
         anim.SetBool(AnimatorNames.playerIsJumping, false);
         anim.SetTrigger(AnimatorNames.playerIsDead);
-        environment.Play(MusicNames.death, true);
+        musicController.Play(MusicNames.death, true);
 
         StartCoroutine(endGame(deathClip.length));
     }

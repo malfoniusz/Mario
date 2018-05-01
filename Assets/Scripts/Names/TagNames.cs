@@ -3,7 +3,7 @@
 public class TagNames : MonoBehaviour
 {
     public static string player = "Player";
-    public static string environment = "Environment";
+    public static string musicController = "MusicController";
     public static string startLevelScreen = "StartLevelScreen";
     public static string gameOverScreen = "GameOverScreen";
     public static string solidBlockContainer = "SolidBlockContainer";
@@ -15,15 +15,18 @@ public class TagNames : MonoBehaviour
     public static string pipe = "Pipe";
     public static string background = "Background";
     public static string mainCamera = "MainCamera";
+    public static string environment = "Environment";
+    public static string flagpole = "Flagpole";
+    public static string castle = "Castle";
 
     public static GameObject GetPlayer()
     {
         return GameObject.FindGameObjectWithTag(player);
     }
 
-    public static GameObject GetEnvironment()
+    public static GameObject GetMusicController()
     {
-        return GameObject.FindGameObjectWithTag(environment);
+        return GameObject.FindGameObjectWithTag(musicController);
     }
 
     public static GameObject GetStartLevelScreen()
@@ -109,6 +112,31 @@ public class TagNames : MonoBehaviour
     public static GameObject GetMainCamera()
     {
         return GameObject.FindGameObjectWithTag(mainCamera);
+    }
+
+    public static GameObject GetEnvironment()
+    {
+        return GameObject.FindGameObjectWithTag(environment);
+    }
+
+    public static GameObject GetFlagpole()
+    {
+        return GameObject.FindGameObjectWithTag(flagpole);
+    }
+
+    public static GameObject[] GetFlagpoles()
+    {
+        return GameObject.FindGameObjectsWithTag(flagpole);
+    }
+
+    public static GameObject GetCastle()
+    {
+        return GameObject.FindGameObjectWithTag(castle);
+    }
+
+    public static GameObject[] GetCastles()
+    {
+        return GameObject.FindGameObjectsWithTag(castle);
     }
 
 }
