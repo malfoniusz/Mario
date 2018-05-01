@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212093715917020544}
   m_Layer: 0
   m_Name: Castle
-  m_TagString: Untagged
+  m_TagString: Castle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114666595149519648}
   m_Layer: 0
   m_Name: Flagpole
-  m_TagString: Untagged
+  m_TagString: Flagpole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 82948187267288694}
   - component: {fileID: 114276293329975922}
   m_Layer: 0
-  m_Name: End
+  m_Name: Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointsPos: {fileID: 4391661461883354}
   audioFlagpole: {fileID: 82948187267288694}
-  pointsRiseDistance: 175
+  pointsRiseDistance: 135
   pointsRiseTimeInSeconds: 1
 --- !u!114 &114666595149519648
 MonoBehaviour:
@@ -487,7 +487,7 @@ MonoBehaviour:
   - {fileID: 61642247841640382}
   - {fileID: 61851006451711614}
   pointsForCollider: 88130000a00f0000d0070000200300009001000064000000
-  endObject: {fileID: 1373207423251344}
+  finishObject: {fileID: 1373207423251344}
 --- !u!212 &212093715917020544
 SpriteRenderer:
   m_ObjectHideFlags: 1

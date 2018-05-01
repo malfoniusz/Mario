@@ -1,10 +1,9 @@
 ﻿
 - musicController - zrób na switch na enum, zamiast na string
 - camera - on start, position camera on player
-- zmienić nazwę skryptu z End na FlagpoleAndCastle
 
 Wygrana:
-- sprite maria dotykającego flage + unieruchomienie gracza
+- sprite maria dotykającego flage + unieruchomienie gracza + zatrzymanie gry
 - obniżenie grasza, obniżenie flagi
 - odwrócenie gracza na drugą stronę gdy flaga dotknie ziemi
 - po skończeniu muzyczki flagi: muzyczka zwycięstwa + pujście gracza do zamku + zniknięcie gracza przy bramie

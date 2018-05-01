@@ -5,14 +5,14 @@ public class Flagpole : MonoBehaviour
 {
     public Collider2D[] flagpoleColliders;
     public int[] pointsForCollider;
-    public GameObject endObject;
+    public GameObject finishObject;
 
-    private End end;
+    private Finish finish;
     private bool flagTouched = false;
 
     private void Start()
     {
-        end = endObject.GetComponent<End>();
+        finish = finishObject.GetComponent<Finish>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,7 +29,7 @@ public class Flagpole : MonoBehaviour
         int touchedColliderIndex = TouchedColliderIndex(collision);
         bool extraLife = (touchedColliderIndex == 0);
 
-        StartCoroutine(end.ClearStage(pointsForCollider[touchedColliderIndex], extraLife));
+        StartCoroutine(finish.ClearStage(pointsForCollider[touchedColliderIndex], extraLife));
     }
 
     private int TouchedColliderIndex(Collider2D collision)

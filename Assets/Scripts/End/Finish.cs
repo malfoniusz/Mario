@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class End : MonoBehaviour
+public class Finish : MonoBehaviour
 {
     public Transform spawnPointsPos;
     public AudioSource audioFlagpole;
