@@ -24,6 +24,7 @@ public class End : MonoBehaviour
 
         yield return new WaitForSeconds(audioFlagpole.clip.length);
 
+        musicController.Play(MusicNames.stageCleared, true);
 
         yield return null;
     }

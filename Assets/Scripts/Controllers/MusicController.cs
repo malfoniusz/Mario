@@ -9,42 +9,41 @@ public class MusicController : MonoBehaviour
 
     private int curAudioIndex = 0;
 
-    public void Play(string musicName, bool reset)
+    public void Play(string musicName, bool startFromBeginning)
     {
         if (musicName.Equals(MusicNames.main))
         {
-            PlayAudio(audioSources[0], reset);
-            curAudioIndex = 0;
+            PlayAudio(0, startFromBeginning);
         }
         else if (musicName.Equals(MusicNames.hurry))
         {
-            PlayAudio(audioSources[1], reset);
-            curAudioIndex = 1;
+            PlayAudio(1, startFromBeginning);
         }
         else if (musicName.Equals(MusicNames.invincibility))
         {
-            PlayAudio(audioSources[2], reset);
-            curAudioIndex = 2;
+            PlayAudio(2, startFromBeginning);
         }
         else if (musicName.Equals(MusicNames.death))
         {
-            PlayAudio(audioSources[3], reset);
-            curAudioIndex = 3;
+            PlayAudio(3, startFromBeginning);
         }
         else if (musicName.Equals(MusicNames.underground))
         {
-            PlayAudio(audioSources[4], reset);
-            curAudioIndex = 4;
+            PlayAudio(4, startFromBeginning);
+        }
+        else if (musicName.Equals(MusicNames.stageCleared))
+        {
+            PlayAudio(5, startFromBeginning);
         }
     }
 
-    private void PlayAudio(AudioSource audioSource, bool reset)
+    private void PlayAudio(int audioIndex, bool startFromBeginning)
     {
-        audioSources[curAudioIndex].Pause();
+        audioSources[curAudioIndex].Pause();    // Zatrzymanie starej muzyki
 
-        if (reset) audioSource.Stop();
-
-        audioSource.Play();
+        curAudioIndex = audioIndex;
+        if (startFromBeginning) audioSources[audioIndex].Stop();
+        audioSources[audioIndex].Play();
     }
 
     public void PauseCurrentMusic()

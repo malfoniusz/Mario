@@ -9,7 +9,15 @@ public class MusicNames : MonoBehaviour
         invincibility,
         death,
         underground,
+        stageCleared,
     }
+
+    public static string main = "Main";
+    public static string hurry = "Hurry";
+    public static string invincibility = "Invincibility";
+    public static string death = "Death";
+    public static string underground = "Underground";
+    public static string stageCleared = "StageCleared";
 
     static public string GetMusic(Musics music)
     {
@@ -25,15 +33,11 @@ public class MusicNames : MonoBehaviour
                 return death;
             case Musics.underground:
                 return underground;
+            case Musics.stageCleared:
+                return stageCleared;
             default:
                 throw new System.Exception("Chosen music dosen't exist.");
         }
     }
-
-    public static string main = "Main";
-    public static string hurry = "Hurry";
-    public static string invincibility = "Invincibility";
-    public static string death = "Death";
-    public static string underground = "Underground";
 
 }
