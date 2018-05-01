@@ -1,6 +1,6 @@
 ﻿
 Wygrana:
-- sprite maria dotykającego flage
+- sprite maria dotykającego flage + unieruchomienie gracza
 - obniżenie grasza, obniżenie flagi, muzyczka windowania punktów
 - odwrócenie gracza na drugą stronę gdy flaga dotknie ziemi
 - po skończeniu muzyczki: muzyczka zwycięstwa + pujście gracza do zamku + zniknięcie gracza przy bramie
@@ -19,10 +19,4 @@ Menu główne:
 Porządki:
 - usunięcie niepotrzebnych rzeczy z początku poziomu
 - ustawienie odpowiednich opcji w GameMasterze
-
-Trolololio:
-- w menu głównym dać dwa tryby gry: normalny i trolololio
-- dodać rigidbody do bloków (żeby mogły interaktować z fizyką)
-- zapadająca się podłoga (rigidbody + można odskoczyć zanim się zapadnie)
-- dodać dużo przeciwników
-- super szybkość przeciwników
+- jak będziesz im udostępniał grę to zamieść zdjęcie wszystkich napisanych skryptów

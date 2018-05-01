@@ -9,7 +9,7 @@ public class SpawnPointsFloating : MonoBehaviour
         return pointsFloating;
     }
 
-    public static void FlagPole(Vector3 pos, int points, bool extraLife, float riseDistance, float riseTimeInSeconds)
+    public static void Flagpole(Vector3 pos, int points, bool extraLife, float riseDistance, float riseTimeInSeconds)
     {
         PointsFloating pointsFloating = Points(pos, points, extraLife);
 
