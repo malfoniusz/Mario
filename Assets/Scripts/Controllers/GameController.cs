@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
     {
         Moving.stop = true;
         UITime.stop = true;
-        playerMovement.Stop(true);
+        playerMovement.DisablePlayer(true);
         PlayerFireball.Stop(true);
         if (pauseMusic) musicController.PauseCurrentMusic();    // environmentObject.SetActive(false); - rowniez wylacza muzyke
     }
@@ -120,7 +120,7 @@ public class GameController : MonoBehaviour
     {
         Moving.stop = false;
         UITime.stop = false;
-        playerMovement.Stop(false);
+        playerMovement.DisablePlayer(false);
         PlayerFireball.Stop(false);
         if (playMusic) musicController.PlayCurrentMusic();
     }

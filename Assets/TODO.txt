@@ -1,11 +1,8 @@
 ﻿
-- camera - on start, position camera on player
-
 Wygrana:
-- sprite maria dotykającego flage + unieruchomienie gracza + zatrzymanie gry
 - obniżenie grasza, obniżenie flagi
-- odwrócenie gracza na drugą stronę gdy flaga dotknie ziemi
-- po skończeniu muzyczki flagi: muzyczka zwycięstwa + pujście gracza do zamku + zniknięcie gracza przy bramie
+- odwrócenie gracza na drugą stronę gdy gracz dotknie ziemi
+- po skończeniu muzyczki flagi: pójście gracza do zamku + zniknięcie gracza przy bramie
 - po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
 - po zliczeniu punktów: flaga na zamku
 - wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego

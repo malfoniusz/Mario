@@ -236,16 +236,15 @@ public class PlayerMovement : MonoBehaviour
         return maxOffsetX;
     }
 
-    public void Stop(bool value)
+    public void DisablePlayer(bool value)
     {
         stop = value;
         rb.isKinematic = value;
     }
 
-    public void DisablePlayer(bool disable)
+    public void DisablePlayerInput(bool disable)
     {
         ButtonNames.disableInput = disable;
-        rb.isKinematic = disable;
     }
 
 }

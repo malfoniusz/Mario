@@ -7,6 +7,7 @@ public class AnimatorNames : MonoBehaviour
     public static string playerIsJumping = "IsJumping";
     public static string playerIsTurning = "IsTurning";
     public static string playerIsWalking = "IsWalking";
+    public static string playerIsGrabbing = "IsGrabbing";
     public static string playerIsDead = "IsDead";
     public static string playerWalkSpeedMultiplier = "WalkSpeedMultiplier";
     public static string playerPowerup = "Powerup";
