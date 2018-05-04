@@ -86,7 +86,7 @@ public class WarpPipe : MonoBehaviour
     {
         enteringPipe = true;
         audioPipeEnter.Play();
-        moveObject = new MoveObject(player.transform.position, enterDistance, ENTER_PIPE_TIME_IN_SECONDS);
+        moveObject = MoveObject.CreateMoveObject1(player.transform.position, enterDistance, ENTER_PIPE_TIME_IN_SECONDS);
 
         playerMov.DisablePlayer(true);
 
@@ -127,7 +127,7 @@ public class WarpPipe : MonoBehaviour
 
     private IEnumerator ExitPipeAnim()
     {
-        moveObject = new MoveObject(player.transform.position, exitDistance, EXIT_PIPE_TIME_IN_SECONDS);
+        moveObject = MoveObject.CreateMoveObject1(player.transform.position, exitDistance, EXIT_PIPE_TIME_IN_SECONDS);
         Transform[] playerGroundChecks = player.GetComponent<PlayerMovement>().groundChecks;
 
         while (true)

@@ -16,7 +16,7 @@ public class Mushroom : Moving
         this.playerPowerup = player.GetComponent<PlayerPowerup>();
 
         Vector2 startPos = transform.position;
-        this.moveObject = new MoveObject(startPos, moveDistance, MOVE_TIME_IN_SECONDS);
+        this.moveObject = MoveObject.CreateMoveObject1(startPos, moveDistance, MOVE_TIME_IN_SECONDS);
     }
 
     private void Start()

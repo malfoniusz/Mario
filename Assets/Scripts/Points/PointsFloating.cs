@@ -26,7 +26,7 @@ public class PointsFloating : MonoBehaviour
     {
         if (extraLife && extraLifePlaySound) audioSource.Play();
         if (addPointsAtEnd == false) UIPoints.AddPoints(points);
-        moveObject = new MoveObject(transform.position, Vector3.up * riseDistance, riseTimeInSeconds);
+        moveObject = MoveObject.CreateMoveObject1(transform.position, Vector3.up * riseDistance, riseTimeInSeconds);
     }
 
     void FixedUpdate()
