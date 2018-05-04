@@ -16,6 +16,8 @@ public class Finish : MonoBehaviour
     private GameObject player;
     private MarioAnimator mAnim;
 
+    private bool playerTouchedBase = false;
+
     private void Awake()
     {
         gameController = TagNames.GetGameController().GetComponent<GameController>();
@@ -28,6 +30,8 @@ public class Finish : MonoBehaviour
     {
         FlagpoleTouched(flagpolePoints, extraLife);
         yield return new WaitForSeconds(audioFlagpole.clip.length);
+
+        while (!playerTouchedBase) yield return new WaitForSeconds(Time.deltaTime);
 
         GoingToCastle();
         yield return null;
@@ -58,6 +62,8 @@ public class Finish : MonoBehaviour
             player.transform.position = marioMoveObj.NextPosition();
             yield return Time.deltaTime;
         }
+
+        playerTouchedBase = true;
 
         yield return null;
     }
