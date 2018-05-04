@@ -4,9 +4,12 @@ using UnityEngine;
 public class Finish : MonoBehaviour
 {
     public Transform spawnPointsPos;
+    public GameObject flagpoleBase;
+    public Transform flagpoleBaseTopContact;
     public AudioSource audioFlagpole;
     public float pointsRiseDistance = 135;
     public float pointsRiseTimeInSeconds = 1;
+    public float marioFallSpeed = 150;
 
     private GameController gameController;
     private MusicController musicController;
@@ -41,6 +44,22 @@ public class Finish : MonoBehaviour
 
         gameController.StopGame(false);
         mAnim.SetIsGrabbing(true);
+
+        StartCoroutine(PlayerTouchingBase());
+    }
+
+    private IEnumerator PlayerTouchingBase()
+    {
+        Transform[] contacts = { flagpoleBaseTopContact };
+        
+        MoveObject marioMoveObj = MoveObject.CreateMoveObject3(player.transform.position, flagpoleBase.transform.position, marioFallSpeed);
+        while (Contact.ContactPoints(contacts, LayerNames.GetPlayer()) == false)
+        {
+            player.transform.position = marioMoveObj.NextPosition();
+            yield return Time.deltaTime;
+        }
+
+        yield return null;
     }
 
     private void GoingToCastle()

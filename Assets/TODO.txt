@@ -1,6 +1,6 @@
 ﻿
 Wygrana:
-- obniżenie gracza, obniżenie flagi
+- obniżenie flagi
 - odwrócenie gracza na drugą stronę gdy gracz dotknie ziemi
 - po skończeniu muzyczki flagi: pójście gracza do zamku + zniknięcie gracza przy bramie
 - po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
