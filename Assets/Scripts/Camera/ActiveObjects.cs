@@ -11,6 +11,12 @@ public class ActiveObjects : MonoBehaviour
     private Vector2 CAM_VIEW_MAX;
     private float time;
     private bool stopDisabling = false;
+    private Camera cam;
+
+    private void Awake()
+    {
+        cam = GetComponent<Camera>();
+    }
 
     private void Start()
     {
@@ -78,7 +84,7 @@ public class ActiveObjects : MonoBehaviour
     private void Active(GameObject gameObject)
     {
         Transform transform = gameObject.transform;
-        Vector3 objPos = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 objPos = cam.WorldToViewportPoint(transform.position);
 
         bool camVis = (objPos.x >= CAM_VIEW_MIN.x && objPos.x <= CAM_VIEW_MAX.x) && (objPos.y >= CAM_VIEW_MIN.y && objPos.y <= CAM_VIEW_MAX.y);
 

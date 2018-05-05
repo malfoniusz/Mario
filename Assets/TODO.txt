@@ -1,14 +1,14 @@
 ﻿
-- refaktoryzacja: w TagNames dodać GetCamera(), która będzie brała kamerę z Main.camera. Zastąpić wszystkie wystąpienia Main.camera tą funkcją
+- bugfix: WarpPipe - przy wchodzeniu wyzeruj Velocity gracza
+- bugfix: WarpPipe - coś się psuje przy wychodzeniu
+- bugfix: WarpPipe - duży Mario
 
 Wygrana:
 - po skończeniu muzyczki flagi: pójście gracza do zamku + zniknięcie gracza przy bramie
 - po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
 - po zliczeniu punktów: flaga na zamku
 - wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego
-
-- bugfix: warppipe dla dużego maria
-- check: sprawdzić flagpole dla dużego, ognistego i nieśmiertelnego maria
+- check: sprawdzić flagpole, czy działa normalnie dla dużego, ognistego i nieśmiertelnego maria
 
 Menu główne:
 - osobna scena

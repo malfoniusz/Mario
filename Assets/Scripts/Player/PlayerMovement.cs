@@ -214,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
 
     void LeftCameraBoundary()
     {
-        float maxLeft = Camera.main.transform.position.x - maxOffsetX;
+        float maxLeft = TagNames.GetCamera().transform.position.x - maxOffsetX;
         float new_x = Mathf.Clamp(transform.position.x, maxLeft, Mathf.Infinity);
 
         if (transform.position.x != new_x)
@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float playerWidth = boxCollider.size.x;
 
-        Camera cam = Camera.main;
+        Camera cam = TagNames.GetCamera();
         float height = cam.orthographicSize * 2;
         float camWidth = cam.aspect * height;
 

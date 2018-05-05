@@ -25,7 +25,7 @@ public class Fireball : MonoBehaviour
     private void Start()
     {
         numberOfFireballs++;
-        mainCam = Camera.main;
+        mainCam = TagNames.GetCamera();
         direction = Mathf.Sign(player.transform.localScale.x);
         rb.velocity = Vector2.right * direction * speed;
     }

@@ -63,7 +63,7 @@ public class Finish : MonoBehaviour
         while (objCollider.bounds.Contains(flagpoleBaseTopContact.position) == false)
         {
             movingObject.transform.position = moveObj.NextPosition();
-            yield return Time.deltaTime;
+            yield return new WaitForEndOfFrame();
         }
 
         if (isPlayer) 
@@ -82,7 +82,7 @@ public class Finish : MonoBehaviour
         movingObject.transform.position += Vector3.right * xMirror;
         movingObject.transform.localScale = new Vector3(-1 * movingObject.transform.localScale.x, 1, 1);
 
-        CameraFollow camFollow = TagNames.GetCamera().GetComponent<CameraFollow>();
+        CameraFollow camFollow = TagNames.GetCameraObject().GetComponent<CameraFollow>();
         camFollow.UpdateMinDistanceToCurrent();
     }
 

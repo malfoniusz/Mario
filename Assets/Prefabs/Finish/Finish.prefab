@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 61039377392431102}
   m_Layer: 0
   m_Name: Flag
-  m_TagString: Untagged
+  m_TagString: Flagpole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -552,6 +552,7 @@ MonoBehaviour:
   spawnPointsPos: {fileID: 4391661461883354}
   flagpoleBase: {fileID: 1537395312581262}
   flagpoleBaseTopContact: {fileID: 4346526765288712}
+  pole: {fileID: 1183672848132740}
   flag: {fileID: 1131569401906908}
   audioFlagpole: {fileID: 82948187267288694}
   pointsRiseDistance: 135

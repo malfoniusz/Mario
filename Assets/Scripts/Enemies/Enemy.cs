@@ -88,7 +88,7 @@ public class Enemy : Moving
 
     void CheckVisibility()
     {
-        Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 visTest = TagNames.GetCamera().WorldToViewportPoint(transform.position);
         bool camVis = (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1);
 
         if (camVis == true)
