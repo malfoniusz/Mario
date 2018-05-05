@@ -6,12 +6,13 @@ public class Finish : MonoBehaviour
     public Transform spawnPointsPos;
     public GameObject flagpoleBase;
     public Transform flagpoleBaseTopContact;
+    public GameObject pole;
     public GameObject flag;
     public AudioSource audioFlagpole;
     public float pointsRiseDistance = 135;
     public float pointsRiseTimeInSeconds = 1;
     public float marioSlideSpeed = 150;
-    public float flagSlideSpeed = 150;
+    public float flagSlideSpeed = 130;
 
     private GameController gameController;
     private MusicController musicController;
@@ -47,11 +48,11 @@ public class Finish : MonoBehaviour
         gameController.StopGame(false);
         mAnim.SetIsGrabbing(true);
 
-        StartCoroutine(SlideDown(player, marioSlideSpeed));
-        StartCoroutine(SlideDown(flag, flagSlideSpeed));
+        StartCoroutine(SlideDown(player, marioSlideSpeed, true));
+        StartCoroutine(SlideDown(flag, flagSlideSpeed, false));
     }
 
-    private IEnumerator SlideDown(GameObject movingObject, float moveSpeed)
+    private IEnumerator SlideDown(GameObject movingObject, float moveSpeed, bool isPlayer)
     {
         Vector2 startPos = movingObject.transform.position;
         Vector2 endPos = new Vector2(movingObject.transform.position.x, flagpoleBase.transform.position.y);
@@ -65,7 +66,24 @@ public class Finish : MonoBehaviour
             yield return Time.deltaTime;
         }
 
+        if (isPlayer) 
+        {
+            MoveToOtherSideOfPole(movingObject);
+        }
+
         yield return null;
+    }
+
+    private void MoveToOtherSideOfPole(GameObject movingObject)
+    {
+        float xDifference = pole.transform.position.x - movingObject.transform.position.x;
+        float xMirror = 2 * xDifference;
+
+        movingObject.transform.position += Vector3.right * xMirror;
+        movingObject.transform.localScale = new Vector3(-1 * movingObject.transform.localScale.x, 1, 1);
+
+        CameraFollow camFollow = TagNames.GetCamera().GetComponent<CameraFollow>();
+        camFollow.UpdateMinDistanceToCurrent();
     }
 
     private void GoingToCastle()

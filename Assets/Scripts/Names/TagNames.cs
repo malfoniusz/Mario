@@ -139,4 +139,9 @@ public class TagNames : MonoBehaviour
         return GameObject.FindGameObjectsWithTag(castle);
     }
 
+    public static GameObject GetCamera()
+    {
+        return Camera.main.gameObject;
+    }
+
 }

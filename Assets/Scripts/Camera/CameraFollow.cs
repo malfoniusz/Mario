@@ -2,7 +2,7 @@
 
 public class CameraFollow : MonoBehaviour
 {
-    public float minDistance;
+    public float minDistance = 90;
 
     private Transform player;
     private bool pause = false;
@@ -30,6 +30,11 @@ public class CameraFollow : MonoBehaviour
     public void Pause(bool pause)
     {
         this.pause = pause;
+    }
+
+    public void UpdateMinDistanceToCurrent()
+    {
+        minDistance = transform.position.x - player.position.x;
     }
 
 }
