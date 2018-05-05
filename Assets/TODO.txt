@@ -1,6 +1,5 @@
 ﻿
 Wygrana:
-- obniżenie flagi
 - odwrócenie gracza na drugą stronę gdy gracz dotknie ziemi
 - po skończeniu muzyczki flagi: pójście gracza do zamku + zniknięcie gracza przy bramie
 - po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
@@ -8,6 +7,7 @@ Wygrana:
 - wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego
 
 - bugfix: warppipe dla dużego maria
+- check: sprawdzić flagpole dla dużego, ognistego i nieśmiertelnego maria
 
 Menu główne:
 - osobna scena

@@ -6,17 +6,17 @@ public class Finish : MonoBehaviour
     public Transform spawnPointsPos;
     public GameObject flagpoleBase;
     public Transform flagpoleBaseTopContact;
+    public GameObject flag;
     public AudioSource audioFlagpole;
     public float pointsRiseDistance = 135;
     public float pointsRiseTimeInSeconds = 1;
-    public float marioFallSpeed = 150;
+    public float marioSlideSpeed = 150;
+    public float flagSlideSpeed = 150;
 
     private GameController gameController;
     private MusicController musicController;
     private GameObject player;
     private MarioAnimator mAnim;
-
-    private bool playerTouchedBase = false;
 
     private void Awake()
     {
@@ -30,8 +30,6 @@ public class Finish : MonoBehaviour
     {
         FlagpoleTouched(flagpolePoints, extraLife);
         yield return new WaitForSeconds(audioFlagpole.clip.length);
-
-        while (!playerTouchedBase) yield return new WaitForSeconds(Time.deltaTime);
 
         GoingToCastle();
         yield return null;
@@ -49,21 +47,23 @@ public class Finish : MonoBehaviour
         gameController.StopGame(false);
         mAnim.SetIsGrabbing(true);
 
-        StartCoroutine(PlayerTouchingBase());
+        StartCoroutine(SlideDown(player, marioSlideSpeed));
+        StartCoroutine(SlideDown(flag, flagSlideSpeed));
     }
 
-    private IEnumerator PlayerTouchingBase()
+    private IEnumerator SlideDown(GameObject movingObject, float moveSpeed)
     {
-        Transform[] contacts = { flagpoleBaseTopContact };
-        
-        MoveObject marioMoveObj = MoveObject.CreateMoveObject3(player.transform.position, flagpoleBase.transform.position, marioFallSpeed);
-        while (Contact.ContactPoints(contacts, LayerNames.GetPlayer()) == false)
+        Vector2 startPos = movingObject.transform.position;
+        Vector2 endPos = new Vector2(movingObject.transform.position.x, flagpoleBase.transform.position.y);
+
+        MoveObject moveObj = MoveObject.CreateMoveObject3(startPos, endPos, moveSpeed);
+        Collider2D objCollider = movingObject.GetComponent<Collider2D>();
+
+        while (objCollider.bounds.Contains(flagpoleBaseTopContact.position) == false)
         {
-            player.transform.position = marioMoveObj.NextPosition();
+            movingObject.transform.position = moveObj.NextPosition();
             yield return Time.deltaTime;
         }
-
-        playerTouchedBase = true;
 
         yield return null;
     }
