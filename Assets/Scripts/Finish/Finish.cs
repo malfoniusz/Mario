@@ -49,6 +49,7 @@ public class Finish : MonoBehaviour
         audioFlagpole.Play();
 
         gameController.StopGame(false);
+        playerMove.ResetVelocity();
         mAnim.SetIsGrabbing(true);
 
         StartCoroutine(SlideDown(player, marioSlideSpeed, true));
@@ -99,6 +100,11 @@ public class Finish : MonoBehaviour
         playerMove.IsKinematic(false);
         playerMove.Stop(false);
         playerMove.SetConstantMove(true, Direction.Right, playerCastleMovSpeed);
+    }
+
+    public void EnteredCastle()
+    {
+        player.SetActive(false);
     }
 
 }

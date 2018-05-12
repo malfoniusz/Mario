@@ -253,7 +253,7 @@ public class PlayerMovement : MonoBehaviour
         DisableInput(value);
         Stop(value);
         IsKinematic(value);
-        if (resetVelocity) rb.velocity = Vector2.zero;
+        if (resetVelocity) ResetVelocity();
     }
 
     public void SetConstantMove(bool activate, Direction direction, float speed)
@@ -283,6 +283,11 @@ public class PlayerMovement : MonoBehaviour
     public void Stop(bool value)
     {
         stop = value;
+    }
+
+    public void ResetVelocity()
+    {
+        rb.velocity = Vector2.zero;
     }
 
 }
