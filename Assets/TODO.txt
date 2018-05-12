@@ -1,6 +1,4 @@
 ﻿
-- bugfix: WarpPipe - duży Mario
-
 Wygrana:
 - po skończeniu muzyczki flagi: pójście gracza do zamku + zniknięcie gracza przy bramie
 - po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów

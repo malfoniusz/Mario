@@ -6,6 +6,7 @@ public class WarpPipe : MonoBehaviour
     public Transform[] entrances;
     public AudioSource audioPipeEnter;
     public Direction enterDirection;
+    public float enterDistanceValue = 40f;
     public Transform newPlayerPos;
     public bool newCameraPosOnPlayer = true;
     public Transform newCameraPos;
@@ -21,7 +22,6 @@ public class WarpPipe : MonoBehaviour
     private TransferScreen transferScreen;
     private ActiveObjects activeObjects;
     private MoveObject moveObject;
-    private float ENTER_PIPE_DISTANCE = 32f;
     private float ENTER_PIPE_TIME_IN_SECONDS = 1f;
     private float EXIT_PIPE_DISTANCE = 100f;
     private float EXIT_PIPE_TIME_IN_SECONDS = 2f;
@@ -36,7 +36,7 @@ public class WarpPipe : MonoBehaviour
         cam = TagNames.GetMainCamera();
         transferScreen = cam.GetComponent<TransferScreen>();
         activeObjects = cam.GetComponent<ActiveObjects>();
-        enterDistance = CalcDistance(enterDirection, ENTER_PIPE_DISTANCE);
+        enterDistance = CalcDistance(enterDirection, enterDistanceValue);
         exitDistance = CalcDistance(exitDirection, EXIT_PIPE_DISTANCE);
     }
 

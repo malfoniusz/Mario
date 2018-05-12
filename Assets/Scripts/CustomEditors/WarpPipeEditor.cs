@@ -7,6 +7,7 @@ public class WarpPipeEditor : Editor
     SerializedProperty entrances;
     SerializedProperty audioPipeEnter;
     SerializedProperty enterDirection;
+    SerializedProperty enterDistanceValue;
     SerializedProperty newPlayerPos;
     SerializedProperty newCameraPosOnPlayer;
     SerializedProperty newCameraPos;
@@ -21,6 +22,7 @@ public class WarpPipeEditor : Editor
         entrances = serializedObject.FindProperty("entrances");
         audioPipeEnter = serializedObject.FindProperty("audioPipeEnter");
         enterDirection = serializedObject.FindProperty("enterDirection");
+        enterDistanceValue = serializedObject.FindProperty("enterDistanceValue");
         newPlayerPos = serializedObject.FindProperty("newPlayerPos");
         newCameraPosOnPlayer = serializedObject.FindProperty("newCameraPosOnPlayer");
         newCameraPos = serializedObject.FindProperty("newCameraPos");
@@ -38,6 +40,7 @@ public class WarpPipeEditor : Editor
         EditorGUILayout.PropertyField(entrances, true);
         EditorGUILayout.PropertyField(audioPipeEnter);
         EditorGUILayout.PropertyField(enterDirection);
+        EditorGUILayout.PropertyField(enterDistanceValue);
         EditorGUILayout.PropertyField(newPlayerPos);
         EditorGUILayout.PropertyField(newCameraPosOnPlayer);
         if (newCameraPosOnPlayer.boolValue == false)
