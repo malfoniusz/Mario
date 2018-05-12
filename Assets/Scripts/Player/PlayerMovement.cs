@@ -236,10 +236,11 @@ public class PlayerMovement : MonoBehaviour
         return maxOffsetX;
     }
 
-    public void DisablePlayer(bool value)
+    public void DisablePlayer(bool value, bool resetVelocity)
     {
         stop = value;
         rb.isKinematic = value;
+        if (resetVelocity) rb.velocity = Vector2.zero;
     }
 
     public void DisablePlayerInput(bool disable)

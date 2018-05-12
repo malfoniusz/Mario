@@ -24,7 +24,7 @@ public class WarpPipe : MonoBehaviour
     private float ENTER_PIPE_DISTANCE = 32f;
     private float ENTER_PIPE_TIME_IN_SECONDS = 1f;
     private float EXIT_PIPE_DISTANCE = 100f;
-    private float EXIT_PIPE_TIME_IN_SECONDS = 0.3f;
+    private float EXIT_PIPE_TIME_IN_SECONDS = 2f;
     private Vector2 enterDistance;
     private Vector2 exitDistance;
     private bool enteringPipe = false;
@@ -88,7 +88,7 @@ public class WarpPipe : MonoBehaviour
         audioPipeEnter.Play();
         moveObject = MoveObject.CreateMoveObject1(player.transform.position, enterDistance, ENTER_PIPE_TIME_IN_SECONDS);
 
-        playerMov.DisablePlayer(true);
+        playerMov.DisablePlayer(true, true);
 
         StartCoroutine(EnterPipeAnim());
     }
@@ -149,7 +149,7 @@ public class WarpPipe : MonoBehaviour
     private void FinishExit()
     {
         enteringPipe = false;
-        playerMov.DisablePlayer(false);
+        playerMov.DisablePlayer(false, false);
         activeObjects.SetStopDisabling(false);
     }
 

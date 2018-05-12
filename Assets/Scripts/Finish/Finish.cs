@@ -66,7 +66,7 @@ public class Finish : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        if (isPlayer) 
+        if (isPlayer)
         {
             MoveToOtherSideOfPole(movingObject);
         }
@@ -91,6 +91,7 @@ public class Finish : MonoBehaviour
         musicController.Play(MusicEnum.stageCleared, true);
 
         mAnim.SetIsGrabbing(false);
+        player.transform.localScale = new Vector3(-1 * player.transform.localScale.x, 1, 1);
     }
 
 }

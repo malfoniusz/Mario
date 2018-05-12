@@ -1,6 +1,4 @@
 ﻿
-- bugfix: WarpPipe - przy wchodzeniu wyzeruj Velocity gracza
-- bugfix: WarpPipe - coś się psuje przy wychodzeniu
 - bugfix: WarpPipe - duży Mario
 
 Wygrana:
