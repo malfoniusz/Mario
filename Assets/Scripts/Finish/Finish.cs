@@ -13,10 +13,12 @@ public class Finish : MonoBehaviour
     public float pointsRiseTimeInSeconds = 1;
     public float marioSlideSpeed = 150;
     public float flagSlideSpeed = 130;
+    public float playerCastleMovSpeed = 70f;
 
     private GameController gameController;
     private MusicController musicController;
     private GameObject player;
+    private PlayerMovement playerMove;
     private MarioAnimator mAnim;
 
     private void Awake()
@@ -24,6 +26,7 @@ public class Finish : MonoBehaviour
         gameController = TagNames.GetGameController().GetComponent<GameController>();
         musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         player = TagNames.GetPlayer();
+        playerMove = player.GetComponent<PlayerMovement>();
         mAnim = player.GetComponent<MarioAnimator>();
     }
 
@@ -92,6 +95,10 @@ public class Finish : MonoBehaviour
 
         mAnim.SetIsGrabbing(false);
         player.transform.localScale = new Vector3(-1 * player.transform.localScale.x, 1, 1);
+
+        playerMove.IsKinematic(false);
+        playerMove.Stop(false);
+        playerMove.SetConstantMove(true, Direction.Right, playerCastleMovSpeed);
     }
 
 }

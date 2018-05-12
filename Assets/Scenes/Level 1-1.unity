@@ -40509,6 +40509,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114276293329975922, guid: a076ab146733320418c6cc8546e60766,
+        type: 2}
+      propertyPath: playerCastleMovSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a076ab146733320418c6cc8546e60766, type: 2}
   m_IsPrefabParent: 0
@@ -42585,6 +42590,11 @@ Prefab:
     - target: {fileID: 1475193258290710, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}
       propertyPath: m_Name
       value: SideWarpPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201506730701296, guid: a362ab5f3d91c7d419044921d040db9f,
+        type: 2}
+      propertyPath: enterTimeInSeconds
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a362ab5f3d91c7d419044921d040db9f, type: 2}

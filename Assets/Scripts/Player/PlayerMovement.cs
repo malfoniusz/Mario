@@ -32,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float maxOffsetX;
 
+    private bool constantMove = false;
+    private int constantDirection;
+    private float constantSpeed;
+
     void Awake()
     {
         parent = transform.parent.gameObject;
@@ -69,6 +73,14 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             LeftCameraBoundary();
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (constantMove)
+        {
+            rb.velocity = new Vector2(constantDirection * constantSpeed, rb.velocity.y);
         }
     }
 
@@ -238,14 +250,39 @@ public class PlayerMovement : MonoBehaviour
 
     public void DisablePlayer(bool value, bool resetVelocity)
     {
-        stop = value;
-        rb.isKinematic = value;
+        DisableInput(value);
+        Stop(value);
+        IsKinematic(value);
         if (resetVelocity) rb.velocity = Vector2.zero;
     }
 
-    public void DisablePlayerInput(bool disable)
+    public void SetConstantMove(bool activate, Direction direction, float speed)
     {
-        ButtonNames.disableInput = disable;
+        constantMove = activate;
+
+        if (constantMove)
+        {
+            if (direction == Direction.Right) constantDirection = 1;
+            else if (direction == Direction.Left) constantDirection = -1;
+            else throw new System.Exception("You can't move in this direction.");
+
+            constantSpeed = speed;
+        }
+    }
+
+    public void IsKinematic(bool value)
+    {
+        rb.isKinematic = value;
+    }
+
+    public void DisableInput(bool value)
+    {
+        ButtonNames.disableInput = value;
+    }
+
+    public void Stop(bool value)
+    {
+        stop = value;
     }
 
 }
