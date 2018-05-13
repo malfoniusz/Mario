@@ -125,6 +125,11 @@ public class GameController : MonoBehaviour
         if (playMusic) musicController.PlayCurrentMusic();
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public bool GetQuickStart()
     {
         return quickStart;

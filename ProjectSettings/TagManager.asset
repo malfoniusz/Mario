@@ -19,6 +19,7 @@ TagManager:
   - Castle
   - UITime
   - UIPoints
+  - FPSCounter
   layers:
   - Default
   - TransparentFX

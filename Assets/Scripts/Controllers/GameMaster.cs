@@ -6,13 +6,13 @@ public class GameMaster : MonoBehaviour
     public bool quickStart = false;
     public bool playerInvincible = false;
     public bool stopDisablingObjects = false;
-    public GameObject FPSCounter;
 
     private GameObject player;
     private PlayerInvincibility invincibility;
     private GameController gameController;
     private GameObject cam;
     private ActiveObjects activeObjects;
+    private GameObject fpsCounter;
 
     private void Awake()
     {
@@ -22,11 +22,12 @@ public class GameMaster : MonoBehaviour
         if (gameController != null) gameController.SetQuickStart(quickStart); // If run in Start it doesn't set GameController.quickStart
         cam = TagNames.GetMainCamera();
         activeObjects = cam.GetComponent<ActiveObjects>();
+        fpsCounter = TagNames.GetFPSCounter();
     }
 
     private void Start()
     {
-        FPSCounter.SetActive(showFPS);
+        fpsCounter.SetActive(showFPS);
         invincibility.SetInvincible(playerInvincible);
         activeObjects.SetStopDisabling(stopDisablingObjects);
     }

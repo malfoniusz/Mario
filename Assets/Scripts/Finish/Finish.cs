@@ -151,6 +151,8 @@ public class Finish : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
+        gameController.NextLevel();
+
         yield return null;
     }
 
