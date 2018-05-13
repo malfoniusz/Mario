@@ -14,12 +14,15 @@ public class Finish : MonoBehaviour
     public float marioSlideSpeed = 150;
     public float flagSlideSpeed = 130;
     public float playerCastleMovSpeed = 70f;
+    public float waitForTimeCountingInSeconds = 1f;
 
     private GameController gameController;
     private MusicController musicController;
     private GameObject player;
     private PlayerMovement playerMove;
     private MarioAnimator mAnim;
+    private UITime uiTime;
+    private bool timeCounted = false;
 
     private void Awake()
     {
@@ -28,9 +31,15 @@ public class Finish : MonoBehaviour
         player = TagNames.GetPlayer();
         playerMove = player.GetComponent<PlayerMovement>();
         mAnim = player.GetComponent<MarioAnimator>();
+        uiTime = TagNames.GetUITime().GetComponent<UITime>();
     }
 
-    public IEnumerator ClearStage(int flagpolePoints, bool extraLife)
+    public void ClearStage(int flagpolePoints, bool extraLife)
+    {
+        StartCoroutine(ClearStageCoroutine(flagpolePoints, extraLife));
+    }
+
+    private IEnumerator ClearStageCoroutine(int flagpolePoints, bool extraLife)
     {
         FlagpoleTouched(flagpolePoints, extraLife);
         yield return new WaitForSeconds(audioFlagpole.clip.length);
@@ -100,11 +109,29 @@ public class Finish : MonoBehaviour
         playerMove.IsKinematic(false);
         playerMove.Stop(false);
         playerMove.SetConstantMove(true, Direction.Right, playerCastleMovSpeed);
+
+        StartCoroutine(TimeToPoints());
+    }
+
+    IEnumerator TimeToPoints()
+    {
+        yield return new WaitForSeconds(waitForTimeCountingInSeconds);
+        uiTime.TimeToPoints();
+        timeCounted = true;
+        yield return null;
     }
 
     public void EnteredCastle()
     {
+        StartCoroutine(EnteredCastleCoroutine());
+    }
+
+    public IEnumerator EnteredCastleCoroutine()
+    {
         player.SetActive(false);
+        while (timeCounted == false) yield return new WaitForEndOfFrame();
+
+        yield return null;
     }
 
 }

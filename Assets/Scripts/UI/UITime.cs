@@ -1,13 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UITime : MonoBehaviour
 {
     public static bool stop = false;
 
+    public AudioSource audioTimeToPoints;
     public float countdownSpeed = 3;
     public int time = 400;
     public int hurryTime = 100;
+    public int pointsForTimeUnit = 50;
+    public float intervalTimeToPointsInSeconds = 0.01f;
 
     private MusicController musicController;
     private PlayerDeath playerDeath;
@@ -37,14 +41,14 @@ public class UITime : MonoBehaviour
         }
     }
 
-    void CountTime()
+    private void CountTime()
     {
         TimeCounting();
         HurryMusic();
         DeathByTime();
     }
 
-    void TimeCounting()
+    private void TimeCounting()
     {
         deltaTime += Time.deltaTime;
         if (deltaTime > nextTimeInc)
@@ -55,7 +59,7 @@ public class UITime : MonoBehaviour
         }
     }
 
-    void HurryMusic()
+    private void HurryMusic()
     {
         if (time <= hurryTime && hurryTimeSwitch == false)
         {
@@ -64,7 +68,7 @@ public class UITime : MonoBehaviour
         }
     }
 
-    void DeathByTime()
+    private void DeathByTime()
     {
         if (time <= 0)
         {
@@ -72,9 +76,31 @@ public class UITime : MonoBehaviour
         }
     }
 
-    void SetText(int time)
+    private void SetText(int time)
     {
         text.text = time.ToString();
+    }
+
+    public void TimeToPoints()
+    {
+        StartCoroutine(TimeToPointCoroutine());
+    }
+
+    IEnumerator TimeToPointCoroutine()
+    {
+        audioTimeToPoints.Play();
+
+        while (time > 0)
+        {
+            UIPoints.AddPoints(pointsForTimeUnit);
+            time--;
+            SetText(time);
+            yield return new WaitForSeconds(intervalTimeToPointsInSeconds);
+        }
+
+        audioTimeToPoints.Stop();
+
+        yield return null;
     }
 
 }

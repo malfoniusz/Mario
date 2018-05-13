@@ -18,6 +18,7 @@ public class TagNames : MonoBehaviour
     public static string environment = "Environment";
     public static string flagpole = "Flagpole";
     public static string castle = "Castle";
+    public static string uiTime = "UITime";
 
     public static GameObject GetPlayer()
     {
@@ -139,8 +140,6 @@ public class TagNames : MonoBehaviour
         return GameObject.FindGameObjectsWithTag(castle);
     }
 
-
-
     public static Camera GetCamera()
     {
         return Camera.main;
@@ -149,6 +148,11 @@ public class TagNames : MonoBehaviour
     public static GameObject GetCameraObject()
     {
         return Camera.main.gameObject;
+    }
+
+    public static GameObject GetUITime()
+    {
+        return GameObject.FindGameObjectWithTag(uiTime);
     }
 
 }

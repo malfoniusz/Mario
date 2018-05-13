@@ -17,6 +17,7 @@ TagManager:
   - Environment
   - Flagpole
   - Castle
+  - UITime
   layers:
   - Default
   - TransparentFX

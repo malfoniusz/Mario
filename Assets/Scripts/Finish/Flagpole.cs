@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Flagpole : MonoBehaviour
 {
@@ -29,14 +28,14 @@ public class Flagpole : MonoBehaviour
         int touchedColliderIndex = TouchedColliderIndex(collision);
         bool extraLife = (touchedColliderIndex == 0);
 
-        StartCoroutine(finish.ClearStage(pointsForCollider[touchedColliderIndex], extraLife));
+        finish.ClearStage(pointsForCollider[touchedColliderIndex], extraLife);
     }
 
     private int TouchedColliderIndex(Collider2D collision)
     {
         for (int i = 0; i < flagpoleColliders.Length; i++)
         {
-            if (flagpoleColliders[i].IsTouching(collision)) 
+            if (flagpoleColliders[i].IsTouching(collision))
             {
                 return i;
             }

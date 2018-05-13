@@ -1,6 +1,5 @@
 ﻿
 Wygrana:
-- po zniknięciu gracza: zliczanie punktów (50 punktów za jednostkę czasu) + dźwięk zliczania punktów
 - po zliczeniu punktów: flaga na zamku
 - wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego
 - check: sprawdzić flagpole, czy działa normalnie dla dużego, ognistego i nieśmiertelnego maria

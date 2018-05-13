@@ -587,6 +587,7 @@ MonoBehaviour:
   marioSlideSpeed: 150
   flagSlideSpeed: 130
   playerCastleMovSpeed: 50
+  waitForTimeCountingInSeconds: 1
 --- !u!114 &114429440362625272
 MonoBehaviour:
   m_ObjectHideFlags: 1
