@@ -105,7 +105,7 @@ public class WarpPipe : MonoBehaviour
                 break;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
@@ -140,7 +140,7 @@ public class WarpPipe : MonoBehaviour
                 break;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.01f);
         }
 
         FinishExit();

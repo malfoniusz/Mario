@@ -78,7 +78,7 @@ public class Finish : MonoBehaviour
         while (objCollider.bounds.Contains(flagpoleBaseTopContact.position) == false)
         {
             movingObject.transform.position = moveObj.NextPosition();
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.01f);
         }
 
         if (isPlayer)
