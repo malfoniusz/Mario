@@ -1,6 +1,7 @@
 ﻿
+- refaktor: WaitForEndOfFrame() - change to WaitForSeconds() - framerate save
+
 Wygrana:
-- po zliczeniu punktów: flaga na zamku
 - wczytanie następnego poziomu (sceny) i wyświetlenie jego ekranu startowego
 - check: sprawdzić flagpole, czy działa normalnie dla dużego, ognistego i nieśmiertelnego maria
 

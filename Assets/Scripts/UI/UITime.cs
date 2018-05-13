@@ -6,12 +6,10 @@ public class UITime : MonoBehaviour
 {
     public static bool stop = false;
 
-    public AudioSource audioTimeToPoints;
     public float countdownSpeed = 3;
     public int time = 400;
     public int hurryTime = 100;
     public int pointsForTimeUnit = 50;
-    public float intervalTimeToPointsInSeconds = 0.01f;
 
     private MusicController musicController;
     private PlayerDeath playerDeath;
@@ -81,26 +79,11 @@ public class UITime : MonoBehaviour
         text.text = time.ToString();
     }
 
-    public void TimeToPoints()
+    public void PointsForTimeUnit()
     {
-        StartCoroutine(TimeToPointCoroutine());
-    }
-
-    IEnumerator TimeToPointCoroutine()
-    {
-        audioTimeToPoints.Play();
-
-        while (time > 0)
-        {
-            UIPoints.AddPoints(pointsForTimeUnit);
-            time--;
-            SetText(time);
-            yield return new WaitForSeconds(intervalTimeToPointsInSeconds);
-        }
-
-        audioTimeToPoints.Stop();
-
-        yield return null;
+        UIPoints.AddPoints(pointsForTimeUnit);
+        time--;
+        SetText(time);
     }
 
 }

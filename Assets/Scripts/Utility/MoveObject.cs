@@ -12,6 +12,8 @@ public class MoveObject
     private float moveSpeed; // Move X piksels in 1 second
     private float distance;
 
+    private MoveObject() {}
+
     private MoveObject(Vector2 startPos, Vector2 curPos, Vector2 endPos, float moveTimeInSeconds, float moveSpeed)
     {
         this.startPos = startPos;
@@ -21,7 +23,7 @@ public class MoveObject
         this.moveSpeed = moveSpeed;
         this.distance = Vector2.Distance(startPos, endPos);
     }
-    
+
     public static MoveObject CreateMoveObject1(Vector2 startPos, Vector2 moveDistance, float moveTimeInSeconds)
     {
         Vector2 endPos = startPos + moveDistance;

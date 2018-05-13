@@ -8,13 +8,15 @@ public class Finish : MonoBehaviour
     public Transform flagpoleBaseTopContact;
     public GameObject pole;
     public GameObject flag;
+    public Castle castle;
     public AudioSource audioFlagpole;
+    public AudioSource audioTimeToPoints;
     public float pointsRiseDistance = 135;
     public float pointsRiseTimeInSeconds = 1;
     public float marioSlideSpeed = 150;
     public float flagSlideSpeed = 130;
     public float playerCastleMovSpeed = 70f;
-    public float waitForTimeCountingInSeconds = 1f;
+    public float intervalTimeToPointsInSeconds = 0.01f;
 
     private GameController gameController;
     private MusicController musicController;
@@ -22,7 +24,7 @@ public class Finish : MonoBehaviour
     private PlayerMovement playerMove;
     private MarioAnimator mAnim;
     private UITime uiTime;
-    private bool timeCounted = false;
+    private bool enteredCastle = false;
 
     private void Awake()
     {
@@ -113,23 +115,41 @@ public class Finish : MonoBehaviour
         StartCoroutine(TimeToPoints());
     }
 
-    IEnumerator TimeToPoints()
+    public void EnteredCastle()
     {
-        yield return new WaitForSeconds(waitForTimeCountingInSeconds);
-        uiTime.TimeToPoints();
-        timeCounted = true;
+        player.SetActive(false);
+        enteredCastle = true;
+    }
+
+    private IEnumerator TimeToPoints()
+    {
+        yield return new WaitForSeconds(1f);
+
+        audioTimeToPoints.Play();
+
+        while (uiTime.time > 0)
+        {
+            uiTime.PointsForTimeUnit();
+            yield return new WaitForSeconds(intervalTimeToPointsInSeconds);
+        }
+
+        audioTimeToPoints.Stop();
+
+        while (enteredCastle == false) yield return new WaitForSeconds(0.01f);
+
+        castle.ShowCastleFlag();
+
         yield return null;
     }
 
-    public void EnteredCastle()
+    public void NextLevel()
     {
-        StartCoroutine(EnteredCastleCoroutine());
+        StartCoroutine(NextLevelCoroutine());
     }
 
-    public IEnumerator EnteredCastleCoroutine()
+    private IEnumerator NextLevelCoroutine()
     {
-        player.SetActive(false);
-        while (timeCounted == false) yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(1f);
 
         yield return null;
     }

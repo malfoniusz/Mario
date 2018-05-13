@@ -19,6 +19,7 @@ public class TagNames : MonoBehaviour
     public static string flagpole = "Flagpole";
     public static string castle = "Castle";
     public static string uiTime = "UITime";
+    public static string uiPoints = "UIPoints";
 
     public static GameObject GetPlayer()
     {
@@ -153,6 +154,11 @@ public class TagNames : MonoBehaviour
     public static GameObject GetUITime()
     {
         return GameObject.FindGameObjectWithTag(uiTime);
+    }
+
+    public static GameObject GetUIPoints()
+    {
+        return GameObject.FindGameObjectWithTag(uiPoints);
     }
 
 }

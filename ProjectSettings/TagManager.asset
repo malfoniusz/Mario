@@ -18,6 +18,7 @@ TagManager:
   - Flagpole
   - Castle
   - UITime
+  - UIPoints
   layers:
   - Default
   - TransparentFX
