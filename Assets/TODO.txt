@@ -1,7 +1,6 @@
 ﻿
 Wygrana:
 - check: sprawdzić flagpole, czy działa normalnie dla dużego, ognistego i nieśmiertelnego maria
-- bugfix: oneUp z flagi się nie nalicza przy starcie kolejnego poziomu - sprawdzić czy działa dla wszystkich oneUp'ów
 
 Menu główne:
 - osobna scena
@@ -9,7 +8,8 @@ Menu główne:
 - opcja rozpoczęcia gry
 - opcja wyjścia z gry
 - kursor
-- po utracie wszystkich żyć, powrót do menu
+- przy starcie gry pokazać menu główne
+- po utracie wszystkich żyć, powrót do menu głównego
 
 Porządki:
 - usunięcie niepotrzebnych rzeczy z początku poziomu

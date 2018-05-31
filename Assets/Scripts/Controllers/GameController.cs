@@ -42,9 +42,9 @@ public class GameController : MonoBehaviour
 
     public void PlayerDied()
     {
-        UILives.lives--;
+        UILives.DecreaseLive();
 
-        if (UILives.lives <= 0)
+        if (UILives.GetLives() <= 0)
         {
             ShowGameOver();
             StartCoroutine(RestartGame());

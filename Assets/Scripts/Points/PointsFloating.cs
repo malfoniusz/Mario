@@ -36,11 +36,17 @@ public class PointsFloating : MonoBehaviour
             transform.position = moveObject.NextPosition();
             if (moveObject.ReachedEnd())
             {
-                if (addPointsAtEnd) UIPoints.AddPoints(points);
-                if (deleteAfterReachingEnd) Destroy(gameObject);
-                updateOn = false;
+                AddToUI();
             }
         }
+    }
+
+    private void AddToUI()
+    {
+        if (addPointsAtEnd) UIPoints.AddPoints(points);
+        if (deleteAfterReachingEnd) Destroy(gameObject);
+        if (extraLife) UILives.AddLive();
+        updateOn = false;
     }
 
     public void SetPointsAndExtraLife(int points, bool extraLife)
