@@ -23,12 +23,12 @@ public class UILives : MonoBehaviour
         lives = STARTING_LIVES;
     }
 
-    public static void AddLive()
+    public static void AddLife()
     {
         lives++;
     }
 
-    public static void DecreaseLive()
+    public static void DecreaseLife()
     {
         lives--;
     }

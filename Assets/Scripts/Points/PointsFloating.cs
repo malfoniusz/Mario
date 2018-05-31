@@ -45,7 +45,7 @@ public class PointsFloating : MonoBehaviour
     {
         if (addPointsAtEnd) UIPoints.AddPoints(points);
         if (deleteAfterReachingEnd) Destroy(gameObject);
-        if (extraLife) UILives.AddLive();
+        if (extraLife) UILives.AddLife();
         updateOn = false;
     }
 

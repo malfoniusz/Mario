@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
 
     public void PlayerDied()
     {
-        UILives.DecreaseLive();
+        UILives.DecreaseLife();
 
         if (UILives.GetLives() <= 0)
         {

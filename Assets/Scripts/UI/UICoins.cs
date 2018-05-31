@@ -39,7 +39,7 @@ public class UICoins : MonoBehaviour
         if (coins >= EXTRA_LIFE_COINS)
         {
             coins -= EXTRA_LIFE_COINS;
-            UILives.AddLive();
+            UILives.AddLife();
             return true;
         }
 
