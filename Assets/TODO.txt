@@ -1,6 +1,13 @@
 ﻿
 Wygrana:
-- check: sprawdzić flagpole, czy działa normalnie dla dużego, ognistego i nieśmiertelnego maria
+- refaktor: zrobić 3 prefaby maria
+- refaktor: zmienić animacje powerupa, żeby podmieniała modele
+- refaktor: uprościć kod animacji w MarioAnimation (usunąć eventy i zamiast nich w stawić Coroutin'y)
+- refaktor: sprawdzić klasę MarioAnimator
+
+- bugfix: po skończeniu poziomu, powerupy powinny przechodzić do następnego
+- bugfix: postawienie flagi na zamku po skończeniu muzyki, wejściu maria do zamku i zliczeniu punktów
+- QoL: kontrola nad mushroomPowerup i włączeniem starpower
 
 Menu główne:
 - osobna scena

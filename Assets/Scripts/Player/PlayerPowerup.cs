@@ -96,4 +96,16 @@ public class PlayerPowerup : MonoBehaviour
         return level;
     }
 
+    public void SetLevel(int value)
+    {
+        level = value;
+    }
+
+    public void ChangeAppearanceToLevel(int value)
+    {
+        level = value;
+        // TODO: uzupełnić
+        //PowerupBehaviour(3);
+    }
+
 }

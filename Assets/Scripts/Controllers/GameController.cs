@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     private PlayerMovement playerMovement;
     private const float START_DELAY = 2;
     private bool quickStart;
+    private SceneTransfer sceneTransfer;
 
     private void Awake()
     {
@@ -20,10 +21,13 @@ public class GameController : MonoBehaviour
         musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
+        sceneTransfer = GetComponent<SceneTransfer>();
     }
 
     private void Start()
     {
+        sceneTransfer.LoadArguments();
+
         HideStartLevel();
         HideGameOver();
 
@@ -127,7 +131,7 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        sceneTransfer.NextLevel();
     }
 
     public bool GetQuickStart()
