@@ -1,10 +1,6 @@
 ﻿
-Wygrana:
-- refaktor: przenieść skrypt MarioModel do PowerupAnimation i usunąć ten skrypt
-
-- bugfix: po skończeniu poziomu, powerupy powinny przechodzić do następnego
+- bugfix: po skończeniu poziomu, powerupy powinny przechodzić do następnego (pamiętaj że masz rozpoczęty kod)
 - bugfix: postawienie flagi na zamku po skończeniu muzyki, wejściu maria do zamku i zliczeniu punktów
-- QoL: kontrola nad mushroomPowerup i włączeniem starpower
 
 Menu główne:
 - osobna scena
