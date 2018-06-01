@@ -9,6 +9,6 @@ public class MarioAnimator : MonoBehaviour
         anim.SetBool(AnimatorNames.playerIsGrabbing, isGrabbing);
     }
 
-    // Ty który to czytasz, w imię refaktoryzacji przenieś całe sterowanie animacją Maria tutaj :)
+    // Ty który to czytasz, w imię refaktoryzacji przenieś tutaj wszystkie instukcje, które zmieniają stan animatora :)
 
 }

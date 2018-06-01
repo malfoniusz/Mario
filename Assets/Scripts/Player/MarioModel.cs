@@ -53,18 +53,18 @@ public class MarioModel : MonoBehaviour
         }
     }
 
-    public void UpdateModelBehaviour(BoxCollider2D bc, Transform[] gc, Transform[] tc)
+    private void UpdateModelBehaviour(BoxCollider2D boxCollider, Transform[] groundChecks, Transform[] topChecks)
     {
-        playerBoxCollider.size = bc.size;
+        playerBoxCollider.size = boxCollider.size;
 
         for (int i = 0; i < playerGroundChecks.Length; i++)
         {
-            playerGroundChecks[i].localPosition = gc[i].localPosition;
+            playerGroundChecks[i].localPosition = groundChecks[i].localPosition;
         }
 
         for (int i = 0; i < playerTopChecks.Length; i++)
         {
-            playerTopChecks[i].localPosition = tc[i].localPosition;
+            playerTopChecks[i].localPosition = topChecks[i].localPosition;
         }
     }
 

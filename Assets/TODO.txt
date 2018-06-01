@@ -1,9 +1,6 @@
 ﻿
 Wygrana:
-- refaktor: zrobić 3 prefaby maria
-- refaktor: zmienić animacje powerupa, żeby podmieniała modele
-- refaktor: uprościć kod animacji w MarioAnimation (usunąć eventy i zamiast nich w stawić Coroutin'y)
-- refaktor: sprawdzić klasę MarioAnimator
+- refaktor: przenieść skrypt MarioModel do PowerupAnimation i usunąć ten skrypt
 
 - bugfix: po skończeniu poziomu, powerupy powinny przechodzić do następnego
 - bugfix: postawienie flagi na zamku po skończeniu muzyki, wejściu maria do zamku i zliczeniu punktów

@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 212112481910225218}
   - component: {fileID: 61663913545260244}
   m_Layer: 10
-  m_Name: BigMarioModel
+  m_Name: FireMario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 16, y: 32}
-    newSize: {x: 0.13, y: 0.16}
+    newSize: {x: 16, y: 32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -214,13 +214,13 @@ SpriteRenderer:
   m_SortingLayerID: 700612937
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300066, guid: 70efaf66cd973a948bcb20a310191c03, type: 3}
+  m_Sprite: {fileID: 21300118, guid: a712ba88d8d4f3946b487ef1b837ca96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.13, y: 0.16}
+  m_Size: {x: 16, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0

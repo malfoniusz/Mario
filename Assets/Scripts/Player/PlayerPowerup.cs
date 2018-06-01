@@ -11,14 +11,18 @@ public class PlayerPowerup : MonoBehaviour
     public AudioSource powerdownAudio;
 
     private int level = 1;   // 1 - mario, 2 - bigMario, 3 - fireMario
+    private GameObject player;
+    private PowerupAnimation powerupAnimation;
     private PlayerDeath playerDeath;
     private float powerdownInvDur = 2.5f;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
-        playerDeath = GetComponent<PlayerDeath>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        player = TagNames.GetPlayer();
+        powerupAnimation = player.GetComponent<PowerupAnimation>();
+        playerDeath = player.GetComponent<PlayerDeath>();
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
     }
 
     public void MushroomPowerup()
@@ -26,7 +30,7 @@ public class PlayerPowerup : MonoBehaviour
         powerupAudio.Play();
         if (level == 1)
         {
-            PowerupBehaviour(2);
+            PowerupBehaviour();
         }
     }
 
@@ -35,18 +39,19 @@ public class PlayerPowerup : MonoBehaviour
         powerupAudio.Play();
         if (level == 1)
         {
-            PowerupBehaviour(2);
+            PowerupBehaviour();
         }
         else if (level == 2)
         {
-            PowerupBehaviour(3);
+            PowerupBehaviour();
         }
     }
 
-    private void PowerupBehaviour(int newLevel)
+    private void PowerupBehaviour()
     {
-        level = newLevel;
+        level++;
         anim.SetTrigger(AnimatorNames.playerPowerup);
+        powerupAnimation.StartAnimation(true, level);
         jumpAudio.clip = bigJumpClip;
     }
 
@@ -66,6 +71,7 @@ public class PlayerPowerup : MonoBehaviour
     {
         level--;
         anim.SetTrigger(AnimatorNames.playerPowerdown);
+        powerupAnimation.StartAnimation(false, level);
         powerdownAudio.Play();
 
         if (level == 1)
