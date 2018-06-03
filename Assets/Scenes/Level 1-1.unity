@@ -5914,7 +5914,7 @@ Prefab:
     - target: {fileID: 224160106159642638, guid: 2c176067413a61f439343f72683b7ca8,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224160106159642638, guid: 2c176067413a61f439343f72683b7ca8,
         type: 2}
@@ -8045,7 +8045,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4521758757967138, guid: 51e68035cd0a50342875651851ef74c8, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1072184546549578, guid: 51e68035cd0a50342875651851ef74c8, type: 2}
       propertyPath: m_Name
@@ -16191,7 +16191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4521758757967138, guid: 51e68035cd0a50342875651851ef74c8, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1072184546549578, guid: 51e68035cd0a50342875651851ef74c8, type: 2}
       propertyPath: m_Name
@@ -16705,7 +16705,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &802164571 stripped
 Transform:
@@ -17045,7 +17045,7 @@ Transform:
   - {fileID: 42002663}
   - {fileID: 460755993}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &820467739
 Prefab:
@@ -32129,11 +32129,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980842584705754, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4058964249119030, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058964249119030, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
@@ -40977,7 +40981,7 @@ Transform:
   - {fileID: 2027603161}
   - {fileID: 317115566}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1976178614
 Prefab:
@@ -42238,7 +42242,7 @@ MonoBehaviour:
   quickStart: 1
   playerInvincible: 0
   stopDisablingObjects: 0
-  marioStartingLevel: 0
+  marioStartingLevel: 3
   newStartingTime: -1
 --- !u!1001 &2029780531
 Prefab:

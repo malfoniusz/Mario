@@ -63,7 +63,7 @@ public class KoopaShell : Enemy
 
     private void EnemyHitByShell(Collider2D collision)
     {
-        bool shellHitsEnemy = (collision.gameObject.layer == LayerNames.GetEnemy() && rb.velocity.x > MINIMAL_VELOCITY);
+        bool shellHitsEnemy = (collision.gameObject.layer == LayerNames.GetEnemy() && Mathf.Abs(rb.velocity.x) > MINIMAL_VELOCITY);
         if (shellHitsEnemy && !stopMultipleTriggers)
         {
             stopMultipleTriggers = true;
@@ -71,7 +71,7 @@ public class KoopaShell : Enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             Transform playerT = collision.gameObject.transform;
-            float hitDirection = Mathf.Sign(playerT.position.y - transform.position.y);
+            float hitDirection = Mathf.Sign(rb.velocity.x);
             enemy.HitByFireball(hitDirection);
         }
     }

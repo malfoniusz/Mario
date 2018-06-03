@@ -68,15 +68,14 @@ public class Enemy : Moving
 
     protected void HitByInvPlayer(Collider2D playerCollider)
     {
-        Transform playerT = playerCollider.gameObject.transform;
-        float hitDirection = Mathf.Sign(playerT.position.y - transform.position.y);
+        float hitDirection = Mathf.Sign(player.GetComponent<Rigidbody2D>().velocity.x);
         HitByFireball(hitDirection);
     }
 
     public void HitByFireball(float fallDirection)
     {
         DisableObject(false, false);
-        rb.velocity = Vector2.right * fallDirection + FIREBALL_KNOCKBACK;
+        rb.velocity = new Vector2(fallDirection * FIREBALL_KNOCKBACK.x, FIREBALL_KNOCKBACK.y);
         spriteRenderer.flipY = true;
 
         audioSource.clip = kickClip;
