@@ -14,12 +14,6 @@ public class SceneTransfer : MonoBehaviour
         playerPowerup = player.GetComponent<PlayerPowerup>();
     }
 
-    private void Start()
-    {
-        // TESTING
-        //playerPowerup.ChangeAppearanceToLevel(marioPowerupLevel);
-    }
-
     public void NextLevel()
     {
         SaveArguments();
@@ -31,7 +25,7 @@ public class SceneTransfer : MonoBehaviour
         marioPowerupLevel = playerPowerup.GetLevel();
     }
 
-    public void LoadArguments()
+    public void PrepareLevel()
     {
         if (marioPowerupLevel != -1) playerPowerup.ChangeAppearanceToLevel(marioPowerupLevel);
     }

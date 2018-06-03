@@ -13,9 +13,11 @@ public class AnimatorNames : MonoBehaviour
     public static string playerPowerup = "Powerup";
     public static string playerPowerdown = "Powerdown";
     public static string playerFireballShot = "FireballShot";
-
     public static string playerInvincibility = "Invincibility";
     public static string playerInvincibilityExpire = "InvincibilityExpire";
+    public static string playerSmallMarioIdle = "SmallMarioIdle";
+    public static string playerBigMarioIdle = "BigMarioIdle";
+    public static string playerFireMarioIdle = "FireMarioIdle";
 
     public static int GetPlayerInvincibilityLayer(Animator anim)
     {

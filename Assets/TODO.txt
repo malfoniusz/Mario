@@ -1,13 +1,18 @@
 ﻿
-- bugfix: po skończeniu poziomu, powerupy powinny przechodzić do następnego (pamiętaj że masz rozpoczęty kod)
 - bugfix: postawienie flagi na zamku po skończeniu muzyki, wejściu maria do zamku i zliczeniu punktów
+- QoL: gameController - wybór poziomu maria
+- bugfix: dodać do SceneTransfer: lives, points and coins
+- refaktor: AnimatorNames
+- QoL: gameController - remaining game time
+- refaktor: zamiast używać powerup i powerdown triggery, użyj SmallMarioIdle etc. Zrób w kodzie if'y i w zależności od poziomu, uruchom odpowiedni trigger.
+Przenieś wywoływanie tych triggerów z PlayerPowerup do PowerupAnimation. W PowerupAnimation usuń funkcje UpdateModel lub UpdateModelBehaviour.
 
 Menu główne:
 - osobna scena
 - przygotowanie części wizualnej
+- kursor
 - opcja rozpoczęcia gry
 - opcja wyjścia z gry
-- kursor
 - przy starcie gry pokazać menu główne
 - po utracie wszystkich żyć, powrót do menu głównego
 

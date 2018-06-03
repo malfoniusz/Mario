@@ -102,16 +102,15 @@ public class PlayerPowerup : MonoBehaviour
         return level;
     }
 
-    public void SetLevel(int value)
+    private void SetLevel(int value) // Don't make this public. Use other function that changes also the appearance.
     {
         level = value;
     }
 
-    public void ChangeAppearanceToLevel(int value)
+    public void ChangeAppearanceToLevel(int newLevel)
     {
-        level = value;
-        // TODO: uzupełnić
-        //PowerupBehaviour(3);
+        level = newLevel;
+        powerupAnimation.UpdateModelToLevel(newLevel);
     }
 
 }

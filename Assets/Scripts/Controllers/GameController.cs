@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        sceneTransfer.LoadArguments();
+        sceneTransfer.PrepareLevel();
 
         HideStartLevel();
         HideGameOver();

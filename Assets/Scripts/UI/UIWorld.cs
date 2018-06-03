@@ -6,16 +6,16 @@ public class UIWorld : MonoBehaviour
     public static int world = 1;
     public static int level = 1;
 
-    private Text child;
+    private Text levelText;
 
     void Awake()
     {
-        child = transform.GetChild(0).gameObject.GetComponent<Text>();
+        levelText = GetComponent<Text>();
     }
 
     void Start()
     {
-        child.text = world + "-" + level;
+        levelText.text = world + "-" + level;
     }
 
 }

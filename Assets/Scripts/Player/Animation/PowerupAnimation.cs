@@ -123,4 +123,17 @@ public class PowerupAnimation : MonoBehaviour
         }
     }
 
+    public void UpdateModelToLevel(int newLevel)
+    {
+        UpdateModel(newLevel);
+        SetAnimatorState(newLevel);
+    }
+
+    private void SetAnimatorState(int marioLevel)
+    {
+        if      (marioLevel == 1)   marioAnimator.SetTrigger(AnimatorNames.playerSmallMarioIdle);
+        else if (marioLevel == 2)   marioAnimator.SetTrigger(AnimatorNames.playerBigMarioIdle);
+        else if (marioLevel == 3)   marioAnimator.SetTrigger(AnimatorNames.playerFireMarioIdle);
+    }
+
 }
