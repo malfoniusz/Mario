@@ -17,7 +17,10 @@ public class Castle : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        finish.EnteredCastle();
+        if (collision.gameObject.tag == TagNames.player)
+        {
+            finish.EnteredCastle();
+        }
     }
 
     public void ShowCastleFlag()
