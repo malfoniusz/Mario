@@ -2,7 +2,7 @@
 
 public class ColorNames : MonoBehaviour
 {
-    static public Color GetColor(ColorEnum color)
+    public static Color GetColor(ColorEnum color)
     {
         switch (color)
         {
@@ -15,7 +15,7 @@ public class ColorNames : MonoBehaviour
         }
     }
 
-    static public Color normalBackground = new Color32(139, 158, 251, 0);
-    static public Color undergroundBackground = Color.black;
+    public static Color normalBackground = new Color32(139, 158, 251, 0);
+    public static Color undergroundBackground = Color.black;
 
 }

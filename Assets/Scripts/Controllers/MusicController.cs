@@ -11,7 +11,7 @@ public class MusicController : MonoBehaviour
 
     public void Play(MusicEnum musicName, bool startFromBeginning)
     {
-        int musicIndex = GetMusicIndex(musicName);
+        int musicIndex = MusicNames.GetMusicIndex(musicName);
         PlayAudio(musicIndex, startFromBeginning);
     }
 
@@ -26,31 +26,8 @@ public class MusicController : MonoBehaviour
 
     public float GetMusicLength(MusicEnum musicName)
     {
-        int musicIndex = GetMusicIndex(musicName);
+        int musicIndex = MusicNames.GetMusicIndex(musicName);
         return audioSources[musicIndex].clip.length;
-    }
-
-    private int GetMusicIndex(MusicEnum musicName)
-    {
-        switch (musicName)
-        {
-            case MusicEnum.main:
-                return 0;
-            case MusicEnum.hurry:
-                return 1;
-            case MusicEnum.invincibility:
-                return 2;
-            case MusicEnum.death:
-                return 3;
-            case MusicEnum.underground:
-                return 4;
-            case MusicEnum.stageCleared:
-                return 5;
-            case MusicEnum.gameOver:
-                return 6;
-            default:
-                throw new System.Exception("No such music exists.");
-        }
     }
 
     public void PauseCurrentMusic()
@@ -65,7 +42,7 @@ public class MusicController : MonoBehaviour
 
     public bool IsPlaying(MusicEnum musicName)
     {
-        int musicIndex = GetMusicIndex(musicName);
+        int musicIndex = MusicNames.GetMusicIndex(musicName);
         return audioSources[musicIndex].isPlaying;
     }
 
