@@ -16,8 +16,8 @@ public class PlayerInvincibility : MonoBehaviour
     private void Awake()
     {
         musicController = TagNames.GetMusicController().GetComponent<MusicController>();
-        animInvLayerIndex = AnimatorNames.GetPlayerInvincibilityLayer(anim);
-        animInvExpiereLayerIndex = AnimatorNames.GetPlayerInvincibilityExpireLayer(anim);
+        animInvLayerIndex = AnimatorPlayerNames.GetInvincibilityLayer(anim);
+        animInvExpiereLayerIndex = AnimatorPlayerNames.GetInvincibilityExpireLayer(anim);
     }
 
     public void Invincibility()

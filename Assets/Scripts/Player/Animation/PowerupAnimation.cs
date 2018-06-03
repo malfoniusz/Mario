@@ -131,9 +131,9 @@ public class PowerupAnimation : MonoBehaviour
 
     private void SetAnimatorState(MarioLevelEnum marioLevel)
     {
-        if      (marioLevel == MarioLevelEnum.small)    marioAnimator.SetTrigger(AnimatorNames.playerSmallMarioIdle);
-        else if (marioLevel == MarioLevelEnum.big)      marioAnimator.SetTrigger(AnimatorNames.playerBigMarioIdle);
-        else if (marioLevel == MarioLevelEnum.fire)     marioAnimator.SetTrigger(AnimatorNames.playerFireMarioIdle);
+        if      (marioLevel == MarioLevelEnum.small)    marioAnimator.SetTrigger(AnimatorPlayerNames.smallMarioIdle);
+        else if (marioLevel == MarioLevelEnum.big)      marioAnimator.SetTrigger(AnimatorPlayerNames.bigMarioIdle);
+        else if (marioLevel == MarioLevelEnum.fire)     marioAnimator.SetTrigger(AnimatorPlayerNames.fireMarioIdle);
     }
 
 }

@@ -50,7 +50,7 @@ public class PlayerPowerup : MonoBehaviour
     private void PowerupBehaviour()
     {
         level++;
-        anim.SetTrigger(AnimatorNames.playerPowerup);
+        anim.SetTrigger(AnimatorPlayerNames.powerup);
         powerupAnimation.StartAnimation(true, level);
         jumpAudio.clip = bigJumpClip;
     }
@@ -70,7 +70,7 @@ public class PlayerPowerup : MonoBehaviour
     private void Powerdown()
     {
         level--;
-        anim.SetTrigger(AnimatorNames.playerPowerdown);
+        anim.SetTrigger(AnimatorPlayerNames.powerdown);
         powerupAnimation.StartAnimation(false, level);
         powerdownAudio.Play();
 

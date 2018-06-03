@@ -26,8 +26,8 @@ public class PlayerDeath : MonoBehaviour
         rb.isKinematic = true;
         boxCollider.enabled = false;
 
-        anim.SetBool(AnimatorNames.playerIsJumping, false);
-        anim.SetTrigger(AnimatorNames.playerIsDead);
+        anim.SetBool(AnimatorPlayerNames.isJumping, false);
+        anim.SetTrigger(AnimatorPlayerNames.isDead);
         musicController.Play(MusicEnum.death, true);
 
         StartCoroutine(endGame(musicController.GetMusicLength(MusicEnum.death)));

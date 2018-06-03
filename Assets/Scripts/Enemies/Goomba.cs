@@ -6,7 +6,7 @@ public class Goomba : Enemy
 
     protected override void EnemyStompedBehaviour()
     {
-        anim.SetTrigger(AnimatorNames.goombaIsDead);
+        anim.SetTrigger(AnimatorGoombaNames.isDead);
         audioSource.Play();
         DisableObject(true, true);
 

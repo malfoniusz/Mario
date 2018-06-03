@@ -24,7 +24,7 @@ public class PlayerFireball : MonoBehaviour
         if (playerPowerup.GetLevel() == MarioLevelEnum.fire && ButtonNames.RunPressed() && Fireball.numberOfFireballs < Fireball.MAX_FIREBALLS)
         {
             Instantiate(fireball, fireballSpawn.transform.position, Quaternion.identity);
-            anim.SetTrigger(AnimatorNames.playerFireballShot);
+            anim.SetTrigger(AnimatorPlayerNames.fireballShot);
         }
     }
 

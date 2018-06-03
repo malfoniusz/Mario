@@ -1,6 +1,4 @@
 ﻿
-- bugfix: dodać do SceneTransfer: lives, points and coins
-- refaktor: AnimatorNames
 - QoL: gameController - remaining game time
 - refaktor: zamiast używać powerup i powerdown triggery, użyj SmallMarioIdle etc. Zrób w kodzie if'y i w zależności od poziomu, uruchom odpowiedni trigger.
 Przenieś wywoływanie tych triggerów z PlayerPowerup do PowerupAnimation. W PowerupAnimation usuń funkcje UpdateModel lub UpdateModelBehaviour.

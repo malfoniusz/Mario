@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         bool opposite = (walkKey == -Mathf.Sign(rb.velocity.x));
         bool isTurning = (slowing && opposite) ? true : false;
 
-        anim.SetBool(AnimatorNames.playerIsTurning, isTurning);
+        anim.SetBool(AnimatorPlayerNames.isTurning, isTurning);
         prevSpeed = rb.velocity.x;
     }
 
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckJump();
         MakeAJump();
-        anim.SetBool(AnimatorNames.playerIsJumping, playerIsJumping);
+        anim.SetBool(AnimatorPlayerNames.isJumping, playerIsJumping);
     }
 
     void CheckJump()
@@ -210,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
     void WalkAnimation()
     {
         bool isWalking = Mathf.Abs(rb.velocity.x) > minimalVelocity ? true : false;
-        anim.SetBool(AnimatorNames.playerIsWalking, isWalking);
+        anim.SetBool(AnimatorPlayerNames.isWalking, isWalking);
 
         WalkAnimationSpeed();
     }
@@ -221,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
         float walkMultiplier = 1;
         walkMultiplier += (Mathf.InverseLerp(0, maxRunSpeed, curSpeed) * 2);
 
-        anim.SetFloat(AnimatorNames.playerWalkSpeedMultiplier, walkMultiplier);
+        anim.SetFloat(AnimatorPlayerNames.walkSpeedMultiplier, walkMultiplier);
     }
 
     void LeftCameraBoundary()
