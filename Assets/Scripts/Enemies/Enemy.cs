@@ -129,7 +129,7 @@ public class Enemy : Moving
         rb.isKinematic = kinema;
         if (anim != null) anim.enabled = animation;
         objectCollider.enabled = false;
-        Physics2D.IgnoreCollision(triggerCollider, player.GetComponent<BoxCollider2D>());   // Only for player so that DeathByFall can register collision
+        triggerCollider.enabled = false;
     }
 
 }

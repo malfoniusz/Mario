@@ -58,7 +58,7 @@ public class Fireball : MonoBehaviour
     {
         bool sideContact = Contact.ContactPoints(sideChecks);
 
-        if (sideContact)    Destroy(gameObject);
+        if (sideContact) Destroy(gameObject);
     }
 
     private void OutOfViewport()
