@@ -13,10 +13,10 @@ public class Mushroom : Moving
     protected override void Awake()
     {
         base.Awake();
-        this.playerPowerup = player.GetComponent<PlayerPowerup>();
+        playerPowerup = player.GetComponent<PlayerPowerup>();
 
         Vector2 startPos = transform.position;
-        this.moveObject = MoveObject.CreateMoveObject1(startPos, moveDistance, MOVE_TIME_IN_SECONDS);
+        moveObject = MoveObject.CreateMoveObject1(startPos, moveDistance, MOVE_TIME_IN_SECONDS);
     }
 
     private void Start()

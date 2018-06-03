@@ -1,5 +1,4 @@
 ﻿
-- bugfix: super powolna animacja uderzenia bloku od dołu
 - bugfix: są dwa skryptu z UIWorld. Jeden w UI i jeden w StartLevelScreen
 - bugfix: przy starcie poziomu ustawić numer poziomu w UIWorld
 

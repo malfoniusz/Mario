@@ -40,6 +40,12 @@ public class MoveObject
         return new MoveObject(startPos, startPos, endPos, 0, moveSpeed);
     }
 
+    public static MoveObject CreateMoveObject4(Vector2 startPos, Vector2 moveDistance, float moveSpeed)
+    {
+        Vector2 endPos = startPos + moveDistance;
+        return new MoveObject(startPos, startPos, endPos, 0, moveSpeed);
+    }
+
     public Vector2 NextPosition()
     {
         CalcNextPosition();
