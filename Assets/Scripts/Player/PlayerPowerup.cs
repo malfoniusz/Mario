@@ -50,8 +50,8 @@ public class PlayerPowerup : MonoBehaviour
     private void PowerupBehaviour()
     {
         level++;
-        anim.SetTrigger(AnimatorPlayerNames.powerup);
         powerupAnimation.StartAnimation(true, level);
+
         jumpAudio.clip = bigJumpClip;
     }
 
@@ -70,14 +70,10 @@ public class PlayerPowerup : MonoBehaviour
     private void Powerdown()
     {
         level--;
-        anim.SetTrigger(AnimatorPlayerNames.powerdown);
         powerupAnimation.StartAnimation(false, level);
         powerdownAudio.Play();
 
-        if (level == MarioLevelEnum.small)
-        {
-            jumpAudio.clip = jumpClip;
-        }
+        if (level == MarioLevelEnum.small) jumpAudio.clip = jumpClip;
 
         StartCoroutine(PowerdownInvincibility(powerdownInvDur));
     }
@@ -110,7 +106,7 @@ public class PlayerPowerup : MonoBehaviour
     public void ChangeAppearanceToLevel(MarioLevelEnum newLevel)
     {
         level = newLevel;
-        powerupAnimation.UpdateModelToLevel(newLevel);
+        powerupAnimation.UpdateModel(newLevel);
     }
 
 }

@@ -18,7 +18,6 @@ TagManager:
   - Flagpole
   - Castle
   - UITime
-  - UIPoints
   - FPSCounter
   layers:
   - Default

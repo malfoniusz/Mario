@@ -19,7 +19,6 @@ public class TagNames : MonoBehaviour
     public static string flagpole = "Flagpole";
     public static string castle = "Castle";
     public static string uiTime = "UITime";
-    public static string uiPoints = "UIPoints";
     public static string fpsCounter = "FPSCounter";
 
     public static GameObject GetPlayer()
@@ -155,11 +154,6 @@ public class TagNames : MonoBehaviour
     public static UITime GetUITime()
     {
         return GameObject.FindGameObjectWithTag(uiTime).GetComponent<UITime>(); ;
-    }
-
-    public static UIPoints GetUIPoints()
-    {
-        return GameObject.FindGameObjectWithTag(uiPoints).GetComponent<UIPoints>();
     }
 
     public static GameObject GetFPSCounter()

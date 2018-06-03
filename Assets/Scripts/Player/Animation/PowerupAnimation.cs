@@ -97,11 +97,13 @@ public class PowerupAnimation : MonoBehaviour
         return new WaitForSeconds(animationDuration);
     }
 
-    private void UpdateModel(MarioLevelEnum marioLevel)
+    public void UpdateModel(MarioLevelEnum marioLevel)
     {
         if      (marioLevel == MarioLevelEnum.small)    UpdateModelBehaviour(smallMarioModel);
         else if (marioLevel == MarioLevelEnum.big)      UpdateModelBehaviour(bigMarioModel);
         else if (marioLevel == MarioLevelEnum.fire)     UpdateModelBehaviour(fireMarioModel);
+
+        SetAnimatorState(marioLevel);
     }
 
     private void UpdateModelBehaviour(GameObject newModel)
@@ -121,12 +123,6 @@ public class PowerupAnimation : MonoBehaviour
         {
             playerTopChecks[i].localPosition = newTopChecks[i].localPosition;
         }
-    }
-
-    public void UpdateModelToLevel(MarioLevelEnum newLevel)
-    {
-        UpdateModel(newLevel);
-        SetAnimatorState(newLevel);
     }
 
     private void SetAnimatorState(MarioLevelEnum marioLevel)
