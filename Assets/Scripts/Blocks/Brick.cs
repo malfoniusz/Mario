@@ -16,7 +16,7 @@ public class Brick : BlockAnimated
     {
         base.Update();
 
-        if (playerHit && playerPowerup.GetLevel() > 1)
+        if (playerHit && (playerPowerup.GetLevel() == MarioLevelEnum.big || playerPowerup.GetLevel() == MarioLevelEnum.fire))
         {
             Instantiate(brickBroken, transform.localPosition, Quaternion.identity);
             Destroy(gameObject);

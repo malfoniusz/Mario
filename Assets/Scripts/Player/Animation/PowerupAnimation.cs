@@ -26,12 +26,12 @@ public class PowerupAnimation : MonoBehaviour
         playerTopChecks = PrefabNames.GetChecks(player, PrefabNames.marioTopChecks);
     }
 
-    public void StartAnimation(bool powerup, int marioNewLevel)
+    public void StartAnimation(bool powerup, MarioLevelEnum marioNewLevel)
     {
         StartCoroutine(StartAnimationCoroutine(powerup, marioNewLevel));
     }
 
-    private IEnumerator StartAnimationCoroutine(bool powerup, int marioNewLevel)
+    private IEnumerator StartAnimationCoroutine(bool powerup, MarioLevelEnum marioNewLevel)
     {
         gameController.StopGame(false);
         animationInProgress = true;
@@ -39,13 +39,13 @@ public class PowerupAnimation : MonoBehaviour
 
         if (powerup)
         {
-            if      (marioNewLevel == 2) StartCoroutine(AnimationCoroutine(smallMarioModel, bigMarioModel, true));
-            else if (marioNewLevel == 3) StartCoroutine(AnimationCoroutine(bigMarioModel, fireMarioModel, true));
+            if      (marioNewLevel == MarioLevelEnum.big) StartCoroutine(AnimationCoroutine(smallMarioModel, bigMarioModel, true));
+            else if (marioNewLevel == MarioLevelEnum.fire) StartCoroutine(AnimationCoroutine(bigMarioModel, fireMarioModel, true));
         }
         else
         {
-            if      (marioNewLevel == 2) StartCoroutine(AnimationCoroutine(fireMarioModel, bigMarioModel, false));
-            else if (marioNewLevel == 1) StartCoroutine(AnimationCoroutine(bigMarioModel, smallMarioModel, false));
+            if      (marioNewLevel == MarioLevelEnum.big) StartCoroutine(AnimationCoroutine(fireMarioModel, bigMarioModel, false));
+            else if (marioNewLevel == MarioLevelEnum.small) StartCoroutine(AnimationCoroutine(bigMarioModel, smallMarioModel, false));
         }
 
         while (animationInProgress)
@@ -97,11 +97,11 @@ public class PowerupAnimation : MonoBehaviour
         return new WaitForSeconds(animationDuration);
     }
 
-    private void UpdateModel(int marioLevel)
+    private void UpdateModel(MarioLevelEnum marioLevel)
     {
-        if      (marioLevel == 1)   UpdateModelBehaviour(smallMarioModel);
-        else if (marioLevel == 2)   UpdateModelBehaviour(bigMarioModel);
-        else if (marioLevel == 3)   UpdateModelBehaviour(fireMarioModel);
+        if      (marioLevel == MarioLevelEnum.small)    UpdateModelBehaviour(smallMarioModel);
+        else if (marioLevel == MarioLevelEnum.big)      UpdateModelBehaviour(bigMarioModel);
+        else if (marioLevel == MarioLevelEnum.fire)     UpdateModelBehaviour(fireMarioModel);
     }
 
     private void UpdateModelBehaviour(GameObject newModel)
@@ -123,17 +123,17 @@ public class PowerupAnimation : MonoBehaviour
         }
     }
 
-    public void UpdateModelToLevel(int newLevel)
+    public void UpdateModelToLevel(MarioLevelEnum newLevel)
     {
         UpdateModel(newLevel);
         SetAnimatorState(newLevel);
     }
 
-    private void SetAnimatorState(int marioLevel)
+    private void SetAnimatorState(MarioLevelEnum marioLevel)
     {
-        if      (marioLevel == 1)   marioAnimator.SetTrigger(AnimatorNames.playerSmallMarioIdle);
-        else if (marioLevel == 2)   marioAnimator.SetTrigger(AnimatorNames.playerBigMarioIdle);
-        else if (marioLevel == 3)   marioAnimator.SetTrigger(AnimatorNames.playerFireMarioIdle);
+        if      (marioLevel == MarioLevelEnum.small)    marioAnimator.SetTrigger(AnimatorNames.playerSmallMarioIdle);
+        else if (marioLevel == MarioLevelEnum.big)      marioAnimator.SetTrigger(AnimatorNames.playerBigMarioIdle);
+        else if (marioLevel == MarioLevelEnum.fire)     marioAnimator.SetTrigger(AnimatorNames.playerFireMarioIdle);
     }
 
 }

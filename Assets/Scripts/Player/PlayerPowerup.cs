@@ -10,7 +10,7 @@ public class PlayerPowerup : MonoBehaviour
     public AudioSource powerupAudio;
     public AudioSource powerdownAudio;
 
-    private int level = 1;   // 1 - mario, 2 - bigMario, 3 - fireMario
+    private MarioLevelEnum level = MarioLevelEnum.small;
     private GameObject player;
     private PowerupAnimation powerupAnimation;
     private PlayerDeath playerDeath;
@@ -28,7 +28,7 @@ public class PlayerPowerup : MonoBehaviour
     public void MushroomPowerup()
     {
         powerupAudio.Play();
-        if (level == 1)
+        if (level == MarioLevelEnum.small)
         {
             PowerupBehaviour();
         }
@@ -37,11 +37,11 @@ public class PlayerPowerup : MonoBehaviour
     public void FireFlowerPowerup()
     {
         powerupAudio.Play();
-        if (level == 1)
+        if (level == MarioLevelEnum.small)
         {
             PowerupBehaviour();
         }
-        else if (level == 2)
+        else if (level == MarioLevelEnum.big)
         {
             PowerupBehaviour();
         }
@@ -57,7 +57,7 @@ public class PlayerPowerup : MonoBehaviour
 
     public void PlayerHit()
     {
-        if (level == 1)
+        if (level == MarioLevelEnum.small)
         {
             playerDeath.Die();
         }
@@ -74,7 +74,7 @@ public class PlayerPowerup : MonoBehaviour
         powerupAnimation.StartAnimation(false, level);
         powerdownAudio.Play();
 
-        if (level == 1)
+        if (level == MarioLevelEnum.small)
         {
             jumpAudio.clip = jumpClip;
         }
@@ -97,17 +97,17 @@ public class PlayerPowerup : MonoBehaviour
         spriteRenderer.color = trans;
     }
 
-    public int GetLevel()
+    public MarioLevelEnum GetLevel()
     {
         return level;
     }
 
-    private void SetLevel(int value) // Don't make this public. Use other function that changes also the appearance.
+    private void SetLevel(MarioLevelEnum value) // Don't make this public. Use other function that changes also the appearance.
     {
         level = value;
     }
 
-    public void ChangeAppearanceToLevel(int newLevel)
+    public void ChangeAppearanceToLevel(MarioLevelEnum newLevel)
     {
         level = newLevel;
         powerupAnimation.UpdateModelToLevel(newLevel);
