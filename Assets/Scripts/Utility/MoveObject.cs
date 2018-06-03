@@ -27,7 +27,7 @@ public class MoveObject
     public static MoveObject CreateMoveObject1(Vector2 startPos, Vector2 moveDistance, float moveTimeInSeconds)
     {
         Vector2 endPos = startPos + moveDistance;
-        return new MoveObject(startPos, startPos, endPos, moveTimeInSeconds, 0);
+        return CreateMoveObject2(startPos, endPos, moveTimeInSeconds);
     }
 
     public static MoveObject CreateMoveObject2(Vector2 startPos, Vector2 endPos, float moveTimeInSeconds)
@@ -35,14 +35,14 @@ public class MoveObject
         return new MoveObject(startPos, startPos, endPos, moveTimeInSeconds, 0);
     }
 
-    public static MoveObject CreateMoveObject3(Vector2 startPos, Vector2 endPos, float moveSpeed)
-    {
-        return new MoveObject(startPos, startPos, endPos, 0, moveSpeed);
-    }
-
-    public static MoveObject CreateMoveObject4(Vector2 startPos, Vector2 moveDistance, float moveSpeed)
+    public static MoveObject CreateMoveObject3(Vector2 startPos, Vector2 moveDistance, float moveSpeed)
     {
         Vector2 endPos = startPos + moveDistance;
+        return CreateMoveObject4(startPos, endPos, moveSpeed);
+    }
+
+    public static MoveObject CreateMoveObject4(Vector2 startPos, Vector2 endPos, float moveSpeed)
+    {
         return new MoveObject(startPos, startPos, endPos, 0, moveSpeed);
     }
 

@@ -70,7 +70,7 @@ public class Finish : MonoBehaviour
         Vector2 startPos = movingObject.transform.position;
         Vector2 endPos = new Vector2(movingObject.transform.position.x, flagpoleBase.transform.position.y);
 
-        MoveObject moveObj = MoveObject.CreateMoveObject3(startPos, endPos, moveSpeed);
+        MoveObject moveObj = MoveObject.CreateMoveObject4(startPos, endPos, moveSpeed);
         Collider2D objCollider = movingObject.GetComponent<Collider2D>();
 
         while (objCollider.bounds.Contains(flagpoleBaseTopContact.position) == false)

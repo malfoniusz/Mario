@@ -33,7 +33,7 @@ public class Castle : MonoBehaviour
         Vector2 startPos = objCastleFlag.transform.position;
         Vector2 endPos = objCastleFlagEndPos.transform.position;
 
-        MoveObject moveObjFlag = MoveObject.CreateMoveObject3(startPos, endPos, castleFlagRiseSpeed);
+        MoveObject moveObjFlag = MoveObject.CreateMoveObject4(startPos, endPos, castleFlagRiseSpeed);
 
         while (moveObjFlag.ReachedEnd() == false)
         {

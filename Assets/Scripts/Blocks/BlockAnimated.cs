@@ -14,7 +14,7 @@ public class BlockAnimated : Block
         base.Awake();
 
         Vector2 startPos = transform.position;
-        moveObject = MoveObject.CreateMoveObject4(startPos, moveDistance, MOVE_SPEED);
+        moveObject = MoveObject.CreateMoveObject3(startPos, moveDistance, MOVE_SPEED);
     }
 
     protected override void Update()
@@ -40,7 +40,7 @@ public class BlockAnimated : Block
                 moveBlockDown = true;
 
                 Vector2 endPos = transform.position;
-                moveObject = MoveObject.CreateMoveObject4(endPos, -moveDistance, MOVE_SPEED);
+                moveObject = MoveObject.CreateMoveObject3(endPos, -moveDistance, MOVE_SPEED);
             }
         }
         else if (moveBlockDown)
@@ -52,7 +52,7 @@ public class BlockAnimated : Block
                 moveBlockDown = false;
 
                 Vector2 startPos = transform.position;
-                moveObject = MoveObject.CreateMoveObject4(startPos, moveDistance, MOVE_SPEED);
+                moveObject = MoveObject.CreateMoveObject3(startPos, moveDistance, MOVE_SPEED);
             }
         }
     }
