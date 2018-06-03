@@ -48,8 +48,6 @@ public class Finish : MonoBehaviour
 
         GoingToCastle();
         yield return null;
-
-        // gameController.ResumeGame(true);  // W razie problemów po wczytaniu kolejnego poziomu odkomentuj to
     }
 
     private void FlagpoleTouched(int flagpolePoints, bool extraLife)
@@ -135,7 +133,10 @@ public class Finish : MonoBehaviour
 
         audioTimeToPoints.Stop();
 
-        while (enteredCastle == false) yield return new WaitForSeconds(0.01f);
+        while (!(enteredCastle && !musicController.IsPlaying(MusicEnum.stageCleared)))
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
 
         castle.ShowCastleFlag();
 

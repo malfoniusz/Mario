@@ -1,5 +1,4 @@
 ﻿
-- bugfix: postawienie flagi na zamku po skończeniu muzyki, wejściu maria do zamku i zliczeniu punktów
 - QoL: gameController - wybór poziomu maria
 - bugfix: dodać do SceneTransfer: lives, points and coins
 - refaktor: AnimatorNames

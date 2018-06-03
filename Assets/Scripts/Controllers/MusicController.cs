@@ -11,32 +11,8 @@ public class MusicController : MonoBehaviour
 
     public void Play(MusicEnum musicName, bool startFromBeginning)
     {
-        switch(musicName)
-        {
-            case MusicEnum.main:
-                PlayAudio(0, startFromBeginning);
-                break;
-            case MusicEnum.hurry:
-                PlayAudio(1, startFromBeginning);
-                break;
-            case MusicEnum.invincibility:
-                PlayAudio(2, startFromBeginning);
-                break;
-            case MusicEnum.death:
-                PlayAudio(3, startFromBeginning);
-                break;
-            case MusicEnum.underground:
-                PlayAudio(4, startFromBeginning);
-                break;
-            case MusicEnum.stageCleared:
-                PlayAudio(5, startFromBeginning);
-                break;
-            case MusicEnum.gameOver:
-                PlayAudio(6, startFromBeginning);
-                break;
-            default:
-                throw new System.Exception("No such music exists.");
-        }
+        int musicIndex = GetMusicIndex(musicName);
+        PlayAudio(musicIndex, startFromBeginning);
     }
 
     private void PlayAudio(int audioIndex, bool startFromBeginning)
@@ -50,22 +26,28 @@ public class MusicController : MonoBehaviour
 
     public float GetMusicLength(MusicEnum musicName)
     {
+        int musicIndex = GetMusicIndex(musicName);
+        return audioSources[musicIndex].clip.length;
+    }
+
+    private int GetMusicIndex(MusicEnum musicName)
+    {
         switch (musicName)
         {
             case MusicEnum.main:
-                return audioSources[0].clip.length;
+                return 0;
             case MusicEnum.hurry:
-                return audioSources[1].clip.length;
+                return 1;
             case MusicEnum.invincibility:
-                return audioSources[2].clip.length;
+                return 2;
             case MusicEnum.death:
-                return audioSources[3].clip.length;
+                return 3;
             case MusicEnum.underground:
-                return audioSources[4].clip.length;
+                return 4;
             case MusicEnum.stageCleared:
-                return audioSources[5].clip.length;
+                return 5;
             case MusicEnum.gameOver:
-                return audioSources[6].clip.length;
+                return 6;
             default:
                 throw new System.Exception("No such music exists.");
         }
@@ -79,6 +61,12 @@ public class MusicController : MonoBehaviour
     public void PlayCurrentMusic()
     {
         audioSources[curAudioIndex].Play();
+    }
+
+    public bool IsPlaying(MusicEnum musicName)
+    {
+        int musicIndex = GetMusicIndex(musicName);
+        return audioSources[musicIndex].isPlaying;
     }
 
 }
