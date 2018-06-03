@@ -1,5 +1,4 @@
 ﻿
-- QoL: gameController - wybór poziomu maria
 - bugfix: dodać do SceneTransfer: lives, points and coins
 - refaktor: AnimatorNames
 - QoL: gameController - remaining game time

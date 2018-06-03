@@ -42217,6 +42217,7 @@ MonoBehaviour:
   quickStart: 1
   playerInvincible: 0
   stopDisablingObjects: 0
+  marioStartingLevel: 0
 --- !u!1001 &2029780531
 Prefab:
   m_ObjectHideFlags: 0
