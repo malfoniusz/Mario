@@ -1,7 +1,4 @@
 ﻿
-- bugfix: są dwa skryptu z UIWorld. Jeden w UI i jeden w StartLevelScreen
-- bugfix: przy starcie poziomu ustawić numer poziomu w UIWorld
-
 Menu główne:
 - osobna scena
 - przygotowanie części wizualnej

@@ -3,19 +3,49 @@ using UnityEngine.UI;
 
 public class UIWorld : MonoBehaviour
 {
-    public static int world = 1;
-    public static int level = 1;
+    public Text startScreenText;
 
+    private int world = -1;
+    private int level = -1;
     private Text levelText;
 
-    void Awake()
+    private void Awake()
     {
         levelText = GetComponent<Text>();
     }
 
-    void Start()
+    private void Start()
     {
-        levelText.text = world + "-" + level;
+        UpdateText();
+    }
+
+    public int GetWorld()
+    {
+        return world;
+    }
+
+    public void SetWorld(int newWorld)
+    {
+        world = newWorld;
+        UpdateText();
+    }
+
+    public int Getlevel()
+    {
+        return level;
+    }
+
+    public void SetLevel(int newLevel)
+    {
+        level = newLevel;
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
+        string textString = world + "-" + level;
+        levelText.text = textString;
+        startScreenText.text = textString;
     }
 
 }

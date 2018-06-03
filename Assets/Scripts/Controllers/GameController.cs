@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public int worldNumber = -1;
+    public int levelNumber = -1;
     public GameObject startLevelScreen;
     public GameObject gameOverScreen;
 
@@ -14,6 +16,7 @@ public class GameController : MonoBehaviour
     private const float START_DELAY = 2;
     private bool quickStart;
     private SceneTransfer sceneTransfer;
+    private UIWorld uiWorld;
 
     private void Awake()
     {
@@ -22,11 +25,14 @@ public class GameController : MonoBehaviour
         player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
         sceneTransfer = GetComponent<SceneTransfer>();
+        uiWorld = TagNames.GetUIWorld();
     }
 
     private void Start()
     {
         sceneTransfer.PrepareLevel();
+        uiWorld.SetWorld(worldNumber);
+        uiWorld.SetLevel(levelNumber);
 
         HideStartLevel();
         HideGameOver();
