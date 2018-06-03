@@ -152,14 +152,14 @@ public class TagNames : MonoBehaviour
         return Camera.main.gameObject;
     }
 
-    public static GameObject GetUITime()
+    public static UITime GetUITime()
     {
-        return GameObject.FindGameObjectWithTag(uiTime);
+        return GameObject.FindGameObjectWithTag(uiTime).GetComponent<UITime>(); ;
     }
 
-    public static GameObject GetUIPoints()
+    public static UIPoints GetUIPoints()
     {
-        return GameObject.FindGameObjectWithTag(uiPoints);
+        return GameObject.FindGameObjectWithTag(uiPoints).GetComponent<UIPoints>();
     }
 
     public static GameObject GetFPSCounter()

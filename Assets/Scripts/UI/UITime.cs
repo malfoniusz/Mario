@@ -7,7 +7,7 @@ public class UITime : MonoBehaviour
     public static bool stop = false;
 
     public float countdownSpeed = 3;
-    public int time = 400;
+    private int time = 400;
     public int hurryTime = 100;
     public int pointsForTimeUnit = 50;
 
@@ -84,6 +84,16 @@ public class UITime : MonoBehaviour
         UIPoints.AddPoints(pointsForTimeUnit);
         time--;
         SetText(time);
+    }
+
+    public void SetTime(int newTime)
+    {
+        time = newTime;
+    }
+
+    public int GetTime()
+    {
+        return time;
     }
 
 }

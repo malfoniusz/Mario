@@ -33,7 +33,7 @@ public class Finish : MonoBehaviour
         player = TagNames.GetPlayer();
         playerMove = player.GetComponent<PlayerMovement>();
         mAnim = player.GetComponent<MarioAnimator>();
-        uiTime = TagNames.GetUITime().GetComponent<UITime>();
+        uiTime = TagNames.GetUITime();
     }
 
     public void ClearStage(int flagpolePoints, bool extraLife)
@@ -125,7 +125,7 @@ public class Finish : MonoBehaviour
 
         audioTimeToPoints.Play();
 
-        while (uiTime.time > 0)
+        while (uiTime.GetTime() > 0)
         {
             uiTime.PointsForTimeUnit();
             yield return new WaitForSeconds(intervalTimeToPointsInSeconds);
