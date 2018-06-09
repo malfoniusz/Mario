@@ -3,6 +3,7 @@
 public class ButtonNames : MonoBehaviour
 {
     public static bool disableInput = false;
+
     public static string horizontal = "Horizontal";
     public static string jump = "Jump";
     public static string run = "Run";
@@ -10,6 +11,8 @@ public class ButtonNames : MonoBehaviour
     public static string down = "Down";
     public static string left = "Left";
     public static string right = "Right";
+    public static string enter = "Enter";
+    public static string space = "Space";
 
     public static float GetRawHorizontal()
     {
@@ -87,6 +90,18 @@ public class ButtonNames : MonoBehaviour
     {
         if (disableInput) return false;
         return Input.GetButtonDown(right);
+    }
+
+    public static bool EnterPressed()
+    {
+        if (disableInput) return false;
+        return Input.GetButtonDown(enter);
+    }
+
+    public static bool SpacePressed()
+    {
+        if (disableInput) return false;
+        return Input.GetButtonDown(space);
     }
 
 }

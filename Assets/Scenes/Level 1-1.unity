@@ -33158,11 +33158,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4058964249119030, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4058964249119030, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 160
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5faaad4c44517d348bffc7860a54e6ed, type: 2}
@@ -43446,8 +43446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dc416f8cd0d3a4882e51c816b3b06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldNumber: 3
-  levelNumber: 8
+  worldNumber: 1
+  levelNumber: 1
   startLevelScreen: {fileID: 1098399851}
   gameOverScreen: {fileID: 2074890458}
 --- !u!4 &2027603161
@@ -43485,8 +43485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b07a1be365c7d4c8bf5de57a7ba723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showFPS: 1
-  quickStart: 1
+  showFPS: 0
+  quickStart: 0
   playerInvincible: 0
   stopDisablingObjects: 0
   marioStartingLevel: 0

@@ -1,12 +1,8 @@
 ﻿
 Menu główne:
-- osobna scena
-- przygotowanie części wizualnej
-- kursor
-- opcja rozpoczęcia gry
-- opcja wyjścia z gry
-- przy starcie gry pokazać menu główne
-- po utracie wszystkich żyć, powrót do menu głównego
+- top score
+
+- savepoint'y - przy śmierci nie zaczynać od początku poziomu
 
 Porządki:
 - usunięcie niepotrzebnych rzeczy z początku poziomu

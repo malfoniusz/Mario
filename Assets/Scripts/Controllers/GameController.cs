@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     private bool quickStart;
     private SceneTransfer sceneTransfer;
     private UIWorld uiWorld;
+    private const float RESTART_DELAY = 1f;
 
     private void Awake()
     {
@@ -82,13 +83,14 @@ public class GameController : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
-        float gameOverMusicLength = musicController.GetMusicLength(MusicEnum.gameOver);
+        float gameOverMusicLength = musicController.GetMusicLength(MusicEnum.gameOver) + RESTART_DELAY;
 
         yield return new WaitForSeconds(gameOverMusicLength);
         UIPoints.ResetPoints();
         UICoins.ResetCoins();
         UILives.ResetLives();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ResumeGame(false); // So you can e.g. use keyboard after the reset
+        SceneNames.LoadStartMenu();
     }
 
     private void ShowStartLevel()
