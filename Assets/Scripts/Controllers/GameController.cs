@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        sceneTransfer.PrepareLevel();
+        sceneTransfer.LoadArguments();
         uiWorld.SetWorld(worldNumber);
         uiWorld.SetLevel(levelNumber);
 

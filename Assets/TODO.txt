@@ -1,5 +1,4 @@
 ﻿
-- bugfix: SceneTransfer - zrobić funkcje resetującą wszystkie zmienne i uruchomić tą funkcję przy śmierci gracza
 - savepoint'y - przy śmierci nie zaczynać od początku poziomu
 
 Porządki:

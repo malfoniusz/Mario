@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransfer : MonoBehaviour
 {
-    private static MarioLevelEnum marioLevel = MarioLevelEnum.notSet;
+    // Remember to consider adding new arguments to ResetArgumentsAfterLaod() so that they won't carry e.g. after players death
+    private static MarioLevelEnum marioLevelDefault = MarioLevelEnum.notSet;
+    private static MarioLevelEnum marioLevel = marioLevelDefault;
 
     private GameObject player;
     private PlayerPowerup playerPowerup;
@@ -25,9 +27,16 @@ public class SceneTransfer : MonoBehaviour
         marioLevel = playerPowerup.GetLevel();
     }
 
-    public void PrepareLevel()
+    public void LoadArguments()
     {
         if (marioLevel != MarioLevelEnum.notSet) playerPowerup.ChangeAppearanceToLevel(marioLevel);
+
+        ResetArgumentsAfterLaod();
+    }
+
+    private void ResetArgumentsAfterLaod()
+    {
+        marioLevel = marioLevelDefault;
     }
 
 }
