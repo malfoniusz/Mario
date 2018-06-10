@@ -25,7 +25,7 @@ public class SceneTransfer : MonoBehaviour
     {
         SaveArguments();
         ResetArgumentsBeforeNextLevel();
-        SceneNames.LoadStartMenu();
+        SceneNames.EndGameLoadStartMenu(UIPoints.GetPoints());
     }
 
     private void SaveArguments()

@@ -6,10 +6,24 @@ public class SceneNames : MonoBehaviour
     public static string startMenu = "StartMenu";
     public static string level1_1 = "Level 1-1";
 
-    public static void LoadStartMenu()
+    public static void EndGameLoadStartMenu(int score)
     {
+        SaveHighscore(score);
+
         ButtonNames.disableInput = false;
+        UIPoints.ResetPoints();
+        UICoins.ResetCoins();
+        UILives.ResetLives();
+
         SceneManager.LoadScene(startMenu);
+    }
+
+    private static void SaveHighscore(int score)
+    {
+        if (score > PlayerPrefsNames.GetHighscore())
+        {
+            PlayerPrefsNames.SaveHighscore(score);
+        }
     }
 
     public static void LoadLevel1_1()

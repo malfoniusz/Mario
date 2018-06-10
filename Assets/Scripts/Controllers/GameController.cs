@@ -81,27 +81,15 @@ public class GameController : MonoBehaviour
         ResumeGame(true);
     }
 
-    private void SaveHighscore()
-    {
-        int points = UIPoints.GetPoints();
-        if (points > PlayerPrefsNames.GetHighscore())
-        {
-            PlayerPrefsNames.SaveHighscore(points);
-        }
-    }
-
     private IEnumerator GameOverReset()
     {
         float gameOverMusicLength = musicController.GetMusicLength(MusicEnum.gameOver) + RESTART_DELAY;
 
         yield return new WaitForSeconds(gameOverMusicLength);
-        SaveHighscore();
-        UIPoints.ResetPoints();
-        UICoins.ResetCoins();
-        UILives.ResetLives();
+
         sceneTransfer.ResetArgumentsAtGameOver();
 
-        SceneNames.LoadStartMenu();
+        SceneNames.EndGameLoadStartMenu(UIPoints.GetPoints());
     }
 
     private void ShowStartLevel()
