@@ -1,6 +1,1 @@
 ﻿
-Porządki:
-- usunięcie niepotrzebnych rzeczy z początku poziomu
-- ustawienie odpowiednich opcji w GameMasterze
-- jak będziesz im udostępniał grę to zamieść zdjęcie wszystkich napisanych skryptów
-- apply changes to all prefabs

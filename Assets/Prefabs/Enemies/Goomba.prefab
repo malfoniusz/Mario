@@ -431,8 +431,6 @@ MonoBehaviour:
   objectCollider: {fileID: 61839216042900228}
   triggerCollider: {fileID: 61071532238583508}
   anim: {fileID: 95022830871753166}
-  pointsFloating: {fileID: 1318919515756202, guid: 020476bc2ec3a1d419d02ef38bf4cfa4,
-    type: 2}
   leftChecks:
   - {fileID: 4338327088625076}
   - {fileID: 4836437269593910}
