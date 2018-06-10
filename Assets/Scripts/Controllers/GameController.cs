@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class GameController : MonoBehaviour
         musicController = TagNames.GetMusicController().GetComponent<MusicController>();
         player = TagNames.GetPlayer();
         playerMovement = player.GetComponent<PlayerMovement>();
-        sceneTransfer = GetComponent<SceneTransfer>();
+        sceneTransfer = TagNames.GetSceneTransfer();
         uiWorld = TagNames.GetUIWorld();
     }
 
@@ -58,12 +57,12 @@ public class GameController : MonoBehaviour
         if (UILives.GetLives() <= 0)
         {
             ShowGameOver();
-            SaveHighscore();
-            StartCoroutine(RestartGame());
+            StartCoroutine(GameOverReset());
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            sceneTransfer.ResetArgumentsAtPlayerDeath();
+            SceneNames.ReloadScene();
         }
     }
 
@@ -91,15 +90,17 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private IEnumerator RestartGame()
+    private IEnumerator GameOverReset()
     {
         float gameOverMusicLength = musicController.GetMusicLength(MusicEnum.gameOver) + RESTART_DELAY;
 
         yield return new WaitForSeconds(gameOverMusicLength);
+        SaveHighscore();
         UIPoints.ResetPoints();
         UICoins.ResetCoins();
         UILives.ResetLives();
-        ResumeGame(false); // So you can e.g. use keyboard after the reset
+        sceneTransfer.ResetArgumentsAtGameOver();
+
         SceneNames.LoadStartMenu();
     }
 

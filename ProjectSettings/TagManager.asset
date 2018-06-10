@@ -20,6 +20,7 @@ TagManager:
   - UITime
   - FPSCounter
   - UIWorld
+  - SceneTransfer
   layers:
   - Default
   - TransparentFX

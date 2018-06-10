@@ -8,12 +8,18 @@ public class SceneNames : MonoBehaviour
 
     public static void LoadStartMenu()
     {
+        ButtonNames.disableInput = false;
         SceneManager.LoadScene(startMenu);
     }
 
     public static void LoadLevel1_1()
     {
         SceneManager.LoadScene(level1_1);
+    }
+
+    public static void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

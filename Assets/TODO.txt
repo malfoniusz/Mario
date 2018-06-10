@@ -1,6 +1,4 @@
 ﻿
-- savepoint'y - przy śmierci nie zaczynać od początku poziomu
-
 Porządki:
 - usunięcie niepotrzebnych rzeczy z początku poziomu
 - ustawienie odpowiednich opcji w GameMasterze

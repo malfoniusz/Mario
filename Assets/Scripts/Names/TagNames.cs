@@ -21,6 +21,7 @@ public class TagNames : MonoBehaviour
     public static string uiTime = "UITime";
     public static string uiWorld = "UIWorld";
     public static string fpsCounter = "FPSCounter";
+    public static string sceneTransfer = "SceneTransfer";
 
     public static GameObject GetPlayer()
     {
@@ -165,6 +166,16 @@ public class TagNames : MonoBehaviour
     public static GameObject GetFPSCounter()
     {
         return GameObject.FindGameObjectWithTag(fpsCounter);
+    }
+
+    public static SceneTransfer GetSceneTransfer()
+    {
+        return GameObject.FindGameObjectWithTag(sceneTransfer).GetComponent<SceneTransfer>();
+    }
+
+    public static CameraFollow GetCameraFollow()
+    {
+        return GetMainCamera().GetComponent<CameraFollow>();
     }
 
 }

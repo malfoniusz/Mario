@@ -6,10 +6,12 @@ public class CameraFollow : MonoBehaviour
 
     private Transform player;
     private bool pause = false;
+    private ActiveObjects activeObjects;
 
     private void Awake()
     {
         player = TagNames.GetPlayer().transform;
+        activeObjects = GetComponent<ActiveObjects>();
     }
 
     private void LateUpdate()
@@ -35,6 +37,12 @@ public class CameraFollow : MonoBehaviour
     public void UpdateMinDistanceToCurrent()
     {
         minDistance = transform.position.x - player.position.x;
+    }
+
+    public void Refresh()
+    {
+        Follow();
+        activeObjects.Refresh();
     }
 
 }
