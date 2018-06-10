@@ -58,6 +58,7 @@ public class GameController : MonoBehaviour
         if (UILives.GetLives() <= 0)
         {
             ShowGameOver();
+            SaveHighscore();
             StartCoroutine(RestartGame());
         }
         else
@@ -79,6 +80,15 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(false);
         ShowLevel();
         ResumeGame(true);
+    }
+
+    private void SaveHighscore()
+    {
+        int points = UIPoints.GetPoints();
+        if (points > PlayerPrefsNames.GetHighscore())
+        {
+            PlayerPrefsNames.SaveHighscore(points);
+        }
     }
 
     private IEnumerator RestartGame()

@@ -43485,8 +43485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b07a1be365c7d4c8bf5de57a7ba723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showFPS: 0
-  quickStart: 0
+  showFPS: 1
+  quickStart: 1
   playerInvincible: 0
   stopDisablingObjects: 0
   marioStartingLevel: 0

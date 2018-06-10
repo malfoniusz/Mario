@@ -7,23 +7,16 @@ public class UIPoints : MonoBehaviour
     private static int points = 0;
     private const int MAX_TEXT_LENGTH = 6;
 
-    void Awake()
+    private void Awake()
     {
         pointText = GetComponent<Text>();
         UpdateText();
     }
 
-    static void UpdateText()
+    private static void UpdateText()
     {
-        int zeros = MAX_TEXT_LENGTH - points.ToString().Length;
-        string text = "";
-        for (int i = 0; i < zeros; i++)
-        {
-            text += "0";
-        }
-
-        text += points.ToString();
-        pointText.text = text;
+        pointText.text = points.ToString();
+        pointText.text = StringUtility.AddZerosToBeginning(MAX_TEXT_LENGTH, pointText.text);
     }
 
     public static void AddPoints(int amount)
@@ -35,6 +28,16 @@ public class UIPoints : MonoBehaviour
     public static void ResetPoints()
     {
         points = 0;
+    }
+
+    public static int GetPoints()
+    {
+        return points;
+    }
+
+    public static void SetPoints(int value)
+    {
+        points = value;
     }
 
 }
